@@ -294,9 +294,8 @@ C:\Users\hung\Documents\GitHub\Quanlyvattu_winform\bin\Debug\es\DevExpress.XtraN
 C:\Users\hung\Documents\GitHub\Quanlyvattu_winform\bin\Debug\ja\DevExpress.XtraNavBar.v22.1.resources.dll
 C:\Users\hung\Documents\GitHub\Quanlyvattu_winform\obj\Debug\quanlyvattu.FormPhieuNhap.resources
 C:\Users\hung\Documents\GitHub\Quanlyvattu_winform\obj\Debug\quanlyvattu.FormDatHang.resources
-C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\quanlyvattu.exe.config
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\quanlyvattu.exe
-C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\quanlyvattu.pdb
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\quanlyvattu.exe.config
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.BonusSkins.v22.1.dll
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.Charts.v22.1.Core.dll
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.CodeParser.v22.1.dll
@@ -492,3 +491,4 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.csproj.
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyva.FF625A1F.Up2Date
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.exe
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.pdb
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\quanlyvattu.pdb

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mANVLabel;
             System.Windows.Forms.Label cMNDLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label tENLabel;
             System.Windows.Forms.Label dIACHILabel;
@@ -39,6 +38,7 @@
             System.Windows.Forms.Label lUONGLabel;
             System.Windows.Forms.Label gHICHULabel;
             System.Windows.Forms.Label tRANGTHAIXOALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.nhanvienBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -60,15 +60,15 @@
             this.nhanvienGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tRANGTHAIXOACheckEdit = new DevExpress.XtraEditors.CheckEdit();
+            this.gHICHUTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.lUONGSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.cMNDTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mANVSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.lUONGSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.gHICHUTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tRANGTHAIXOACheckEdit = new DevExpress.XtraEditors.CheckEdit();
             mANVLabel = new System.Windows.Forms.Label();
             cMNDLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
@@ -84,16 +84,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cMNDTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAIXOACheckEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAIXOACheckEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cMNDTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mANVLabel
@@ -108,11 +108,74 @@
             // cMNDLabel
             // 
             cMNDLabel.AutoSize = true;
-            cMNDLabel.Location = new System.Drawing.Point(49, 86);
+            cMNDLabel.Location = new System.Drawing.Point(32, 86);
             cMNDLabel.Name = "cMNDLabel";
             cMNDLabel.Size = new System.Drawing.Size(50, 16);
             cMNDLabel.TabIndex = 2;
             cMNDLabel.Text = "CMND:";
+            // 
+            // hOLabel
+            // 
+            hOLabel.AutoSize = true;
+            hOLabel.Location = new System.Drawing.Point(51, 131);
+            hOLabel.Name = "hOLabel";
+            hOLabel.Size = new System.Drawing.Size(30, 16);
+            hOLabel.TabIndex = 4;
+            hOLabel.Text = "HO:";
+            // 
+            // tENLabel
+            // 
+            tENLabel.AutoSize = true;
+            tENLabel.Location = new System.Drawing.Point(44, 178);
+            tENLabel.Name = "tENLabel";
+            tENLabel.Size = new System.Drawing.Size(38, 16);
+            tENLabel.TabIndex = 6;
+            tENLabel.Text = "TEN:";
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(318, 38);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(54, 16);
+            dIACHILabel.TabIndex = 8;
+            dIACHILabel.Text = "DIACHI:";
+            // 
+            // nGAYSINHLabel
+            // 
+            nGAYSINHLabel.AutoSize = true;
+            nGAYSINHLabel.Location = new System.Drawing.Point(292, 93);
+            nGAYSINHLabel.Name = "nGAYSINHLabel";
+            nGAYSINHLabel.Size = new System.Drawing.Size(80, 16);
+            nGAYSINHLabel.TabIndex = 10;
+            nGAYSINHLabel.Text = "NGAYSINH:";
+            // 
+            // lUONGLabel
+            // 
+            lUONGLabel.AutoSize = true;
+            lUONGLabel.Location = new System.Drawing.Point(315, 140);
+            lUONGLabel.Name = "lUONGLabel";
+            lUONGLabel.Size = new System.Drawing.Size(57, 16);
+            lUONGLabel.TabIndex = 12;
+            lUONGLabel.Text = "LUONG:";
+            // 
+            // gHICHULabel
+            // 
+            gHICHULabel.AutoSize = true;
+            gHICHULabel.Location = new System.Drawing.Point(310, 185);
+            gHICHULabel.Name = "gHICHULabel";
+            gHICHULabel.Size = new System.Drawing.Size(62, 16);
+            gHICHULabel.TabIndex = 14;
+            gHICHULabel.Text = "GHICHU:";
+            // 
+            // tRANGTHAIXOALabel
+            // 
+            tRANGTHAIXOALabel.AutoSize = true;
+            tRANGTHAIXOALabel.Location = new System.Drawing.Point(156, 221);
+            tRANGTHAIXOALabel.Name = "tRANGTHAIXOALabel";
+            tRANGTHAIXOALabel.Size = new System.Drawing.Size(116, 16);
+            tRANGTHAIXOALabel.TabIndex = 16;
+            tRANGTHAIXOALabel.Text = "TRANGTHAIXOA:";
             // 
             // nhanvienBindingNavigator
             // 
@@ -305,10 +368,79 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // tRANGTHAIXOACheckEdit
+            // 
+            this.tRANGTHAIXOACheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "TRANGTHAIXOA", true));
+            this.tRANGTHAIXOACheckEdit.Location = new System.Drawing.Point(278, 218);
+            this.tRANGTHAIXOACheckEdit.Name = "tRANGTHAIXOACheckEdit";
+            this.tRANGTHAIXOACheckEdit.Properties.Caption = "checkEdit1";
+            this.tRANGTHAIXOACheckEdit.Size = new System.Drawing.Size(94, 24);
+            this.tRANGTHAIXOACheckEdit.TabIndex = 17;
+            // 
+            // gHICHUTextEdit
+            // 
+            this.gHICHUTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "GHICHU", true));
+            this.gHICHUTextEdit.Location = new System.Drawing.Point(378, 182);
+            this.gHICHUTextEdit.Name = "gHICHUTextEdit";
+            this.gHICHUTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.gHICHUTextEdit.TabIndex = 15;
+            // 
+            // lUONGSpinEdit
+            // 
+            this.lUONGSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "LUONG", true));
+            this.lUONGSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.lUONGSpinEdit.Location = new System.Drawing.Point(378, 137);
+            this.lUONGSpinEdit.Name = "lUONGSpinEdit";
+            this.lUONGSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lUONGSpinEdit.Size = new System.Drawing.Size(125, 24);
+            this.lUONGSpinEdit.TabIndex = 13;
+            // 
+            // nGAYSINHDateEdit
+            // 
+            this.nGAYSINHDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "NGAYSINH", true));
+            this.nGAYSINHDateEdit.EditValue = null;
+            this.nGAYSINHDateEdit.Location = new System.Drawing.Point(378, 90);
+            this.nGAYSINHDateEdit.Name = "nGAYSINHDateEdit";
+            this.nGAYSINHDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nGAYSINHDateEdit.Size = new System.Drawing.Size(125, 22);
+            this.nGAYSINHDateEdit.TabIndex = 11;
+            // 
+            // dIACHITextEdit
+            // 
+            this.dIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "DIACHI", true));
+            this.dIACHITextEdit.Location = new System.Drawing.Point(378, 35);
+            this.dIACHITextEdit.Name = "dIACHITextEdit";
+            this.dIACHITextEdit.Size = new System.Drawing.Size(125, 22);
+            this.dIACHITextEdit.TabIndex = 9;
+            // 
+            // tENTextEdit
+            // 
+            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "TEN", true));
+            this.tENTextEdit.Location = new System.Drawing.Point(88, 175);
+            this.tENTextEdit.Name = "tENTextEdit";
+            this.tENTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.tENTextEdit.TabIndex = 7;
+            // 
+            // hOTextEdit
+            // 
+            this.hOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "HO", true));
+            this.hOTextEdit.Location = new System.Drawing.Point(87, 128);
+            this.hOTextEdit.Name = "hOTextEdit";
+            this.hOTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.hOTextEdit.TabIndex = 5;
+            // 
             // cMNDTextEdit
             // 
             this.cMNDTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "CMND", true));
-            this.cMNDTextEdit.Location = new System.Drawing.Point(105, 83);
+            this.cMNDTextEdit.Location = new System.Drawing.Point(88, 83);
             this.cMNDTextEdit.Name = "cMNDTextEdit";
             this.cMNDTextEdit.Size = new System.Drawing.Size(125, 22);
             this.cMNDTextEdit.TabIndex = 3;
@@ -328,138 +460,6 @@
             this.mANVSpinEdit.Size = new System.Drawing.Size(125, 24);
             this.mANVSpinEdit.TabIndex = 1;
             // 
-            // hOLabel
-            // 
-            hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(51, 131);
-            hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(30, 16);
-            hOLabel.TabIndex = 4;
-            hOLabel.Text = "HO:";
-            // 
-            // hOTextEdit
-            // 
-            this.hOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "HO", true));
-            this.hOTextEdit.Location = new System.Drawing.Point(87, 128);
-            this.hOTextEdit.Name = "hOTextEdit";
-            this.hOTextEdit.Size = new System.Drawing.Size(125, 22);
-            this.hOTextEdit.TabIndex = 5;
-            // 
-            // tENLabel
-            // 
-            tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(73, 176);
-            tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(38, 16);
-            tENLabel.TabIndex = 6;
-            tENLabel.Text = "TEN:";
-            // 
-            // tENTextEdit
-            // 
-            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "TEN", true));
-            this.tENTextEdit.Location = new System.Drawing.Point(117, 173);
-            this.tENTextEdit.Name = "tENTextEdit";
-            this.tENTextEdit.Size = new System.Drawing.Size(125, 22);
-            this.tENTextEdit.TabIndex = 7;
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(318, 38);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(54, 16);
-            dIACHILabel.TabIndex = 8;
-            dIACHILabel.Text = "DIACHI:";
-            // 
-            // dIACHITextEdit
-            // 
-            this.dIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "DIACHI", true));
-            this.dIACHITextEdit.Location = new System.Drawing.Point(378, 35);
-            this.dIACHITextEdit.Name = "dIACHITextEdit";
-            this.dIACHITextEdit.Size = new System.Drawing.Size(125, 22);
-            this.dIACHITextEdit.TabIndex = 9;
-            // 
-            // nGAYSINHLabel
-            // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(338, 93);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(80, 16);
-            nGAYSINHLabel.TabIndex = 10;
-            nGAYSINHLabel.Text = "NGAYSINH:";
-            // 
-            // nGAYSINHDateEdit
-            // 
-            this.nGAYSINHDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "NGAYSINH", true));
-            this.nGAYSINHDateEdit.EditValue = null;
-            this.nGAYSINHDateEdit.Location = new System.Drawing.Point(424, 90);
-            this.nGAYSINHDateEdit.Name = "nGAYSINHDateEdit";
-            this.nGAYSINHDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Size = new System.Drawing.Size(125, 22);
-            this.nGAYSINHDateEdit.TabIndex = 11;
-            // 
-            // lUONGLabel
-            // 
-            lUONGLabel.AutoSize = true;
-            lUONGLabel.Location = new System.Drawing.Point(333, 140);
-            lUONGLabel.Name = "lUONGLabel";
-            lUONGLabel.Size = new System.Drawing.Size(57, 16);
-            lUONGLabel.TabIndex = 12;
-            lUONGLabel.Text = "LUONG:";
-            // 
-            // lUONGSpinEdit
-            // 
-            this.lUONGSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "LUONG", true));
-            this.lUONGSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.lUONGSpinEdit.Location = new System.Drawing.Point(396, 137);
-            this.lUONGSpinEdit.Name = "lUONGSpinEdit";
-            this.lUONGSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lUONGSpinEdit.Size = new System.Drawing.Size(125, 24);
-            this.lUONGSpinEdit.TabIndex = 13;
-            // 
-            // gHICHULabel
-            // 
-            gHICHULabel.AutoSize = true;
-            gHICHULabel.Location = new System.Drawing.Point(357, 183);
-            gHICHULabel.Name = "gHICHULabel";
-            gHICHULabel.Size = new System.Drawing.Size(62, 16);
-            gHICHULabel.TabIndex = 14;
-            gHICHULabel.Text = "GHICHU:";
-            // 
-            // gHICHUTextEdit
-            // 
-            this.gHICHUTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "GHICHU", true));
-            this.gHICHUTextEdit.Location = new System.Drawing.Point(425, 180);
-            this.gHICHUTextEdit.Name = "gHICHUTextEdit";
-            this.gHICHUTextEdit.Size = new System.Drawing.Size(125, 22);
-            this.gHICHUTextEdit.TabIndex = 15;
-            // 
-            // tRANGTHAIXOALabel
-            // 
-            tRANGTHAIXOALabel.AutoSize = true;
-            tRANGTHAIXOALabel.Location = new System.Drawing.Point(169, 224);
-            tRANGTHAIXOALabel.Name = "tRANGTHAIXOALabel";
-            tRANGTHAIXOALabel.Size = new System.Drawing.Size(116, 16);
-            tRANGTHAIXOALabel.TabIndex = 16;
-            tRANGTHAIXOALabel.Text = "TRANGTHAIXOA:";
-            // 
-            // tRANGTHAIXOACheckEdit
-            // 
-            this.tRANGTHAIXOACheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "TRANGTHAIXOA", true));
-            this.tRANGTHAIXOACheckEdit.Location = new System.Drawing.Point(291, 221);
-            this.tRANGTHAIXOACheckEdit.Name = "tRANGTHAIXOACheckEdit";
-            this.tRANGTHAIXOACheckEdit.Properties.Caption = "checkEdit1";
-            this.tRANGTHAIXOACheckEdit.Size = new System.Drawing.Size(94, 24);
-            this.tRANGTHAIXOACheckEdit.TabIndex = 17;
-            // 
             // FormNhanVien
             // 
             this.ClientSize = new System.Drawing.Size(1363, 705);
@@ -476,16 +476,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cMNDTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAIXOACheckEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAIXOACheckEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cMNDTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

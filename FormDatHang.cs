@@ -13,6 +13,7 @@ namespace quanlyvattu
 {
     public partial class FormDatHang : Form
     {
+        public Form formBaocao;
         public FormDatHang()
         {
             InitializeComponent();
@@ -72,6 +73,18 @@ namespace quanlyvattu
         private void backBut_Click(object sender, EventArgs e)
         {
             FormManager.switchForm(this,new Dashboard());
+        }
+
+        private void notImportBtn_Click(object sender, EventArgs e)
+        {
+            if (formBaocao != null)
+            {
+                formBaocao.Close();
+
+            }
+            formBaocao = new FormBaoCao(new ddhChuaNhapRep());
+            formBaocao.Show();
+
         }
     }
 }

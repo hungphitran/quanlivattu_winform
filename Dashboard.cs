@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLVT;
 
@@ -29,12 +22,12 @@ namespace quanlyvattu
 
         private void btnNhanvien_Click(object sender, EventArgs e)
         {
-            FormManager.switchForm(this,new FormNhanVien());
+            FormManager.switchForm(this, new FormNhanVien());
         }
 
         private void VattuBtn_Click(object sender, EventArgs e)
         {
-            FormManager.switchForm(this,new FormVatTu());
+            FormManager.switchForm(this, new FormVatTu());
         }
 
 
@@ -60,7 +53,8 @@ namespace quanlyvattu
 
         private void creatAccBtn_Click(object sender, EventArgs e)
         {
-            FormManager.switchForm(this,new FormTaoAcc());
+            FormManager.switchForm(this, new FormTaoAcc());
         }
+
     }
 }

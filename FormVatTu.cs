@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.ChartRangeControlClient.Core;
 using DevExpress.DashboardCommon.DataProcessing;
+using DevExpress.XtraRichEdit.Mouse;
 using QLVT;
 
 namespace quanlyvattu
@@ -17,7 +18,7 @@ namespace quanlyvattu
     {
         private Stack<qlvtDataSet.VattuDataTable> st_vattu;
 
-
+        private Form formBaoCao;
         public FormVatTu()
         {
             InitializeComponent();
@@ -152,7 +153,7 @@ namespace quanlyvattu
                     {
                         st_vattu.Push(qlvtDataSet.Vattu.Copy() as qlvtDataSet.VattuDataTable);
                         vattuRow.Delete();
-                        vattuTableAdapter.Update(qlvtDataSet.Vattu);
+                        //vattuTableAdapter.Update(qlvtDataSet.Vattu);
                         MessageBox.Show("Xóa vật tư thành công");
                     }
                 }
@@ -178,6 +179,43 @@ namespace quanlyvattu
             {
                 vattuBindingSource.RemoveFilter();
             }
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            Console.Write("changed");
+            try
+            {
+                // Save changes to the dataset
+                vattuBindingSource.EndEdit();
+                st_vattu.Push(qlvtDataSet.Vattu.Copy() as qlvtDataSet.VattuDataTable);
+                //vattuTableAdapter.Update(qlvtDataSet.Vattu);
+                MessageBox.Show("Cập nhật thành công");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
+            }
+        }
+
+        private void lichSuVattuBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("lichSuVattuBtn_Click triggered");
+
+
+            if (formBaoCao != null)
+            {
+                formBaoCao.Close();
+            }
+            String mavt = this.mAVTTextEdit.Text;
+
+            formBaoCao = new FormBaoCao( new LichSuVattuReport(mavt));
+            formBaoCao.Show();
+            //if (checkDeleteable(mavt))
+            //{
+            //    MessageBox.Show("Vật tư chưa được nhập / xuất hay đặt");
+            //    return;
+            //}
         }
     }
 }

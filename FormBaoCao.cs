@@ -19,6 +19,7 @@ namespace quanlyvattu
             documentViewer1.DocumentSource = report;
             // Create the document
             report.CreateDocument();
+            
         }
     }
 }

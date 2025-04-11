@@ -504,3 +504,6 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormLic
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.LichSuVattuReport.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.ddhChuaNhapRep.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormBaoCao.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormSelectDetail.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BaoCaoChiTietNhap.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BaoCaoChiTietXuat.resources

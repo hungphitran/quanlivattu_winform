@@ -12,24 +12,10 @@ namespace quanlyvattu
         public LichSuVattuReport(string mavt)
         {
             InitializeComponent();
-
-            // Create and configure the MAVT parameter
-            DevExpress.XtraReports.Parameters.Parameter mavtParameter = new DevExpress.XtraReports.Parameters.Parameter
-            {
-                Name = "MAVT", // Parameter name in the report
-                Type = typeof(string), // Parameter type
-                Value = mavt, // Assign the value passed to the constructor
-                Visible = false // Optional: Hide the parameter in the UI
-            };
-
-            // Add the parameter to the report
-            this.Parameters.Add(mavtParameter);
-
             // Bind the report parameter to the SQL query parameter
-            this.sqlDataSource1.Queries[0].Parameters[0].Value = mavt; // Directly assign the string value
+            this.Parameters["MAVT"].Value = mavt; // Directly assign the string value
+            this.Parameters["MAVT"].Visible = false;
         }
-
-
 
     }
 }

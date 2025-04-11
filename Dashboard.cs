@@ -56,5 +56,9 @@ namespace quanlyvattu
             FormManager.switchForm(this, new FormTaoAcc());
         }
 
+        private void ImAndExportBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this, new FormSelectDetail());
+        }
     }
 }

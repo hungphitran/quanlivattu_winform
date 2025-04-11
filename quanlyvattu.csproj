@@ -92,6 +92,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoChiTietNhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCaoChiTietNhap.Designer.cs">
+      <DependentUpon>BaoCaoChiTietNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoChiTietXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCaoChiTietXuat.Designer.cs">
+      <DependentUpon>BaoCaoChiTietXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="C:/Users/hung/Documents/GitHub/quanlivattu_winform/\frmNhanvien.cs">
       <Link>frmNhanvien.cs</Link>
     </Compile>
@@ -127,6 +139,12 @@
     <Compile Include="FormPhieuNhap.Designer.cs">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelectDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectDetail.Designer.cs">
+      <DependentUpon>FormSelectDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTaoAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +177,9 @@
     <Compile Include="FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="qlvtDataSet.cs">
+      <DependentUpon>qlvtDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="qlvtDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +198,12 @@
     <Compile Include="ddhChuaNhapRep.Designer.cs">
       <DependentUpon>ddhChuaNhapRep.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCaoChiTietNhap.resx">
+      <DependentUpon>BaoCaoChiTietNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoChiTietXuat.resx">
+      <DependentUpon>BaoCaoChiTietXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuNhap.resx">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectDetail.resx">
+      <DependentUpon>FormSelectDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoAcc.resx">
       <DependentUpon>FormTaoAcc.cs</DependentUpon>

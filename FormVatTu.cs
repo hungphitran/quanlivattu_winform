@@ -200,22 +200,15 @@ namespace quanlyvattu
 
         private void lichSuVattuBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("lichSuVattuBtn_Click triggered");
-
 
             if (formBaoCao != null)
             {
                 formBaoCao.Close();
             }
             String mavt = this.mAVTTextEdit.Text;
-
             formBaoCao = new FormBaoCao( new LichSuVattuReport(mavt));
             formBaoCao.Show();
-            //if (checkDeleteable(mavt))
-            //{
-            //    MessageBox.Show("Vật tư chưa được nhập / xuất hay đặt");
-            //    return;
-            //}
+   
         }
     }
 }

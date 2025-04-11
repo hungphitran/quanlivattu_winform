@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using QLVT;
+
+namespace quanlyvattu
+{
+    public partial class Dashboard : Form
+    {
+        public Dashboard()
+        {
+            InitializeComponent();
+            this.toolStripStatusLabel1.Text = Program.mHoten;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Program.mlogin = "";
+            Program.password = "";
+            FormManager.switchForm(this, new LoginForm());
+
+        }
+
+        private void btnNhanvien_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this,new FormNhanVien());
+        }
+
+        private void VattuBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this,new FormVatTu());
+        }
+
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void importBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this, new FormPhieuNhap());
+        }
+
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this, new FormDatHang());
+        }
+
+        private void creatAccBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this,new FormTaoAcc());
+        }
+
+        private void reportVattuBtn_Click(object sender, EventArgs e)
+        {
+            var vr = new VattuReport();
+            vr.Show();
+        }
+    }
+}

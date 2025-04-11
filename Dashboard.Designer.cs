@@ -37,6 +37,7 @@
             this.importBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
             this.creatAccBtn = new System.Windows.Forms.Button();
+            this.ImAndExportBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -129,11 +130,22 @@
             this.creatAccBtn.UseVisualStyleBackColor = true;
             this.creatAccBtn.Click += new System.EventHandler(this.creatAccBtn_Click);
             // 
+            // ImAndExportBtn
+            // 
+            this.ImAndExportBtn.Location = new System.Drawing.Point(568, 389);
+            this.ImAndExportBtn.Name = "ImAndExportBtn";
+            this.ImAndExportBtn.Size = new System.Drawing.Size(223, 66);
+            this.ImAndExportBtn.TabIndex = 10;
+            this.ImAndExportBtn.Text = "Báo cáo nhập xuất chi tiết";
+            this.ImAndExportBtn.UseVisualStyleBackColor = true;
+            this.ImAndExportBtn.Click += new System.EventHandler(this.ImAndExportBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 720);
+            this.Controls.Add(this.ImAndExportBtn);
             this.Controls.Add(this.creatAccBtn);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.importBtn);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.Button importBtn;
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Button creatAccBtn;
+        private System.Windows.Forms.Button ImAndExportBtn;
     }
 }

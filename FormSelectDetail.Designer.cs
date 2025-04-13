@@ -42,6 +42,7 @@
             // 
             this.fromDateInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fromDateInput.Location = new System.Drawing.Point(576, 83);
+            this.fromDateInput.MaxDate = new System.DateTime(2025, 12, 25, 23, 59, 59, 0);
             this.fromDateInput.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.fromDateInput.Name = "fromDateInput";
             this.fromDateInput.Size = new System.Drawing.Size(200, 22);
@@ -50,6 +51,7 @@
             // 
             // typeComboBox
             // 
+            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Items.AddRange(new object[] {
             "NHAP",
@@ -63,7 +65,8 @@
             // 
             this.toDateInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.toDateInput.Location = new System.Drawing.Point(950, 83);
-            this.toDateInput.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.toDateInput.MaxDate = new System.DateTime(2025, 4, 13, 0, 0, 0, 0);
+            this.toDateInput.MinDate = new System.DateTime(2000, 2, 1, 0, 0, 0, 0);
             this.toDateInput.Name = "toDateInput";
             this.toDateInput.Size = new System.Drawing.Size(200, 22);
             this.toDateInput.TabIndex = 2;
@@ -90,7 +93,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(137, 88);
+            this.label1.Location = new System.Drawing.Point(124, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 5;

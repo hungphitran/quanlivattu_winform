@@ -56,5 +56,6 @@ namespace quanlyvattu
         {
             FormManager.switchForm(this, new Dashboard());
         }
+
     }
 }

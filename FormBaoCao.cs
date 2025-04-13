@@ -21,5 +21,19 @@ namespace quanlyvattu
             report.CreateDocument();
             
         }
+
+        private void dropDownButton1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Lưu file");
+            // check which option is selected
+
+            // Save the report to a file in C directory
+            string filePath = "report.pdf"; // Specify the file path and name
+            DevExpress.XtraReports.UI.XtraReport report = (DevExpress.XtraReports.UI.XtraReport)documentViewer1.DocumentSource;
+            report.ExportToPdf(filePath);
+            // Show a message box to indicate that the report has been saved
+            MessageBox.Show("Report saved to " + filePath);
+
+        }
     }
 }

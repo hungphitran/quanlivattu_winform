@@ -69,6 +69,7 @@
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.backBut = new System.Windows.Forms.Button();
             this.notImportBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.importBtn = new DevExpress.XtraEditors.SimpleButton();
             masoDDHLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
             nhaCCLabel = new System.Windows.Forms.Label();
@@ -454,9 +455,19 @@
             this.notImportBtn.Text = "Xem báo cáo đơn hàng chưa nhập";
             this.notImportBtn.Click += new System.EventHandler(this.notImportBtn_Click);
             // 
+            // importBtn
+            // 
+            this.importBtn.Location = new System.Drawing.Point(680, 39);
+            this.importBtn.Name = "importBtn";
+            this.importBtn.Size = new System.Drawing.Size(94, 41);
+            this.importBtn.TabIndex = 6;
+            this.importBtn.Text = "Nhập hàng";
+            this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
+            // 
             // FormDatHang
             // 
             this.ClientSize = new System.Drawing.Size(1143, 728);
+            this.Controls.Add(this.importBtn);
             this.Controls.Add(this.notImportBtn);
             this.Controls.Add(this.backBut);
             this.Controls.Add(this.groupControl2);
@@ -573,5 +584,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private System.Windows.Forms.Button backBut;
         private DevExpress.XtraEditors.SimpleButton notImportBtn;
+        private DevExpress.XtraEditors.SimpleButton importBtn;
     }
 }

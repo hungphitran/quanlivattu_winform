@@ -70,6 +70,7 @@
             this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.backBut = new System.Windows.Forms.Button();
+            this.addBtn = new DevExpress.XtraEditors.SimpleButton();
             mAPNLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
             masoDDHLabel = new System.Windows.Forms.Label();
@@ -105,7 +106,7 @@
             // nGAYLabel
             // 
             nGAYLabel.AutoSize = true;
-            nGAYLabel.Location = new System.Drawing.Point(66, 99);
+            nGAYLabel.Location = new System.Drawing.Point(43, 99);
             nGAYLabel.Name = "nGAYLabel";
             nGAYLabel.Size = new System.Drawing.Size(43, 16);
             nGAYLabel.TabIndex = 2;
@@ -114,7 +115,7 @@
             // masoDDHLabel
             // 
             masoDDHLabel.AutoSize = true;
-            masoDDHLabel.Location = new System.Drawing.Point(67, 143);
+            masoDDHLabel.Location = new System.Drawing.Point(44, 143);
             masoDDHLabel.Name = "masoDDHLabel";
             masoDDHLabel.Size = new System.Drawing.Size(70, 16);
             masoDDHLabel.TabIndex = 4;
@@ -123,7 +124,7 @@
             // mANVLabel
             // 
             mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(69, 185);
+            mANVLabel.Location = new System.Drawing.Point(46, 185);
             mANVLabel.Name = "mANVLabel";
             mANVLabel.Size = new System.Drawing.Size(46, 16);
             mANVLabel.TabIndex = 6;
@@ -344,7 +345,7 @@
             0,
             0,
             0});
-            this.mANVSpinEdit.Location = new System.Drawing.Point(121, 182);
+            this.mANVSpinEdit.Location = new System.Drawing.Point(98, 182);
             this.mANVSpinEdit.Name = "mANVSpinEdit";
             this.mANVSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -354,7 +355,7 @@
             // masoDDHTextEdit
             // 
             this.masoDDHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuNhapBindingSource, "MasoDDH", true));
-            this.masoDDHTextEdit.Location = new System.Drawing.Point(143, 140);
+            this.masoDDHTextEdit.Location = new System.Drawing.Point(120, 140);
             this.masoDDHTextEdit.Name = "masoDDHTextEdit";
             this.masoDDHTextEdit.Size = new System.Drawing.Size(125, 22);
             this.masoDDHTextEdit.TabIndex = 5;
@@ -363,7 +364,7 @@
             // 
             this.nGAYDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuNhapBindingSource, "NGAY", true));
             this.nGAYDateEdit.EditValue = null;
-            this.nGAYDateEdit.Location = new System.Drawing.Point(115, 96);
+            this.nGAYDateEdit.Location = new System.Drawing.Point(92, 96);
             this.nGAYDateEdit.Name = "nGAYDateEdit";
             this.nGAYDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -413,6 +414,7 @@
             this.colDONGIA});
             this.gridView2.GridControl = this.cTPNGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // colMAVT
             // 
@@ -451,9 +453,18 @@
             this.backBut.UseVisualStyleBackColor = true;
             this.backBut.Click += new System.EventHandler(this.backBut_Click);
             // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(384, 4);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(142, 29);
+            this.addBtn.TabIndex = 4;
+            this.addBtn.Text = "Thêm phiếu nhập";
+            // 
             // FormPhieuNhap
             // 
             this.ClientSize = new System.Drawing.Size(1076, 625);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.backBut);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -520,5 +531,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        private DevExpress.XtraEditors.SimpleButton addBtn;
     }
 }

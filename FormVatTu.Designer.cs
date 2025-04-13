@@ -1,4 +1,7 @@
-﻿namespace quanlyvattu
+﻿using System;
+using DevExpress.XtraGrid.Views.Base;
+
+namespace quanlyvattu
 {
     partial class FormVatTu
     {
@@ -29,10 +32,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mAVTLabel;
             System.Windows.Forms.Label tENVTLabel;
-            System.Windows.Forms.Label dVTLabel;
             System.Windows.Forms.Label soluongtonLabel;
+            System.Windows.Forms.Label dVTLabel;
+            System.Windows.Forms.Label mAVTLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVatTu));
             this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
             this.vattuBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,19 +52,13 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.vattuGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSoluongton = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.mAVTTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dVTTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.soluongtonSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.tENVTTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.lichSuVattuBtn = new DevExpress.XtraEditors.SimpleButton();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.soluongtonSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.dVTTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENVTTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.mAVTTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.backBut = new System.Windows.Forms.Button();
             this.addButt = new System.Windows.Forms.Button();
             this.reloadBtn = new System.Windows.Forms.Button();
@@ -75,67 +72,68 @@
             this.undoBtn = new System.Windows.Forms.Button();
             this.searchInput = new DevExpress.XtraEditors.TextEdit();
             this.searchBtn = new DevExpress.XtraEditors.SimpleButton();
-            mAVTLabel = new System.Windows.Forms.Label();
+            this.vattuDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listVattuBtn = new DevExpress.XtraEditors.SimpleButton();
             tENVTLabel = new System.Windows.Forms.Label();
-            dVTLabel = new System.Windows.Forms.Label();
             soluongtonLabel = new System.Windows.Forms.Label();
+            dVTLabel = new System.Windows.Forms.Label();
+            mAVTLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vattuBindingNavigator)).BeginInit();
             this.vattuBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soluongtonSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dVTTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENVTTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAVTTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dVTTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soluongtonSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENVTTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mavtInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenvtInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donvitinhInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchInput.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vattuDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mAVTLabel
-            // 
-            mAVTLabel.AutoSize = true;
-            mAVTLabel.Location = new System.Drawing.Point(51, 75);
-            mAVTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            mAVTLabel.Name = "mAVTLabel";
-            mAVTLabel.Size = new System.Drawing.Size(46, 16);
-            mAVTLabel.TabIndex = 0;
-            mAVTLabel.Text = "MAVT:";
             // 
             // tENVTLabel
             // 
             tENVTLabel.AutoSize = true;
-            tENVTLabel.Location = new System.Drawing.Point(342, 76);
-            tENVTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            tENVTLabel.Location = new System.Drawing.Point(316, 64);
             tENVTLabel.Name = "tENVTLabel";
             tENVTLabel.Size = new System.Drawing.Size(51, 16);
-            tENVTLabel.TabIndex = 2;
+            tENVTLabel.TabIndex = 10;
             tENVTLabel.Text = "TENVT:";
-            // 
-            // dVTLabel
-            // 
-            dVTLabel.AutoSize = true;
-            dVTLabel.Location = new System.Drawing.Point(51, 141);
-            dVTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            dVTLabel.Name = "dVTLabel";
-            dVTLabel.Size = new System.Drawing.Size(36, 16);
-            dVTLabel.TabIndex = 4;
-            dVTLabel.Text = "DVT:";
             // 
             // soluongtonLabel
             // 
             soluongtonLabel.AutoSize = true;
-            soluongtonLabel.Location = new System.Drawing.Point(350, 145);
-            soluongtonLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            soluongtonLabel.Location = new System.Drawing.Point(291, 143);
             soluongtonLabel.Name = "soluongtonLabel";
             soluongtonLabel.Size = new System.Drawing.Size(76, 16);
-            soluongtonLabel.TabIndex = 6;
+            soluongtonLabel.TabIndex = 11;
             soluongtonLabel.Text = "Soluongton:";
+            // 
+            // dVTLabel
+            // 
+            dVTLabel.AutoSize = true;
+            dVTLabel.Location = new System.Drawing.Point(85, 143);
+            dVTLabel.Name = "dVTLabel";
+            dVTLabel.Size = new System.Drawing.Size(36, 16);
+            dVTLabel.TabIndex = 12;
+            dVTLabel.Text = "DVT:";
+            // 
+            // mAVTLabel
+            // 
+            mAVTLabel.AutoSize = true;
+            mAVTLabel.Location = new System.Drawing.Point(75, 64);
+            mAVTLabel.Name = "mAVTLabel";
+            mAVTLabel.Size = new System.Drawing.Size(46, 16);
+            mAVTLabel.TabIndex = 13;
+            mAVTLabel.Text = "MAVT:";
             // 
             // qlvtDataSet
             // 
@@ -183,7 +181,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem});
-            this.vattuBindingNavigator.Location = new System.Drawing.Point(0, 645);
+            this.vattuBindingNavigator.Location = new System.Drawing.Point(0, 696);
             this.vattuBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.vattuBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.vattuBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -271,87 +269,63 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // vattuGridControl
-            // 
-            this.vattuGridControl.DataSource = this.vattuBindingSource;
-            this.vattuGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.vattuGridControl.Location = new System.Drawing.Point(0, 65);
-            this.vattuGridControl.MainView = this.gridView1;
-            this.vattuGridControl.Margin = new System.Windows.Forms.Padding(4);
-            this.vattuGridControl.Name = "vattuGridControl";
-            this.vattuGridControl.Size = new System.Drawing.Size(1244, 312);
-            this.vattuGridControl.TabIndex = 1;
-            this.vattuGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAVT,
-            this.colTENVT,
-            this.colDVT,
-            this.colSoluongton});
-            this.gridView1.DetailHeight = 437;
-            this.gridView1.GridControl = this.vattuGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
-            // 
-            // colMAVT
-            // 
-            this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.MinWidth = 31;
-            this.colMAVT.Name = "colMAVT";
-            this.colMAVT.Visible = true;
-            this.colMAVT.VisibleIndex = 0;
-            this.colMAVT.Width = 117;
-            // 
-            // colTENVT
-            // 
-            this.colTENVT.FieldName = "TENVT";
-            this.colTENVT.MinWidth = 31;
-            this.colTENVT.Name = "colTENVT";
-            this.colTENVT.Visible = true;
-            this.colTENVT.VisibleIndex = 1;
-            this.colTENVT.Width = 117;
-            // 
-            // colDVT
-            // 
-            this.colDVT.FieldName = "DVT";
-            this.colDVT.MinWidth = 31;
-            this.colDVT.Name = "colDVT";
-            this.colDVT.Visible = true;
-            this.colDVT.VisibleIndex = 2;
-            this.colDVT.Width = 117;
-            // 
-            // colSoluongton
-            // 
-            this.colSoluongton.FieldName = "Soluongton";
-            this.colSoluongton.MinWidth = 31;
-            this.colSoluongton.Name = "colSoluongton";
-            this.colSoluongton.Visible = true;
-            this.colSoluongton.VisibleIndex = 3;
-            this.colSoluongton.Width = 117;
-            // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.lichSuVattuBtn);
-            this.groupControl1.Controls.Add(this.deleteBtn);
-            this.groupControl1.Controls.Add(soluongtonLabel);
-            this.groupControl1.Controls.Add(this.soluongtonSpinEdit);
-            this.groupControl1.Controls.Add(dVTLabel);
-            this.groupControl1.Controls.Add(this.dVTTextEdit);
-            this.groupControl1.Controls.Add(tENVTLabel);
-            this.groupControl1.Controls.Add(this.tENVTTextEdit);
             this.groupControl1.Controls.Add(mAVTLabel);
             this.groupControl1.Controls.Add(this.mAVTTextEdit);
+            this.groupControl1.Controls.Add(dVTLabel);
+            this.groupControl1.Controls.Add(this.dVTTextEdit);
+            this.groupControl1.Controls.Add(soluongtonLabel);
+            this.groupControl1.Controls.Add(this.soluongtonSpinEdit);
+            this.groupControl1.Controls.Add(tENVTLabel);
+            this.groupControl1.Controls.Add(this.tENVTTextEdit);
+            this.groupControl1.Controls.Add(this.lichSuVattuBtn);
+            this.groupControl1.Controls.Add(this.deleteBtn);
             this.groupControl1.Location = new System.Drawing.Point(0, 378);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(640, 294);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thông tin vật tư";
+            // 
+            // mAVTTextEdit
+            // 
+            this.mAVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "MAVT", true));
+            this.mAVTTextEdit.Location = new System.Drawing.Point(127, 61);
+            this.mAVTTextEdit.Name = "mAVTTextEdit";
+            this.mAVTTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.mAVTTextEdit.TabIndex = 14;
+            // 
+            // dVTTextEdit
+            // 
+            this.dVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "DVT", true));
+            this.dVTTextEdit.Location = new System.Drawing.Point(127, 140);
+            this.dVTTextEdit.Name = "dVTTextEdit";
+            this.dVTTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.dVTTextEdit.TabIndex = 13;
+            // 
+            // soluongtonSpinEdit
+            // 
+            this.soluongtonSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "Soluongton", true));
+            this.soluongtonSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.soluongtonSpinEdit.Location = new System.Drawing.Point(373, 140);
+            this.soluongtonSpinEdit.Name = "soluongtonSpinEdit";
+            this.soluongtonSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soluongtonSpinEdit.Size = new System.Drawing.Size(125, 24);
+            this.soluongtonSpinEdit.TabIndex = 12;
+            // 
+            // tENVTTextEdit
+            // 
+            this.tENVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "TENVT", true));
+            this.tENVTTextEdit.Location = new System.Drawing.Point(373, 61);
+            this.tENVTTextEdit.Name = "tENVTTextEdit";
+            this.tENVTTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.tENVTTextEdit.TabIndex = 11;
             // 
             // lichSuVattuBtn
             // 
@@ -372,50 +346,6 @@
             this.deleteBtn.Text = "Xóa vật tư";
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // soluongtonSpinEdit
-            // 
-            this.soluongtonSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "Soluongton", true));
-            this.soluongtonSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.soluongtonSpinEdit.Location = new System.Drawing.Point(434, 141);
-            this.soluongtonSpinEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.soluongtonSpinEdit.Name = "soluongtonSpinEdit";
-            this.soluongtonSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.soluongtonSpinEdit.Size = new System.Drawing.Size(125, 24);
-            this.soluongtonSpinEdit.TabIndex = 7;
-            // 
-            // dVTTextEdit
-            // 
-            this.dVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "DVT", true));
-            this.dVTTextEdit.Location = new System.Drawing.Point(116, 138);
-            this.dVTTextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.dVTTextEdit.Name = "dVTTextEdit";
-            this.dVTTextEdit.Size = new System.Drawing.Size(156, 22);
-            this.dVTTextEdit.TabIndex = 5;
-            // 
-            // tENVTTextEdit
-            // 
-            this.tENVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "TENVT", true));
-            this.tENVTTextEdit.Location = new System.Drawing.Point(414, 72);
-            this.tENVTTextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.tENVTTextEdit.Name = "tENVTTextEdit";
-            this.tENVTTextEdit.Size = new System.Drawing.Size(156, 22);
-            this.tENVTTextEdit.TabIndex = 3;
-            // 
-            // mAVTTextEdit
-            // 
-            this.mAVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "MAVT", true));
-            this.mAVTTextEdit.Enabled = false;
-            this.mAVTTextEdit.Location = new System.Drawing.Point(116, 71);
-            this.mAVTTextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.mAVTTextEdit.Name = "mAVTTextEdit";
-            this.mAVTTextEdit.Size = new System.Drawing.Size(156, 22);
-            this.mAVTTextEdit.TabIndex = 1;
             // 
             // backBut
             // 
@@ -541,9 +471,67 @@
             this.searchBtn.Text = "Tìm kiếm";
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
+            // vattuDataGridView
+            // 
+            this.vattuDataGridView.AllowUserToOrderColumns = true;
+            this.vattuDataGridView.AutoGenerateColumns = false;
+            this.vattuDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vattuDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vattuDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.vattuDataGridView.DataSource = this.vattuBindingSource;
+            this.vattuDataGridView.Location = new System.Drawing.Point(0, 74);
+            this.vattuDataGridView.Name = "vattuDataGridView";
+            this.vattuDataGridView.RowHeadersWidth = 51;
+            this.vattuDataGridView.RowTemplate.Height = 24;
+            this.vattuDataGridView.Size = new System.Drawing.Size(1232, 297);
+            this.vattuDataGridView.TabIndex = 16;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MAVT";
+            this.dataGridViewTextBoxColumn1.HeaderText = "MAVT";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENVT";
+            this.dataGridViewTextBoxColumn2.HeaderText = "TENVT";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DVT";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DVT";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Soluongton";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Soluongton";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // listVattuBtn
+            // 
+            this.listVattuBtn.Location = new System.Drawing.Point(844, 628);
+            this.listVattuBtn.Name = "listVattuBtn";
+            this.listVattuBtn.Size = new System.Drawing.Size(207, 29);
+            this.listVattuBtn.TabIndex = 17;
+            this.listVattuBtn.Text = "In danh sách vật tư";
+            this.listVattuBtn.Click += new System.EventHandler(this.listVattuBtn_Click);
+            // 
             // FormVatTu
             // 
-            this.ClientSize = new System.Drawing.Size(1244, 672);
+            this.ClientSize = new System.Drawing.Size(1244, 723);
+            this.Controls.Add(this.listVattuBtn);
+            this.Controls.Add(this.vattuDataGridView);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.undoBtn);
@@ -558,7 +546,6 @@
             this.Controls.Add(this.addButt);
             this.Controls.Add(this.backBut);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.vattuGridControl);
             this.Controls.Add(this.vattuBindingNavigator);
             this.Name = "FormVatTu";
             this.Load += new System.EventHandler(this.FormVatTu_Load_1);
@@ -567,19 +554,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.vattuBindingNavigator)).EndInit();
             this.vattuBindingNavigator.ResumeLayout(false);
             this.vattuBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soluongtonSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dVTTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENVTTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAVTTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dVTTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soluongtonSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENVTTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mavtInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenvtInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donvitinhInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchInput.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vattuDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,18 +588,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private DevExpress.XtraGrid.GridControl vattuGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SpinEdit soluongtonSpinEdit;
-        private DevExpress.XtraEditors.TextEdit dVTTextEdit;
-        private DevExpress.XtraEditors.TextEdit tENVTTextEdit;
-        private DevExpress.XtraEditors.TextEdit mAVTTextEdit;
         private System.Windows.Forms.Button backBut;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colDVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colSoluongton;
         private System.Windows.Forms.Button addButt;
         private System.Windows.Forms.Button reloadBtn;
         private DevExpress.XtraEditors.TextEdit mavtInput;
@@ -628,5 +604,15 @@
         private DevExpress.XtraEditors.TextEdit searchInput;
         private DevExpress.XtraEditors.SimpleButton searchBtn;
         private DevExpress.XtraEditors.SimpleButton lichSuVattuBtn;
+        private System.Windows.Forms.DataGridView vattuDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DevExpress.XtraEditors.TextEdit dVTTextEdit;
+        private DevExpress.XtraEditors.SpinEdit soluongtonSpinEdit;
+        private DevExpress.XtraEditors.TextEdit tENVTTextEdit;
+        private DevExpress.XtraEditors.TextEdit mAVTTextEdit;
+        private DevExpress.XtraEditors.SimpleButton listVattuBtn;
     }
 }

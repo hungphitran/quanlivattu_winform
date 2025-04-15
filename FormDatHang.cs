@@ -89,7 +89,7 @@ namespace quanlyvattu
 
         private void importBtn_Click(object sender, EventArgs e)
         {
-            FormManager.switchForm(this, new NhapVatTu());
+            FormManager.switchForm(this, new FormTaoPhieuNhap());
         }
     }
 }

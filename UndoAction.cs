@@ -19,5 +19,6 @@ namespace quanlyvattu
         public object[] OldItemArray { get; set; }
         public object[] NewItemArray { get; set; }
         public int index { get; set; } // Chỉ số của item trong danh sách
+
     }
 }

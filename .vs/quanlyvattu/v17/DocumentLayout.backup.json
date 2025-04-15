@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\",
+  "WorkspaceRootPath": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\lichsuvattureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:lichsuvattureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\huyph\\documents\\quanlivattu_winform\\formnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\reportvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:reportvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\huyph\\documents\\quanlivattu_winform\\formtaophieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formtaophieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\huyph\\documents\\quanlivattu_winform\\formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\huyph\\documents\\quanlivattu_winform\\formtaophieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formtaophieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,12 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
@@ -39,50 +35,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LichSuVattuReport.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LichSuVattuReport.cs",
-              "RelativeDocumentMoniker": "LichSuVattuReport.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LichSuVattuReport.cs [Design]",
-              "RelativeToolTip": "LichSuVattuReport.cs [Design]",
+              "Title": "FormNhanVien.cs",
+              "DocumentMoniker": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormNhanVien.cs",
+              "RelativeDocumentMoniker": "FormNhanVien.cs",
+              "ToolTip": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormNhanVien.cs",
+              "RelativeToolTip": "FormNhanVien.cs",
+              "ViewState": "AgIAAHEBAAAAAAAAAAAkwH4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:49:25.047Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "reportVattu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\reportVattu.cs",
-              "RelativeDocumentMoniker": "reportVattu.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\reportVattu.cs [Design]",
-              "RelativeToolTip": "reportVattu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:48:52.227Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormVatTu.cs",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs",
-              "RelativeDocumentMoniker": "FormVatTu.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs",
-              "RelativeToolTip": "FormVatTu.cs",
-              "ViewState": "AgIAAFgBAAAAAAAAAAAAwHYBAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:47:56.011Z",
+              "WhenOpened": "2025-04-15T11:48:04.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormVatTu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs",
-              "RelativeDocumentMoniker": "FormVatTu.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs [Design]",
-              "RelativeToolTip": "FormVatTu.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "FormTaoPhieuNhap.cs",
+              "DocumentMoniker": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormTaoPhieuNhap.cs",
+              "RelativeDocumentMoniker": "FormTaoPhieuNhap.cs",
+              "ToolTip": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormTaoPhieuNhap.cs",
+              "RelativeToolTip": "FormTaoPhieuNhap.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:46:43.354Z",
+              "WhenOpened": "2025-04-15T11:40:08.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormTaoPhieuNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormTaoPhieuNhap.cs",
+              "RelativeDocumentMoniker": "FormTaoPhieuNhap.cs",
+              "ToolTip": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormTaoPhieuNhap.cs [Design]",
+              "RelativeToolTip": "FormTaoPhieuNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T11:23:59.784Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormDatHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormDatHang.cs",
+              "RelativeDocumentMoniker": "FormDatHang.cs",
+              "ToolTip": "C:\\Users\\huyph\\Documents\\quanlivattu_winform\\FormDatHang.cs [Design]",
+              "RelativeToolTip": "FormDatHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T11:17:07.249Z",
               "EditorCaption": " [Design]"
             }
           ]

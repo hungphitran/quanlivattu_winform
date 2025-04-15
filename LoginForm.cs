@@ -29,32 +29,32 @@ namespace quanlyvattu
 
             Program.mlogin = userName;
             Program.password = pass;
+
+            
             int success= Program.connectDB();
 
             if (success ==1)
             {
-                //MessageBox.Show("Đăng nhập thành công");
-                //string query = "exec sp_get_infor_by_login '"+ Program.mlogin+"'";
-                //Console.WriteLine(query);
+                MessageBox.Show("Đăng nhập thành công");
+                SqlDataReader reader = Program.ExecSqlDataReader("use qlvt\r\nselect Nhanvien.HO , Nhanvien.TEN\r\nfrom sys.sysusers u, sys.syslogins l,NhanVien\r\nwhere u.sid = l.sid and l.loginname ='"+Program.mlogin+"' and Nhanvien.CMND= u.name");
+                if (reader.HasRows)  // Kiểm tra có dữ liệu không
+                {
+                    Console.WriteLine(reader);
 
-                //SqlDataReader reader = Program.ExecSqlDataReader(query);
-                //if (reader.HasRows)  // Kiểm tra có dữ liệu không
-                //{
-                //    Console.WriteLine(reader);
+                    while (reader.Read())  // Duyệt từng dòng dữ liệu
+                    {
+                        //Program.mGroup = reader[""].ToString(); // Đọc dữ liệu an toàn
+                        Program.mHoten = reader["HO"].ToString()+" "+reader["TEN"].ToString();
+                        //String cmnd = reader["name"].ToString();
 
-                //    while (reader.Read())  // Duyệt từng dòng dữ liệu
-                //    {
-                //        Program.mGroup = reader["role"].ToString(); // Đọc dữ liệu an toàn
-                //        Program.mHoten = reader["username"].ToString();
-                //        Console.WriteLine(Program.mGroup+Program.mHoten);
-                //    }
-                //}
-                //else
-                //{
-                //    Console.WriteLine("No data found.");
-                //}
-                //reader.Close();
-                //Console.WriteLine("group of " + Program.mlogin + " is " + Program.mGroup);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No data found.");
+                }
+                reader.Close();
+                Console.WriteLine("group of " + Program.mlogin + " is " + Program.mGroup);
                 Dashboard dashboard = new Dashboard();
                 this.Hide();
                 dashboard.Show();

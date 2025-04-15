@@ -211,7 +211,7 @@ namespace quanlyvattu
                 int check = this.vattuTableAdapter.Update(qlvtDataSet);
                 if (check == 0)
                 {
-                    throw new Exception();
+                    MessageBox.Show("Không có thay đổi nào để lưu.");
                 }
                 else
                 {

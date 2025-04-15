@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\lichsuvattureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:lichsuvattureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\reportvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:reportvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:backuprestoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\qlvtdataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:qlvtdataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,50 +55,101 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LichSuVattuReport.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LichSuVattuReport.cs",
-              "RelativeDocumentMoniker": "LichSuVattuReport.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LichSuVattuReport.cs [Design]",
-              "RelativeToolTip": "LichSuVattuReport.cs [Design]",
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:49:25.047Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-15T10:27:42.163Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "reportVattu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\reportVattu.cs",
-              "RelativeDocumentMoniker": "reportVattu.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\reportVattu.cs [Design]",
-              "RelativeToolTip": "reportVattu.cs [Design]",
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:48:52.227Z",
+              "WhenOpened": "2025-04-15T10:27:40.567Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T10:27:29.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "qlvtDataSet.xsd",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\qlvtDataSet.xsd",
+              "RelativeDocumentMoniker": "qlvtDataSet.xsd",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\qlvtDataSet.xsd",
+              "RelativeToolTip": "qlvtDataSet.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2025-04-14T16:57:16.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "FormVatTu.cs",
               "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs",
               "RelativeDocumentMoniker": "FormVatTu.cs",
               "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs",
               "RelativeToolTip": "FormVatTu.cs",
-              "ViewState": "AgIAAFgBAAAAAAAAAAAAwHYBAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAIwMwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:47:56.011Z",
+              "WhenOpened": "2025-04-14T16:55:14.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormVatTu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs",
               "RelativeDocumentMoniker": "FormVatTu.cs",
               "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormVatTu.cs [Design]",
               "RelativeToolTip": "FormVatTu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T10:46:43.354Z",
+              "WhenOpened": "2025-04-14T16:55:06.509Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BackupRestoreForm.cs",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\BackupRestoreForm.cs",
+              "RelativeDocumentMoniker": "BackupRestoreForm.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\BackupRestoreForm.cs",
+              "RelativeToolTip": "BackupRestoreForm.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAwwIoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T01:24:43.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BackupRestoreForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\BackupRestoreForm.cs",
+              "RelativeDocumentMoniker": "BackupRestoreForm.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\BackupRestoreForm.cs [Design]",
+              "RelativeToolTip": "BackupRestoreForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T01:17:40.745Z",
               "EditorCaption": " [Design]"
             }
           ]

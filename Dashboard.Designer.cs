@@ -38,6 +38,7 @@
             this.orderBtn = new System.Windows.Forms.Button();
             this.creatAccBtn = new System.Windows.Forms.Button();
             this.ImAndExportBtn = new System.Windows.Forms.Button();
+            this.backupBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +123,7 @@
             // 
             // creatAccBtn
             // 
-            this.creatAccBtn.Location = new System.Drawing.Point(209, 387);
+            this.creatAccBtn.Location = new System.Drawing.Point(45, 379);
             this.creatAccBtn.Name = "creatAccBtn";
             this.creatAccBtn.Size = new System.Drawing.Size(168, 71);
             this.creatAccBtn.TabIndex = 9;
@@ -132,7 +133,7 @@
             // 
             // ImAndExportBtn
             // 
-            this.ImAndExportBtn.Location = new System.Drawing.Point(568, 389);
+            this.ImAndExportBtn.Location = new System.Drawing.Point(302, 381);
             this.ImAndExportBtn.Name = "ImAndExportBtn";
             this.ImAndExportBtn.Size = new System.Drawing.Size(223, 66);
             this.ImAndExportBtn.TabIndex = 10;
@@ -140,11 +141,22 @@
             this.ImAndExportBtn.UseVisualStyleBackColor = true;
             this.ImAndExportBtn.Click += new System.EventHandler(this.ImAndExportBtn_Click);
             // 
+            // backupBtn
+            // 
+            this.backupBtn.Location = new System.Drawing.Point(594, 384);
+            this.backupBtn.Name = "backupBtn";
+            this.backupBtn.Size = new System.Drawing.Size(223, 66);
+            this.backupBtn.TabIndex = 11;
+            this.backupBtn.Text = "Sao lưu và phục hồi dữ liệu";
+            this.backupBtn.UseVisualStyleBackColor = true;
+            this.backupBtn.Click += new System.EventHandler(this.backupBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 720);
+            this.Controls.Add(this.backupBtn);
             this.Controls.Add(this.ImAndExportBtn);
             this.Controls.Add(this.creatAccBtn);
             this.Controls.Add(this.orderBtn);
@@ -175,5 +187,6 @@
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Button creatAccBtn;
         private System.Windows.Forms.Button ImAndExportBtn;
+        private System.Windows.Forms.Button backupBtn;
     }
 }

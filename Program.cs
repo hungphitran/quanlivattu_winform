@@ -38,6 +38,7 @@ namespace QLVT
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
                       Program.database + ";User ID=" +
                       Program.mlogin + ";password=" + Program.password;
+                Console.WriteLine(Program.connstr);
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
                 return 1;
@@ -115,6 +116,8 @@ namespace QLVT
 
         [DllImport("kernel32.dll")]
         static extern bool AllocConsole(); // Hàm mở console
+
+        [STAThread]
         static void Main()
         {
 

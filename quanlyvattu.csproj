@@ -92,6 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupRestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupRestoreForm.Designer.cs">
+      <DependentUpon>BackupRestoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCaoChiTietNhap.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     <Compile Include="ddhChuaNhapRep.Designer.cs">
       <DependentUpon>ddhChuaNhapRep.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BackupRestoreForm.resx">
+      <DependentUpon>BackupRestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoChiTietNhap.resx">
       <DependentUpon>BaoCaoChiTietNhap.cs</DependentUpon>
     </EmbeddedResource>

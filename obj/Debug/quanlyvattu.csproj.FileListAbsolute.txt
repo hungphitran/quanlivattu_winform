@@ -508,3 +508,4 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyva.FF625A1F.U
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.exe
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.pdb
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormVatTu.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BackupRestoreForm.resources

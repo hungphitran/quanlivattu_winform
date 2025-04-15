@@ -207,8 +207,9 @@ namespace quanlyvattu
         {
             try
             {
+                vattuBindingSource.EndEdit();
                 vattuBindingSource.RemoveFilter();
-                int check = this.vattuTableAdapter.Update(qlvtDataSet);
+                int check = this.vattuTableAdapter.Update(qlvtDataSet.Vattu);
                 if (check == 0)
                 {
                     MessageBox.Show("Không có thay đổi nào để lưu.");
@@ -375,5 +376,6 @@ namespace quanlyvattu
             formBaoCao = new FormBaoCao(new reportVattu());
             formBaoCao.Show();
         }
+
     }
 }

@@ -60,5 +60,10 @@ namespace quanlyvattu
         {
             FormManager.switchForm(this, new FormSelectDetail());
         }
+
+        private void exportBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this, new FormPhieuXuat());
+        }
     }
 }

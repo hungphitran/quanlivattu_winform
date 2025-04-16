@@ -58,6 +58,7 @@
             this.manvInput = new DevExpress.XtraEditors.TextEdit();
             this.backBtn = new DevExpress.XtraEditors.SimpleButton();
             this.ngayInput = new System.Windows.Forms.DateTimePicker();
+            this.addBtn = new DevExpress.XtraEditors.SimpleButton();
             masoDDHLabel = new System.Windows.Forms.Label();
             mAPNLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
@@ -154,10 +155,10 @@
             // sp_BaoCaoDonDatHangChuaNhapGridControl
             // 
             this.sp_BaoCaoDonDatHangChuaNhapGridControl.DataSource = this.sp_BaoCaoDonDatHangChuaNhapBindingSource;
-            this.sp_BaoCaoDonDatHangChuaNhapGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sp_BaoCaoDonDatHangChuaNhapGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.sp_BaoCaoDonDatHangChuaNhapGridControl.Location = new System.Drawing.Point(2, 34);
             this.sp_BaoCaoDonDatHangChuaNhapGridControl.MainView = this.gridView1;
-            this.sp_BaoCaoDonDatHangChuaNhapGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sp_BaoCaoDonDatHangChuaNhapGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.sp_BaoCaoDonDatHangChuaNhapGridControl.Name = "sp_BaoCaoDonDatHangChuaNhapGridControl";
             this.sp_BaoCaoDonDatHangChuaNhapGridControl.Size = new System.Drawing.Size(926, 248);
             this.sp_BaoCaoDonDatHangChuaNhapGridControl.TabIndex = 2;
@@ -216,7 +217,7 @@
             // 
             this.masoDDHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sp_BaoCaoDonDatHangChuaNhapBindingSource, "MasoDDH", true));
             this.masoDDHTextEdit.Location = new System.Drawing.Point(71, 292);
-            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.masoDDHTextEdit.Name = "masoDDHTextEdit";
             this.masoDDHTextEdit.Size = new System.Drawing.Size(94, 20);
             this.masoDDHTextEdit.TabIndex = 3;
@@ -233,10 +234,10 @@
             // cTDDHGridControl
             // 
             this.cTDDHGridControl.DataSource = this.cTDDHBindingSource;
-            this.cTDDHGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cTDDHGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.cTDDHGridControl.Location = new System.Drawing.Point(512, 287);
             this.cTDDHGridControl.MainView = this.gridView2;
-            this.cTDDHGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cTDDHGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.cTDDHGridControl.Name = "cTDDHGridControl";
             this.cTDDHGridControl.Size = new System.Drawing.Size(415, 231);
             this.cTDDHGridControl.TabIndex = 3;
@@ -323,11 +324,21 @@
             this.ngayInput.TabIndex = 13;
             this.ngayInput.ValueChanged += new System.EventHandler(this.ngayInput_ValueChanged);
             // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(71, 371);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(116, 31);
+            this.addBtn.TabIndex = 14;
+            this.addBtn.Text = "Thêm phiếu nhập";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
             // FormTaoPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 534);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.ngayInput);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.manvInput);
@@ -339,7 +350,7 @@
             this.Controls.Add(masoDDHLabel);
             this.Controls.Add(this.masoDDHTextEdit);
             this.Controls.Add(this.sp_BaoCaoDonDatHangChuaNhapGridControl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTaoPhieuNhap";
             this.Text = "NhapVatTu";
             this.Load += new System.EventHandler(this.NhapVatTu_Load);
@@ -386,5 +397,6 @@
         private DevExpress.XtraEditors.TextEdit manvInput;
         private DevExpress.XtraEditors.SimpleButton backBtn;
         private System.Windows.Forms.DateTimePicker ngayInput;
+        private DevExpress.XtraEditors.SimpleButton addBtn;
     }
 }

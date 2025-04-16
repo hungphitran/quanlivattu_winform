@@ -722,3 +722,4 @@ C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyva.FF625A1F.Up2Date
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.exe
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.pdb
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormTaoPhieuNhap.resources
+C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormPhieuXuat.resources

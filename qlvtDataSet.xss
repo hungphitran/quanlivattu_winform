@@ -23,7 +23,7 @@
     <Shape ID="DesignTable:lay_chi_tiet_dat_hang" ZOrder="4" X="3461" Y="-3" Height="191" Width="267" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:sp_BaoCaoChiTietNhapTheoThang" ZOrder="3" X="3798" Y="-3" Height="191" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:sp_BaoCaoChiTietXuatTheoThang" ZOrder="2" X="4168" Y="-3" Height="191" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="8" X="1609" Y="-3" Height="162" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="8" X="1609" Y="-3" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__CTDDH__MasoDDH__32E0915F" ZOrder="17" LineWidth="11">

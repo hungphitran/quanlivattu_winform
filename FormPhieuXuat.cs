@@ -55,21 +55,21 @@ namespace quanlyvattu
 
         }
 
-        private void reloadBtn_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("reload");
-            this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
-            phieuXuatBindingSource.RemoveFilter();
-            this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
-            cTPXBindingSource.RemoveFilter();
-        }
+        //private void reloadBtn_Click(object sender, EventArgs e)
+        //{
+        //    Console.WriteLine("reload");
+        //    this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
+        //    phieuXuatBindingSource.RemoveFilter();
+        //    this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
+        //    cTPXBindingSource.RemoveFilter();
+        //}
 
         private void addPhieuXuatBtn_Click(object sender, EventArgs e)
         {
             string mapx = mapxInput.Text.Trim();
             string ngay = ngayInput.Value.ToString("yyyy-MM-dd");
-            string hotenkh = makhInput.Text.Trim();
-            string manv = nhanvienInput.Text.Trim();
+            string hotenkh = hotenkhInput.Text.Trim();
+            string manv = manvInput.Text.Trim();
 
             if (Program.connectDB() == 0)
             {
@@ -94,7 +94,7 @@ namespace quanlyvattu
                 }
             }
 
-         
+
             if (ctpxTable.Rows.Count == 0)
             {
                 MessageBox.Show("Vui lòng thêm ít nhất một vật tư vào phiếu xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -121,8 +121,8 @@ namespace quanlyvattu
 
                 MessageBox.Show("Thêm phiếu xuất thành công!");
                 mapxInput.Text = "";
-                makhInput.Text = "";
-                nhanvienInput.Text = "";
+                hotenkhInput.Text = "";
+                manvInput.Text = "";
                 tempDataGridView.Rows.Clear();
 
             }
@@ -158,10 +158,13 @@ namespace quanlyvattu
                 return;
             }
 
+            float thanhTien = soLuong * donGia;
 
-            tempDataGridView.Rows.Add(tenVT, soLuong, donGia, mavt);
 
-         
+            tempDataGridView.Rows.Add(mavt, tenVT, soLuong, donGia, thanhTien);
+
+            UpdateTotalAmount();
+
             soluongInput.Text = "";
             dongiaInput.Text = "";
             vattuComboBox.SelectedIndex = -1;
@@ -169,6 +172,76 @@ namespace quanlyvattu
         }
 
 
+        private void UpdateTotalAmount()
+        {
+            float totalAmount = 0;
 
+            foreach (DataGridViewRow row in tempDataGridView.Rows)
+            {
+                if (row.Cells[4].Value != null) 
+                {
+                    totalAmount += Convert.ToSingle(row.Cells[4].Value);
+                }
+            }
+
+            totalAmoutBox.Text = totalAmount.ToString("N0"); 
+        }
+
+        private void deleteVTbtn_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu có dòng được chọn
+            if (tempDataGridView.SelectedRows.Count > 0)
+            {
+                // Xóa dòng đầu tiên trong danh sách các dòng được chọn
+                tempDataGridView.Rows.RemoveAt(tempDataGridView.SelectedRows[0].Index);
+
+                // Cập nhật lại tổng thành tiền sau khi xóa
+                UpdateTotalAmount();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn vật tư cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void tempDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra nếu người dùng sửa ở cột số lượng (2) hoặc đơn giá (3)
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
+            {
+                DataGridViewRow row = tempDataGridView.Rows[e.RowIndex];
+
+                // Lấy giá trị số lượng và đơn giá từ dòng đang chỉnh sửa
+                if (float.TryParse(row.Cells[2].Value?.ToString(), out float soLuong) &&
+                    float.TryParse(row.Cells[3].Value?.ToString(), out float donGia))
+                {
+                    // Tính lại thành tiền
+                    float thanhTien = soLuong * donGia;
+                    row.Cells[4].Value = thanhTien;
+
+                    // Cập nhật lại tổng thành tiền
+                    UpdateTotalAmount();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng số lượng và đơn giá là số hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void clearAllBtn_Click(object sender, EventArgs e)
+        {
+            // Hỏi người dùng xác nhận xóa hết
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa tất cả vật tư đã thêm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Xóa hết các dòng trong DataGridView
+                tempDataGridView.Rows.Clear();
+
+                // Cập nhật lại tổng tiền về 0
+                UpdateTotalAmount();
+            }
+        }
     }
 }

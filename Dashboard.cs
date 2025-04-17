@@ -65,5 +65,10 @@ namespace quanlyvattu
         {
             FormManager.switchForm(this, new FormPhieuXuat());
         }
+
+        private void backupBtn_Click(object sender, EventArgs e)
+        {
+            FormManager.switchForm(this, new BackupRestoreForm());
+        }
     }
 }

@@ -294,8 +294,8 @@
     </None>
     <None Include="qlvtDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>qlvtDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>qlvtDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="qlvtDataSet.xss">
       <DependentUpon>qlvtDataSet.xsd</DependentUpon>

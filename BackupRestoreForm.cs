@@ -14,55 +14,55 @@ namespace quanlyvattu
 {
     public partial class BackupRestoreForm : Form
     {
+        private String deviceName = "device_qlvt";
         public BackupRestoreForm()
         {
             InitializeComponent();
 
-            DataTable deviceTable = Program.ExecSqlDataTable("EXEC sp_helpdevice");
-            if (deviceTable != null)
+            DataTable deviceTable = Program.ExecSqlDataTable("USE master; EXEC sp_helpdevice");
+            if (deviceTable != null && deviceTable.Rows.Count >0)
             {
-                this.deviceCb.DataSource = deviceTable;
-                this.deviceCb.DisplayMember = "name";
-                this.deviceCb.ValueMember = "device_name";
-                this.deviceCb.SelectedIndex = 0; // Select the first device by default
+                createDeviceBtn.Visible = false;
+                groupControl1.Visible = false;
+                backupTableLoad();
+            }
+            else
+            {
+                createDeviceBtn.Visible = true;
+                groupControl1.Visible= true;
+                MessageBox.Show("Chưa có thiết bị nào, vui lòng tạo thiết bị trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
-            // Trigger the SelectedIndexChanged event manually for the first load
-            if (this.deviceCb.SelectedValue != null)
-            {
-                String deviceName = this.deviceCb.SelectedValue.ToString();
-                
-                backupTableLoad(deviceName);
-                
-                this.deviceCb.SelectedIndexChanged += deviceCb_SelectedIndexChanged;
-            }
+            this.dtpDate.Visible = false;
+            this.dtpTime.Visible = false;
+            this.lblTime.Visible = false;
+            this.restoreWithTimeBtn.Visible = false;
         }
 
-        public void backupTableLoad(String deviceName)
+        public void backupTableLoad()
         {
 
             DataTable backupTable = Program.ExecSqlDataTable($"EXEC sp_DanhSachBackUp 'qlvt', '{deviceName}'");
             if (backupTable != null)
             {
-                 
+                createDeviceBtn.Visible = false;
+                groupControl1.Visible = false;
                 if (backupTable.Rows.Count == 0)
                 {
-                    Console.WriteLine("1");
                     MessageBox.Show("Chưa có bản sao lưu trên thiết bị này");
-                    restoreBtn.Enabled = false;
+                    restoreBtn.Visible = false;
 
                 }
                 else
                 {
-                    Console.WriteLine("2");
-                    restoreBtn.Enabled = true;
+                    restoreBtn.Visible = true;
                 }
                 this.sp_DanhSachBackUpDataGridView.DataSource = backupTable;
             }
             else
             {
                 MessageBox.Show("Không thể tải lại danh sách sao lưu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FormManager.switchForm(this, new Dashboard());
             }
         }
 
@@ -73,31 +73,15 @@ namespace quanlyvattu
 
         private void createDeviceBtn_Click(object sender, EventArgs e)
         {
-            // Check if the device name and path are provided
-            if (string.IsNullOrWhiteSpace(this.deviceNameInput.Text) || string.IsNullOrWhiteSpace(this.deviceNameInput.Text))
-            {
-                MessageBox.Show("Vui lòng nhập tên thiết bị và đường dẫn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            int res = Program.ExecSqlNonQuery($"EXEC sp_TaoDeviceSaoLuu '{this.deviceNameInput.Text}', 'C:\\backup\\{this.deviceNameInput.Text}.bak'");
+            int res = Program.ExecSqlNonQuery($"USE master; EXEC sp_TaoDeviceSaoLuu '{deviceName}', 'C:\\backup\\{deviceName}.bak'");
 
             // Notify the user of the result
             if (res == 0)
             {
 
-                // Refresh the device list
-                DataTable deviceTable = Program.ExecSqlDataTable("EXEC sp_helpdevice");
-                if (deviceTable != null)
-                {
-                    this.deviceCb.DataSource = deviceTable;
-                    this.deviceCb.DisplayMember = "name";
-                    this.deviceCb.ValueMember = "device_name";
-                    this.deviceCb.SelectedIndex = 0; // Select the first device by default
-                }
                 MessageBox.Show("Tạo thiết bị thành công!");
                 // Load the backup table for the newly created device
-                String deviceName = this.deviceCb.SelectedValue.ToString();
-                backupTableLoad(deviceName);
+                backupTableLoad();
             }
             else
             {
@@ -107,33 +91,49 @@ namespace quanlyvattu
 
         private void deviceCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String deviceName = this.deviceCb.SelectedValue.ToString();
             // Load the backup table for the selected device
-            backupTableLoad(deviceName);
+            backupTableLoad();
 
         }
 
         private void backupBtn_Click(object sender, EventArgs e)
         {
-            String deviceName = this.deviceCb.SelectedValue.ToString();
+            if (this.sp_DanhSachBackUpDataGridView.Rows.Count > 0)
+            {
+                DateTime currentDate = DateTime.Now;
+                DateTime latestBackup = Convert.ToDateTime(this.sp_DanhSachBackUpDataGridView.Rows[0].Cells[0].Value);
+                if (currentDate < latestBackup.AddMinutes(1))
+                {
+                    MessageBox.Show("Chưa đủ thời gian để sao lưu lại, vui lòng thử lại sau 1 phút!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
 
             // Execute the backup stored procedure
-            int res = Program.ExecSqlNonQuery($"USE qlvt EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}'");
-
-            // Notify the user of the result
-            MessageBox.Show(res == 0 ? "Sao lưu thành công!" : "Sao lưu thất bại!");
+            if (checkEdit1.Checked)
+            {
+                int res = Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',1");
+                // Notify the user of the result
+                MessageBox.Show(res == 0 ? "Sao lưu thành công!" : "Sao lưu thất bại!");
+            }
+            else
+            {
+                int res = Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',0");   
+                // Notify the user of the result
+                MessageBox.Show(res == 0 ? "Sao lưu thành công!" : "Sao lưu thất bại!");
+            }
 
             // Refresh the DataGridView by reloading the data
-            backupTableLoad(deviceName);
+            backupTableLoad();
         }
 
         private void restoreBtn_Click(object sender, EventArgs e)
         {
             int index = sp_DanhSachBackUpDataGridView.CurrentCell.RowIndex;
-            String deviceName = this.deviceCb.SelectedValue.ToString();
+            Console.WriteLine("index"+index);
+            Console.WriteLine("devicename: "+deviceName);
 
-
-            int res = Program.ExecSqlNonQuery($"USE master; EXEC sp_PhucHoiCSDL 'qlvt', '{deviceName}', '{sp_DanhSachBackUpDataGridView.Rows[index].Cells[0].Value.ToString()}'");
+            int res = Program.ExecSqlNonQuery($"USE master; EXEC sp_PhucHoiCSDL @path=N'C:\\backup\\{deviceName}.bak',@index={this.sp_DanhSachBackUpDataGridView.Rows.Count - index}");
             // Notify the user of the result
             if (res == 0)
             {
@@ -145,6 +145,25 @@ namespace quanlyvattu
             }
 
             //Program.connectDB();
+        }
+
+        private void checkEdit2_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isChecked = this.checkEdit2.Checked;
+            if (!isChecked)
+            {
+                this.dtpDate.Visible = false;
+                this.dtpTime.Visible = false;
+                this.lblTime.Visible = false;
+                this.restoreWithTimeBtn.Visible = false;
+            }
+            else
+            {
+                this.dtpDate.Visible = true;
+                this.dtpTime.Visible = true;
+                this.lblTime.Visible = true;
+                this.restoreWithTimeBtn.Visible = true;
+            }
         }
     }
 }

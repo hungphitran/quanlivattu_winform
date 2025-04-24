@@ -30,6 +30,8 @@ namespace quanlyvattu
             this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Fill(this.qlvtDataSet.sp_BaoCaoDonDatHangChuaNhap);
             
             this.ngayInput.Value = DateTime.Now;
+            this.manvInput.Text = Program.manv;
+            this.manvInput.Enabled = false;
         }
 
         private void backBtn_Click(object sender, EventArgs e)

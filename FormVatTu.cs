@@ -35,6 +35,21 @@ namespace quanlyvattu
         public FormVatTu()
         {
             InitializeComponent();
+            this.searchInput.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+            this.searchInput.Properties.MaxLength = 30;
+            this.mavtInput.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToUppercase_NoSpace;
+            this.mavtInput.Properties.MaxLength = 4;
+            this.tenvtInput.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+            this.tenvtInput.Properties.MaxLength = 30;
+            this.donvitinhInput.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+            this.donvitinhInput.Properties.MaxLength = 15;
+
+            // disable all input in groupControl
+            this.mavtTextEdit.Enabled= false;
+            this.tenvtTextEdit.Enabled = false;
+            this.dvtTextEdit.Enabled = false;
+            this.soluongtonSpinEdit.Enabled = false;
+
         }
 
         private void FormVatTu_Load_1(object sender, EventArgs e)
@@ -47,44 +62,200 @@ namespace quanlyvattu
             this.vattuDataGridView.CellValueChanged += VattuDataGridView_CellValueChanged;
             // Subscribe to the CurrentChanged event for BeginEdit
             this.vattuDataGridView.CellBeginEdit += VattuDataGridView_CellBeginEdit;
+            this.vattuDataGridView.CellEndEdit += VattuDataGridView_CellEndEdit;
+            this.vattuDataGridView.EditingControlShowing += VattuDataGridView_EditingControlShowing;
+            // Try all possible variants of the column name - debugging approach
+            vattuDataGridView.Columns[3].ReadOnly = true;
         }
+
+        private void VattuDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            // Get the column index of the cell being edited
+            int columnIndex = vattuDataGridView.CurrentCell.ColumnIndex;
+
+            // Check if the editing control is a TextBox
+            if (e.Control is TextBox textBox)
+            {
+                //// Remove any existing event handlers to prevent multiple subscriptions
+                textBox.KeyPress -= KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_NoSpace;
+                textBox.KeyPress -= KeyPressConstraint.KeyPress_LettersDigitsSpace;
+                textBox.KeyPress -= KeyPressConstraint.KeyPress_OnlyDigits;
+                textBox.KeyPress -= KeyPressConstraint.KeyPress_OnlyLetters;
+
+                switch (columnIndex)
+                {
+                    case 0:
+                        // For MAVT column
+                        textBox.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToUppercase_NoSpace;
+                        textBox.MaxLength = 4;
+                        break;
+
+                    case 1:
+                        // For TENVT column
+                        textBox.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+                        textBox.MaxLength = 30;
+                        break;
+                    case 2:
+                        // For DVT column
+                        textBox.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+                        textBox.MaxLength = 15;
+                        break;
+                }
+            }
+        }
+        private void VattuDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
+                DataRow row = rowView.Row;
+
+                if (e.ColumnIndex == 0) // MAVT column
+                {
+                    String mavt = row["MAVT"].ToString().Trim();
+                    DataRow[] existingRows = qlvtDataSet.Vattu.Select($"MAVT = '{mavt}' AND NOT (MAVT = '{row["MAVT", DataRowVersion.Original]}')");
+                    if (existingRows.Length > 0)
+                    {
+                        MessageBox.Show("Mã vật tư đã tồn tại, không thể cập nhật", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.RejectChanges(); // Revert to the original value
+                        return;
+                    }
+                }
+
+                // Get the pre-edit state from undo stack
+                if (undoStack.Count > 0)
+                {
+                    UndoAction pre = undoStack.Pop();
+
+                    // Check if values have actually changed
+                    bool hasChanged = false;
+                    if (pre.OldItemArray.Length == row.ItemArray.Length)
+                    {
+                        for (int i = 0; i < pre.OldItemArray.Length; i++)
+                        {
+                            // Compare each value in the arrays
+                            if (!Equals(pre.OldItemArray[i], row.ItemArray[i]))
+                            {
+                                hasChanged = true;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        hasChanged = true; // Different array lengths indicate change
+                    }
+
+                    if (hasChanged)
+                    {
+                        // Only push to stack if there's an actual change
+                        undoStack.Push(new UndoAction
+                        {
+                            Action = ActionType.Update,
+                            OldItemArray = pre.OldItemArray,
+                            NewItemArray = row.ItemArray,
+                            index = pre.index
+                        });
+                        Console.WriteLine("Changes detected and saved to undo stack");
+                    }
+                    else
+                    {
+                        // No changes, put the pre-edit state back
+                        undoStack.Push(pre);
+                        Console.WriteLine("No changes detected");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi kết thúc chỉnh sửa: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
         private void VattuDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
-            DataRow row = rowView.Row;
-
-            // kiểm tra trùng tên vt
-            if (e.ColumnIndex == 1)
+            try
             {
-                String tenvt = row["TENVT"].ToString();
-                vattuBindingSource.RemoveFilter();
-                searchInput.Text = "";
-                DataRow[] existingRows = qlvtDataSet.Vattu.Select($"TENVT = '{tenvt}'");
-                if (existingRows.Length > 0)
+                DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
+                DataRow row = rowView.Row;
+
+                // Kiểm tra trùng MAVT khi sửa cột MAVT (cột 0)
+                if (e.ColumnIndex == 0)
                 {
-                    MessageBox.Show("Tên vật tư đã tồn tại, không thể cập nhật");
-                    return;
+                    String mavt = row["MAVT"].ToString();
+                    vattuBindingSource.RemoveFilter();
+                    searchInput.Text = "";
+
+                    // Check for duplicates excluding the current row
+                    DataRow[] existingRows = qlvtDataSet.Vattu.Select($"MAVT = '{mavt}' AND NOT (MAVT = '{row["MAVT", DataRowVersion.Original]}')");
+                    if (existingRows.Length > 0)
+                    {
+                        MessageBox.Show("Mã vật tư đã tồn tại, không thể cập nhật", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        row.RejectChanges(); // Revert the change
+                        return;
+                    }
                 }
+
+                // Kiểm tra trùng tên vt khi sửa cột TENVT (cột 1)
+                if (e.ColumnIndex == 1)
+                {
+                    String tenvt = row["TENVT"].ToString();
+                    vattuBindingSource.RemoveFilter();
+                    searchInput.Text = "";
+
+                    // Check for duplicates excluding the current row
+                    DataRow[] existingRows = qlvtDataSet.Vattu.Select($"TENVT = '{tenvt}' AND NOT (MAVT = '{row["MAVT"]}')");
+                    if (existingRows.Length > 0)
+                    {
+                        MessageBox.Show("Tên vật tư đã tồn tại, không thể cập nhật", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        row.RejectChanges(); // Revert the change
+                        return;
+                    }
+                }
+
+                // Lưu giá trị mới vào undoStack
+                if (undoStack.Count > 0)
+                {
+                    UndoAction pre = undoStack.Pop();
+                    undoStack.Push(
+                        new UndoAction
+                        {
+                            Action = ActionType.Update,
+                            OldItemArray = pre.OldItemArray,
+                            NewItemArray = row.ItemArray,
+                            index = pre.index
+                        }
+                    );
+                }
+
+                row.EndEdit();
+                MessageBox.Show("Cập nhật thành công");
             }
+            catch (ConstraintException ex)
+            {
+                // Handle the constraint violation
+                MessageBox.Show("Không thể cập nhật vì trùng mã vật tư: " + ex.Message, "Lỗi ràng buộc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            // Lưu giá trị mới vào undoStack
-            UndoAction pre = undoStack.Pop();
-            undoStack.Push(
-                new UndoAction
-                {
-                    Action = ActionType.Update,
-                    OldItemArray = pre.OldItemArray,
-                    NewItemArray = row.ItemArray,
-                    index = pre.index
-                }
-            );
-            Console.WriteLine(undoStack.Peek().OldItemArray);
-            row.EndEdit();
+                // Get the current row and revert changes
+                DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
+                rowView.Row.RejectChanges();
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            MessageBox.Show("Cập nhật thành công");
-
+                // Get the current row and revert changes
+                DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
+                rowView.Row.RejectChanges();
+            }
         }
+
 
         private void VattuDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -121,8 +292,6 @@ namespace quanlyvattu
                 }
             );
         }
-
-
         private void backBut_Click(object sender, EventArgs e)
         {
             FormManager.switchForm(this, new Dashboard());
@@ -135,8 +304,6 @@ namespace quanlyvattu
             String dvt = this.donvitinhInput.Text.Trim();
             // Kiểm tra các trường nhập liệu
 
-            if (validate.valid_mavt(mavt) && validate.valid_tenvt(tenvt) && validate.valid_mavt(dvt))
-            {
                 try
                 {
                     // Kiểm tra MAVT đã tồn tại
@@ -187,11 +354,6 @@ namespace quanlyvattu
                     Console.WriteLine(ex);
                     MessageBox.Show("Lỗi khi thêm vật tư: " + ex.Message);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Chưa nhập đủ thông tin hoặc thông tin không hợp lệ");
-            }
         }
 
 
@@ -360,7 +522,7 @@ namespace quanlyvattu
             {
                 formBaoCao.Close();
             }
-            String mavt = this.mAVTTextEdit.Text;
+            String mavt = this.mavtTextEdit.Text;
             formBaoCao = new FormBaoCao( new LichSuVattuReport(mavt));
             formBaoCao.Show();
    
@@ -372,7 +534,7 @@ namespace quanlyvattu
             {
                 formBaoCao.Close();
             }
-            String mavt = this.mAVTTextEdit.Text;
+            String mavt = this.mavtTextEdit.Text;
             formBaoCao = new FormBaoCao(new reportVattu());
             formBaoCao.Show();
         }

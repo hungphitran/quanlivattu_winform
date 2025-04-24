@@ -707,7 +707,6 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.Dashboa
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormPhieuXuat.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormBaoCao.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormDatHang.resources
-C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormLichSuGiaoDichVattu.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormNhanVien.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormPhieuNhap.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormSelectDetail.resources
@@ -725,3 +724,6 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.csproj.
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyva.FF625A1F.Up2Date
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.exe
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.pdb
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormDoiMatKhau.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.TongHopNhapXuat.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.NhanVienReport.resources

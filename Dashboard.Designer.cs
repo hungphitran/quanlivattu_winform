@@ -40,13 +40,17 @@
             this.ImAndExportBtn = new System.Windows.Forms.Button();
             this.exportBtn = new DevExpress.XtraEditors.SimpleButton();
             this.backupBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelName = new DevExpress.XtraEditors.LabelControl();
+            this.changePassBtn = new System.Windows.Forms.Button();
+            this.tongHopNhapXuatBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.label1.Location = new System.Drawing.Point(360, 34);
+            this.label1.Location = new System.Drawing.Point(378, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(332, 76);
@@ -67,10 +71,10 @@
             // 
             // btnNhanvien
             // 
-            this.btnNhanvien.Location = new System.Drawing.Point(64, 229);
+            this.btnNhanvien.Location = new System.Drawing.Point(257, 160);
             this.btnNhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhanvien.Name = "btnNhanvien";
-            this.btnNhanvien.Size = new System.Drawing.Size(131, 66);
+            this.btnNhanvien.Size = new System.Drawing.Size(211, 60);
             this.btnNhanvien.TabIndex = 2;
             this.btnNhanvien.Text = "Quản lý nhân viên";
             this.btnNhanvien.UseVisualStyleBackColor = true;
@@ -78,10 +82,10 @@
             // 
             // VattuBtn
             // 
-            this.VattuBtn.Location = new System.Drawing.Point(283, 229);
+            this.VattuBtn.Location = new System.Drawing.Point(257, 233);
             this.VattuBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VattuBtn.Name = "VattuBtn";
-            this.VattuBtn.Size = new System.Drawing.Size(149, 66);
+            this.VattuBtn.Size = new System.Drawing.Size(211, 66);
             this.VattuBtn.TabIndex = 3;
             this.VattuBtn.Text = "Quản lý vật tư";
             this.VattuBtn.UseVisualStyleBackColor = true;
@@ -103,14 +107,13 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(32, 20);
             this.toolStripStatusLabel1.Text = "Tên";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // importBtn
             // 
-            this.importBtn.Location = new System.Drawing.Point(566, 229);
+            this.importBtn.Location = new System.Drawing.Point(593, 233);
             this.importBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(149, 66);
+            this.importBtn.Size = new System.Drawing.Size(213, 66);
             this.importBtn.TabIndex = 7;
             this.importBtn.Text = "Phiếu nhập";
             this.importBtn.UseVisualStyleBackColor = true;
@@ -118,10 +121,10 @@
             // 
             // orderBtn
             // 
-            this.orderBtn.Location = new System.Drawing.Point(761, 229);
+            this.orderBtn.Location = new System.Drawing.Point(593, 317);
             this.orderBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(149, 66);
+            this.orderBtn.Size = new System.Drawing.Size(212, 57);
             this.orderBtn.TabIndex = 8;
             this.orderBtn.Text = "Đơn đặt hàng";
             this.orderBtn.UseVisualStyleBackColor = true;
@@ -129,10 +132,10 @@
             // 
             // creatAccBtn
             // 
-            this.creatAccBtn.Location = new System.Drawing.Point(64, 383);
+            this.creatAccBtn.Location = new System.Drawing.Point(257, 400);
             this.creatAccBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creatAccBtn.Name = "creatAccBtn";
-            this.creatAccBtn.Size = new System.Drawing.Size(168, 57);
+            this.creatAccBtn.Size = new System.Drawing.Size(211, 57);
             this.creatAccBtn.TabIndex = 9;
             this.creatAccBtn.Text = "Tạo tài khoản";
             this.creatAccBtn.UseVisualStyleBackColor = true;
@@ -140,10 +143,10 @@
             // 
             // ImAndExportBtn
             // 
-            this.ImAndExportBtn.Location = new System.Drawing.Point(283, 380);
+            this.ImAndExportBtn.Location = new System.Drawing.Point(259, 317);
             this.ImAndExportBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ImAndExportBtn.Name = "ImAndExportBtn";
-            this.ImAndExportBtn.Size = new System.Drawing.Size(223, 60);
+            this.ImAndExportBtn.Size = new System.Drawing.Size(211, 57);
             this.ImAndExportBtn.TabIndex = 10;
             this.ImAndExportBtn.Text = "Báo cáo nhập xuất chi tiết";
             this.ImAndExportBtn.UseVisualStyleBackColor = true;
@@ -151,28 +154,73 @@
             // 
             // exportBtn
             // 
-            this.exportBtn.Location = new System.Drawing.Point(550, 380);
-            this.exportBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.exportBtn.Location = new System.Drawing.Point(593, 160);
+            this.exportBtn.Margin = new System.Windows.Forms.Padding(5);
             this.exportBtn.Name = "exportBtn";
-            this.exportBtn.Size = new System.Drawing.Size(165, 60);
+            this.exportBtn.Size = new System.Drawing.Size(210, 55);
             this.exportBtn.TabIndex = 11;
             this.exportBtn.Text = "Phiếu xuất";
             this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
             // backupBtn
             // 
-            this.backupBtn.Location = new System.Drawing.Point(761, 383);
+            this.backupBtn.Location = new System.Drawing.Point(595, 400);
+            this.backupBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backupBtn.Name = "backupBtn";
-            this.backupBtn.Size = new System.Drawing.Size(149, 57);
+            this.backupBtn.Size = new System.Drawing.Size(210, 57);
             this.backupBtn.TabIndex = 12;
             this.backupBtn.Text = "Sao lưu và phục hồi";
             this.backupBtn.Click += new System.EventHandler(this.backupBtn_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(23, 29);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(78, 16);
+            this.labelControl1.TabIndex = 13;
+            this.labelControl1.Text = "Người dùng : ";
+            // 
+            // labelName
+            // 
+            this.labelName.Location = new System.Drawing.Point(110, 29);
+            this.labelName.Margin = new System.Windows.Forms.Padding(5);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(4, 16);
+            this.labelName.TabIndex = 14;
+            this.labelName.Text = " ";
+            // 
+            // changePassBtn
+            // 
+            this.changePassBtn.Location = new System.Drawing.Point(257, 480);
+            this.changePassBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.changePassBtn.Name = "changePassBtn";
+            this.changePassBtn.Size = new System.Drawing.Size(211, 60);
+            this.changePassBtn.TabIndex = 15;
+            this.changePassBtn.Text = "Đổi mật khẩu";
+            this.changePassBtn.UseVisualStyleBackColor = true;
+            this.changePassBtn.Click += new System.EventHandler(this.changePassBtn_Click);
+            // 
+            // tongHopNhapXuatBtn
+            // 
+            this.tongHopNhapXuatBtn.Location = new System.Drawing.Point(595, 480);
+            this.tongHopNhapXuatBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tongHopNhapXuatBtn.Name = "tongHopNhapXuatBtn";
+            this.tongHopNhapXuatBtn.Size = new System.Drawing.Size(211, 60);
+            this.tongHopNhapXuatBtn.TabIndex = 16;
+            this.tongHopNhapXuatBtn.Text = "Tổng hợp nhập xuất";
+            this.tongHopNhapXuatBtn.UseVisualStyleBackColor = true;
+            this.tongHopNhapXuatBtn.Click += new System.EventHandler(this.tongHopNhapXuatBtn_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 720);
+            this.Controls.Add(this.tongHopNhapXuatBtn);
+            this.Controls.Add(this.changePassBtn);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.backupBtn);
             this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.ImAndExportBtn);
@@ -207,5 +255,9 @@
         private System.Windows.Forms.Button ImAndExportBtn;
         private DevExpress.XtraEditors.SimpleButton exportBtn;
         private DevExpress.XtraEditors.SimpleButton backupBtn;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelName;
+        private System.Windows.Forms.Button changePassBtn;
+        private System.Windows.Forms.Button tongHopNhapXuatBtn;
     }
 }

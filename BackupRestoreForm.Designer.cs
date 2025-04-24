@@ -33,11 +33,7 @@
             this.returnBtn = new DevExpress.XtraEditors.SimpleButton();
             this.restoreBtn = new DevExpress.XtraEditors.SimpleButton();
             this.createDeviceBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.deviceCb = new System.Windows.Forms.ComboBox();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.deviceNameInput = new DevExpress.XtraEditors.TextEdit();
             this.sp_DanhSachBackUpDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,17 +43,24 @@
             this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
             this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
             this.sp_DanhSachBackUpTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.sp_DanhSachBackUpTableAdapter();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.lblTime = new DevExpress.XtraEditors.LabelControl();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.restoreWithTimeBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceNameInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_DanhSachBackUpDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_DanhSachBackUpBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // backupBtn
             // 
-            this.backupBtn.Location = new System.Drawing.Point(706, 16);
+            this.backupBtn.Location = new System.Drawing.Point(752, 17);
             this.backupBtn.Name = "backupBtn";
             this.backupBtn.Size = new System.Drawing.Size(158, 44);
             this.backupBtn.TabIndex = 2;
@@ -75,7 +78,7 @@
             // 
             // restoreBtn
             // 
-            this.restoreBtn.Location = new System.Drawing.Point(896, 16);
+            this.restoreBtn.Location = new System.Drawing.Point(944, 16);
             this.restoreBtn.Name = "restoreBtn";
             this.restoreBtn.Size = new System.Drawing.Size(232, 44);
             this.restoreBtn.TabIndex = 15;
@@ -89,60 +92,21 @@
             this.createDeviceBtn.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9F);
             this.createDeviceBtn.AppearanceDisabled.Options.UseBackColor = true;
             this.createDeviceBtn.AppearanceDisabled.Options.UseFont = true;
-            this.createDeviceBtn.Location = new System.Drawing.Point(106, 148);
+            this.createDeviceBtn.Location = new System.Drawing.Point(42, 83);
             this.createDeviceBtn.Name = "createDeviceBtn";
             this.createDeviceBtn.Size = new System.Drawing.Size(148, 44);
             this.createDeviceBtn.TabIndex = 16;
             this.createDeviceBtn.Text = "Tạo device sao lưu";
             this.createDeviceBtn.Click += new System.EventHandler(this.createDeviceBtn_Click);
             // 
-            // deviceCb
-            // 
-            this.deviceCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.deviceCb.FormattingEnabled = true;
-            this.deviceCb.Location = new System.Drawing.Point(380, 22);
-            this.deviceCb.Name = "deviceCb";
-            this.deviceCb.Size = new System.Drawing.Size(129, 24);
-            this.deviceCb.TabIndex = 17;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(291, 25);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(69, 16);
-            this.labelControl1.TabIndex = 18;
-            this.labelControl1.Text = "Chọn device";
-            // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.deviceNameInput);
             this.groupControl1.Controls.Add(this.createDeviceBtn);
             this.groupControl1.Location = new System.Drawing.Point(3, 391);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(357, 217);
+            this.groupControl1.Size = new System.Drawing.Size(228, 217);
             this.groupControl1.TabIndex = 19;
             this.groupControl1.Text = "Tạo device";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(80, 47);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(194, 21);
-            this.labelControl2.TabIndex = 18;
-            this.labelControl2.Text = "Nhập tên device muốn tạo";
-            // 
-            // deviceNameInput
-            // 
-            this.deviceNameInput.Location = new System.Drawing.Point(106, 88);
-            this.deviceNameInput.Name = "deviceNameInput";
-            this.deviceNameInput.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.deviceNameInput.Properties.Appearance.Options.UseFont = true;
-            this.deviceNameInput.Properties.MaxLength = 20;
-            this.deviceNameInput.Size = new System.Drawing.Size(148, 28);
-            this.deviceNameInput.TabIndex = 17;
             // 
             // sp_DanhSachBackUpDataGridView
             // 
@@ -219,15 +183,68 @@
             // 
             this.sp_DanhSachBackUpTableAdapter.ClearBeforeFill = true;
             // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(547, 409);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "Xóa bản sao lưu cũ trước khi sao lưu bản mới";
+            this.checkEdit1.Size = new System.Drawing.Size(317, 24);
+            this.checkEdit1.TabIndex = 20;
+            // 
+            // checkEdit2
+            // 
+            this.checkEdit2.Location = new System.Drawing.Point(305, 26);
+            this.checkEdit2.Name = "checkEdit2";
+            this.checkEdit2.Properties.Caption = "Khôi phục theo thời gian chỉ định";
+            this.checkEdit2.Size = new System.Drawing.Size(323, 24);
+            this.checkEdit2.TabIndex = 21;
+            this.checkEdit2.CheckedChanged += new System.EventHandler(this.checkEdit2_CheckedChanged);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(560, 496);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(133, 22);
+            this.dtpDate.TabIndex = 22;
+            // 
+            // lblTime
+            // 
+            this.lblTime.Location = new System.Drawing.Point(348, 496);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(180, 16);
+            this.lblTime.TabIndex = 23;
+            this.lblTime.Text = "Chọn thời điểm muốn khôi phục";
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTime.Location = new System.Drawing.Point(713, 496);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(140, 22);
+            this.dtpTime.TabIndex = 24;
+            // 
+            // restoreWithTimeBtn
+            // 
+            this.restoreWithTimeBtn.Location = new System.Drawing.Point(911, 488);
+            this.restoreWithTimeBtn.Name = "restoreWithTimeBtn";
+            this.restoreWithTimeBtn.Size = new System.Drawing.Size(194, 41);
+            this.restoreWithTimeBtn.TabIndex = 25;
+            this.restoreWithTimeBtn.Text = "Xác nhận khôi phục";
+            // 
             // BackupRestoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1206, 628);
+            this.Controls.Add(this.restoreWithTimeBtn);
+            this.Controls.Add(this.dtpTime);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.checkEdit2);
+            this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.sp_DanhSachBackUpDataGridView);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.deviceCb);
             this.Controls.Add(this.restoreBtn);
             this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.backupBtn);
@@ -235,11 +252,11 @@
             this.Text = "BackupRestoreForm";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceNameInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_DanhSachBackUpDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_DanhSachBackUpBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,16 +274,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DevExpress.XtraEditors.SimpleButton createDeviceBtn;
-        private System.Windows.Forms.ComboBox deviceCb;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit deviceNameInput;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private qlvtDataSetTableAdapters.sp_DanhSachBackUpTableAdapter sp_DanhSachBackUpTableAdapter;
         private System.Windows.Forms.DataGridView sp_DanhSachBackUpDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit2;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private DevExpress.XtraEditors.LabelControl lblTime;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private DevExpress.XtraEditors.SimpleButton restoreWithTimeBtn;
     }
 }

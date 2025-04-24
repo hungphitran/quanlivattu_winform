@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 using quanlyvattu;
 using System.Text;
+using DevExpress.DataAccess.Sql;
 
 
 
@@ -27,6 +30,7 @@ namespace QLVT
 
         public static String mGroup = "";
         public static String mHoten = "";
+        public static String manv = "";
 
 
         public static int connectDB()
@@ -102,9 +106,8 @@ namespace QLVT
             }
             catch (SqlException ex)
             {
-                if (ex.Message.Contains("Error converting data type varchar to int"))
-                    MessageBox.Show("Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.");
-                else MessageBox.Show(ex.Message);
+
+                MessageBox.Show(ex.Message);
                 conn.Close();
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
@@ -118,6 +121,57 @@ namespace QLVT
         static extern bool AllocConsole(); // Hàm mở console
 
         [STAThread]
+
+        public static bool hasData(DevExpress.XtraReports.UI.XtraReport report)
+        {
+
+            try
+            {
+                Console.WriteLine(report.DataSource.GetType());
+                if (report.DataSource == null) return false;
+                else if (report.DataSource is DataSet)
+                {
+                    
+                    DataSet ds = (DataSet)report.DataSource;
+                    foreach (DataTable dt in ds.Tables)
+                    {
+                        if (dt.Rows.Count > 0) return true;
+                    }
+                }
+                else if (report.DataSource is DataTable)
+                {
+                    DataTable dt = (DataTable)report.DataSource;
+                    if (dt.Rows.Count > 0) return true;
+                }
+                else if(report.DataSource is DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource)
+                {
+                    try
+                    {
+                        sqlDataSource.Fill();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error filling SqlDataSource: " + ex.Message);
+                    }
+
+                    // Check if Result is not null and has tables with data
+                    if (sqlDataSource.Result != null)
+                    {
+                        foreach (DevExpress.DataAccess.Native.Sql.ResultTable table in sqlDataSource.Result)
+                        {
+                            if (table.Count > 0)
+                                return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
         static void Main()
         {
 

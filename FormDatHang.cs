@@ -63,6 +63,8 @@ namespace quanlyvattu
 
         private void FormDatHang_Load_2(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qlvtDataSet1.Nhanvien' table. You can move, or remove it, as needed.
+            this.nhanvienTableAdapter.Fill(this.qlvtDataSet1.Nhanvien);
             // TODO: This line of code loads data into the 'qlvtDataSet1.CTDDH' table. You can move, or remove it, as needed.
             this.cTDDHTableAdapter.Fill(this.qlvtDataSet1.CTDDH);
             // TODO: This line of code loads data into the 'qlvtDataSet1.DatHang' table. You can move, or remove it, as needed.

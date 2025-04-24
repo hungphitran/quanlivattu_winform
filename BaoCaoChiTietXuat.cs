@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using DevExpress.XtraReports.UI;
+using QLVT;
 
 namespace quanlyvattu
 {
@@ -30,6 +31,8 @@ namespace quanlyvattu
             this.cellTongTien.TextFormatString = "{0:#,##0} ₫";
             this.tongNamLbl.TextFormatString = "{0:n0}";
             this.tongTienNamLbl.TextFormatString = "{0:#,##0}₫";
+
+            this.userLbl.Text= $"Người lập: {Program.mHoten}";
 
         }
 

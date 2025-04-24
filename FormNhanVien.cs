@@ -384,5 +384,11 @@ namespace quanlyvattu
         {
 
         }
+
+        private void nhanVienReportBtn_Click(object sender, EventArgs e)
+        {
+            FormBaoCao form = new FormBaoCao(new NhanVienReport());
+            form.Show();
+        }
     }
 }

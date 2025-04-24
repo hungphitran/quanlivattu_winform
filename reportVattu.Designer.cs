@@ -92,6 +92,7 @@
             this.GrandTotalData1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.GrandTotalBackground1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -142,15 +143,12 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.userLbl,
-            this.pageInfo1});
             this.BottomMargin.HeightF = 300F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // userLbl
             // 
-            this.userLbl.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.userLbl.LocationFloat = new DevExpress.Utils.PointFloat(380.8333F, 10F);
             this.userLbl.Multiline = true;
             this.userLbl.Name = "userLbl";
             this.userLbl.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -159,15 +157,16 @@
             // 
             // pageInfo1
             // 
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(315F, 0F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(348.3334F, 26.99997F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.pageInfo1.SizeF = new System.Drawing.SizeF(325F, 23F);
+            this.pageInfo1.SizeF = new System.Drawing.SizeF(291.6666F, 23F);
             this.pageInfo1.StyleName = "PageInfo";
             // 
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.pageInfo1,
             this.label1});
             this.ReportHeader.HeightF = 60F;
             this.ReportHeader.Name = "ReportHeader";
@@ -373,11 +372,7 @@
             // panel1
             // 
             this.panel1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.label2,
-            this.label3,
-            this.label5,
-            this.label7,
-            this.label9});
+            this.userLbl});
             this.panel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.panel1.Name = "panel1";
             this.panel1.SizeF = new System.Drawing.SizeF(650F, 49.38444F);
@@ -385,7 +380,7 @@
             // 
             // label2
             // 
-            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(10F, 11.49999F);
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(10F, 7.11558F);
             this.label2.Name = "label2";
             this.label2.SizeF = new System.Drawing.SizeF(60.12933F, 14.88444F);
             this.label2.StyleName = "GrandTotalCaption1";
@@ -396,7 +391,7 @@
             this.label3.CanGrow = false;
             this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Soluongton])")});
-            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(182.739F, 11.5F);
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(182.739F, 7.11558F);
             this.label3.Name = "label3";
             this.label3.SizeF = new System.Drawing.SizeF(52.3569F, 14.88444F);
             this.label3.StyleName = "GrandTotalData1";
@@ -411,7 +406,7 @@
             this.label5.CanGrow = false;
             this.label5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([TongSoLuongDat])")});
-            this.label5.LocationFloat = new DevExpress.Utils.PointFloat(268.5586F, 11.5F);
+            this.label5.LocationFloat = new DevExpress.Utils.PointFloat(268.5586F, 7.11558F);
             this.label5.Name = "label5";
             this.label5.SizeF = new System.Drawing.SizeF(98.74719F, 14.88444F);
             this.label5.StyleName = "GrandTotalData1";
@@ -426,7 +421,7 @@
             this.label7.CanGrow = false;
             this.label7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([TongSoLuongNhap])")});
-            this.label7.LocationFloat = new DevExpress.Utils.PointFloat(400.7685F, 11.5F);
+            this.label7.LocationFloat = new DevExpress.Utils.PointFloat(400.7685F, 7.11558F);
             this.label7.Name = "label7";
             this.label7.SizeF = new System.Drawing.SizeF(109.9911F, 14.88444F);
             this.label7.StyleName = "GrandTotalData1";
@@ -441,7 +436,7 @@
             this.label9.CanGrow = false;
             this.label9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([TongSoLuongXuat])")});
-            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(544.2222F, 11.5F);
+            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(544.2222F, 7.11558F);
             this.label9.Name = "label9";
             this.label9.SizeF = new System.Drawing.SizeF(105.7778F, 14.88444F);
             this.label9.StyleName = "GrandTotalData1";
@@ -530,6 +525,17 @@
             this.PageInfo.Name = "PageInfo";
             this.PageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
             // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.label2,
+            this.label7,
+            this.label5,
+            this.label3,
+            this.label9});
+            this.GroupFooter1.HeightF = 32.00002F;
+            this.GroupFooter1.Name = "GroupFooter1";
+            // 
             // reportVattu
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -538,7 +544,8 @@
             this.ReportHeader,
             this.GroupHeader1,
             this.Detail,
-            this.ReportFooter});
+            this.ReportFooter,
+            this.GroupFooter1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
             this.DataMember = "vw_VattuInfo";
@@ -604,5 +611,6 @@
         private DevExpress.XtraReports.UI.XRControlStyle GrandTotalBackground1;
         private DevExpress.XtraReports.UI.XRControlStyle PageInfo;
         private DevExpress.XtraReports.UI.XRLabel userLbl;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
     }
 }

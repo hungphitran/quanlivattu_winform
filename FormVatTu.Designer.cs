@@ -53,10 +53,10 @@ namespace quanlyvattu
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.mAVTTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.dVTTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mavtTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dvtTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.soluongtonSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.tENVTTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tenvtTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.lichSuVattuBtn = new DevExpress.XtraEditors.SimpleButton();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.backBut = new System.Windows.Forms.Button();
@@ -88,10 +88,10 @@ namespace quanlyvattu
             this.vattuBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAVTTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dVTTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mavtTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvtTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soluongtonSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENVTTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenvtTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mavtInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenvtInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donvitinhInput.Properties)).BeginInit();
@@ -104,7 +104,7 @@ namespace quanlyvattu
             tENVTLabel.AutoSize = true;
             tENVTLabel.Location = new System.Drawing.Point(316, 64);
             tENVTLabel.Name = "tENVTLabel";
-            tENVTLabel.Size = new System.Drawing.Size(42, 13);
+            tENVTLabel.Size = new System.Drawing.Size(51, 16);
             tENVTLabel.TabIndex = 10;
             tENVTLabel.Text = "TENVT:";
             // 
@@ -113,7 +113,7 @@ namespace quanlyvattu
             soluongtonLabel.AutoSize = true;
             soluongtonLabel.Location = new System.Drawing.Point(291, 143);
             soluongtonLabel.Name = "soluongtonLabel";
-            soluongtonLabel.Size = new System.Drawing.Size(65, 13);
+            soluongtonLabel.Size = new System.Drawing.Size(76, 16);
             soluongtonLabel.TabIndex = 11;
             soluongtonLabel.Text = "Soluongton:";
             // 
@@ -122,7 +122,7 @@ namespace quanlyvattu
             dVTLabel.AutoSize = true;
             dVTLabel.Location = new System.Drawing.Point(85, 143);
             dVTLabel.Name = "dVTLabel";
-            dVTLabel.Size = new System.Drawing.Size(30, 13);
+            dVTLabel.Size = new System.Drawing.Size(36, 16);
             dVTLabel.TabIndex = 12;
             dVTLabel.Text = "DVT:";
             // 
@@ -131,7 +131,7 @@ namespace quanlyvattu
             mAVTLabel.AutoSize = true;
             mAVTLabel.Location = new System.Drawing.Point(75, 64);
             mAVTLabel.Name = "mAVTLabel";
-            mAVTLabel.Size = new System.Drawing.Size(38, 13);
+            mAVTLabel.Size = new System.Drawing.Size(46, 16);
             mAVTLabel.TabIndex = 13;
             mAVTLabel.Text = "MAVT:";
             // 
@@ -198,13 +198,13 @@ namespace quanlyvattu
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -214,7 +214,7 @@ namespace quanlyvattu
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -223,7 +223,7 @@ namespace quanlyvattu
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -252,7 +252,7 @@ namespace quanlyvattu
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -261,7 +261,7 @@ namespace quanlyvattu
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -272,13 +272,13 @@ namespace quanlyvattu
             // groupControl1
             // 
             this.groupControl1.Controls.Add(mAVTLabel);
-            this.groupControl1.Controls.Add(this.mAVTTextEdit);
+            this.groupControl1.Controls.Add(this.mavtTextEdit);
             this.groupControl1.Controls.Add(dVTLabel);
-            this.groupControl1.Controls.Add(this.dVTTextEdit);
+            this.groupControl1.Controls.Add(this.dvtTextEdit);
             this.groupControl1.Controls.Add(soluongtonLabel);
             this.groupControl1.Controls.Add(this.soluongtonSpinEdit);
             this.groupControl1.Controls.Add(tENVTLabel);
-            this.groupControl1.Controls.Add(this.tENVTTextEdit);
+            this.groupControl1.Controls.Add(this.tenvtTextEdit);
             this.groupControl1.Controls.Add(this.lichSuVattuBtn);
             this.groupControl1.Controls.Add(this.deleteBtn);
             this.groupControl1.Location = new System.Drawing.Point(0, 378);
@@ -288,21 +288,21 @@ namespace quanlyvattu
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thông tin vật tư";
             // 
-            // mAVTTextEdit
+            // mavtTextEdit
             // 
-            this.mAVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "MAVT", true));
-            this.mAVTTextEdit.Location = new System.Drawing.Point(127, 61);
-            this.mAVTTextEdit.Name = "mAVTTextEdit";
-            this.mAVTTextEdit.Size = new System.Drawing.Size(125, 20);
-            this.mAVTTextEdit.TabIndex = 14;
+            this.mavtTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "MAVT", true));
+            this.mavtTextEdit.Location = new System.Drawing.Point(127, 61);
+            this.mavtTextEdit.Name = "mavtTextEdit";
+            this.mavtTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.mavtTextEdit.TabIndex = 14;
             // 
-            // dVTTextEdit
+            // dvtTextEdit
             // 
-            this.dVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "DVT", true));
-            this.dVTTextEdit.Location = new System.Drawing.Point(127, 140);
-            this.dVTTextEdit.Name = "dVTTextEdit";
-            this.dVTTextEdit.Size = new System.Drawing.Size(125, 20);
-            this.dVTTextEdit.TabIndex = 13;
+            this.dvtTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "DVT", true));
+            this.dvtTextEdit.Location = new System.Drawing.Point(127, 140);
+            this.dvtTextEdit.Name = "dvtTextEdit";
+            this.dvtTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.dvtTextEdit.TabIndex = 13;
             // 
             // soluongtonSpinEdit
             // 
@@ -316,16 +316,16 @@ namespace quanlyvattu
             this.soluongtonSpinEdit.Name = "soluongtonSpinEdit";
             this.soluongtonSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.soluongtonSpinEdit.Size = new System.Drawing.Size(125, 20);
+            this.soluongtonSpinEdit.Size = new System.Drawing.Size(125, 24);
             this.soluongtonSpinEdit.TabIndex = 12;
             // 
-            // tENVTTextEdit
+            // tenvtTextEdit
             // 
-            this.tENVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "TENVT", true));
-            this.tENVTTextEdit.Location = new System.Drawing.Point(373, 61);
-            this.tENVTTextEdit.Name = "tENVTTextEdit";
-            this.tENVTTextEdit.Size = new System.Drawing.Size(125, 20);
-            this.tENVTTextEdit.TabIndex = 11;
+            this.tenvtTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "TENVT", true));
+            this.tenvtTextEdit.Location = new System.Drawing.Point(373, 61);
+            this.tenvtTextEdit.Name = "tenvtTextEdit";
+            this.tenvtTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.tenvtTextEdit.TabIndex = 11;
             // 
             // lichSuVattuBtn
             // 
@@ -383,7 +383,7 @@ namespace quanlyvattu
             this.mavtInput.Location = new System.Drawing.Point(780, 423);
             this.mavtInput.Margin = new System.Windows.Forms.Padding(4);
             this.mavtInput.Name = "mavtInput";
-            this.mavtInput.Size = new System.Drawing.Size(156, 20);
+            this.mavtInput.Size = new System.Drawing.Size(156, 22);
             this.mavtInput.TabIndex = 6;
             // 
             // tenvtInput
@@ -391,7 +391,7 @@ namespace quanlyvattu
             this.tenvtInput.Location = new System.Drawing.Point(780, 496);
             this.tenvtInput.Margin = new System.Windows.Forms.Padding(4);
             this.tenvtInput.Name = "tenvtInput";
-            this.tenvtInput.Size = new System.Drawing.Size(156, 20);
+            this.tenvtInput.Size = new System.Drawing.Size(156, 22);
             this.tenvtInput.TabIndex = 7;
             // 
             // donvitinhInput
@@ -399,7 +399,7 @@ namespace quanlyvattu
             this.donvitinhInput.Location = new System.Drawing.Point(780, 561);
             this.donvitinhInput.Margin = new System.Windows.Forms.Padding(4);
             this.donvitinhInput.Name = "donvitinhInput";
-            this.donvitinhInput.Size = new System.Drawing.Size(156, 20);
+            this.donvitinhInput.Size = new System.Drawing.Size(156, 22);
             this.donvitinhInput.TabIndex = 9;
             // 
             // label1
@@ -407,17 +407,16 @@ namespace quanlyvattu
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(695, 426);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Mã vật tư";
-
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(690, 499);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 11;
             this.label2.Text = "Tên vật tư";
             // 
@@ -426,7 +425,7 @@ namespace quanlyvattu
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(688, 567);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "Đơn vị tính";
             // 
@@ -458,7 +457,7 @@ namespace quanlyvattu
             this.searchInput.Name = "searchInput";
             this.searchInput.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchInput.Properties.Appearance.Options.UseFont = true;
-            this.searchInput.Size = new System.Drawing.Size(182, 26);
+            this.searchInput.Size = new System.Drawing.Size(182, 30);
             this.searchInput.TabIndex = 15;
             // 
             // searchBtn
@@ -558,10 +557,10 @@ namespace quanlyvattu
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAVTTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dVTTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mavtTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvtTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soluongtonSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENVTTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenvtTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mavtInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenvtInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donvitinhInput.Properties)).EndInit();
@@ -610,10 +609,10 @@ namespace quanlyvattu
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DevExpress.XtraEditors.TextEdit dVTTextEdit;
+        private DevExpress.XtraEditors.TextEdit dvtTextEdit;
         private DevExpress.XtraEditors.SpinEdit soluongtonSpinEdit;
-        private DevExpress.XtraEditors.TextEdit tENVTTextEdit;
-        private DevExpress.XtraEditors.TextEdit mAVTTextEdit;
+        private DevExpress.XtraEditors.TextEdit tenvtTextEdit;
+        private DevExpress.XtraEditors.TextEdit mavtTextEdit;
         private DevExpress.XtraEditors.SimpleButton listVattuBtn;
     }
 }

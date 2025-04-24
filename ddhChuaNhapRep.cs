@@ -3,6 +3,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using DevExpress.XtraReports.UI;
+using QLVT;
 
 namespace quanlyvattu
 {
@@ -11,6 +12,7 @@ namespace quanlyvattu
         public ddhChuaNhapRep()
         {
             InitializeComponent();
+            xrLabel1.Text = $"Người lập: {Program.mHoten}";
         }
 
     }

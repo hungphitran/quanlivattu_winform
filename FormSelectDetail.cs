@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Data.Filtering.Helpers;
+using QLVT;
 
 namespace quanlyvattu
 {
@@ -19,8 +20,16 @@ namespace quanlyvattu
             InitializeComponent();
             this.fromDateInput.Format = DateTimePickerFormat.Custom;
             this.fromDateInput.CustomFormat = "dd/MM/yyyy";
+            this.fromDateInput.MaxDate = DateTime.Now;
+            this.fromDateInput.MinDate = new DateTime(2020, 1, 1);
+            this.fromDateInput.Value = DateTime.Now.Date.AddDays(-1);
+
             this.toDateInput.Format = DateTimePickerFormat.Custom;
             this.toDateInput.CustomFormat = "dd/MM/yyyy";
+            this.toDateInput.MaxDate = DateTime.Now.Date;
+            this.toDateInput.MinDate = new DateTime(2020, 1, 1);
+            this.toDateInput.Value = DateTime.Now.Date;
+
 
         }
 
@@ -43,7 +52,7 @@ namespace quanlyvattu
 
 
 
-            if (DateTime.Compare(tuNgay, denNgay) != -1)
+            if (DateTime.Compare(tuNgay, denNgay) !=-1)
             {
                 MessageBox.Show("Ngày bắt đầu không được nhỏ hơn ngày kết thúc");
                 return;
@@ -53,7 +62,7 @@ namespace quanlyvattu
             { 
                 BaoCaoChiTietNhap baoCaoChiTietNhap = new BaoCaoChiTietNhap(tuNgay, denNgay);
                 // kiểm tra báo cáo có dữ liệu không
-                if (baoCaoChiTietNhap.DataMember.Length<=0)
+                if (!Program.hasData(baoCaoChiTietNhap))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
                     return;
@@ -65,12 +74,13 @@ namespace quanlyvattu
             {
                 BaoCaoChiTietXuat baoCaoChiTietXuat = new BaoCaoChiTietXuat(tuNgay, denNgay);
                 // kiểm tra báo cáo có dữ liệu không
-                if (baoCaoChiTietXuat.DataMember.Length <= 0)
+                if (Program.hasData(baoCaoChiTietXuat))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
                     return;
                 }
                 formBaoCao = new FormBaoCao(baoCaoChiTietXuat);
+
             }
 
             formBaoCao.Show();
@@ -80,5 +90,6 @@ namespace quanlyvattu
         {
             FormManager.switchForm(this, new Dashboard());
         }
+
     }
 }

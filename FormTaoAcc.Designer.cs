@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTaoAcc));
-            System.Windows.Forms.Label hOLabel;
-            System.Windows.Forms.Label tENLabel;
-            System.Windows.Forms.Label mANVLabel;
+            this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -42,35 +39,29 @@
             this.employeeBtn = new System.Windows.Forms.RadioButton();
             this.btnBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
-            this.nhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhanvienTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.NhanvienTableAdapter();
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_NhanVienChuaCoTaiKhoanTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.vw_NhanVienChuaCoTaiKhoanTableAdapter();
             this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
-            this.nhanvienBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.nhanvienBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.hOComboBox = new System.Windows.Forms.ComboBox();
-            this.tENComboBox = new System.Windows.Forms.ComboBox();
-            this.mANVSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            hOLabel = new System.Windows.Forms.Label();
-            tENLabel = new System.Windows.Forms.Label();
-            mANVLabel = new System.Windows.Forms.Label();
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbNhanVien = new System.Windows.Forms.ComboBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingNavigator)).BeginInit();
-            this.nhanvienBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // qlvtDataSet
+            // 
+            this.qlvtDataSet.DataSetName = "qlvtDataSet";
+            this.qlvtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCreate
             // 
@@ -102,9 +93,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(378, 226);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Username";
+            this.label1.Text = "LoginName";
             // 
             // label2
             // 
@@ -156,231 +147,86 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Thuộc nhóm";
             // 
-            // qlvtDataSet
+            // vw_NhanVienChuaCoTaiKhoanBindingSource
             // 
-            this.qlvtDataSet.DataSetName = "qlvtDataSet";
-            this.qlvtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource.DataMember = "vw_NhanVienChuaCoTaiKhoan";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource.DataSource = this.qlvtDataSet;
             // 
-            // nhanvienBindingSource
+            // vw_NhanVienChuaCoTaiKhoanTableAdapter
             // 
-            this.nhanvienBindingSource.DataMember = "Nhanvien";
-            this.nhanvienBindingSource.DataSource = this.qlvtDataSet;
-            // 
-            // nhanvienTableAdapter
-            // 
-            this.nhanvienTableAdapter.ClearBeforeFill = true;
+            this.vw_NhanVienChuaCoTaiKhoanTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.CTDDHTableAdapter = null;
             this.tableAdapterManager.CTPNTableAdapter = null;
             this.tableAdapterManager.CTPXTableAdapter = null;
             this.tableAdapterManager.DatHangTableAdapter = null;
-            this.tableAdapterManager.NhanvienTableAdapter = this.nhanvienTableAdapter;
+            this.tableAdapterManager.NhanvienTableAdapter = null;
             this.tableAdapterManager.PhieuNhapTableAdapter = null;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VattuTableAdapter = null;
             // 
-            // nhanvienBindingNavigator
+            // vw_NhanVienChuaCoTaiKhoanBindingSource1
             // 
-            this.nhanvienBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.nhanvienBindingNavigator.BindingSource = this.nhanvienBindingSource;
-            this.nhanvienBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.nhanvienBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.nhanvienBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.nhanvienBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.nhanvienBindingNavigatorSaveItem});
-            this.nhanvienBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.nhanvienBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.nhanvienBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.nhanvienBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.nhanvienBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.nhanvienBindingNavigator.Name = "nhanvienBindingNavigator";
-            this.nhanvienBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.nhanvienBindingNavigator.Size = new System.Drawing.Size(1179, 27);
-            this.nhanvienBindingNavigator.TabIndex = 10;
-            this.nhanvienBindingNavigator.Text = "bindingNavigator1";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource1.DataMember = "vw_NhanVienChuaCoTaiKhoan";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource1.DataSource = this.qlvtDataSet;
             // 
-            // bindingNavigatorMoveFirstItem
+            // vw_NhanVienChuaCoTaiKhoanBindingSource2
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource2.DataMember = "vw_NhanVienChuaCoTaiKhoan";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource2.DataSource = this.qlvtDataSet;
             // 
-            // bindingNavigatorMovePreviousItem
+            // vw_NhanVienChuaCoTaiKhoanBindingSource3
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource3.DataMember = "vw_NhanVienChuaCoTaiKhoan";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource3.DataSource = this.qlvtDataSet;
             // 
-            // bindingNavigatorSeparator
+            // vw_NhanVienChuaCoTaiKhoanBindingSource4
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource4.DataMember = "vw_NhanVienChuaCoTaiKhoan";
+            this.vw_NhanVienChuaCoTaiKhoanBindingSource4.DataSource = this.qlvtDataSet;
             // 
-            // bindingNavigatorPositionItem
+            // cmbNhanVien
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.cmbNhanVien.DataSource = this.vw_NhanVienChuaCoTaiKhoanBindingSource4;
+            this.cmbNhanVien.DisplayMember = "CMND";
+            this.cmbNhanVien.FormattingEnabled = true;
+            this.cmbNhanVien.Location = new System.Drawing.Point(471, 102);
+            this.cmbNhanVien.Name = "cmbNhanVien";
+            this.cmbNhanVien.Size = new System.Drawing.Size(256, 24);
+            this.cmbNhanVien.TabIndex = 10;
+            this.cmbNhanVien.ValueMember = "MANV";
             // 
-            // bindingNavigatorCountItem
+            // labelControl1
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 20);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.labelControl1.Location = new System.Drawing.Point(351, 110);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(88, 16);
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "Chọn nhân viên";
             // 
-            // bindingNavigatorSeparator1
+            // checkEdit1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // nhanvienBindingNavigatorSaveItem
-            // 
-            this.nhanvienBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.nhanvienBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("nhanvienBindingNavigatorSaveItem.Image")));
-            this.nhanvienBindingNavigatorSaveItem.Name = "nhanvienBindingNavigatorSaveItem";
-            this.nhanvienBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-            this.nhanvienBindingNavigatorSaveItem.Text = "Save Data";
-            this.nhanvienBindingNavigatorSaveItem.Click += new System.EventHandler(this.nhanvienBindingNavigatorSaveItem_Click);
-            // 
-            // hOLabel
-            // 
-            hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(501, 141);
-            hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(30, 16);
-            hOLabel.TabIndex = 10;
-            hOLabel.Text = "HO:";
-            // 
-            // hOComboBox
-            // 
-            this.hOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanvienBindingSource, "HO", true));
-            this.hOComboBox.FormattingEnabled = true;
-            this.hOComboBox.Location = new System.Drawing.Point(537, 141);
-            this.hOComboBox.Name = "hOComboBox";
-            this.hOComboBox.Size = new System.Drawing.Size(121, 24);
-            this.hOComboBox.TabIndex = 11;
-            // 
-            // tENLabel
-            // 
-            tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(493, 182);
-            tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(38, 16);
-            tENLabel.TabIndex = 12;
-            tENLabel.Text = "TEN:";
-            // 
-            // tENComboBox
-            // 
-            this.tENComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanvienBindingSource, "TEN", true));
-            this.tENComboBox.FormattingEnabled = true;
-            this.tENComboBox.Location = new System.Drawing.Point(537, 179);
-            this.tENComboBox.Name = "tENComboBox";
-            this.tENComboBox.Size = new System.Drawing.Size(121, 24);
-            this.tENComboBox.TabIndex = 13;
-            // 
-            // mANVLabel
-            // 
-            mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(482, 95);
-            mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(49, 16);
-            mANVLabel.TabIndex = 14;
-            mANVLabel.Text = "MANV:";
-            // 
-            // mANVSpinEdit
-            // 
-            this.mANVSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "MANV", true));
-            this.mANVSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.mANVSpinEdit.Enabled = false;
-            this.mANVSpinEdit.Location = new System.Drawing.Point(537, 91);
-            this.mANVSpinEdit.Name = "mANVSpinEdit";
-            this.mANVSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.mANVSpinEdit.Size = new System.Drawing.Size(125, 24);
-            this.mANVSpinEdit.TabIndex = 15;
+            this.checkEdit1.Location = new System.Drawing.Point(744, 285);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "Hiển thị mật khẩu";
+            this.checkEdit1.Size = new System.Drawing.Size(175, 24);
+            this.checkEdit1.TabIndex = 13;
+            this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // FormTaoAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 742);
-            this.Controls.Add(mANVLabel);
-            this.Controls.Add(this.mANVSpinEdit);
-            this.Controls.Add(tENLabel);
-            this.Controls.Add(this.tENComboBox);
-            this.Controls.Add(hOLabel);
-            this.Controls.Add(this.hOComboBox);
-            this.Controls.Add(this.nhanvienBindingNavigator);
+            this.Controls.Add(this.checkEdit1);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.cmbNhanVien);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.employeeBtn);
@@ -394,17 +240,19 @@
             this.Text = "Tạo tài khoản nhân viên";
             this.Load += new System.EventHandler(this.FormTaoAcc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingNavigator)).EndInit();
-            this.nhanvienBindingNavigator.ResumeLayout(false);
-            this.nhanvienBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+        private qlvtDataSet qlvtDataSet;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtUsername;
@@ -414,25 +262,15 @@
         private System.Windows.Forms.RadioButton employeeBtn;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label3;
-        private qlvtDataSet qlvtDataSet;
-        private System.Windows.Forms.BindingSource nhanvienBindingSource;
-        private qlvtDataSetTableAdapters.NhanvienTableAdapter nhanvienTableAdapter;
+        private System.Windows.Forms.BindingSource vw_NhanVienChuaCoTaiKhoanBindingSource;
+        private qlvtDataSetTableAdapters.vw_NhanVienChuaCoTaiKhoanTableAdapter vw_NhanVienChuaCoTaiKhoanTableAdapter;
         private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator nhanvienBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton nhanvienBindingNavigatorSaveItem;
-        private System.Windows.Forms.ComboBox hOComboBox;
-        private System.Windows.Forms.ComboBox tENComboBox;
-        private DevExpress.XtraEditors.SpinEdit mANVSpinEdit;
+        private System.Windows.Forms.BindingSource vw_NhanVienChuaCoTaiKhoanBindingSource1;
+        private System.Windows.Forms.BindingSource vw_NhanVienChuaCoTaiKhoanBindingSource2;
+        private System.Windows.Forms.BindingSource vw_NhanVienChuaCoTaiKhoanBindingSource3;
+        private System.Windows.Forms.BindingSource vw_NhanVienChuaCoTaiKhoanBindingSource4;
+        private System.Windows.Forms.ComboBox cmbNhanVien;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
     }
 }

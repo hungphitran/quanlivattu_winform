@@ -92,6 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupRestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupRestoreForm.Designer.cs">
+      <DependentUpon>BackupRestoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCaoChiTietNhap.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoiMatKhau.Designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPhieuXuat.cs">
       <SubType>Form</SubType>
@@ -134,12 +146,6 @@
     </Compile>
     <Compile Include="FormDatHang.Designer.cs">
       <DependentUpon>FormDatHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLichSuGiaoDichVattu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLichSuGiaoDichVattu.Designer.cs">
-      <DependentUpon>FormLichSuGiaoDichVattu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManager.cs" />
     <Compile Include="FormPhieuNhap.cs">
@@ -166,6 +172,7 @@
     <Compile Include="FormVatTu.Designer.cs">
       <DependentUpon>FormVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeyPressConstraint.cs" />
     <Compile Include="LichSuVattuReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -184,6 +191,12 @@
     <Compile Include="FormTaoPhieuNhap.Designer.cs">
       <DependentUpon>FormTaoPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NhanVienReport.Designer.cs">
+      <DependentUpon>NhanVienReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="qlvtDataSet.cs">
@@ -200,14 +213,22 @@
     <Compile Include="reportVattu.Designer.cs">
       <DependentUpon>reportVattu.cs</DependentUpon>
     </Compile>
+    <Compile Include="TongHopNhapXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TongHopNhapXuat.Designer.cs">
+      <DependentUpon>TongHopNhapXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UndoAction.cs" />
-    <Compile Include="validate.cs" />
     <Compile Include="ddhChuaNhapRep.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ddhChuaNhapRep.Designer.cs">
       <DependentUpon>ddhChuaNhapRep.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BackupRestoreForm.resx">
+      <DependentUpon>BackupRestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoChiTietNhap.resx">
       <DependentUpon>BaoCaoChiTietNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +238,9 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuXuat.resx">
       <DependentUpon>FormPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDatHang.resx">
       <DependentUpon>FormDatHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLichSuGiaoDichVattu.resx">
-      <DependentUpon>FormLichSuGiaoDichVattu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
@@ -253,6 +274,9 @@
     <EmbeddedResource Include="FormTaoPhieuNhap.resx">
       <DependentUpon>FormTaoPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienReport.resx">
+      <DependentUpon>NhanVienReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -270,6 +294,9 @@
     <EmbeddedResource Include="ddhChuaNhapRep.resx">
       <DependentUpon>ddhChuaNhapRep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TongHopNhapXuat.resx">
+      <DependentUpon>TongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -285,8 +312,8 @@
     </None>
     <None Include="qlvtDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>qlvtDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>qlvtDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="qlvtDataSet.xss">
       <DependentUpon>qlvtDataSet.xsd</DependentUpon>

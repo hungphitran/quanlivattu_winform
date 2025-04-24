@@ -18,43 +18,64 @@ namespace quanlyvattu
         public LoginForm()
         {
             InitializeComponent();
+            txtUser.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToLowercase_NoSpace;
+            txtPass.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToLowercase_NoSpace;
         }
-
-        
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String userName = this.txtUser.Text;
             String pass = this.txtPass.Text;
 
+
+
             Program.mlogin = userName;
             Program.password = pass;
+
+            
             int success= Program.connectDB();
 
             if (success ==1)
             {
-                //MessageBox.Show("Đăng nhập thành công");
-                //string query = "exec sp_get_infor_by_login '"+ Program.mlogin+"'";
-                //Console.WriteLine(query);
+                MessageBox.Show("Đăng nhập thành công");
+                SqlDataReader reader = Program.ExecSqlDataReader("use qlvt;\r\nselect Nhanvien.MANV, Nhanvien.HO , Nhanvien.TEN\r\nfrom sys.sysusers u, sys.syslogins l,NhanVien\r\nwhere u.sid = l.sid and l.loginname ='"+Program.mlogin+"' and Nhanvien.MANV= u.name");
+                if (reader.HasRows)  // Kiểm tra có dữ liệu không
+                {
+                    Console.WriteLine(reader);
 
-                //SqlDataReader reader = Program.ExecSqlDataReader(query);
-                //if (reader.HasRows)  // Kiểm tra có dữ liệu không
-                //{
-                //    Console.WriteLine(reader);
+                    while (reader.Read())  // Duyệt từng dòng dữ liệu
+                    {
+                        Program.mHoten = reader["HO"].ToString()+" "+reader["TEN"].ToString();
+                        Program.manv = reader["MANV"].ToString();
+                        Console.WriteLine("Ho ten: " + Program.mHoten);
+                        Console.WriteLine("Ma NV: " + Program.manv);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No data found.");
+                }
+                reader.Close();
+                reader = Program.ExecSqlDataReader($"SELECT \n    sp.name AS LoginName,\n    sr.name AS ServerRole\nFROM \n    sys.server_principals sp\n    LEFT JOIN sys.server_role_members srm ON sp.principal_id = srm.member_principal_id\n    LEFT JOIN sys.server_principals sr ON srm.role_principal_id = sr.principal_id\nWHERE \n    sp.name = '{Program.mlogin}';");
+                if (reader.HasRows)  // Kiểm tra có dữ liệu không
+                {
+                    Console.WriteLine(reader);
 
-                //    while (reader.Read())  // Duyệt từng dòng dữ liệu
-                //    {
-                //        Program.mGroup = reader["role"].ToString(); // Đọc dữ liệu an toàn
-                //        Program.mHoten = reader["username"].ToString();
-                //        Console.WriteLine(Program.mGroup+Program.mHoten);
-                //    }
-                //}
-                //else
-                //{
-                //    Console.WriteLine("No data found.");
-                //}
-                //reader.Close();
-                //Console.WriteLine("group of " + Program.mlogin + " is " + Program.mGroup);
+                    while (reader.Read())  // Duyệt từng dòng dữ liệu
+                    {
+                        if (reader["ServerRole"].ToString().Equals("AdminRole") ||
+                            reader["ServerRole"].ToString().Equals("NhanVienRole"))
+                        {
+                            Program.mGroup = reader["ServerRole"].ToString();
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No data found.");
+                }
+                reader.Close();
+                Console.WriteLine("group of " + Program.mlogin + " is " + Program.mGroup);
                 Dashboard dashboard = new Dashboard();
                 this.Hide();
                 dashboard.Show();

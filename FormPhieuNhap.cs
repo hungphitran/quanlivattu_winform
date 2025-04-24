@@ -18,37 +18,59 @@ namespace quanlyvattu
         {
             InitializeComponent();
         }
-
-        private void FormPhieuNhap_Load(object sender, EventArgs e)
+        private void dgvPhieuNhap_SelectionChanged(object sender, EventArgs e)
         {
+            if (vw_PhieuNhapDataGridView.CurrentRow != null)
+            {
+                // Debug: Print all column names
+                //foreach (DataGridViewColumn column in vw_PhieuNhapDataGridView.Columns)
+                //{
+                //    Console.WriteLine($"Column name: {column.Name}, Header: {column.HeaderText}");
+                //}
 
+                try
+                {
+                    // Get the correct column name
+                    string maPN = vw_PhieuNhapDataGridView.CurrentRow.Cells[0].Value.ToString(); // Temporarily use index 0
 
+                    // Filter data for CTPN
+                    DataView dv = new DataView(qlvtDataSet.CTPN);
+                    dv.RowFilter = $"MAPN = '{maPN}'";
+
+                    // Update DataSource for dgvCTPN
+                    cTPNDataGridView.DataSource = dv;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Debug info - Available columns: {string.Join(", ", vw_PhieuNhapDataGridView.Columns.Cast<DataGridViewColumn>().Select(c => c.Name))}");
+                    throw;
+                }
+            }
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
-        {
-            FormManager.switchForm(this, new Dashboard());
-        }
 
-        private void phieuNhapBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-
-        }
-
-        private void datHangBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-
-        }
 
         private void FormPhieuNhap_Load_1(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qlvtDataSet.vw_PhieuNhap' table. You can move, or remove it, as needed.
+            this.vw_PhieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.vw_PhieuNhapTableAdapter.Fill(this.qlvtDataSet.vw_PhieuNhap);
             // TODO: This line of code loads data into the 'qlvtDataSet.CTPN' table. You can move, or remove it, as needed.
             this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
             this.cTPNTableAdapter.Fill(this.qlvtDataSet.CTPN);
             // TODO: This line of code loads data into the 'qlvtDataSet.PhieuNhap' table. You can move, or remove it, as needed.
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             this.phieuNhapTableAdapter.Fill(this.qlvtDataSet.PhieuNhap);
+
+            // Format the DateEdit control if it exists
+            if (nGAYDateEdit != null)
+            {
+                nGAYDateEdit.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
+                nGAYDateEdit.Properties.EditFormat.FormatString = "dd-MM-yyyy";
+                nGAYDateEdit.Properties.Mask.EditMask = "dd-MM-yyyy";
+            }
+
+            vw_PhieuNhapDataGridView.SelectionChanged += dgvPhieuNhap_SelectionChanged;
 
         }
 

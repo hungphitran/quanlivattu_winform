@@ -231,6 +231,7 @@
             this.restoreWithTimeBtn.Size = new System.Drawing.Size(194, 41);
             this.restoreWithTimeBtn.TabIndex = 25;
             this.restoreWithTimeBtn.Text = "Xác nhận khôi phục";
+            this.restoreWithTimeBtn.Click += new System.EventHandler(this.restoreWithTimeBtn_Click);
             // 
             // BackupRestoreForm
             // 

@@ -473,6 +473,8 @@ namespace quanlyvattu
             // 
             // vattuDataGridView
             // 
+            this.vattuDataGridView.AllowUserToAddRows = false;
+            this.vattuDataGridView.AllowUserToDeleteRows = false;
             this.vattuDataGridView.AllowUserToOrderColumns = true;
             this.vattuDataGridView.AutoGenerateColumns = false;
             this.vattuDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

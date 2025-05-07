@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\baocaochitietnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:baocaochitietnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\formbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|c:\\users\\hung\\documents\\github\\quanlivattu_winform\\formbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F37CDEC3-A349-4BBA-94D8-10C0D2DB584F}|quanlyvattu.csproj|solutionrelative:formbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,13 +35,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BaoCaoChiTietNhap.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\BaoCaoChiTietNhap.cs",
-              "RelativeDocumentMoniker": "BaoCaoChiTietNhap.cs",
-              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\BaoCaoChiTietNhap.cs [Design]",
-              "RelativeToolTip": "BaoCaoChiTietNhap.cs [Design]",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAhwK4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T18:36:15.653Z",
+              "WhenOpened": "2025-05-07T11:00:56.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormBaoCao.cs",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormBaoCao.cs",
+              "RelativeDocumentMoniker": "FormBaoCao.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormBaoCao.cs",
+              "RelativeToolTip": "FormBaoCao.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T10:54:11.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormBaoCao.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormBaoCao.cs",
+              "RelativeDocumentMoniker": "FormBaoCao.cs",
+              "ToolTip": "C:\\Users\\hung\\Documents\\GitHub\\quanlivattu_winform\\FormBaoCao.cs [Design]",
+              "RelativeToolTip": "FormBaoCao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T10:54:06.004Z",
               "EditorCaption": " [Design]"
             }
           ]

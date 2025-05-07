@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,75 @@ namespace quanlyvattu
         private void FormDoiMatKhau_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qlvtDataSet.vw_NhanVienCoTaiKhoan' table. You can move, or remove it, as needed.
-            this.vw_NhanVienCoTaiKhoanTableAdapter.Fill(this.qlvtDataSet.vw_NhanVienCoTaiKhoan);
-            this.cmbNhanVien.Format += new ListControlConvertEventHandler(cmbNhanVien_Format);
+            if (Program.mGroup == "AdminRole")
+            {
+                this.vw_NhanVienCoTaiKhoanTableAdapter.Fill(this.qlvtDataSet.vw_NhanVienCoTaiKhoan);
+                this.cmbNhanVien.Format += new ListControlConvertEventHandler(cmbNhanVien_Format);
+            }
+            else
+            {
+                Console.WriteLine($"Current MANV: {Program.manv}");
+
+                this.vw_NhanVienCoTaiKhoanTableAdapter.Fill(this.qlvtDataSet.vw_NhanVienCoTaiKhoan);
+                this.vw_NhanVienCoTaiKhoanBindingSource.Filter = $"MANV = {Program.manv}";
+                this.cmbNhanVien.DataSource = this.vw_NhanVienCoTaiKhoanBindingSource;
+                this.cmbNhanVien.Format += new ListControlConvertEventHandler(cmbNhanVien_Format);
+                this.cmbNhanVien.ValueMember = "MANV";
+
+                if (vw_NhanVienCoTaiKhoanBindingSource.Count > 0)
+                {
+                    this.cmbNhanVien.SelectedIndex = 0; // Select the first (and only) item
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên hiện tại trong danh sách.");
+                }
+
+                this.cmbNhanVien.Enabled = false; // Disable the combo box
+            }
+
 
             this.textPass1.Properties.UseSystemPasswordChar = true;
             this.textPass2.Properties.UseSystemPasswordChar = true;
 
+        }
+        public static string GetLoginByUser(string userId)
+        {
+            try
+            {
+                String login = "";
+                // Query to get the login name for the given user ID
+                string query = $@"
+            SELECT l.loginname 
+            FROM sys.sysusers u
+            JOIN sys.syslogins l ON u.sid = l.sid
+            WHERE u.name = '{userId}'";
+
+                // Execute the query
+                SqlDataReader reader = Program.ExecSqlDataReader(query);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // Return the login name
+                         login=reader["loginname"].ToString();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No login found for the given user.");
+                }
+
+                reader.Close();
+                return login; // Return the login name
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching login for user {userId}: {ex.Message}");
+            }
+
+            return null; // Return null if no login is found
         }
 
         private void cmbNhanVien_Format(object sender, ListControlConvertEventArgs e)
@@ -49,6 +113,12 @@ namespace quanlyvattu
             String pass = this.textPass1.Text;
             String pass2 = this.textPass2.Text;
             String manv = cmbNhanVien.SelectedValue.ToString(); // Get selected employee ID
+            String login = GetLoginByUser(manv); // Get the login name for the selected user
+            if (login == null|| login.Length==0)
+            {
+                MessageBox.Show("Không tìm thấy login cho nhân viên này.");
+                return;
+            }
             if (pass != pass2)
             {
                 MessageBox.Show("Mật khẩu không khớp");
@@ -56,11 +126,11 @@ namespace quanlyvattu
             }
 
             String cmd =
-                $"use master; exec sp_DoiMatKhau @login = '{Program.mlogin}',@MatKhauCu = '{Program.password}',@MatKhauMoi = '{pass}'";
+                $"use master;  EXEC sp_password @old = '{Program.password}',\r\n     @new = '{pass}',\r\n   @loginame = '{login}'";
             int res = Program.ExecSqlNonQuery(cmd);
             if (res == 0)
             {
-                MessageBox.Show("Thay đổi mật khẩu thành công");
+                MessageBox.Show("Thay đổi mật khẩu thành công cho user "+manv+" với login "+login);
                 if (manv == Program.manv)
                 {
                     Program.password = pass;

@@ -63,6 +63,91 @@ namespace quanlyvattu
         //    this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
         //    cTPXBindingSource.RemoveFilter();
         //}
+        private bool ValidatePhieuXuatInputs(string mapx, string hotenKH, int? manv, DateTime ngay)
+        {
+            // Validate MAPX (Primary Key, nChar(8))
+            if (string.IsNullOrWhiteSpace(mapx))
+            {
+                MessageBox.Show("Mã phiếu xuất không được để trống!");
+                return false;
+            }
+            if (mapx.Length > 8)
+            {
+                MessageBox.Show("Mã phiếu xuất không được vượt quá 8 ký tự!");
+                return false;
+            }
+
+            // Validate HOTENKH (nvarchar(100))
+            if (string.IsNullOrWhiteSpace(hotenKH))
+            {
+                MessageBox.Show("Họ tên khách hàng không được để trống!");
+                return false;
+            }
+            if (hotenKH.Length > 100)
+            {
+                MessageBox.Show("Họ tên khách hàng không được vượt quá 100 ký tự!");
+                return false;
+            }
+
+            // Validate MANV (Foreign Key, int)
+            if (!manv.HasValue || manv <= 0)
+            {
+                MessageBox.Show("Mã nhân viên không hợp lệ!");
+                return false;
+            }
+
+            // Validate NGAY (Date)
+            if (ngay > DateTime.Now)
+            {
+                MessageBox.Show("Ngày không thể là ngày trong tương lai!");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateCTPXInputs(string mapx, string mavt, int soluong, float dongia)
+        {
+            // Validate MAPX (Foreign Key, nChar(8))
+            if (string.IsNullOrWhiteSpace(mapx))
+            {
+                MessageBox.Show("Mã phiếu xuất không được để trống!");
+                return false;
+            }
+            if (mapx.Length > 8)
+            {
+                MessageBox.Show("Mã phiếu xuất không được vượt quá 8 ký tự!");
+                return false;
+            }
+
+            // Validate MAVT (Foreign Key, nChar(4))
+            if (string.IsNullOrWhiteSpace(mavt))
+            {
+                MessageBox.Show("Mã vật tư không được để trống!");
+                return false;
+            }
+            if (mavt.Length > 4)
+            {
+                MessageBox.Show("Mã vật tư không được vượt quá 4 ký tự!");
+                return false;
+            }
+
+            // Validate SOLUONG (int, > 0)
+            if (soluong <= 0)
+            {
+                MessageBox.Show("Số lượng phải lớn hơn 0!");
+                return false;
+            }
+
+            // Validate DONGIA (float, >= 0)
+            if (dongia < 0)
+            {
+                MessageBox.Show("Đơn giá phải lớn hơn hoặc bằng 0!");
+                return false;
+            }
+
+            return true;
+        }
 
         private void addPhieuXuatBtn_Click(object sender, EventArgs e)
         {

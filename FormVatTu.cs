@@ -62,7 +62,7 @@ namespace quanlyvattu
             this.vattuDataGridView.CellValueChanged += VattuDataGridView_CellValueChanged;
             // Subscribe to the CurrentChanged event for BeginEdit
             this.vattuDataGridView.CellBeginEdit += VattuDataGridView_CellBeginEdit;
-            this.vattuDataGridView.CellEndEdit += VattuDataGridView_CellEndEdit;
+            //this.vattuDataGridView.CellEndEdit += VattuDataGridView_CellEndEdit;
             this.vattuDataGridView.EditingControlShowing += VattuDataGridView_EditingControlShowing;
             // Try all possible variants of the column name - debugging approach
             vattuDataGridView.Columns[3].ReadOnly = true;
@@ -103,75 +103,75 @@ namespace quanlyvattu
                 }
             }
         }
-        private void VattuDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
-                DataRow row = rowView.Row;
+        //private void VattuDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    try
+        //    {
+        //        DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
+        //        DataRow row = rowView.Row;
 
-                if (e.ColumnIndex == 0) // MAVT column
-                {
-                    String mavt = row["MAVT"].ToString().Trim();
-                    DataRow[] existingRows = qlvtDataSet.Vattu.Select($"MAVT = '{mavt}' AND NOT (MAVT = '{row["MAVT", DataRowVersion.Original]}')");
-                    if (existingRows.Length > 0)
-                    {
-                        MessageBox.Show("Mã vật tư đã tồn tại, không thể cập nhật", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        row.RejectChanges(); // Revert to the original value
-                        return;
-                    }
-                }
+        //        if (e.ColumnIndex == 0) // MAVT column
+        //        {
+        //            String mavt = row["MAVT"].ToString().Trim();
+        //            DataRow[] existingRows = qlvtDataSet.Vattu.Select($"MAVT = '{mavt}')");
+        //            if (existingRows.Length > 1)
+        //            {
+        //                MessageBox.Show("Mã vật tư đã tồn tại, không thể cập nhật", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //                row.RejectChanges(); // Revert to the original value
+        //                return;
+        //            }
+        //        }
 
-                // Get the pre-edit state from undo stack
-                if (undoStack.Count > 0)
-                {
-                    UndoAction pre = undoStack.Pop();
+        //        // Get the pre-edit state from undo stack
+        //        if (undoStack.Count > 0)
+        //        {
+        //            UndoAction pre = undoStack.Pop();
 
-                    // Check if values have actually changed
-                    bool hasChanged = false;
-                    if (pre.OldItemArray.Length == row.ItemArray.Length)
-                    {
-                        for (int i = 0; i < pre.OldItemArray.Length; i++)
-                        {
-                            // Compare each value in the arrays
-                            if (!Equals(pre.OldItemArray[i], row.ItemArray[i]))
-                            {
-                                hasChanged = true;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        hasChanged = true; // Different array lengths indicate change
-                    }
+        //            // Check if values have actually changed
+        //            bool hasChanged = false;
+        //            if (pre.OldItemArray.Length == row.ItemArray.Length)
+        //            {
+        //                for (int i = 0; i < pre.OldItemArray.Length; i++)
+        //                {
+        //                    // Compare each value in the arrays
+        //                    if (!Equals(pre.OldItemArray[i], row.ItemArray[i]))
+        //                    {
+        //                        hasChanged = true;
+        //                        break;
+        //                    }
+        //                }
+        //            }
+        //            else
+        //            {
+        //                hasChanged = true; // Different array lengths indicate change
+        //            }
 
-                    if (hasChanged)
-                    {
-                        // Only push to stack if there's an actual change
-                        undoStack.Push(new UndoAction
-                        {
-                            Action = ActionType.Update,
-                            OldItemArray = pre.OldItemArray,
-                            NewItemArray = row.ItemArray,
-                            index = pre.index
-                        });
-                        Console.WriteLine("Changes detected and saved to undo stack");
-                    }
-                    else
-                    {
-                        // No changes, put the pre-edit state back
-                        undoStack.Push(pre);
-                        Console.WriteLine("No changes detected");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi kết thúc chỉnh sửa: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //            if (hasChanged)
+        //            {
+        //                // Only push to stack if there's an actual change
+        //                undoStack.Push(new UndoAction
+        //                {
+        //                    Action = ActionType.Update,
+        //                    OldItemArray = pre.OldItemArray,
+        //                    NewItemArray = row.ItemArray,
+        //                    index = pre.index
+        //                });
+        //                Console.WriteLine("Changes detected and saved to undo stack");
+        //            }
+        //            else
+        //            {
+        //                // No changes, put the pre-edit state back
+        //                undoStack.Push(pre);
+        //                Console.WriteLine("No changes detected");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi kết thúc chỉnh sửa: " + ex.Message, "Lỗi",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
 
 
@@ -190,8 +190,8 @@ namespace quanlyvattu
                     searchInput.Text = "";
 
                     // Check for duplicates excluding the current row
-                    DataRow[] existingRows = qlvtDataSet.Vattu.Select($"MAVT = '{mavt}' AND NOT (MAVT = '{row["MAVT", DataRowVersion.Original]}')");
-                    if (existingRows.Length > 0)
+                    DataRow[] existingRows = qlvtDataSet.Vattu.Select($"MAVT = '{mavt}'");
+                    if (existingRows.Length > 1)
                     {
                         MessageBox.Show("Mã vật tư đã tồn tại, không thể cập nhật", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         row.RejectChanges(); // Revert the change
@@ -234,21 +234,10 @@ namespace quanlyvattu
                 row.EndEdit();
                 MessageBox.Show("Cập nhật thành công");
             }
-            catch (ConstraintException ex)
-            {
-                // Handle the constraint violation
-                MessageBox.Show("Không thể cập nhật vì trùng mã vật tư: " + ex.Message, "Lỗi ràng buộc",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                // Get the current row and revert changes
-                DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;
-                rowView.Row.RejectChanges();
-            }
             catch (Exception ex)
             {
                 // Handle other exceptions
-                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi",MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 // Get the current row and revert changes
                 DataRowView rowView = (DataRowView)vattuDataGridView.CurrentRow.DataBoundItem;

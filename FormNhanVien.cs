@@ -17,6 +17,11 @@ namespace quanlyvattu
         public FormNhanVien()
         {
             InitializeComponent();
+
+            this.cmndInput.KeyPress += cmndInput_KeyPress;
+            this.hoInput.KeyPress += hoInput_KeyPress;
+            this.tenInput.KeyPress += tenInput_KeyPress;
+            this.luongInput.KeyPress += luongInput_KeyPress;
         }
 
         Stack<UndoAction> undoStack = new Stack<UndoAction>();
@@ -204,37 +209,43 @@ namespace quanlyvattu
 
         private void cmndInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Nếu không phải số và không phải phím điều khiển (backspace, delete...)
+            // Only allow digits
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // chặn nhập
+                e.Handled = true; // Block invalid input
             }
         }
 
         private void hoInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Nếu ký tự nhập vào không phải chữ cái, không phải phím điều khiển và không phải dấu cách
+            // Only allow letters and spaces
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
-                e.Handled = true; // Chặn nhập
+                e.Handled = true; // Block invalid input
             }
         }
 
         private void tenInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Nếu ký tự nhập vào không phải chữ cái, không phải phím điều khiển và không phải dấu cách
+            // Only allow letters and spaces
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
-                e.Handled = true; // Chặn nhập
+                e.Handled = true; // Block invalid input
             }
         }
 
         private void luongInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Nếu ký tự nhập vào không phải chữ cái, không phải phím điều khiển và không phải dấu cách
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            // Only allow digits and one decimal point
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
-                e.Handled = true; // Chặn nhập
+                e.Handled = true; // Block invalid input
+            }
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.Contains('.'))
+            {
+                e.Handled = true;
             }
         }
 
@@ -251,55 +262,42 @@ namespace quanlyvattu
             string luongText = this.luongInput.Text.Trim();
             string ghichu = this.ghichuInput.Text.Trim();
 
-            // Kiểm tra và chuyển đổi dữ liệu
-            if (!int.TryParse(manvText, out int manv))
+            // Validate inputs
+            if (!ValidateInputs(manvText, cmnd, ho, ten, diachi, ngaysinh, luongText))
             {
-                MessageBox.Show("Mã nhân viên phải là số nguyên hợp lệ!");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(cmnd) || string.IsNullOrEmpty(ho) || string.IsNullOrEmpty(ten))
-            {
-                MessageBox.Show("Chưa nhập đủ thông tin bắt buộc (CMND, Họ, Tên)!");
-                return;
-            }
-
-            if (cmnd.Length > 12 || ho.Length > 40 || ten.Length > 10 || diachi.Length > 100)
-            {
-                MessageBox.Show("Độ dài thông tin vượt quá giới hạn (CMND: 20, Họ: 40, Tên: 10, Địa chỉ: 100 ký tự)!");
-                return;
-            }
-
-            float? luong = null;
-            if (!string.IsNullOrEmpty(luongText))
-            {
-                if (!float.TryParse(luongText, out float luongParsed))
-                {
-                    MessageBox.Show("Lương phải là số hợp lệ!");
-                    return;
-                }
-                luong = luongParsed;
+                return; // Stop execution if validation fails
             }
 
             try
             {
+                // Remove any filters to ensure all records are checked
+                nhanvienBindingSource.RemoveFilter();
+
                 // Kiểm tra MANV đã tồn tại
-                DataRow[] existingRows = qlvtDataSet.Nhanvien.Select($"MANV = {manv}");
+                DataRow[] existingRows = qlvtDataSet.Nhanvien.Select($"MANV = {manvText}");
                 if (existingRows.Length > 0)
                 {
                     MessageBox.Show("Mã nhân viên đã tồn tại, không thể thêm!");
                     return;
                 }
 
+                // Kiểm tra CMND đã tồn tại
+                DataRow[] existingCmndRows = qlvtDataSet.Nhanvien.Select($"CMND = '{cmnd}'");
+                if (existingCmndRows.Length > 0)
+                {
+                    MessageBox.Show("CMND này đã tồn tại, không thể thêm!");
+                    return;
+                }
+
                 // Tạo hàng mới cho bảng NhanVien
                 DataRow newRow = qlvtDataSet.Nhanvien.NewRow();
-                newRow["MANV"] = manv;
+                newRow["MANV"] = int.Parse(manvText);
                 newRow["CMND"] = cmnd;
                 newRow["HO"] = ho;
                 newRow["TEN"] = ten;
                 newRow["DIACHI"] = diachi;
                 newRow["NGAYSINH"] = ngaysinh.Value;
-                newRow["LUONG"] = luong.Value;
+                newRow["LUONG"] = float.Parse(luongText);
                 newRow["GHICHU"] = string.IsNullOrEmpty(ghichu) ? "" : ghichu;
                 newRow["TRANGTHAIXOA"] = 0; // Mặc định là 0 (chưa xóa)
 
@@ -318,14 +316,7 @@ namespace quanlyvattu
                 );
 
                 // Xóa các trường nhập liệu sau khi thêm thành công
-                this.manvInput.Text = "";
-                this.cmndInput.Text = "";
-                this.hoInput.Text = "";
-                this.tenInput.Text = "";
-                this.diachiInput.Text = "";
-                this.ngaysinhInput.Text = "";
-                this.luongInput.Text = "";
-                this.ghichuInput.Text = "";
+                ClearInputs();
 
                 MessageBox.Show("Thêm nhân viên thành công!");
             }
@@ -335,6 +326,116 @@ namespace quanlyvattu
                 MessageBox.Show("Lỗi khi thêm nhân viên: " + ex.Message);
             }
         }
+
+        private bool ValidateInputs(string manvText, string cmnd, string ho, string ten, string diachi, DateTime? ngaysinh, string luongText)
+        {
+            // Validate MANV
+            if (!int.TryParse(manvText, out int manv) || manv <= 0)
+            {
+                MessageBox.Show("Mã nhân viên phải là số nguyên dương hợp lệ!");
+                return false;
+            }
+
+            // Validate CMND
+            if (string.IsNullOrEmpty(cmnd))
+            {
+                MessageBox.Show("CMND không được để trống!");
+                return false;
+            }
+            if (cmnd.Length > 20 || !cmnd.All(char.IsDigit))
+            {
+                MessageBox.Show("CMND phải là số và không vượt quá 20 ký tự!");
+                return false;
+            }
+
+            // Validate Họ và Tên
+            if (string.IsNullOrEmpty(ho))
+            {
+                MessageBox.Show("Họ không được để trống!");
+                return false;
+            }
+            if (ho.Length > 40)
+            {
+                MessageBox.Show("Họ không được vượt quá 40 ký tự!");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(ten))
+            {
+                MessageBox.Show("Tên không được để trống!");
+                return false;
+            }
+            if (ten.Length > 10)
+            {
+                MessageBox.Show("Tên không được vượt quá 10 ký tự!");
+                return false;
+            }
+
+            // Validate Địa chỉ
+            if (string.IsNullOrEmpty(diachi))
+            {
+                MessageBox.Show("Địa chỉ không được để trống!");
+                return false;
+            }
+            if (diachi.Length > 100)
+            {
+                MessageBox.Show("Địa chỉ không được vượt quá 100 ký tự!");
+                return false;
+            }
+
+            // Validate Ngày sinh
+            if (!ngaysinh.HasValue)
+            {
+                MessageBox.Show("Ngày sinh không được để trống!");
+                return false;
+            }
+            if (ngaysinh.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh không thể là ngày trong tương lai!");
+                return false;
+            }
+            // Kiểm tra tuổi hợp lệ (ví dụ: ít nhất 18 tuổi)
+            if (DateTime.Now.Year - ngaysinh.Value.Year < 18)
+            {
+                MessageBox.Show("Nhân viên phải từ 18 tuổi trở lên!");
+                return false;
+            }
+
+            // Validate Lương - phải >= 7000000 theo schema
+            if (string.IsNullOrEmpty(luongText))
+            {
+                MessageBox.Show("Lương không được để trống!");
+                return false;
+            }
+
+            if (!float.TryParse(luongText, out float luong))
+            {
+                MessageBox.Show("Lương phải là số hợp lệ!");
+                return false;
+            }
+
+            if (luong < 7000000)
+            {
+                MessageBox.Show("Lương phải từ 7.000.000 đồng trở lên!");
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void ClearInputs()
+        {
+            this.manvInput.Text = "";
+            this.cmndInput.Text = "";
+            this.hoInput.Text = "";
+            this.tenInput.Text = "";
+            this.diachiInput.Text = "";
+            this.ngaysinhInput.Text = "";
+            this.luongInput.Text = "";
+            this.ghichuInput.Text = "";
+        }
+
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {

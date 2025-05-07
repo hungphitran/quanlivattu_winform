@@ -16,7 +16,6 @@ namespace quanlyvattu
             {
                 this.backupBtn.Visible = false;
                 this.creatAccBtn.Visible = false;
-                this.changePassBtn.Visible = false;
                 this.tongHopNhapXuatBtn.Visible = false;
 
             }

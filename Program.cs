@@ -172,6 +172,7 @@ namespace QLVT
                 throw;
             }
         }
+        [STAThread]
         static void Main()
         {
 

@@ -727,3 +727,4 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.pdb
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormDoiMatKhau.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.TongHopNhapXuat.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.NhanVienReport.resources
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormTaoDDH.resources

@@ -166,6 +166,12 @@
     <Compile Include="FormTaoAcc.Designer.cs">
       <DependentUpon>FormTaoAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTaoDDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoDDH.Designer.cs">
+      <DependentUpon>FormTaoDDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     <EmbeddedResource Include="FormTaoAcc.resx">
       <DependentUpon>FormTaoAcc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoDDH.resx">
+      <DependentUpon>FormTaoDDH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVatTu.resx">
       <DependentUpon>FormVatTu.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +282,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoPhieuNhap.resx">
       <DependentUpon>FormTaoPhieuNhap.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienReport.resx">
       <DependentUpon>NhanVienReport.cs</DependentUpon>

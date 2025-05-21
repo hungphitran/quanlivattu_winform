@@ -29,336 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label masoDDHLabel;
-            System.Windows.Forms.Label nGAYLabel;
-            System.Windows.Forms.Label nhaCCLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDatHang));
-            System.Windows.Forms.Label mANVLabel;
-            this.qlvtDataSet1 = new quanlyvattu.qlvtDataSet();
-            this.datHangBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.datHangTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.DatHangTableAdapter();
-            this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
-            this.cTDDHTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.CTDDHTableAdapter();
-            this.datHangBindingSource2BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.datHangBindingSource2BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.nhaCCTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nGAYDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.masoDDHTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.cTDDHGridControl = new DevExpress.XtraGrid.GridControl();
-            this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.backBut = new System.Windows.Forms.Button();
             this.notImportBtn = new DevExpress.XtraEditors.SimpleButton();
             this.importBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.nhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qlvtDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhanvienTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.NhanvienTableAdapter();
+            this.addDdhBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.qlvtDataSet1 = new quanlyvattu.qlvtDataSet();
+            this.datHangTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.DatHangTableAdapter();
+            this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
+            this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datHangDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.mANVComboBox = new System.Windows.Forms.ComboBox();
-            masoDDHLabel = new System.Windows.Forms.Label();
-            nGAYLabel = new System.Windows.Forms.Label();
-            nhaCCLabel = new System.Windows.Forms.Label();
-            mANVLabel = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cTDDHTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.CTDDHTableAdapter();
+            this.sp_BaoCaoDonDatHangChuaNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_BaoCaoDonDatHangChuaNhapTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.sp_BaoCaoDonDatHangChuaNhapTableAdapter();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTDDHDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource2BindingNavigator)).BeginInit();
-            this.datHangBindingSource2BindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaCCTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masoDDHTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_BaoCaoDonDatHangChuaNhapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // masoDDHLabel
-            // 
-            masoDDHLabel.AutoSize = true;
-            masoDDHLabel.Location = new System.Drawing.Point(58, 45);
-            masoDDHLabel.Name = "masoDDHLabel";
-            masoDDHLabel.Size = new System.Drawing.Size(70, 16);
-            masoDDHLabel.TabIndex = 0;
-            masoDDHLabel.Text = "Maso DDH:";
-            // 
-            // nGAYLabel
-            // 
-            nGAYLabel.AutoSize = true;
-            nGAYLabel.Location = new System.Drawing.Point(64, 89);
-            nGAYLabel.Name = "nGAYLabel";
-            nGAYLabel.Size = new System.Drawing.Size(43, 16);
-            nGAYLabel.TabIndex = 2;
-            nGAYLabel.Text = "NGAY:";
-            // 
-            // nhaCCLabel
-            // 
-            nhaCCLabel.AutoSize = true;
-            nhaCCLabel.Location = new System.Drawing.Point(73, 132);
-            nhaCCLabel.Name = "nhaCCLabel";
-            nhaCCLabel.Size = new System.Drawing.Size(54, 16);
-            nhaCCLabel.TabIndex = 4;
-            nhaCCLabel.Text = "Nha CC:";
-            // 
-            // qlvtDataSet1
-            // 
-            this.qlvtDataSet1.DataSetName = "qlvtDataSet";
-            this.qlvtDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // datHangBindingSource2
-            // 
-            this.datHangBindingSource2.DataMember = "DatHang";
-            this.datHangBindingSource2.DataSource = this.qlvtDataSet1;
-            // 
-            // datHangTableAdapter
-            // 
-            this.datHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CTDDHTableAdapter = this.cTDDHTableAdapter;
-            this.tableAdapterManager.CTPNTableAdapter = null;
-            this.tableAdapterManager.CTPXTableAdapter = null;
-            this.tableAdapterManager.DatHangTableAdapter = this.datHangTableAdapter;
-            this.tableAdapterManager.NhanvienTableAdapter = null;
-            this.tableAdapterManager.PhieuNhapTableAdapter = null;
-            this.tableAdapterManager.PhieuXuatTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VattuTableAdapter = null;
-            // 
-            // cTDDHTableAdapter
-            // 
-            this.cTDDHTableAdapter.ClearBeforeFill = true;
-            // 
-            // datHangBindingSource2BindingNavigator
-            // 
-            this.datHangBindingSource2BindingNavigator.AddNewItem = this.toolStripButton11;
-            this.datHangBindingSource2BindingNavigator.BindingSource = this.datHangBindingSource2;
-            this.datHangBindingSource2BindingNavigator.CountItem = this.toolStripLabel2;
-            this.datHangBindingSource2BindingNavigator.DeleteItem = this.toolStripButton12;
-            this.datHangBindingSource2BindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.datHangBindingSource2BindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.datHangBindingSource2BindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton7,
-            this.toolStripButton8,
-            this.toolStripSeparator4,
-            this.toolStripTextBox2,
-            this.toolStripLabel2,
-            this.toolStripSeparator5,
-            this.toolStripButton9,
-            this.toolStripButton10,
-            this.toolStripSeparator6,
-            this.toolStripButton11,
-            this.toolStripButton12,
-            this.datHangBindingSource2BindingNavigatorSaveItem});
-            this.datHangBindingSource2BindingNavigator.Location = new System.Drawing.Point(0, 721);
-            this.datHangBindingSource2BindingNavigator.MoveFirstItem = this.toolStripButton7;
-            this.datHangBindingSource2BindingNavigator.MoveLastItem = this.toolStripButton10;
-            this.datHangBindingSource2BindingNavigator.MoveNextItem = this.toolStripButton9;
-            this.datHangBindingSource2BindingNavigator.MovePreviousItem = this.toolStripButton8;
-            this.datHangBindingSource2BindingNavigator.Name = "datHangBindingSource2BindingNavigator";
-            this.datHangBindingSource2BindingNavigator.PositionItem = this.toolStripTextBox2;
-            this.datHangBindingSource2BindingNavigator.Size = new System.Drawing.Size(1151, 27);
-            this.datHangBindingSource2BindingNavigator.TabIndex = 0;
-            this.datHangBindingSource2BindingNavigator.Text = "bindingNavigator1";
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton11.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton11.Text = "Add new";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(45, 24);
-            this.toolStripLabel2.Text = "of {0}";
-            this.toolStripLabel2.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton12.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton12.Text = "Delete";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton7.Text = "Move first";
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton8.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton8.Text = "Move previous";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripTextBox2
-            // 
-            this.toolStripTextBox2.AccessibleName = "Position";
-            this.toolStripTextBox2.AutoSize = false;
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(50, 27);
-            this.toolStripTextBox2.Text = "0";
-            this.toolStripTextBox2.ToolTipText = "Current position";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton9.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton9.Text = "Move next";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton10.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton10.Text = "Move last";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
-            // 
-            // datHangBindingSource2BindingNavigatorSaveItem
-            // 
-            this.datHangBindingSource2BindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.datHangBindingSource2BindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("datHangBindingSource2BindingNavigatorSaveItem.Image")));
-            this.datHangBindingSource2BindingNavigatorSaveItem.Name = "datHangBindingSource2BindingNavigatorSaveItem";
-            this.datHangBindingSource2BindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
-            this.datHangBindingSource2BindingNavigatorSaveItem.Text = "Save Data";
-            this.datHangBindingSource2BindingNavigatorSaveItem.Click += new System.EventHandler(this.datHangBindingSource2BindingNavigatorSaveItem_Click);
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(mANVLabel);
-            this.groupControl1.Controls.Add(this.mANVComboBox);
-            this.groupControl1.Controls.Add(nhaCCLabel);
-            this.groupControl1.Controls.Add(this.nhaCCTextEdit);
-            this.groupControl1.Controls.Add(nGAYLabel);
-            this.groupControl1.Controls.Add(this.nGAYDateEdit);
-            this.groupControl1.Controls.Add(masoDDHLabel);
-            this.groupControl1.Controls.Add(this.masoDDHTextEdit);
-            this.groupControl1.Location = new System.Drawing.Point(12, 409);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(578, 274);
-            this.groupControl1.TabIndex = 2;
-            this.groupControl1.Text = "groupControl1";
-            // 
-            // nhaCCTextEdit
-            // 
-            this.nhaCCTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource2, "NhaCC", true));
-            this.nhaCCTextEdit.Location = new System.Drawing.Point(133, 129);
-            this.nhaCCTextEdit.Name = "nhaCCTextEdit";
-            this.nhaCCTextEdit.Size = new System.Drawing.Size(125, 22);
-            this.nhaCCTextEdit.TabIndex = 5;
-            // 
-            // nGAYDateEdit
-            // 
-            this.nGAYDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource2, "NGAY", true));
-            this.nGAYDateEdit.EditValue = null;
-            this.nGAYDateEdit.Location = new System.Drawing.Point(113, 86);
-            this.nGAYDateEdit.Name = "nGAYDateEdit";
-            this.nGAYDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYDateEdit.Size = new System.Drawing.Size(125, 22);
-            this.nGAYDateEdit.TabIndex = 3;
-            // 
-            // masoDDHTextEdit
-            // 
-            this.masoDDHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource2, "MasoDDH", true));
-            this.masoDDHTextEdit.Location = new System.Drawing.Point(134, 42);
-            this.masoDDHTextEdit.Name = "masoDDHTextEdit";
-            this.masoDDHTextEdit.Size = new System.Drawing.Size(125, 22);
-            this.masoDDHTextEdit.TabIndex = 1;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.cTDDHGridControl);
-            this.groupControl2.Location = new System.Drawing.Point(469, 409);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(662, 292);
-            this.groupControl2.TabIndex = 3;
-            this.groupControl2.Text = "groupControl2";
-            // 
-            // cTDDHGridControl
-            // 
-            this.cTDDHGridControl.DataSource = this.cTDDHBindingSource;
-            this.cTDDHGridControl.Location = new System.Drawing.Point(5, 31);
-            this.cTDDHGridControl.MainView = this.gridView4;
-            this.cTDDHGridControl.Name = "cTDDHGridControl";
-            this.cTDDHGridControl.Size = new System.Drawing.Size(652, 243);
-            this.cTDDHGridControl.TabIndex = 0;
-            this.cTDDHGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // cTDDHBindingSource
-            // 
-            this.cTDDHBindingSource.DataMember = "FK__CTDDH__MasoDDH__32E0915F";
-            this.cTDDHBindingSource.DataSource = this.datHangBindingSource2;
-            // 
-            // gridView4
-            // 
-            this.gridView4.GridControl = this.cTDDHGridControl;
-            this.gridView4.Name = "gridView4";
             // 
             // backBut
             // 
-            this.backBut.Location = new System.Drawing.Point(73, 37);
+            this.backBut.Location = new System.Drawing.Point(28, 27);
             this.backBut.Name = "backBut";
             this.backBut.Size = new System.Drawing.Size(81, 33);
             this.backBut.TabIndex = 4;
@@ -368,7 +71,7 @@
             // 
             // notImportBtn
             // 
-            this.notImportBtn.Location = new System.Drawing.Point(885, 28);
+            this.notImportBtn.Location = new System.Drawing.Point(910, 27);
             this.notImportBtn.Name = "notImportBtn";
             this.notImportBtn.Size = new System.Drawing.Size(241, 42);
             this.notImportBtn.TabIndex = 5;
@@ -377,43 +80,69 @@
             // 
             // importBtn
             // 
-            this.importBtn.Location = new System.Drawing.Point(681, 28);
+            this.importBtn.Location = new System.Drawing.Point(639, 28);
             this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(94, 41);
+            this.importBtn.Size = new System.Drawing.Size(233, 41);
             this.importBtn.TabIndex = 6;
-            this.importBtn.Text = "Nhập hàng";
+            this.importBtn.Text = "Nhập hàng cho đơn đặt hàng hiện tại";
             this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
             // 
-            // nhanvienBindingSource
+            // addDdhBtn
             // 
-            this.nhanvienBindingSource.DataMember = "Nhanvien";
-            this.nhanvienBindingSource.DataSource = this.qlvtDataSet1BindingSource;
+            this.addDdhBtn.Location = new System.Drawing.Point(355, 27);
+            this.addDdhBtn.Name = "addDdhBtn";
+            this.addDdhBtn.Size = new System.Drawing.Size(219, 41);
+            this.addDdhBtn.TabIndex = 7;
+            this.addDdhBtn.Text = "Thêm đơn đặt hàng";
+            this.addDdhBtn.Click += new System.EventHandler(this.addDdhBtn_Click);
             // 
-            // qlvtDataSet1BindingSource
+            // qlvtDataSet1
             // 
-            this.qlvtDataSet1BindingSource.DataSource = this.qlvtDataSet1;
-            this.qlvtDataSet1BindingSource.Position = 0;
+            this.qlvtDataSet1.DataSetName = "qlvtDataSet";
+            this.qlvtDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nhanvienTableAdapter
+            // datHangTableAdapter
             // 
-            this.nhanvienTableAdapter.ClearBeforeFill = true;
+            this.datHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CTDDHTableAdapter = null;
+            this.tableAdapterManager.CTPNTableAdapter = null;
+            this.tableAdapterManager.CTPXTableAdapter = null;
+            this.tableAdapterManager.DatHangTableAdapter = this.datHangTableAdapter;
+            this.tableAdapterManager.NhanvienTableAdapter = null;
+            this.tableAdapterManager.PhieuNhapTableAdapter = null;
+            this.tableAdapterManager.PhieuXuatTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
+            // 
+            // datHangBindingSource
+            // 
+            this.datHangBindingSource.DataMember = "DatHang";
+            this.datHangBindingSource.DataSource = this.qlvtDataSet1;
             // 
             // datHangDataGridView
             // 
+            this.datHangDataGridView.AllowUserToAddRows = false;
+            this.datHangDataGridView.AllowUserToDeleteRows = false;
             this.datHangDataGridView.AutoGenerateColumns = false;
+            this.datHangDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datHangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datHangDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5});
-            this.datHangDataGridView.DataSource = this.datHangBindingSource2;
-            this.datHangDataGridView.Location = new System.Drawing.Point(0, 86);
+            this.datHangDataGridView.DataSource = this.datHangBindingSource;
+            this.datHangDataGridView.Location = new System.Drawing.Point(0, 76);
+            this.datHangDataGridView.MultiSelect = false;
             this.datHangDataGridView.Name = "datHangDataGridView";
             this.datHangDataGridView.RowHeadersWidth = 51;
             this.datHangDataGridView.RowTemplate.Height = 24;
-            this.datHangDataGridView.Size = new System.Drawing.Size(1151, 323);
-            this.datHangDataGridView.TabIndex = 6;
+            this.datHangDataGridView.Size = new System.Drawing.Size(1151, 336);
+            this.datHangDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -421,7 +150,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "MasoDDH";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -429,7 +157,6 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "NGAY";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -437,79 +164,108 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "NhaCC";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "MANV";
-            this.dataGridViewTextBoxColumn5.DataSource = this.nhanvienBindingSource;
-            this.dataGridViewTextBoxColumn5.DisplayMember = "TEN";
             this.dataGridViewTextBoxColumn5.HeaderText = "MANV";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.ValueMember = "MANV";
-            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
-            // mANVLabel
+            // cTDDHBindingSource
             // 
-            mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(61, 187);
-            mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(46, 16);
-            mANVLabel.TabIndex = 6;
-            mANVLabel.Text = "MANV:";
+            this.cTDDHBindingSource.DataMember = "FK__CTDDH__MasoDDH__32E0915F";
+            this.cTDDHBindingSource.DataSource = this.datHangBindingSource;
             // 
-            // mANVComboBox
+            // cTDDHTableAdapter
             // 
-            this.mANVComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.datHangBindingSource2, "MANV", true));
-            this.mANVComboBox.FormattingEnabled = true;
-            this.mANVComboBox.Location = new System.Drawing.Point(113, 184);
-            this.mANVComboBox.Name = "mANVComboBox";
-            this.mANVComboBox.Size = new System.Drawing.Size(121, 24);
-            this.mANVComboBox.TabIndex = 7;
+            this.cTDDHTableAdapter.ClearBeforeFill = true;
+            // 
+            // sp_BaoCaoDonDatHangChuaNhapBindingSource
+            // 
+            this.sp_BaoCaoDonDatHangChuaNhapBindingSource.DataMember = "sp_BaoCaoDonDatHangChuaNhap";
+            this.sp_BaoCaoDonDatHangChuaNhapBindingSource.DataSource = this.qlvtDataSet1;
+            // 
+            // sp_BaoCaoDonDatHangChuaNhapTableAdapter
+            // 
+            this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "DONGIA";
+            this.dataGridViewTextBoxColumn9.HeaderText = "DONGIA";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn8.HeaderText = "SOLUONG";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MAVT";
+            this.dataGridViewTextBoxColumn7.HeaderText = "MAVT";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "MasoDDH";
+            this.dataGridViewTextBoxColumn6.HeaderText = "MasoDDH";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // cTDDHDataGridView
+            // 
+            this.cTDDHDataGridView.AllowUserToAddRows = false;
+            this.cTDDHDataGridView.AllowUserToDeleteRows = false;
+            this.cTDDHDataGridView.AutoGenerateColumns = false;
+            this.cTDDHDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cTDDHDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cTDDHDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.cTDDHDataGridView.DataSource = this.cTDDHBindingSource;
+            this.cTDDHDataGridView.Location = new System.Drawing.Point(0, 407);
+            this.cTDDHDataGridView.Name = "cTDDHDataGridView";
+            this.cTDDHDataGridView.ReadOnly = true;
+            this.cTDDHDataGridView.RowHeadersWidth = 51;
+            this.cTDDHDataGridView.RowTemplate.Height = 24;
+            this.cTDDHDataGridView.Size = new System.Drawing.Size(1151, 287);
+            this.cTDDHDataGridView.TabIndex = 8;
             // 
             // FormDatHang
             // 
-            this.ClientSize = new System.Drawing.Size(1151, 748);
+            this.ClientSize = new System.Drawing.Size(1171, 748);
+            this.Controls.Add(this.cTDDHDataGridView);
             this.Controls.Add(this.datHangDataGridView);
+            this.Controls.Add(this.addDdhBtn);
             this.Controls.Add(this.importBtn);
             this.Controls.Add(this.notImportBtn);
             this.Controls.Add(this.backBut);
-            this.Controls.Add(this.groupControl2);
-            this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.datHangBindingSource2BindingNavigator);
             this.Name = "FormDatHang";
-            this.Load += new System.EventHandler(this.FormDatHang_Load_2);
+            this.Load += new System.EventHandler(this.FormDatHang_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource2BindingNavigator)).EndInit();
-            this.datHangBindingSource2BindingNavigator.ResumeLayout(false);
-            this.datHangBindingSource2BindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaCCTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYDateEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masoDDHTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_BaoCaoDonDatHangChuaNhapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.BindingSource datHangBindingSource;
         private System.Windows.Forms.BindingNavigator datHangBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -555,44 +311,28 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraEditors.SimpleButton backbutton;
-        private qlvtDataSet qlvtDataSet1;
-        private System.Windows.Forms.BindingSource datHangBindingSource2;
-        private qlvtDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
-        private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator datHangBindingSource2BindingNavigator;
-        private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton datHangBindingSource2BindingNavigatorSaveItem;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.TextEdit nhaCCTextEdit;
-        private DevExpress.XtraEditors.DateEdit nGAYDateEdit;
-        private DevExpress.XtraEditors.TextEdit masoDDHTextEdit;
-        private qlvtDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
-        private System.Windows.Forms.BindingSource cTDDHBindingSource;
-        private DevExpress.XtraGrid.GridControl cTDDHGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private System.Windows.Forms.Button backBut;
         private DevExpress.XtraEditors.SimpleButton notImportBtn;
         private DevExpress.XtraEditors.SimpleButton importBtn;
-        private System.Windows.Forms.BindingSource qlvtDataSet1BindingSource;
-        private System.Windows.Forms.BindingSource nhanvienBindingSource;
-        private qlvtDataSetTableAdapters.NhanvienTableAdapter nhanvienTableAdapter;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
+        private DevExpress.XtraEditors.SimpleButton addDdhBtn;
+        private qlvtDataSet qlvtDataSet1;
+        private qlvtDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
+        private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource datHangBindingSource;
         private System.Windows.Forms.DataGridView datHangDataGridView;
+        private System.Windows.Forms.BindingSource cTDDHBindingSource;
+        private qlvtDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
+        private System.Windows.Forms.BindingSource sp_BaoCaoDonDatHangChuaNhapBindingSource;
+        private qlvtDataSetTableAdapters.sp_BaoCaoDonDatHangChuaNhapTableAdapter sp_BaoCaoDonDatHangChuaNhapTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.ComboBox mANVComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridView cTDDHDataGridView;
     }
 }

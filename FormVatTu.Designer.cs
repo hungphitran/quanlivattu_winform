@@ -486,6 +486,7 @@ namespace quanlyvattu
             this.dataGridViewTextBoxColumn4});
             this.vattuDataGridView.DataSource = this.vattuBindingSource;
             this.vattuDataGridView.Location = new System.Drawing.Point(0, 74);
+            this.vattuDataGridView.MultiSelect = false;
             this.vattuDataGridView.Name = "vattuDataGridView";
             this.vattuDataGridView.RowHeadersWidth = 51;
             this.vattuDataGridView.RowTemplate.Height = 24;

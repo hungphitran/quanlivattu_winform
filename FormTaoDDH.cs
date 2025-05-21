@@ -42,6 +42,11 @@ namespace quanlyvattu
             this.userTextEdit.Text = Program.mHoten;
             this.nhaccEditor.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
             this.maddhEditor.Text = GenerateOrderId();
+
+
+            this.nhaccEditor.Properties.MaxLength = 100;
+            maddhEditor.Properties.MaxLength = 8;
+            this.donGiaEditor.Properties.MaxLength = 8;
         }
 
 
@@ -64,7 +69,6 @@ namespace quanlyvattu
             this.cTDDHTableAdapter.Fill(this.qlvtDataSet.CTDDH);
             // TODO: This line of code loads data into the 'qlvtDataSet.Vattu' table. You can move, or remove it, as needed.
             this.vattuTableAdapter.Fill(this.qlvtDataSet.Vattu);
-
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -80,11 +84,19 @@ namespace quanlyvattu
                 Console.WriteLine(danhSachDatHang.Rows[i].Cells[0].Value.ToString());
                 seleted_vattu[i] = danhSachDatHang.Rows[i].Cells[0].Value.ToString();
             }
-            Console.WriteLine(seleted_vattu);
             String filter = $"MAVT NOT IN ('{string.Join("','", seleted_vattu)}')";
-            this.vattuBindingSource1.Filter = filter;    
-
-            Console.WriteLine("filter: " + filter);
+            this.vattuBindingSource1.Filter = filter;   
+            if(vattuBindingSource1.Count == 0)
+            {
+                this.vattuComboBox.Enabled = false;
+                this.addBtn.Enabled = false;
+            }
+            else
+            {
+                this.vattuComboBox.Enabled = true;
+                this.addBtn.Enabled = true;
+                this.vattuComboBox.SelectedIndex = 0;
+            }
         }
         private void updateTotalCost()
         {
@@ -93,7 +105,7 @@ namespace quanlyvattu
             {
                 if (row.Cells["DONGIA"].Value != null && row.Cells["SOLUONG"].Value != null)
                 {
-                    double cost = row.Cells["DONGIA"].Value.ToString().Equals("") ? 0 : double.Parse(row.Cells["DONGIA"].Value.ToString());
+                    double cost = row.Cells["DONGIA"].Value.ToString().Equals("") ? 1 : double.Parse(row.Cells["DONGIA"].Value.ToString());
                     int quantity = row.Cells["SOLUONG"].Value.ToString().Equals("") ? 0 : int.Parse(row.Cells["SOLUONG"].Value.ToString());
                     sum += cost * quantity;
                 }
@@ -115,16 +127,15 @@ namespace quanlyvattu
                 return;
             }
             int quantity = int.Parse(this.soLuongEditor.EditValue.ToString());
-            Double cost = double.Parse(this.donGiaEditor.EditValue.ToString());
+            float cost = float.Parse(this.donGiaEditor.EditValue.ToString());
             Console.WriteLine(vattu["MAVT"].ToString() + quantity + cost);
-            if (quantity > 0 && cost > 0)
+            if (quantity > 0 && cost >= 0)
             {
                 this.danhSachDatHang.Rows.Add(vattu["MAVT"].ToString(), vattu["TENVT"].ToString(), quantity, cost);
                 updateTotalCost();
                 updateVattuComboBox();
                 this.soLuongEditor.EditValue = 1;
-                this.donGiaEditor.EditValue = 1;
-                this.vattuComboBox.SelectedIndex = 0;
+                this.donGiaEditor.EditValue = 0;
             }
             else
             {
@@ -144,7 +155,7 @@ namespace quanlyvattu
                 this.danhSachDatHang.Rows[e.RowIndex].Cells["DONGIA"].Value.ToString() == "")
             {
                 MessageBox.Show("Vui lòng nhập đúng đơn giá!");
-                this.danhSachDatHang.Rows[e.RowIndex].Cells["DONGIA"].Value = 1;
+                this.danhSachDatHang.Rows[e.RowIndex].Cells["DONGIA"].Value = 0;
                 return;
             }
             if (e.ColumnIndex == 1)//soluong
@@ -158,7 +169,7 @@ namespace quanlyvattu
             if (e.ColumnIndex == 2)//dongia
             {
                 double cost = double.Parse(this.danhSachDatHang.Rows[e.RowIndex].Cells["DONGIA"].Value.ToString());
-                if (cost == null || cost <= 0)
+                if (cost == null || cost < 0)
                 {
                     MessageBox.Show("Vui lòng nhập đơn giá hợp lệ!");
                 }
@@ -205,7 +216,7 @@ namespace quanlyvattu
                 {
                     String mavt = row.Cells["MAVT"].Value.ToString();
                     int quantity = int.Parse(row.Cells["SOLUONG"].Value.ToString());
-                    double cost = double.Parse(row.Cells["DONGIA"].Value.ToString());
+                    float cost = float.Parse(row.Cells["DONGIA"].Value.ToString());
                     this.cTDDHTableAdapter.Insert(maddh, mavt, quantity, cost);
                 }
             }

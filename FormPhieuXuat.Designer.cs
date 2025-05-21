@@ -97,7 +97,7 @@
             this.tenvtLabel = new DevExpress.XtraEditors.LabelControl();
             this.inputPanel2 = new DevExpress.XtraEditors.PanelControl();
             this.ngayInput = new System.Windows.Forms.DateTimePicker();
-            this.manvInput = new DevExpress.XtraEditors.TextEdit();
+            this.nvInput = new DevExpress.XtraEditors.TextEdit();
             this.hotenkhInput = new DevExpress.XtraEditors.TextEdit();
             this.mapxInput = new DevExpress.XtraEditors.TextEdit();
             this.manvLabel = new DevExpress.XtraEditors.LabelControl();
@@ -127,7 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputPanel2)).BeginInit();
             this.inputPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manvInput.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotenkhInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapxInput.Properties)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +135,7 @@
             // mAVTLabel
             // 
             mAVTLabel.AutoSize = true;
-            mAVTLabel.Location = new System.Drawing.Point(1339, 52);
+            mAVTLabel.Location = new System.Drawing.Point(421, 25);
             mAVTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAVTLabel.Name = "mAVTLabel";
             mAVTLabel.Size = new System.Drawing.Size(46, 16);
@@ -164,7 +164,7 @@
             this.panelHeader.Controls.Add(this.backBtn);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1637, 74);
             this.panelHeader.TabIndex = 0;
@@ -195,7 +195,7 @@
             this.backBtn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.backBtn.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.backBtn.Location = new System.Drawing.Point(16, 15);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(123, 44);
             this.backBtn.TabIndex = 0;
@@ -327,7 +327,7 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 81);
-            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.phieuxuatTab;
             this.xtraTabControl1.Size = new System.Drawing.Size(1637, 822);
@@ -344,15 +344,15 @@
             this.phieuxuatTab.Controls.Add(this.reloadBtn);
             this.phieuxuatTab.Controls.Add(this.cTPXDataGridView);
             this.phieuxuatTab.Controls.Add(this.phieuXuatDataGridView1);
-            this.phieuxuatTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phieuxuatTab.Margin = new System.Windows.Forms.Padding(4);
             this.phieuxuatTab.Name = "phieuxuatTab";
             this.phieuxuatTab.Size = new System.Drawing.Size(1635, 792);
             this.phieuxuatTab.Text = "Phiếu Xuất";
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(1119, 150);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteBtn.Location = new System.Drawing.Point(930, 4);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteBtn.TabIndex = 5;
@@ -360,8 +360,8 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(967, 68);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveBtn.Location = new System.Drawing.Point(585, 4);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(100, 28);
             this.saveBtn.TabIndex = 4;
@@ -369,8 +369,8 @@
             // 
             // reloadBtn
             // 
-            this.reloadBtn.Location = new System.Drawing.Point(1120, 68);
-            this.reloadBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reloadBtn.Location = new System.Drawing.Point(753, 4);
+            this.reloadBtn.Margin = new System.Windows.Forms.Padding(4);
             this.reloadBtn.Name = "reloadBtn";
             this.reloadBtn.Size = new System.Drawing.Size(100, 28);
             this.reloadBtn.TabIndex = 3;
@@ -378,6 +378,8 @@
             // 
             // cTPXDataGridView
             // 
+            this.cTPXDataGridView.AllowUserToAddRows = false;
+            this.cTPXDataGridView.AllowUserToDeleteRows = false;
             this.cTPXDataGridView.AutoGenerateColumns = false;
             this.cTPXDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cTPXDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -387,8 +389,8 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.cTPXDataGridView.DataSource = this.cTPXBindingSource;
-            this.cTPXDataGridView.Location = new System.Drawing.Point(800, 354);
-            this.cTPXDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cTPXDataGridView.Location = new System.Drawing.Point(805, 150);
+            this.cTPXDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.cTPXDataGridView.Name = "cTPXDataGridView";
             this.cTPXDataGridView.RowHeadersWidth = 51;
             this.cTPXDataGridView.Size = new System.Drawing.Size(831, 321);
@@ -424,6 +426,8 @@
             // 
             // phieuXuatDataGridView1
             // 
+            this.phieuXuatDataGridView1.AllowUserToAddRows = false;
+            this.phieuXuatDataGridView1.AllowUserToDeleteRows = false;
             this.phieuXuatDataGridView1.AutoGenerateColumns = false;
             this.phieuXuatDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.phieuXuatDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -433,8 +437,8 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.phieuXuatDataGridView1.DataSource = this.phieuXuatBindingSource;
-            this.phieuXuatDataGridView1.Location = new System.Drawing.Point(4, 354);
-            this.phieuXuatDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phieuXuatDataGridView1.Location = new System.Drawing.Point(15, 150);
+            this.phieuXuatDataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.phieuXuatDataGridView1.Name = "phieuXuatDataGridView1";
             this.phieuXuatDataGridView1.RowHeadersWidth = 51;
             this.phieuXuatDataGridView1.Size = new System.Drawing.Size(788, 321);
@@ -486,15 +490,15 @@
             this.ctpxTab.Controls.Add(this.dongiaLabel);
             this.ctpxTab.Controls.Add(this.tenvtLabel);
             this.ctpxTab.Controls.Add(this.inputPanel2);
-            this.ctpxTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctpxTab.Margin = new System.Windows.Forms.Padding(4);
             this.ctpxTab.Name = "ctpxTab";
             this.ctpxTab.Size = new System.Drawing.Size(1635, 792);
-            this.ctpxTab.Text = "Chi Tiết Phiếu Xuất";
+            this.ctpxTab.Text = "Tạo Phiếu Xuất";
             // 
             // clearAllBtn
             // 
-            this.clearAllBtn.Location = new System.Drawing.Point(1397, 273);
-            this.clearAllBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clearAllBtn.Location = new System.Drawing.Point(424, 147);
+            this.clearAllBtn.Margin = new System.Windows.Forms.Padding(4);
             this.clearAllBtn.Name = "clearAllBtn";
             this.clearAllBtn.Size = new System.Drawing.Size(100, 28);
             this.clearAllBtn.TabIndex = 15;
@@ -503,8 +507,8 @@
             // 
             // deleteVTbtn
             // 
-            this.deleteVTbtn.Location = new System.Drawing.Point(1179, 273);
-            this.deleteVTbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteVTbtn.Location = new System.Drawing.Point(424, 91);
+            this.deleteVTbtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteVTbtn.Name = "deleteVTbtn";
             this.deleteVTbtn.Size = new System.Drawing.Size(100, 28);
             this.deleteVTbtn.TabIndex = 14;
@@ -513,8 +517,9 @@
             // 
             // totalAmoutBox
             // 
-            this.totalAmoutBox.Location = new System.Drawing.Point(1376, 682);
-            this.totalAmoutBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.totalAmoutBox.Enabled = false;
+            this.totalAmoutBox.Location = new System.Drawing.Point(175, 534);
+            this.totalAmoutBox.Margin = new System.Windows.Forms.Padding(4);
             this.totalAmoutBox.Name = "totalAmoutBox";
             this.totalAmoutBox.Size = new System.Drawing.Size(243, 23);
             this.totalAmoutBox.TabIndex = 13;
@@ -523,8 +528,8 @@
             // 
             this.totalLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.Appearance.Options.UseFont = true;
-            this.totalLabel.Location = new System.Drawing.Point(1215, 682);
-            this.totalLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.totalLabel.Location = new System.Drawing.Point(14, 529);
+            this.totalLabel.Margin = new System.Windows.Forms.Padding(4);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(134, 28);
             this.totalLabel.TabIndex = 12;
@@ -532,16 +537,18 @@
             // 
             // addPhieuXuatBtn
             // 
-            this.addPhieuXuatBtn.Location = new System.Drawing.Point(623, 251);
-            this.addPhieuXuatBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addPhieuXuatBtn.Location = new System.Drawing.Point(432, 525);
+            this.addPhieuXuatBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addPhieuXuatBtn.Name = "addPhieuXuatBtn";
             this.addPhieuXuatBtn.Size = new System.Drawing.Size(143, 52);
             this.addPhieuXuatBtn.TabIndex = 11;
-            this.addPhieuXuatBtn.Text = "Thêm Phiếu Xuất";
+            this.addPhieuXuatBtn.Text = "Tạo Phiếu Xuất";
             this.addPhieuXuatBtn.Click += new System.EventHandler(this.addPhieuXuatBtn_Click);
             // 
             // tempDataGridView
             // 
+            this.tempDataGridView.AllowUserToAddRows = false;
+            this.tempDataGridView.AllowUserToDeleteRows = false;
             this.tempDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tempDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tempDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -550,11 +557,12 @@
             this.SOLUONG,
             this.DONGIA,
             this.THANHTIEN});
-            this.tempDataGridView.Location = new System.Drawing.Point(15, 358);
-            this.tempDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tempDataGridView.Location = new System.Drawing.Point(659, 0);
+            this.tempDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.tempDataGridView.Name = "tempDataGridView";
+            this.tempDataGridView.ReadOnly = true;
             this.tempDataGridView.RowHeadersWidth = 51;
-            this.tempDataGridView.Size = new System.Drawing.Size(1605, 305);
+            this.tempDataGridView.Size = new System.Drawing.Size(951, 577);
             this.tempDataGridView.TabIndex = 10;
             this.tempDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.tempDataGridView_CellEndEdit);
             // 
@@ -563,35 +571,40 @@
             this.MAVT.HeaderText = "MÃ VẬT TƯ";
             this.MAVT.MinimumWidth = 6;
             this.MAVT.Name = "MAVT";
+            this.MAVT.ReadOnly = true;
             // 
             // TENVT
             // 
             this.TENVT.HeaderText = "TÊN VẬT TƯ";
             this.TENVT.MinimumWidth = 6;
             this.TENVT.Name = "TENVT";
+            this.TENVT.ReadOnly = true;
             // 
             // SOLUONG
             // 
             this.SOLUONG.HeaderText = "SỐ LƯỢNG";
             this.SOLUONG.MinimumWidth = 6;
             this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
             // 
             // DONGIA
             // 
             this.DONGIA.HeaderText = "ĐƠN GIÁ";
             this.DONGIA.MinimumWidth = 6;
             this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
             // 
             // THANHTIEN
             // 
             this.THANHTIEN.HeaderText = "THÀNH TIỀN";
             this.THANHTIEN.MinimumWidth = 6;
             this.THANHTIEN.Name = "THANHTIEN";
+            this.THANHTIEN.ReadOnly = true;
             // 
             // addvattuBtn
             // 
-            this.addvattuBtn.Location = new System.Drawing.Point(1363, 151);
-            this.addvattuBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addvattuBtn.Location = new System.Drawing.Point(116, 177);
+            this.addvattuBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addvattuBtn.Name = "addvattuBtn";
             this.addvattuBtn.Size = new System.Drawing.Size(204, 55);
             this.addvattuBtn.TabIndex = 9;
@@ -600,25 +613,27 @@
             // 
             // dongiaInput
             // 
-            this.dongiaInput.Location = new System.Drawing.Point(979, 191);
-            this.dongiaInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dongiaInput.EditValue = "0";
+            this.dongiaInput.Location = new System.Drawing.Point(116, 118);
+            this.dongiaInput.Margin = new System.Windows.Forms.Padding(4);
             this.dongiaInput.Name = "dongiaInput";
-            this.dongiaInput.Size = new System.Drawing.Size(180, 22);
+            this.dongiaInput.Size = new System.Drawing.Size(204, 22);
             this.dongiaInput.TabIndex = 8;
             // 
             // soluongInput
             // 
-            this.soluongInput.Location = new System.Drawing.Point(979, 121);
-            this.soluongInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.soluongInput.EditValue = "1";
+            this.soluongInput.Location = new System.Drawing.Point(116, 72);
+            this.soluongInput.Margin = new System.Windows.Forms.Padding(4);
             this.soluongInput.Name = "soluongInput";
-            this.soluongInput.Size = new System.Drawing.Size(180, 22);
+            this.soluongInput.Size = new System.Drawing.Size(204, 22);
             this.soluongInput.TabIndex = 7;
             // 
             // mAVTTextBox
             // 
             this.mAVTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vattuBindingSource2, "MAVT", true));
-            this.mAVTTextBox.Location = new System.Drawing.Point(1397, 50);
-            this.mAVTTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mAVTTextBox.Location = new System.Drawing.Point(475, 23);
+            this.mAVTTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mAVTTextBox.Name = "mAVTTextBox";
             this.mAVTTextBox.Size = new System.Drawing.Size(132, 23);
             this.mAVTTextBox.TabIndex = 6;
@@ -633,8 +648,8 @@
             this.vattuComboBox.DataSource = this.vattuBindingSource2;
             this.vattuComboBox.DisplayMember = "TENVT";
             this.vattuComboBox.FormattingEnabled = true;
-            this.vattuComboBox.Location = new System.Drawing.Point(979, 52);
-            this.vattuComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vattuComboBox.Location = new System.Drawing.Point(116, 20);
+            this.vattuComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.vattuComboBox.Name = "vattuComboBox";
             this.vattuComboBox.Size = new System.Drawing.Size(300, 24);
             this.vattuComboBox.TabIndex = 4;
@@ -642,8 +657,8 @@
             // 
             // soluongLabel
             // 
-            this.soluongLabel.Location = new System.Drawing.Point(848, 124);
-            this.soluongLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.soluongLabel.Location = new System.Drawing.Point(29, 75);
+            this.soluongLabel.Margin = new System.Windows.Forms.Padding(4);
             this.soluongLabel.Name = "soluongLabel";
             this.soluongLabel.Size = new System.Drawing.Size(54, 16);
             this.soluongLabel.TabIndex = 3;
@@ -651,8 +666,8 @@
             // 
             // dongiaLabel
             // 
-            this.dongiaLabel.Location = new System.Drawing.Point(848, 191);
-            this.dongiaLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dongiaLabel.Location = new System.Drawing.Point(29, 118);
+            this.dongiaLabel.Margin = new System.Windows.Forms.Padding(4);
             this.dongiaLabel.Name = "dongiaLabel";
             this.dongiaLabel.Size = new System.Drawing.Size(45, 16);
             this.dongiaLabel.TabIndex = 2;
@@ -660,8 +675,8 @@
             // 
             // tenvtLabel
             // 
-            this.tenvtLabel.Location = new System.Drawing.Point(848, 58);
-            this.tenvtLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tenvtLabel.Location = new System.Drawing.Point(29, 26);
+            this.tenvtLabel.Margin = new System.Windows.Forms.Padding(4);
             this.tenvtLabel.Name = "tenvtLabel";
             this.tenvtLabel.Size = new System.Drawing.Size(65, 16);
             this.tenvtLabel.TabIndex = 1;
@@ -670,65 +685,67 @@
             // inputPanel2
             // 
             this.inputPanel2.Controls.Add(this.ngayInput);
-            this.inputPanel2.Controls.Add(this.manvInput);
+            this.inputPanel2.Controls.Add(this.nvInput);
             this.inputPanel2.Controls.Add(this.hotenkhInput);
             this.inputPanel2.Controls.Add(this.mapxInput);
             this.inputPanel2.Controls.Add(this.manvLabel);
             this.inputPanel2.Controls.Add(this.hotenkhLabel);
             this.inputPanel2.Controls.Add(this.ngayLabel);
             this.inputPanel2.Controls.Add(this.mapxLabel);
-            this.inputPanel2.Location = new System.Drawing.Point(15, 33);
-            this.inputPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputPanel2.Location = new System.Drawing.Point(15, 313);
+            this.inputPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.inputPanel2.Name = "inputPanel2";
             this.inputPanel2.Size = new System.Drawing.Size(560, 192);
             this.inputPanel2.TabIndex = 0;
             // 
             // ngayInput
             // 
+            this.ngayInput.Enabled = false;
             this.ngayInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayInput.Location = new System.Drawing.Point(197, 81);
-            this.ngayInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ngayInput.Location = new System.Drawing.Point(197, 68);
+            this.ngayInput.Margin = new System.Windows.Forms.Padding(4);
             this.ngayInput.Name = "ngayInput";
-            this.ngayInput.Size = new System.Drawing.Size(265, 23);
+            this.ngayInput.Size = new System.Drawing.Size(226, 23);
             this.ngayInput.TabIndex = 7;
             // 
-            // manvInput
+            // nvInput
             // 
-            this.manvInput.Location = new System.Drawing.Point(197, 161);
-            this.manvInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.manvInput.Name = "manvInput";
-            this.manvInput.Size = new System.Drawing.Size(133, 22);
-            this.manvInput.TabIndex = 6;
+            this.nvInput.Enabled = false;
+            this.nvInput.Location = new System.Drawing.Point(197, 161);
+            this.nvInput.Margin = new System.Windows.Forms.Padding(4);
+            this.nvInput.Name = "nvInput";
+            this.nvInput.Size = new System.Drawing.Size(226, 22);
+            this.nvInput.TabIndex = 6;
             // 
             // hotenkhInput
             // 
             this.hotenkhInput.Location = new System.Drawing.Point(197, 118);
-            this.hotenkhInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hotenkhInput.Margin = new System.Windows.Forms.Padding(4);
             this.hotenkhInput.Name = "hotenkhInput";
-            this.hotenkhInput.Size = new System.Drawing.Size(133, 22);
+            this.hotenkhInput.Size = new System.Drawing.Size(226, 22);
             this.hotenkhInput.TabIndex = 5;
             // 
             // mapxInput
             // 
             this.mapxInput.Location = new System.Drawing.Point(197, 27);
-            this.mapxInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mapxInput.Margin = new System.Windows.Forms.Padding(4);
             this.mapxInput.Name = "mapxInput";
-            this.mapxInput.Size = new System.Drawing.Size(133, 22);
+            this.mapxInput.Size = new System.Drawing.Size(226, 22);
             this.mapxInput.TabIndex = 4;
             // 
             // manvLabel
             // 
             this.manvLabel.Location = new System.Drawing.Point(20, 169);
-            this.manvLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.manvLabel.Margin = new System.Windows.Forms.Padding(4);
             this.manvLabel.Name = "manvLabel";
-            this.manvLabel.Size = new System.Drawing.Size(79, 16);
+            this.manvLabel.Size = new System.Drawing.Size(89, 16);
             this.manvLabel.TabIndex = 3;
-            this.manvLabel.Text = "Mã Nhân Viên";
+            this.manvLabel.Text = "Người lập phiếu";
             // 
             // hotenkhLabel
             // 
             this.hotenkhLabel.Location = new System.Drawing.Point(20, 118);
-            this.hotenkhLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hotenkhLabel.Margin = new System.Windows.Forms.Padding(4);
             this.hotenkhLabel.Name = "hotenkhLabel";
             this.hotenkhLabel.Size = new System.Drawing.Size(67, 16);
             this.hotenkhLabel.TabIndex = 2;
@@ -737,7 +754,7 @@
             // ngayLabel
             // 
             this.ngayLabel.Location = new System.Drawing.Point(20, 73);
-            this.ngayLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ngayLabel.Margin = new System.Windows.Forms.Padding(4);
             this.ngayLabel.Name = "ngayLabel";
             this.ngayLabel.Size = new System.Drawing.Size(87, 16);
             this.ngayLabel.TabIndex = 1;
@@ -746,7 +763,7 @@
             // mapxLabel
             // 
             this.mapxLabel.Location = new System.Drawing.Point(20, 27);
-            this.mapxLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mapxLabel.Margin = new System.Windows.Forms.Padding(4);
             this.mapxLabel.Name = "mapxLabel";
             this.mapxLabel.Size = new System.Drawing.Size(82, 16);
             this.mapxLabel.TabIndex = 0;
@@ -760,7 +777,7 @@
             this.ClientSize = new System.Drawing.Size(1637, 896);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPhieuXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Phiếu Xuất";
@@ -790,7 +807,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.inputPanel2)).EndInit();
             this.inputPanel2.ResumeLayout(false);
             this.inputPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manvInput.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotenkhInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapxInput.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -860,7 +877,7 @@
         private DevExpress.XtraEditors.TextEdit dongiaInput;
         private DevExpress.XtraEditors.TextEdit soluongInput;
         private System.Windows.Forms.DateTimePicker ngayInput;
-        private DevExpress.XtraEditors.TextEdit manvInput;
+        private DevExpress.XtraEditors.TextEdit nvInput;
         private DevExpress.XtraEditors.TextEdit hotenkhInput;
         private DevExpress.XtraEditors.TextEdit mapxInput;
         private System.Windows.Forms.DataGridView tempDataGridView;

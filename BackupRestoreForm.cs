@@ -92,15 +92,14 @@ namespace quanlyvattu
                 if (!IsValidRestoreTime(pointInTime))
                     return;
 
-                // Get the backup time of the selected row
-                int selectedRowIndex = sp_DanhSachBackUpDataGridView.CurrentCell.RowIndex;
-                DateTime backupTime = Convert.ToDateTime(sp_DanhSachBackUpDataGridView.Rows[selectedRowIndex].Cells[0].Value);
+                DateTime oldestbackupTime = Convert.ToDateTime(sp_DanhSachBackUpDataGridView.Rows[sp_DanhSachBackUpDataGridView.Rows.Count-1].Cells[0].Value);
+                Console.WriteLine(oldestbackupTime);
 
-                // Ensure the restore time is after the backup time
-                if (pointInTime <= backupTime)
+                //Ensure the restore time is after the backup time
+                if (pointInTime < oldestbackupTime)
                 {
                     MessageBox.Show(
-                        $"Thời điểm phục hồi phải sau thời điểm sao lưu ({backupTime:dd/MM/yyyy HH:mm:ss}).",
+                        $"Thời điểm phục hồi phải sau thời điểm sao lưu ({oldestbackupTime:dd/MM/yyyy HH:mm:ss}).",
                         "Lỗi",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -108,8 +107,9 @@ namespace quanlyvattu
                 }
 
                 // Ensure the restore time is at least 1 minute before the current time
-                if (pointInTime >= DateTime.Now.AddMinutes(-1))
+                if (pointInTime > DateTime.Now.AddMinutes(-1))
                 {
+                    Console.WriteLine(pointInTime + " " + DateTime.Now.AddMinutes(-1));
                     MessageBox.Show(
                         "Thời điểm phục hồi phải trước thời điểm hiện tại ít nhất 1 phút.",
                         "Lỗi",
@@ -138,7 +138,9 @@ namespace quanlyvattu
                         $"USE master; EXEC sp_PhucHoiCSDL_TheoThoiGian " +
                         $"@path=N'C:\\backup\\{deviceName}.bak', " +
                         $"@datetime='{formattedDateTime}'");
-
+                    Console.WriteLine(res +" "+ $"USE master; EXEC sp_PhucHoiCSDL_TheoThoiGian " +
+                        $"@path=N'C:\\backup\\{deviceName}.bak', " +
+                        $"@datetime='{formattedDateTime}'");
                     Cursor = Cursors.Default;
 
                     // Notify the user of the result
@@ -200,7 +202,7 @@ namespace quanlyvattu
                 {
                     if (row.Cells[0].Value != null)
                     {
-                        DateTime backupTime = Convert.ToDateTime(row.Cells[0].Value);
+                        DateTime backupTime = Convert.ToDateTime(sp_DanhSachBackUpDataGridView.Rows[row.Index].Cells[0].Value);
                         if (backupTime < oldestBackup)
                             oldestBackup = backupTime;
                     }

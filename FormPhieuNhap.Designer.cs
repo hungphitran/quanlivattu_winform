@@ -34,7 +34,7 @@
             System.Windows.Forms.Label masoDDHLabel;
             System.Windows.Forms.Label tenNhanVienLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPhieuNhap));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datHangBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -70,7 +70,6 @@
             this.add = new System.Windows.Forms.ToolStripMenuItem();
             this.delete = new System.Windows.Forms.ToolStripMenuItem();
             this.backBut = new System.Windows.Forms.Button();
-            this.addBtn = new DevExpress.XtraEditors.SimpleButton();
             this.vw_PhieuNhapTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.vw_PhieuNhapTableAdapter();
             this.vw_PhieuNhapDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -401,21 +400,21 @@
             // edit
             // 
             this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(210, 24);
+            this.edit.Size = new System.Drawing.Size(112, 24);
             this.edit.Text = "sửa";
             this.edit.ToolTipText = "Sửa";
             // 
             // add
             // 
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(210, 24);
+            this.add.Size = new System.Drawing.Size(112, 24);
             this.add.Text = "thêm";
             this.add.ToolTipText = "Thêm";
             // 
             // delete
             // 
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(210, 24);
+            this.delete.Size = new System.Drawing.Size(112, 24);
             this.delete.Text = "xóa";
             // 
             // backBut
@@ -427,14 +426,6 @@
             this.backBut.Text = "Quay lại";
             this.backBut.UseVisualStyleBackColor = true;
             this.backBut.Click += new System.EventHandler(this.backBut_Click);
-            // 
-            // addBtn
-            // 
-            this.addBtn.Location = new System.Drawing.Point(695, 12);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(142, 29);
-            this.addBtn.TabIndex = 4;
-            this.addBtn.Text = "Thêm phiếu nhập";
             // 
             // vw_PhieuNhapTableAdapter
             // 
@@ -468,8 +459,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NGAY";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "NGAY";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -493,7 +484,6 @@
             // 
             this.ClientSize = new System.Drawing.Size(1084, 746);
             this.Controls.Add(this.vw_PhieuNhapDataGridView);
-            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.backBut);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -544,7 +534,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.BindingSource cTPNBindingSource;
         private System.Windows.Forms.Button backBut;
-        private DevExpress.XtraEditors.SimpleButton addBtn;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem edit;
         private System.Windows.Forms.ToolStripMenuItem add;

@@ -110,6 +110,8 @@
             // 
             // sp_DanhSachBackUpDataGridView
             // 
+            this.sp_DanhSachBackUpDataGridView.AllowUserToAddRows = false;
+            this.sp_DanhSachBackUpDataGridView.AllowUserToDeleteRows = false;
             this.sp_DanhSachBackUpDataGridView.AutoGenerateColumns = false;
             this.sp_DanhSachBackUpDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.sp_DanhSachBackUpDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -120,7 +122,9 @@
             this.dataGridViewTextBoxColumn8});
             this.sp_DanhSachBackUpDataGridView.DataSource = this.sp_DanhSachBackUpBindingSource;
             this.sp_DanhSachBackUpDataGridView.Location = new System.Drawing.Point(3, 78);
+            this.sp_DanhSachBackUpDataGridView.MultiSelect = false;
             this.sp_DanhSachBackUpDataGridView.Name = "sp_DanhSachBackUpDataGridView";
+            this.sp_DanhSachBackUpDataGridView.ReadOnly = true;
             this.sp_DanhSachBackUpDataGridView.RowHeadersWidth = 51;
             this.sp_DanhSachBackUpDataGridView.RowTemplate.Height = 24;
             this.sp_DanhSachBackUpDataGridView.Size = new System.Drawing.Size(1198, 307);

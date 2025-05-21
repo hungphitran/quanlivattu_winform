@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraCharts.Native;
+using DevExpress.XtraRichEdit.Model;
 using QLVT;
 using System;
 using System.Collections.Generic;
@@ -15,161 +16,147 @@ namespace quanlyvattu
 {
     public partial class FormTaoPhieuNhap : Form
     {
-        public FormTaoPhieuNhap()
+        int[] maxSoluong;
+        float[] maxDongia ;
+        public FormTaoPhieuNhap(String maddh)
         {
             InitializeComponent();
-        }
+            this.nhanvienEditor.EditValue = Program.mHoten;
 
-        private bool ValidatePhieuNhapInputs(string mapn, string masoDDH, int? manv, DateTime ngay)
-        {
-            // Validate MAPN (Primary Key, nChar(8))
-            if (string.IsNullOrWhiteSpace(mapn))
-            {
-                MessageBox.Show("Mã phiếu nhập không được để trống!");
-                return false;
-            }
-            if (mapn.Length > 8)
-            {
-                MessageBox.Show("Mã phiếu nhập không được vượt quá 8 ký tự!");
-                return false;
-            }
-
-            // Validate MasoDDH (Foreign Key, Unique, nvarchar(8))
-            if (string.IsNullOrWhiteSpace(masoDDH))
-            {
-                MessageBox.Show("Mã số đơn đặt hàng không được để trống!");
-                return false;
-            }
-            if (masoDDH.Length > 8)
-            {
-                MessageBox.Show("Mã số đơn đặt hàng không được vượt quá 8 ký tự!");
-                return false;
-            }
-
-            // Validate MANV (Foreign Key, int)
-            if (!manv.HasValue || manv <= 0)
-            {
-                MessageBox.Show("Mã nhân viên không hợp lệ!");
-                return false;
-            }
-
-            // Validate NGAY (Date)
-            if (ngay > DateTime.Now)
-            {
-                MessageBox.Show("Ngày không thể là ngày trong tương lai!");
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool ValidateCTPNInputs(string mapn, string mavt, int soluong, float dongia)
-        {
-            // Validate MAPN (Foreign Key, nChar(8))
-            if (string.IsNullOrWhiteSpace(mapn))
-            {
-                MessageBox.Show("Mã phiếu nhập không được để trống!");
-                return false;
-            }
-            if (mapn.Length > 8)
-            {
-                MessageBox.Show("Mã phiếu nhập không được vượt quá 8 ký tự!");
-                return false;
-            }
-
-            // Validate MAVT (Foreign Key, nChar(4))
-            if (string.IsNullOrWhiteSpace(mavt))
-            {
-                MessageBox.Show("Mã vật tư không được để trống!");
-                return false;
-            }
-            if (mavt.Length > 4)
-            {
-                MessageBox.Show("Mã vật tư không được vượt quá 4 ký tự!");
-                return false;
-            }
-
-            // Validate SOLUONG (int, > 0)
-            if (soluong <= 0)
-            {
-                MessageBox.Show("Số lượng phải lớn hơn 0!");
-                return false;
-            }
-
-            // Validate DONGIA (float, >= 0)
-            if (dongia < 0)
-            {
-                MessageBox.Show("Đơn giá phải lớn hơn hoặc bằng 0!");
-                return false;
-            }
-
-            return true;
-        }
-
-        private void NhapVatTu_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'qlvtDataSet.CTDDH' table. You can move, or remove it, as needed.
-            this.cTDDHTableAdapter.Fill(this.qlvtDataSet.CTDDH);
-            // TODO: This line of code loads data into the 'qlvtDataSet.PhieuNhap' table. You can move, or remove it, as needed.
-            this.phieuNhapTableAdapter.Fill(this.qlvtDataSet.PhieuNhap);
-            // TODO: This line of code loads data into the 'qlvtDataSet.sp_BaoCaoDonDatHangChuaNhap' table. You can move, or remove it, as needed.
+            this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Fill(this.qlvtDataSet.sp_BaoCaoDonDatHangChuaNhap);
-            
-            this.ngayInput.Value = DateTime.Now;
-            this.manvInput.Text = Program.manv;
-            this.manvInput.Enabled = false;
+            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.datHangTableAdapter.Fill(this.qlvtDataSet.DatHang);
+            this.datHangBindingSource.DataSource = this.qlvtDataSet.DatHang;
+            this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTDDHTableAdapter.Fill(this.qlvtDataSet.CTDDH);
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Fill(this.qlvtDataSet.PhieuNhap);
+            this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPNTableAdapter.Fill(this.qlvtDataSet.CTPN);
+
+
+            this.datHangBindingSource.Filter = $"MasoDDH = '{maddh}'";
+
+            this.maPNEditor.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToUppercase_NoSpace;
+            this.maPNEditor.Properties.MaxLength = 8;
+
+            this.cTDDHDataGridView.EditingControlShowing += cTDDHDataGridView_EditingControlShowing;
+            this.cTDDHDataGridView.CellEndEdit += cTDDHDataGridView_CellEndEdit;
+
+            DataRow[] dataRows = qlvtDataSet.CTDDH.Select($"MasoDDH = '{maddh}'");
+
+            maxDongia= new float[dataRows.Length];
+            maxSoluong = new int[dataRows.Length];
+            foreach (DataRow row in dataRows)
+            {
+                maxSoluong[Array.IndexOf(dataRows, row)] = int.Parse(row["SOLUONG"].ToString());
+                maxDongia[Array.IndexOf(dataRows, row)] = float.Parse(row["DONGIA"].ToString());
+            }
+        }
+        private void cTDDHDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            //// Remove any existing handler to avoid attaching multiple times
+            e.Control.KeyPress -= KeyPressConstraint.KeyPress_OnlyDigits;
+
+            if (cTDDHDataGridView.CurrentCell.ColumnIndex == 2)//soluong
+            {
+                // Attach your custom KeyPress event handler
+                e.Control.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+            }
+            else if (cTDDHDataGridView.CurrentCell.ColumnIndex == 3)//dongia
+            {
+                // Attach your custom KeyPress event handler
+                e.Control.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+            }
+        }
+
+        private void cTDDHDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                if (cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString().Trim() == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đúng số lượng!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value = maxSoluong[e.RowIndex];
+                    return;
+                }
+                int soluong = int.Parse(cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+                if (soluong==0 || soluong > maxSoluong[e.RowIndex])
+                {
+                    MessageBox.Show("số lượng không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value = maxSoluong[e.RowIndex];
+                }
+            }
+            else
+            {
+                if(cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString().Trim() == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đúng đơn giá!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value = maxDongia[e.RowIndex];
+                    return;
+                }
+                int dongia = int.Parse(cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
+                if (dongia == 0 )
+                {
+                    MessageBox.Show("đơn giá không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value = maxDongia[e.RowIndex];
+                }
+            }
         }
 
         private void backBtn_Click(object sender, EventArgs e)
         {
-            FormManager.switchForm(this, new Dashboard());
+            FormManager.switchForm(this, new FormDatHang());
         }
-
-        private void ngayInput_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void addBtn_Click(object sender, EventArgs e)
         {
-            string mapn = mapnInput.Text.Trim();
             string masoDDH = masoDDHTextEdit.Text.Trim();
-            int? manv = int.TryParse(manvInput.Text.Trim(), out int parsedManv) ? parsedManv : (int?)null;
-            DateTime ngay = ngayInput.Value;
-
-            if (!ValidatePhieuNhapInputs(mapn, masoDDH, manv, ngay))
+            int manv = int.Parse(Program.manv);
+            DateTime ngay = dateTimePicker.Value;
+            String mapn = this.maPNEditor.EditValue.ToString().Trim();
+            if (mapn.Length == 0 || mapn.Length > 8)
             {
-                return; // Stop execution if validation fails
-            }
-
-            DataTable ctphieuNhapTable = new DataTable();
-            ctphieuNhapTable.Columns.Add("MAVT", typeof(string));
-            ctphieuNhapTable.Columns.Add("SOLUONG", typeof(int));
-            ctphieuNhapTable.Columns.Add("DONGIA", typeof(float));
-
-            foreach (DataGridViewRow row in ctphieuNhapTable.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    string mavt = row.Cells["MAVT"].Value.ToString();
-                    int soluong = int.Parse(row.Cells["SOLUONG"].Value.ToString());
-                    float dongia = float.Parse(row.Cells["DONGIA"].Value.ToString());
-
-                    if (!ValidateCTPNInputs(mapn, mavt, soluong, dongia))
-                    {
-                        return; // Stop execution if validation fails
-                    }
-
-                    ctphieuNhapTable.Rows.Add(mavt, soluong, dongia);
-                }
-            }
-
-            if (ctphieuNhapTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng thêm ít nhất một vật tư vào phiếu nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã phiếu nhập không hợp lệ");
                 return;
             }
 
+            if (this.qlvtDataSet.PhieuNhap.FindByMAPN(mapn) != null)
+            {
+                MessageBox.Show("Mã phiếu nhập đã tồn tại");
+                return;
+            }
+
+
+
+
+            qlvtDataSet.CTPNDataTable ctphieuNhapTable = new qlvtDataSet.CTPNDataTable();
+            HashSet<string> addedVatTu = new HashSet<string>();
+            foreach (DataGridViewRow row in cTDDHDataGridView.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                string mavt = row.Cells[1].Value.ToString();
+                if (addedVatTu.Contains(mavt)) continue;
+
+                // Kiểm tra trùng trong database
+                bool exists = false;
+                using (SqlCommand cmdCheck = new SqlCommand(
+                    "SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
+                {
+                    cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
+                    cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+                    int count = (int)cmdCheck.ExecuteScalar();
+                    if (count > 0) exists = true;
+                }
+                if (exists) continue; // Bỏ qua nếu đã tồn tại trong DB
+
+                int soluong = int.Parse(row.Cells[2].Value.ToString());
+                float dongia = float.Parse(row.Cells[3].Value.ToString());
+
+                ctphieuNhapTable.Rows.Add(mapn, mavt, soluong, dongia);
+                addedVatTu.Add(mavt);
+            }
             try
             {
                 using (SqlCommand cmd = new SqlCommand("phieu_nhap_hang", Program.conn))
@@ -180,17 +167,75 @@ namespace quanlyvattu
                     cmd.Parameters.AddWithValue("@NGAY", ngay.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@MasoDDH", masoDDH);
                     cmd.Parameters.AddWithValue("@MANV", manv);
+                    int result = cmd.ExecuteNonQuery();
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Lỗi khi thêm phiếu nhập");
+                        return;
+                    }
+                    else
+                    {
+                        // Thay vì dùng: int check = cTPNTableAdapter.Update(ctphieuNhapTable);
+                        bool hasError = false;
+                        foreach (DataRow row in ctphieuNhapTable.Rows)
+                        {
+                            string mavt = row["MAVT"].ToString();
+                            int soluong = int.Parse(row["SOLUONG"].ToString());
+                            float dongia = float.Parse(row["DONGIA"].ToString());
 
-                    SqlParameter ctphieuNhapParam = cmd.Parameters.AddWithValue("@CTPN", ctphieuNhapTable);
-                    ctphieuNhapParam.SqlDbType = SqlDbType.Structured;
-                    ctphieuNhapParam.TypeName = "dbo.Type_CTPN";
+                            // Kiểm tra lại lần nữa trước khi insert
+                            using (SqlCommand cmdCheck = new SqlCommand(
+                                "SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
+                            {
+                                cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
+                                cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+                                int count = (int)cmdCheck.ExecuteScalar();
+                                if (count > 0) continue; // Đã tồn tại, bỏ qua
+                            }
 
-                    cmd.ExecuteNonQuery();
+                            using (SqlCommand cmdInsert = new SqlCommand(
+                                "INSERT INTO CTPN (MAPN, MAVT, SOLUONG, DONGIA) VALUES (@MAPN, @MAVT, @SL, @DG)", Program.conn))
+                            {
+                                cmdInsert.Parameters.AddWithValue("@MAPN", mapn);
+                                cmdInsert.Parameters.AddWithValue("@MAVT", mavt);
+                                cmdInsert.Parameters.AddWithValue("@SL", soluong);
+                                cmdInsert.Parameters.AddWithValue("@DG", dongia);
+                                try
+                                {
+                                    cmdInsert.ExecuteNonQuery();
+                                }
+                                catch
+                                {
+                                    hasError = true;
+                                }
+                            }
+                        }
+                        if (hasError)
+                        {
+                            MessageBox.Show("Có lỗi khi thêm một số chi tiết phiếu nhập.");
+                        }
+                        else
+                        {
+                            // Cập nhật số lượng vật tư
+                            foreach (DataRow row in ctphieuNhapTable.Rows)
+                            {
+                                string mavt = row["MAVT"].ToString();
+                                int soluong = int.Parse(row["SOLUONG"].ToString());
+
+                                using (SqlCommand cmdUpdate = new SqlCommand(
+                                    "UPDATE VATTU SET SOLUONGTON = SOLUONGTON + @SL WHERE MAVT = @MAVT", Program.conn))
+                                {
+                                    cmdUpdate.Parameters.AddWithValue("@SL", soluong);
+                                    cmdUpdate.Parameters.AddWithValue("@MAVT", mavt);
+                                    cmdUpdate.ExecuteNonQuery();
+                                }
+                            }
+
+                            MessageBox.Show("Phiếu nhập đã được tạo thành công!");
+                            FormManager.switchForm(this, new FormDatHang());
+                        }
+                    }
                 }
-
-                MessageBox.Show("Phiếu nhập đã được tạo thành công!");
-                mapnInput.Text = "";
-                masoDDHTextEdit.Text = "";
             }
             catch (Exception ex)
             {
@@ -198,6 +243,13 @@ namespace quanlyvattu
             }
         }
 
+        private void FormTaoPhieuNhap_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qlvtDataSet.CTPN' table. You can move, or remove it, as needed.
+            this.cTPNTableAdapter.Fill(this.qlvtDataSet.CTPN);
+            // TODO: This line of code loads data into the 'qlvtDataSet.PhieuNhap' table. You can move, or remove it, as needed.
+            this.phieuNhapTableAdapter.Fill(this.qlvtDataSet.PhieuNhap);
 
+        }
     }
 }

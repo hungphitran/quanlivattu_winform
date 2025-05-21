@@ -79,5 +79,9 @@ namespace quanlyvattu
             FormManager.switchForm(this, new Dashboard());
         }
 
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            //FormManager.switchForm(this, new FormTaoPhieuNhap());
+        }
     }
 }

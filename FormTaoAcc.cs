@@ -66,7 +66,7 @@ namespace quanlyvattu
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FormManager.switchForm(this, new FormNhanVien());
+            FormManager.switchForm(this, new Dashboard());
         }
 
         private void FormTaoAcc_Load(object sender, EventArgs e)

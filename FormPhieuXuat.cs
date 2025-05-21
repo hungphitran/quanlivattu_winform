@@ -18,7 +18,13 @@ namespace quanlyvattu
         public FormPhieuXuat()
         {
             InitializeComponent();
- 
+            this.nvInput.Text = Program.mHoten;
+            this.mapxInput.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToUppercase_NoSpace;
+            this.soluongInput.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+            this.dongiaInput.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+            this.mapxInput.Properties.MaxLength = 8;
+            this.soluongInput.Properties.MaxLength = 10;
+            this.dongiaInput.Properties.MaxLength = 10;
         }
 
 
@@ -154,7 +160,16 @@ namespace quanlyvattu
             string mapx = mapxInput.Text.Trim();
             string ngay = ngayInput.Value.ToString("yyyy-MM-dd");
             string hotenkh = hotenkhInput.Text.Trim();
-            string manv = manvInput.Text.Trim();
+            string manv = Program.manv.ToString();
+
+            // Validate inputs before proceeding
+            if (string.IsNullOrWhiteSpace(mapx) || string.IsNullOrWhiteSpace(hotenkh) ||
+                string.IsNullOrWhiteSpace(manv))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin phiếu xuất.", "Thiếu thông tin",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (Program.connectDB() == 0)
             {
@@ -169,20 +184,20 @@ namespace quanlyvattu
 
             foreach (DataGridViewRow row in tempDataGridView.Rows)
             {
-                if (!row.IsNewRow)
+                if (!row.IsNewRow && row.Cells["MAVT"].Value != null)
                 {
                     string mavt = row.Cells["MAVT"].Value.ToString();
-                    int soluong = int.Parse(row.Cells["SOLUONG"].Value.ToString());
-                    double dongia = double.Parse(row.Cells["DONGIA"].Value.ToString());
+                    int soluong = Convert.ToInt32(row.Cells["SOLUONG"].Value);
+                    double dongia = Convert.ToDouble(row.Cells["DONGIA"].Value);
 
                     ctpxTable.Rows.Add(mavt, soluong, dongia);
                 }
             }
 
-
             if (ctpxTable.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng thêm ít nhất một vật tư vào phiếu xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng thêm ít nhất một vật tư vào phiếu xuất.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -191,32 +206,105 @@ namespace quanlyvattu
                 using (SqlCommand cmd = new SqlCommand("phieu_xuat_hang", Program.conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     cmd.Parameters.AddWithValue("@MAPX", mapx);
                     cmd.Parameters.AddWithValue("@NGAY", ngay);
                     cmd.Parameters.AddWithValue("@HOTENKH", hotenkh);
                     cmd.Parameters.AddWithValue("@MANV", manv);
 
+                    Console.WriteLine("command: " + cmd.CommandText);
+
                     SqlParameter ctpxParam = cmd.Parameters.AddWithValue("@CTPX", ctpxTable);
                     ctpxParam.SqlDbType = SqlDbType.Structured;
                     ctpxParam.TypeName = "dbo.Type_CTPX";
+                    Program.conn.InfoMessage += (s, ev) =>
+                    {
+                        foreach (SqlError err in ev.Errors)
+                        {
+                            Console.WriteLine("SQL Message: " + err.Message);
+                        }
+                    };
 
-                    cmd.ExecuteNonQuery();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    Console.WriteLine("rowsAffected: " + rowsAffected);
+
+                    MessageBox.Show("Thêm phiếu xuất thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Clear form fields
+                    mapxInput.Text = "";
+                    hotenkhInput.Text = "";
+                    nvInput.Text = Program.mHoten;  // Reset to current user
+                    tempDataGridView.Rows.Clear();
+
+                    // Reset comboboxes and total amount
+                    UpdateTotalAmount();
+                    updateComboBox();
+
+                    // Refresh the datasets to show the newly added record
+                    this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
+                    this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
                 }
-
-                MessageBox.Show("Thêm phiếu xuất thành công!");
-                mapxInput.Text = "";
-                hotenkhInput.Text = "";
-                manvInput.Text = "";
-                tempDataGridView.Rows.Clear();
-
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Lỗi SQL khi thêm phiếu xuất: " + sqlEx.Message +
+                    "\nError Code: " + sqlEx.Number, "Lỗi Database",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm phiếu xuất: " + ex.Message);
+                MessageBox.Show("Lỗi khi thêm phiếu xuất: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        private void updateComboBox()
+        {
+            // Check if there are any rows to filter
+            if (tempDataGridView.Rows.Count == 0 ||
+                tempDataGridView.Rows[0].Cells["MAVT"].Value == null)
+            {
+                vattuBindingSource2.RemoveFilter();
+                return;
+            }
+
+            // Build a list of MAVT values
+            List<string> mavtValues = new List<string>();
+            foreach (DataGridViewRow row in tempDataGridView.Rows)
+            {
+                if (row.Cells["MAVT"].Value != null)
+                {
+                    mavtValues.Add(row.Cells["MAVT"].Value.ToString());
+                }
+            }
+
+            // Create a properly formatted filter string
+            if (mavtValues.Count > 0)
+            {
+                string filter = "MAVT NOT IN (";
+                foreach (string mavt in mavtValues)
+                {
+                    filter += "'" + mavt + "',";
+                }
+                // Remove the last comma and close the parenthesis
+                filter = filter.TrimEnd(',') + ")";
+                vattuBindingSource2.Filter = filter;
+                if(vattuBindingSource2.Count == 0)
+                {
+                    this.addvattuBtn.Enabled = false;
+                    vattuComboBox.SelectedIndex = -1; // No selection
+                }
+                else
+                {
+                    this.addvattuBtn.Enabled = true;
+                    vattuComboBox.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                vattuBindingSource2.RemoveFilter();
+            }
+        }
 
         private void addvattuBtn_Click(object sender, EventArgs e)
         {
@@ -249,11 +337,10 @@ namespace quanlyvattu
             tempDataGridView.Rows.Add(mavt, tenVT, soLuong, donGia, thanhTien);
 
             UpdateTotalAmount();
+            updateComboBox();
+            soluongInput.Text = "1";
+            dongiaInput.Text = "1";
 
-            soluongInput.Text = "";
-            dongiaInput.Text = "";
-            vattuComboBox.SelectedIndex = -1;
-            mAVTTextBox.Text = "";
         }
 
 
@@ -282,6 +369,8 @@ namespace quanlyvattu
 
                 // Cập nhật lại tổng thành tiền sau khi xóa
                 UpdateTotalAmount();
+                updateComboBox();
+
             }
             else
             {
@@ -306,6 +395,7 @@ namespace quanlyvattu
 
                     // Cập nhật lại tổng thành tiền
                     UpdateTotalAmount();
+                    updateComboBox();
                 }
                 else
                 {
@@ -326,6 +416,8 @@ namespace quanlyvattu
 
                 // Cập nhật lại tổng tiền về 0
                 UpdateTotalAmount();
+                // Cập nhật lại ComboBox vật tư
+                vattuBindingSource2.RemoveFilter();
             }
         }
     }

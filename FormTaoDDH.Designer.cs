@@ -194,7 +194,7 @@
             // 
             // donGiaEditor
             // 
-            this.donGiaEditor.EditValue = "1";
+            this.donGiaEditor.EditValue = "0";
             this.donGiaEditor.Location = new System.Drawing.Point(140, 160);
             this.donGiaEditor.Name = "donGiaEditor";
             this.donGiaEditor.Size = new System.Drawing.Size(191, 22);

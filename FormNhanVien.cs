@@ -93,15 +93,19 @@ namespace quanlyvattu
             DataRowView rowView = (DataRowView)nhanvienDataGridView.CurrentRow.DataBoundItem;
             DataRow row = rowView.Row;
 
-            // Kiểm tra trùng CMND khi sửa cột CMND (giả sử cột CMND là cột thứ 2)
-            if (e.ColumnIndex == 2)
+            // Kiểm tra trùng CMND khi sửa cột CMND 
+            if (e.ColumnIndex == 1)// cột CMND
             {
-                string cmnd = row["CMND"].ToString();
+                string cmnd = row["CMND"].ToString().Trim();
                 nhanvienBindingSource.RemoveFilter();
                 DataRow[] existingRows = qlvtDataSet.Nhanvien.Select($"CMND = '{cmnd}' AND MANV <> '{row["MANV"]}'");
+                Console.WriteLine("CMND: " + cmnd + " - " + existingRows.Length);
                 if (existingRows.Length > 0)
                 {
                     MessageBox.Show("CMND này đã tồn tại, không thể cập nhật.");
+                    // Phục hồi giá trị cũ
+                    row.ItemArray = undoStack.Pop().OldItemArray;
+                    nhanvienBindingSource.Position = 0;
                     return;
                 }
             }
@@ -121,7 +125,6 @@ namespace quanlyvattu
                 );
             }
 
-            Console.WriteLine("Giá trị cũ: " + string.Join(",", undoStack.Peek().OldItemArray));
             row.EndEdit();
 
             MessageBox.Show("Cập nhật thành công");
@@ -439,7 +442,6 @@ namespace quanlyvattu
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Delete button clicked");
             if (nhanvienBindingSource.Current != null)
             {
                 var currentRow = (DataRowView)nhanvienBindingSource.Current;
@@ -448,9 +450,6 @@ namespace quanlyvattu
                 // Get the current row's MAVT value
                 Console.WriteLine("MANV: " + manv);
 
-
-                //if (checkDeleteable(mavt))
-                //{
                     // Confirm deletion
                     var result = MessageBox.Show($"Bạn có chắc muốn xóa nhân viên {nhanvienRow.HO} {nhanvienRow.TEN}?", "Xác nhận xóa", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
@@ -469,11 +468,6 @@ namespace quanlyvattu
                         nhanvienRow.Delete();
                         MessageBox.Show("Xóa nhân viên thành công");
                     }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Không thể xóa vật tư đã được nhập hay xuất!");
-                //}
             }
             else
             {
@@ -491,5 +485,6 @@ namespace quanlyvattu
             FormBaoCao form = new FormBaoCao(new NhanVienReport());
             form.Show();
         }
+
     }
 }

@@ -18,8 +18,6 @@ namespace quanlyvattu
             this.sqlDataSource1.Queries[0].Parameters[0].Value = new DevExpress.DataAccess.Expression($"'{tu:yyyy-MM-dd}'", typeof(DateTime));
             this.sqlDataSource1.Queries[0].Parameters[1].Value = new DevExpress.DataAccess.Expression($"'{den:yyyy-MM-dd}'", typeof(DateTime));
 
-
-
             this.Parameters["TuNgay"].Value = $"{tu:dd-MM-yyyy}";
             this.Parameters["DenNgay"].Value = $"{den:dd-MM-yyyy}";
             this.Parameters["TuNgay"].Visible = false;

@@ -29,31 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mANVLabel;
-            System.Windows.Forms.Label cMNDLabel;
-            System.Windows.Forms.Label hOLabel;
-            System.Windows.Forms.Label tENLabel;
-            System.Windows.Forms.Label nGAYSINHLabel;
-            System.Windows.Forms.Label lUONGLabel;
-            System.Windows.Forms.Label gHICHULabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
             this.nhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhanvienTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.NhanvienTableAdapter();
             this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
-            this.nhanvienBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.nhanvienBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.nhanvienDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,14 +42,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mANVSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.cMNDTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.lUONGSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.gHICHUTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.backBtn = new DevExpress.XtraEditors.SimpleButton();
             this.reloadBtn = new DevExpress.XtraEditors.SimpleButton();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
@@ -91,29 +62,12 @@
             this.ghichuInput = new DevExpress.XtraEditors.TextEdit();
             this.ngaysinhInput = new DevExpress.XtraEditors.DateEdit();
             this.luongInput = new DevExpress.XtraEditors.TextEdit();
-            this.labelDIACHI = new System.Windows.Forms.Label();
-            this.diachiInput = new DevExpress.XtraEditors.TextEdit();
             this.nhanVienReportBtn = new DevExpress.XtraEditors.SimpleButton();
-            mANVLabel = new System.Windows.Forms.Label();
-            cMNDLabel = new System.Windows.Forms.Label();
-            hOLabel = new System.Windows.Forms.Label();
-            tENLabel = new System.Windows.Forms.Label();
-            nGAYSINHLabel = new System.Windows.Forms.Label();
-            lUONGLabel = new System.Windows.Forms.Label();
-            gHICHULabel = new System.Windows.Forms.Label();
+            this.diachiInput = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingNavigator)).BeginInit();
-            this.nhanvienBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMNDTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manvInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmndInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoInput.Properties)).BeginInit();
@@ -124,76 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.luongInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diachiInput.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mANVLabel
-            // 
-            mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(35, 450);
-            mANVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(49, 16);
-            mANVLabel.TabIndex = 2;
-            mANVLabel.Text = "MANV:";
-            // 
-            // cMNDLabel
-            // 
-            cMNDLabel.AutoSize = true;
-            cMNDLabel.Location = new System.Drawing.Point(295, 450);
-            cMNDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            cMNDLabel.Name = "cMNDLabel";
-            cMNDLabel.Size = new System.Drawing.Size(50, 16);
-            cMNDLabel.TabIndex = 4;
-            cMNDLabel.Text = "CMND:";
-            // 
-            // hOLabel
-            // 
-            hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(55, 498);
-            hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(30, 16);
-            hOLabel.TabIndex = 6;
-            hOLabel.Text = "HO:";
-            // 
-            // tENLabel
-            // 
-            tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(308, 498);
-            tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(38, 16);
-            tENLabel.TabIndex = 8;
-            tENLabel.Text = "TEN:";
-            // 
-            // nGAYSINHLabel
-            // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(1, 545);
-            nGAYSINHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(80, 16);
-            nGAYSINHLabel.TabIndex = 10;
-            nGAYSINHLabel.Text = "NGAYSINH:";
-            // 
-            // lUONGLabel
-            // 
-            lUONGLabel.AutoSize = true;
-            lUONGLabel.Location = new System.Drawing.Point(287, 545);
-            lUONGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lUONGLabel.Name = "lUONGLabel";
-            lUONGLabel.Size = new System.Drawing.Size(57, 16);
-            lUONGLabel.TabIndex = 12;
-            lUONGLabel.Text = "LUONG:";
-            // 
-            // gHICHULabel
-            // 
-            gHICHULabel.AutoSize = true;
-            gHICHULabel.Location = new System.Drawing.Point(20, 591);
-            gHICHULabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            gHICHULabel.Name = "gHICHULabel";
-            gHICHULabel.Size = new System.Drawing.Size(62, 16);
-            gHICHULabel.TabIndex = 14;
-            gHICHULabel.Text = "GHICHU:";
             // 
             // qlvtDataSet
             // 
@@ -222,134 +106,11 @@
             this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VattuTableAdapter = null;
             // 
-            // nhanvienBindingNavigator
-            // 
-            this.nhanvienBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.nhanvienBindingNavigator.BindingSource = this.nhanvienBindingSource;
-            this.nhanvienBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.nhanvienBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.nhanvienBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.nhanvienBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.nhanvienBindingNavigatorSaveItem});
-            this.nhanvienBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.nhanvienBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.nhanvienBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.nhanvienBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.nhanvienBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.nhanvienBindingNavigator.Name = "nhanvienBindingNavigator";
-            this.nhanvienBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.nhanvienBindingNavigator.Size = new System.Drawing.Size(1428, 27);
-            this.nhanvienBindingNavigator.TabIndex = 0;
-            this.nhanvienBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // nhanvienBindingNavigatorSaveItem
-            // 
-            this.nhanvienBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.nhanvienBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("nhanvienBindingNavigatorSaveItem.Image")));
-            this.nhanvienBindingNavigatorSaveItem.Name = "nhanvienBindingNavigatorSaveItem";
-            this.nhanvienBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
-            this.nhanvienBindingNavigatorSaveItem.Text = "Save Data";
-            this.nhanvienBindingNavigatorSaveItem.Click += new System.EventHandler(this.nhanvienBindingNavigatorSaveItem_Click);
-            // 
             // nhanvienDataGridView
             // 
+            this.nhanvienDataGridView.AllowUserToAddRows = false;
+            this.nhanvienDataGridView.AllowUserToDeleteRows = false;
+            this.nhanvienDataGridView.AllowUserToOrderColumns = true;
             this.nhanvienDataGridView.AutoGenerateColumns = false;
             this.nhanvienDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.nhanvienDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -361,14 +122,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewCheckBoxColumn1});
+            this.dataGridViewTextBoxColumn8});
             this.nhanvienDataGridView.DataSource = this.nhanvienBindingSource;
             this.nhanvienDataGridView.Location = new System.Drawing.Point(0, 119);
-            this.nhanvienDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nhanvienDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.nhanvienDataGridView.MultiSelect = false;
             this.nhanvienDataGridView.Name = "nhanvienDataGridView";
             this.nhanvienDataGridView.RowHeadersWidth = 51;
-            this.nhanvienDataGridView.Size = new System.Drawing.Size(1401, 281);
+            this.nhanvienDataGridView.Size = new System.Drawing.Size(1401, 295);
             this.nhanvienDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -427,99 +188,10 @@
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "TRANGTHAIXOA";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "TRANGTHAIXOA";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
-            // mANVSpinEdit
-            // 
-            this.mANVSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "MANV", true));
-            this.mANVSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.mANVSpinEdit.Location = new System.Drawing.Point(97, 447);
-            this.mANVSpinEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.mANVSpinEdit.Name = "mANVSpinEdit";
-            this.mANVSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.mANVSpinEdit.Size = new System.Drawing.Size(133, 24);
-            this.mANVSpinEdit.TabIndex = 3;
-            // 
-            // cMNDTextEdit
-            // 
-            this.cMNDTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "CMND", true));
-            this.cMNDTextEdit.Location = new System.Drawing.Point(359, 447);
-            this.cMNDTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cMNDTextEdit.Name = "cMNDTextEdit";
-            this.cMNDTextEdit.Size = new System.Drawing.Size(133, 22);
-            this.cMNDTextEdit.TabIndex = 5;
-            // 
-            // hOTextEdit
-            // 
-            this.hOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "HO", true));
-            this.hOTextEdit.Location = new System.Drawing.Point(97, 495);
-            this.hOTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.hOTextEdit.Name = "hOTextEdit";
-            this.hOTextEdit.Size = new System.Drawing.Size(133, 22);
-            this.hOTextEdit.TabIndex = 7;
-            // 
-            // tENTextEdit
-            // 
-            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "TEN", true));
-            this.tENTextEdit.Location = new System.Drawing.Point(359, 495);
-            this.tENTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tENTextEdit.Name = "tENTextEdit";
-            this.tENTextEdit.Size = new System.Drawing.Size(133, 22);
-            this.tENTextEdit.TabIndex = 9;
-            // 
-            // nGAYSINHDateEdit
-            // 
-            this.nGAYSINHDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "NGAYSINH", true));
-            this.nGAYSINHDateEdit.EditValue = null;
-            this.nGAYSINHDateEdit.Location = new System.Drawing.Point(97, 542);
-            this.nGAYSINHDateEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nGAYSINHDateEdit.Name = "nGAYSINHDateEdit";
-            this.nGAYSINHDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Size = new System.Drawing.Size(133, 22);
-            this.nGAYSINHDateEdit.TabIndex = 11;
-            // 
-            // lUONGSpinEdit
-            // 
-            this.lUONGSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "LUONG", true));
-            this.lUONGSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.lUONGSpinEdit.Location = new System.Drawing.Point(359, 542);
-            this.lUONGSpinEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lUONGSpinEdit.Name = "lUONGSpinEdit";
-            this.lUONGSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lUONGSpinEdit.Size = new System.Drawing.Size(133, 24);
-            this.lUONGSpinEdit.TabIndex = 13;
-            // 
-            // gHICHUTextEdit
-            // 
-            this.gHICHUTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanvienBindingSource, "GHICHU", true));
-            this.gHICHUTextEdit.Location = new System.Drawing.Point(97, 587);
-            this.gHICHUTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gHICHUTextEdit.Name = "gHICHUTextEdit";
-            this.gHICHUTextEdit.Size = new System.Drawing.Size(133, 22);
-            this.gHICHUTextEdit.TabIndex = 15;
-            // 
             // backBtn
             // 
             this.backBtn.Location = new System.Drawing.Point(24, 55);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(100, 28);
             this.backBtn.TabIndex = 16;
@@ -529,7 +201,7 @@
             // reloadBtn
             // 
             this.reloadBtn.Location = new System.Drawing.Point(256, 55);
-            this.reloadBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reloadBtn.Margin = new System.Windows.Forms.Padding(4);
             this.reloadBtn.Name = "reloadBtn";
             this.reloadBtn.Size = new System.Drawing.Size(100, 28);
             this.reloadBtn.TabIndex = 17;
@@ -538,8 +210,8 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(491, 55);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveBtn.Location = new System.Drawing.Point(390, 55);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(100, 28);
             this.saveBtn.TabIndex = 18;
@@ -548,8 +220,8 @@
             // 
             // undoBtn
             // 
-            this.undoBtn.Location = new System.Drawing.Point(711, 55);
-            this.undoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.undoBtn.Location = new System.Drawing.Point(530, 55);
+            this.undoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Size = new System.Drawing.Size(100, 28);
             this.undoBtn.TabIndex = 19;
@@ -558,18 +230,20 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(359, 591);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteBtn.Appearance.BackColor = System.Drawing.Color.Red;
+            this.deleteBtn.Appearance.Options.UseBackColor = true;
+            this.deleteBtn.Location = new System.Drawing.Point(1196, 53);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(133, 28);
+            this.deleteBtn.Size = new System.Drawing.Size(205, 28);
             this.deleteBtn.TabIndex = 20;
-            this.deleteBtn.Text = "Xóa nhân viên";
+            this.deleteBtn.Text = "Xóa nhân viên đang chọn";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // labelMANV
             // 
             this.labelMANV.AutoSize = true;
-            this.labelMANV.Location = new System.Drawing.Point(763, 450);
+            this.labelMANV.Location = new System.Drawing.Point(319, 443);
             this.labelMANV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMANV.Name = "labelMANV";
             this.labelMANV.Size = new System.Drawing.Size(86, 16);
@@ -579,7 +253,7 @@
             // labelCMND
             // 
             this.labelCMND.AutoSize = true;
-            this.labelCMND.Location = new System.Drawing.Point(1157, 450);
+            this.labelCMND.Location = new System.Drawing.Point(768, 446);
             this.labelCMND.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCMND.Name = "labelCMND";
             this.labelCMND.Size = new System.Drawing.Size(47, 16);
@@ -589,7 +263,7 @@
             // labelHO
             // 
             this.labelHO.AutoSize = true;
-            this.labelHO.Location = new System.Drawing.Point(767, 497);
+            this.labelHO.Location = new System.Drawing.Point(323, 490);
             this.labelHO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHO.Name = "labelHO";
             this.labelHO.Size = new System.Drawing.Size(25, 16);
@@ -599,7 +273,7 @@
             // labelTEN
             // 
             this.labelTEN.AutoSize = true;
-            this.labelTEN.Location = new System.Drawing.Point(1161, 497);
+            this.labelTEN.Location = new System.Drawing.Point(772, 493);
             this.labelTEN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTEN.Name = "labelTEN";
             this.labelTEN.Size = new System.Drawing.Size(31, 16);
@@ -609,7 +283,7 @@
             // labelNGAYSINH
             // 
             this.labelNGAYSINH.AutoSize = true;
-            this.labelNGAYSINH.Location = new System.Drawing.Point(767, 544);
+            this.labelNGAYSINH.Location = new System.Drawing.Point(323, 537);
             this.labelNGAYSINH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNGAYSINH.Name = "labelNGAYSINH";
             this.labelNGAYSINH.Size = new System.Drawing.Size(67, 16);
@@ -619,7 +293,7 @@
             // labelLUONG
             // 
             this.labelLUONG.AutoSize = true;
-            this.labelLUONG.Location = new System.Drawing.Point(1161, 545);
+            this.labelLUONG.Location = new System.Drawing.Point(772, 541);
             this.labelLUONG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLUONG.Name = "labelLUONG";
             this.labelLUONG.Size = new System.Drawing.Size(44, 16);
@@ -629,7 +303,7 @@
             // labelGHICHU
             // 
             this.labelGHICHU.AutoSize = true;
-            this.labelGHICHU.Location = new System.Drawing.Point(767, 602);
+            this.labelGHICHU.Location = new System.Drawing.Point(323, 595);
             this.labelGHICHU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelGHICHU.Name = "labelGHICHU";
             this.labelGHICHU.Size = new System.Drawing.Size(51, 16);
@@ -638,64 +312,64 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(1165, 590);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addBtn.Location = new System.Drawing.Point(617, 629);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(157, 43);
+            this.addBtn.Size = new System.Drawing.Size(157, 30);
             this.addBtn.TabIndex = 28;
             this.addBtn.Text = "THÊM NHÂN VIÊN";
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // manvInput
             // 
-            this.manvInput.Location = new System.Drawing.Point(888, 447);
-            this.manvInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.manvInput.Location = new System.Drawing.Point(444, 440);
+            this.manvInput.Margin = new System.Windows.Forms.Padding(4);
             this.manvInput.Name = "manvInput";
-            this.manvInput.Size = new System.Drawing.Size(133, 22);
+            this.manvInput.Size = new System.Drawing.Size(186, 22);
             this.manvInput.TabIndex = 29;
             // 
             // cmndInput
             // 
             this.cmndInput.EditValue = "";
-            this.cmndInput.Location = new System.Drawing.Point(1245, 447);
-            this.cmndInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmndInput.Location = new System.Drawing.Point(856, 443);
+            this.cmndInput.Margin = new System.Windows.Forms.Padding(4);
             this.cmndInput.Name = "cmndInput";
             this.cmndInput.Properties.MaxLength = 12;
-            this.cmndInput.Size = new System.Drawing.Size(133, 22);
+            this.cmndInput.Size = new System.Drawing.Size(165, 22);
             this.cmndInput.TabIndex = 30;
             this.cmndInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmndInput_KeyPress);
             // 
             // hoInput
             // 
-            this.hoInput.Location = new System.Drawing.Point(888, 497);
-            this.hoInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hoInput.Location = new System.Drawing.Point(444, 490);
+            this.hoInput.Margin = new System.Windows.Forms.Padding(4);
             this.hoInput.Name = "hoInput";
-            this.hoInput.Size = new System.Drawing.Size(133, 22);
+            this.hoInput.Size = new System.Drawing.Size(186, 22);
             this.hoInput.TabIndex = 31;
             this.hoInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hoInput_KeyPress);
             // 
             // tenInput
             // 
-            this.tenInput.Location = new System.Drawing.Point(1245, 494);
-            this.tenInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tenInput.Location = new System.Drawing.Point(856, 490);
+            this.tenInput.Margin = new System.Windows.Forms.Padding(4);
             this.tenInput.Name = "tenInput";
-            this.tenInput.Size = new System.Drawing.Size(133, 22);
+            this.tenInput.Size = new System.Drawing.Size(165, 22);
             this.tenInput.TabIndex = 32;
             this.tenInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tenInput_KeyPress);
             // 
             // ghichuInput
             // 
-            this.ghichuInput.Location = new System.Drawing.Point(888, 594);
-            this.ghichuInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ghichuInput.Location = new System.Drawing.Point(444, 587);
+            this.ghichuInput.Margin = new System.Windows.Forms.Padding(4);
             this.ghichuInput.Name = "ghichuInput";
-            this.ghichuInput.Size = new System.Drawing.Size(133, 22);
+            this.ghichuInput.Size = new System.Drawing.Size(186, 22);
             this.ghichuInput.TabIndex = 35;
             // 
             // ngaysinhInput
             // 
             this.ngaysinhInput.EditValue = null;
-            this.ngaysinhInput.Location = new System.Drawing.Point(888, 542);
-            this.ngaysinhInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ngaysinhInput.Location = new System.Drawing.Point(444, 535);
+            this.ngaysinhInput.Margin = new System.Windows.Forms.Padding(4);
             this.ngaysinhInput.Name = "ngaysinhInput";
             this.ngaysinhInput.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -704,39 +378,21 @@
             this.ngaysinhInput.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.ngaysinhInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.ngaysinhInput.Properties.MaskSettings.Set("mask", "dd/MM/yyy");
-            this.ngaysinhInput.Size = new System.Drawing.Size(179, 22);
+            this.ngaysinhInput.Size = new System.Drawing.Size(186, 22);
             this.ngaysinhInput.TabIndex = 36;
             this.ngaysinhInput.EditValueChanged += new System.EventHandler(this.ngaysinhInput_EditValueChanged);
             // 
             // luongInput
             // 
-            this.luongInput.Location = new System.Drawing.Point(1245, 542);
-            this.luongInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.luongInput.Location = new System.Drawing.Point(856, 538);
+            this.luongInput.Margin = new System.Windows.Forms.Padding(4);
             this.luongInput.Name = "luongInput";
             this.luongInput.Properties.DisplayFormat.FormatString = "n3";
             this.luongInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.luongInput.Properties.EditFormat.FormatString = "n3";
             this.luongInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.luongInput.Size = new System.Drawing.Size(133, 22);
+            this.luongInput.Size = new System.Drawing.Size(165, 22);
             this.luongInput.TabIndex = 37;
-            // 
-            // labelDIACHI
-            // 
-            this.labelDIACHI.AutoSize = true;
-            this.labelDIACHI.Location = new System.Drawing.Point(609, 450);
-            this.labelDIACHI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDIACHI.Name = "labelDIACHI";
-            this.labelDIACHI.Size = new System.Drawing.Size(47, 16);
-            this.labelDIACHI.TabIndex = 38;
-            this.labelDIACHI.Text = "Địa chỉ";
-            // 
-            // diachiInput
-            // 
-            this.diachiInput.Location = new System.Drawing.Point(584, 489);
-            this.diachiInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.diachiInput.Name = "diachiInput";
-            this.diachiInput.Size = new System.Drawing.Size(133, 22);
-            this.diachiInput.TabIndex = 39;
             // 
             // nhanVienReportBtn
             // 
@@ -747,14 +403,36 @@
             this.nhanVienReportBtn.Text = "In danh sách nhân viên";
             this.nhanVienReportBtn.Click += new System.EventHandler(this.nhanVienReportBtn_Click);
             // 
+            // diachiInput
+            // 
+            this.diachiInput.Location = new System.Drawing.Point(856, 584);
+            this.diachiInput.Margin = new System.Windows.Forms.Padding(4);
+            this.diachiInput.Name = "diachiInput";
+            this.diachiInput.Properties.DisplayFormat.FormatString = "n3";
+            this.diachiInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.diachiInput.Properties.EditFormat.FormatString = "n3";
+            this.diachiInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.diachiInput.Size = new System.Drawing.Size(165, 22);
+            this.diachiInput.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(772, 587);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 16);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Địa chỉ";
+            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 647);
-            this.Controls.Add(this.nhanVienReportBtn);
+            this.ClientSize = new System.Drawing.Size(1428, 689);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.diachiInput);
-            this.Controls.Add(this.labelDIACHI);
+            this.Controls.Add(this.nhanVienReportBtn);
             this.Controls.Add(this.luongInput);
             this.Controls.Add(this.ngaysinhInput);
             this.Controls.Add(this.ghichuInput);
@@ -775,40 +453,14 @@
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.reloadBtn);
             this.Controls.Add(this.backBtn);
-            this.Controls.Add(gHICHULabel);
-            this.Controls.Add(this.gHICHUTextEdit);
-            this.Controls.Add(lUONGLabel);
-            this.Controls.Add(this.lUONGSpinEdit);
-            this.Controls.Add(nGAYSINHLabel);
-            this.Controls.Add(this.nGAYSINHDateEdit);
-            this.Controls.Add(tENLabel);
-            this.Controls.Add(this.tENTextEdit);
-            this.Controls.Add(hOLabel);
-            this.Controls.Add(this.hOTextEdit);
-            this.Controls.Add(cMNDLabel);
-            this.Controls.Add(this.cMNDTextEdit);
-            this.Controls.Add(mANVLabel);
-            this.Controls.Add(this.mANVSpinEdit);
             this.Controls.Add(this.nhanvienDataGridView);
-            this.Controls.Add(this.nhanvienBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNhanVien";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingNavigator)).EndInit();
-            this.nhanvienBindingNavigator.ResumeLayout(false);
-            this.nhanvienBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cMNDTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manvInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmndInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoInput.Properties)).EndInit();
@@ -829,36 +481,7 @@
         private System.Windows.Forms.BindingSource nhanvienBindingSource;
         private qlvtDataSetTableAdapters.NhanvienTableAdapter nhanvienTableAdapter;
         private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator nhanvienBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton nhanvienBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView nhanvienDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private DevExpress.XtraEditors.SpinEdit mANVSpinEdit;
-        private DevExpress.XtraEditors.TextEdit cMNDTextEdit;
-        private DevExpress.XtraEditors.TextEdit hOTextEdit;
-        private DevExpress.XtraEditors.TextEdit tENTextEdit;
-        private DevExpress.XtraEditors.DateEdit nGAYSINHDateEdit;
-        private DevExpress.XtraEditors.SpinEdit lUONGSpinEdit;
-        private DevExpress.XtraEditors.TextEdit gHICHUTextEdit;
         private DevExpress.XtraEditors.SimpleButton backBtn;
         private DevExpress.XtraEditors.SimpleButton reloadBtn;
         private DevExpress.XtraEditors.SimpleButton saveBtn;
@@ -879,8 +502,16 @@
         private DevExpress.XtraEditors.TextEdit ghichuInput;
         private DevExpress.XtraEditors.DateEdit ngaysinhInput;
         private DevExpress.XtraEditors.TextEdit luongInput;
-        private System.Windows.Forms.Label labelDIACHI;
-        private DevExpress.XtraEditors.TextEdit diachiInput;
         private DevExpress.XtraEditors.SimpleButton nhanVienReportBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DevExpress.XtraEditors.TextEdit diachiInput;
+        private System.Windows.Forms.Label label1;
     }
 }

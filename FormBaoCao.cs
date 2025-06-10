@@ -22,7 +22,8 @@ namespace quanlyvattu
             
         }
 
-        private void dropDownButton1_Click(object sender, EventArgs e)
+
+        private void pdfBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -32,7 +33,7 @@ namespace quanlyvattu
                 // Create a SaveFileDialog to let the user choose where to save the file
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-                saveFileDialog.Title = "Save Report";
+                saveFileDialog.Title = "Lưu báo cáo";
                 saveFileDialog.InitialDirectory = "C:\\"; // Set initial directory to C drive
                 saveFileDialog.FileName = "report.pdf";
 
@@ -46,10 +47,10 @@ namespace quanlyvattu
                     report.ExportToPdf(filePath);
 
                     // Show a success message
-                    MessageBox.Show($"Report saved to {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Báo cáo đã lưu vào {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Open the file (optional)
-                    if (MessageBox.Show("Do you want to open the file?", "Open File",
+                    if (MessageBox.Show("Bạn có muốn mở file không?", "Mở File",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         System.Diagnostics.Process.Start(filePath);
@@ -58,7 +59,46 @@ namespace quanlyvattu
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi lưu report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void excelBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy báo cáo từ DocumentViewer
+                DevExpress.XtraReports.UI.XtraReport report = (DevExpress.XtraReports.UI.XtraReport)documentViewer1.DocumentSource;
+
+                // Tạo SaveFileDialog để người dùng chọn nơi lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Lưu báo cáo";
+                saveFileDialog.InitialDirectory = "C:\\"; // Thư mục mặc định
+                saveFileDialog.FileName = "report.xlsx";
+
+                // Hiển thị SaveFileDialog
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    // Xuất báo cáo ra file Excel
+                    report.ExportToXlsx(filePath);
+
+                    // Thông báo thành công
+                    MessageBox.Show($"Báo cáo đã lưu vào {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Mở file nếu người dùng muốn
+                    if (MessageBox.Show("Bạn có muốn mở file?", "Mở File",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(filePath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu báo cáo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

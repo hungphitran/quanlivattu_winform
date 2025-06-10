@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Data.Filtering.Helpers;
+using DevExpress.DataAccess.Sql;
 using QLVT;
 
 namespace quanlyvattu
@@ -61,6 +62,7 @@ namespace quanlyvattu
             if (loaiBaoCao.Equals("NHAP"))
             { 
                 BaoCaoChiTietNhap baoCaoChiTietNhap = new BaoCaoChiTietNhap(tuNgay, denNgay);
+
                 // kiểm tra báo cáo có dữ liệu không
                 if (!Program.hasData(baoCaoChiTietNhap))
                 {
@@ -74,7 +76,7 @@ namespace quanlyvattu
             {
                 BaoCaoChiTietXuat baoCaoChiTietXuat = new BaoCaoChiTietXuat(tuNgay, denNgay);
                 // kiểm tra báo cáo có dữ liệu không
-                if (Program.hasData(baoCaoChiTietXuat))
+                if (!Program.hasData(baoCaoChiTietXuat))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
                     return;

@@ -337,7 +337,6 @@
             // maddhEditor
             // 
             this.maddhEditor.EditValue = "";
-            this.maddhEditor.Enabled = false;
             this.maddhEditor.Location = new System.Drawing.Point(208, 351);
             this.maddhEditor.Name = "maddhEditor";
             this.maddhEditor.Size = new System.Drawing.Size(191, 22);

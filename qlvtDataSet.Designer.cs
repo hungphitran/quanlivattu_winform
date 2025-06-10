@@ -13460,7 +13460,7 @@ SELECT MANV, CMND, HO, TEN, DIACHI, NGAYSINH, LUONG, GHICHU, TRANGTHAIXOA FROM N
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MANV, CMND, HO, TEN, DIACHI, NGAYSINH, LUONG, GHICHU, TRANGTHAIXOA FROM db" +
-                "o.Nhanvien";
+                "o.Nhanvien where TRANGTHAIXOA=0";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

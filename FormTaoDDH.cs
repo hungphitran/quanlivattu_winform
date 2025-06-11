@@ -14,13 +14,13 @@ namespace quanlyvattu
 {
     public partial class FormTaoDDH : Form
     {
-        private static string GenerateOrderId(int length = 8)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            return new string(Enumerable.Repeat(chars, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
+        //private static string GenerateOrderId(int length = 8)
+        //{
+        //    const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        //    var random = new Random();
+        //    return new string(Enumerable.Repeat(chars, length)
+        //        .Select(s => s[random.Next(s.Length)]).ToArray());
+        //}
         public FormTaoDDH()
         {
             InitializeComponent();
@@ -41,8 +41,8 @@ namespace quanlyvattu
             this.danhSachDatHang.EditingControlShowing += danhSachDatHang_EditingControlShowing;
             this.userTextEdit.Text = Program.mHoten;
             this.nhaccEditor.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
-            this.maddhEditor.Text = GenerateOrderId();
-
+            //this.maddhEditor.Text = GenerateOrderId();
+            this.maddhEditor.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToUppercase_NoSpace;
 
             this.nhaccEditor.Properties.MaxLength = 100;
             maddhEditor.Properties.MaxLength = 8;
@@ -194,7 +194,22 @@ namespace quanlyvattu
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            if(this.danhSachDatHang.Rows.Count == 0)
+            if(this.maddhEditor.EditValue == null || this.maddhEditor.EditValue.ToString().Trim() == "")
+            {
+                MessageBox.Show("Mã đơn hàng không được trống!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Console.WriteLine("ton tai:"+(datHangBindingSource.Find("MasoDDH", this.maddhEditor.EditValue.ToString()) >= 0) );
+
+            if(datHangBindingSource.Find("MasoDDH", this.maddhEditor.EditValue.ToString() ) >= 0)
+            {
+                MessageBox.Show("Mã đơn hàng tồn tại!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.datHangBindingSource.RemoveFilter();
+                return;
+            }
+
+            if (this.danhSachDatHang.Rows.Count == 0)
             {
                 MessageBox.Show("Danh sách đặt hàng không được trống!");
                 return;

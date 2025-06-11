@@ -22,12 +22,6 @@ namespace quanlyvattu
         {
             if (vw_PhieuNhapDataGridView.CurrentRow != null)
             {
-                // Debug: Print all column names
-                //foreach (DataGridViewColumn column in vw_PhieuNhapDataGridView.Columns)
-                //{
-                //    Console.WriteLine($"Column name: {column.Name}, Header: {column.HeaderText}");
-                //}
-
                 try
                 {
                     // Get the correct column name
@@ -77,11 +71,6 @@ namespace quanlyvattu
         private void backBut_Click(object sender, EventArgs e)
         {
             FormManager.switchForm(this, new Dashboard());
-        }
-
-        private void addBtn_Click(object sender, EventArgs e)
-        {
-            //FormManager.switchForm(this, new FormTaoPhieuNhap());
         }
     }
 }

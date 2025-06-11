@@ -392,6 +392,7 @@
             this.cTPXDataGridView.Location = new System.Drawing.Point(805, 150);
             this.cTPXDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.cTPXDataGridView.Name = "cTPXDataGridView";
+            this.cTPXDataGridView.ReadOnly = true;
             this.cTPXDataGridView.RowHeadersWidth = 51;
             this.cTPXDataGridView.Size = new System.Drawing.Size(831, 321);
             this.cTPXDataGridView.TabIndex = 1;
@@ -440,6 +441,7 @@
             this.phieuXuatDataGridView1.Location = new System.Drawing.Point(15, 150);
             this.phieuXuatDataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.phieuXuatDataGridView1.Name = "phieuXuatDataGridView1";
+            this.phieuXuatDataGridView1.ReadOnly = true;
             this.phieuXuatDataGridView1.RowHeadersWidth = 51;
             this.phieuXuatDataGridView1.Size = new System.Drawing.Size(788, 321);
             this.phieuXuatDataGridView1.TabIndex = 0;
@@ -450,6 +452,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "MÃ PHIẾU NHẬP";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -457,6 +460,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "NGÀY LẬP PHIẾU";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -464,6 +468,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "KHÁCH HÀNG";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -471,6 +476,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "MÃ NHÂN VIÊN";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // ctpxTab
             // 
@@ -651,7 +657,7 @@
             this.vattuComboBox.Location = new System.Drawing.Point(116, 20);
             this.vattuComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.vattuComboBox.Name = "vattuComboBox";
-            this.vattuComboBox.Size = new System.Drawing.Size(300, 24);
+            this.vattuComboBox.Size = new System.Drawing.Size(285, 24);
             this.vattuComboBox.TabIndex = 4;
             this.vattuComboBox.ValueMember = "MAVT";
             // 

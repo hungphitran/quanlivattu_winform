@@ -49,6 +49,8 @@
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column10 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienReport));
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
@@ -132,8 +134,14 @@
             selectQuery1.Columns.Add(column9);
             selectQuery1.Name = "Nhanvien";
             selectQuery1.Tables.Add(table3);
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1});
+            customSqlQuery1.Name = "Nhanvien";
+            customSqlQuery1.Sql = @"
+                SELECT MANV, CMND, HO, TEN, DIACHI, NGAYSINH, LUONG, GHICHU, TRANGTHAIXOA, 
+                       (TEN+HO) AS HOTEN
+                FROM Nhanvien
+            ";
+            this.sqlDataSource1.Queries.Clear();
+            this.sqlDataSource1.Queries.Add(customSqlQuery1);
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // TopMargin
@@ -275,6 +283,8 @@
             this.table2});
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
+            this.Detail.SortFields.Clear();
+            this.Detail.SortFields.Add(new DevExpress.XtraReports.UI.GroupField("HOTEN", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending));// sắp xếp theo tên nhân viên
             // 
             // table2
             // 

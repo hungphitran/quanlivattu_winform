@@ -34,7 +34,7 @@
             System.Windows.Forms.Label masoDDHLabel;
             System.Windows.Forms.Label tenNhanVienLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPhieuNhap));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datHangBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -102,7 +102,8 @@
             // mAPNLabel
             // 
             mAPNLabel.AutoSize = true;
-            mAPNLabel.Location = new System.Drawing.Point(30, 56);
+            mAPNLabel.Location = new System.Drawing.Point(38, 70);
+            mAPNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAPNLabel.Name = "mAPNLabel";
             mAPNLabel.Size = new System.Drawing.Size(45, 16);
             mAPNLabel.TabIndex = 0;
@@ -111,7 +112,8 @@
             // nGAYLabel
             // 
             nGAYLabel.AutoSize = true;
-            nGAYLabel.Location = new System.Drawing.Point(32, 105);
+            nGAYLabel.Location = new System.Drawing.Point(40, 131);
+            nGAYLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nGAYLabel.Name = "nGAYLabel";
             nGAYLabel.Size = new System.Drawing.Size(43, 16);
             nGAYLabel.TabIndex = 2;
@@ -120,7 +122,8 @@
             // masoDDHLabel
             // 
             masoDDHLabel.AutoSize = true;
-            masoDDHLabel.Location = new System.Drawing.Point(5, 141);
+            masoDDHLabel.Location = new System.Drawing.Point(6, 176);
+            masoDDHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             masoDDHLabel.Name = "masoDDHLabel";
             masoDDHLabel.Size = new System.Drawing.Size(70, 16);
             masoDDHLabel.TabIndex = 4;
@@ -129,7 +132,8 @@
             // tenNhanVienLabel
             // 
             tenNhanVienLabel.AutoSize = true;
-            tenNhanVienLabel.Location = new System.Drawing.Point(3, 184);
+            tenNhanVienLabel.Location = new System.Drawing.Point(4, 230);
+            tenNhanVienLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tenNhanVienLabel.Name = "tenNhanVienLabel";
             tenNhanVienLabel.Size = new System.Drawing.Size(96, 16);
             tenNhanVienLabel.TabIndex = 6;
@@ -278,18 +282,21 @@
             this.groupControl1.Controls.Add(this.nGAYDateEdit);
             this.groupControl1.Controls.Add(mAPNLabel);
             this.groupControl1.Controls.Add(this.mAPNTextEdit);
-            this.groupControl1.Location = new System.Drawing.Point(2, 360);
+            this.groupControl1.Location = new System.Drawing.Point(2, 411);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(350, 290);
+            this.groupControl1.Size = new System.Drawing.Size(438, 401);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin phiếu nhập";
             // 
             // tenNhanVienTextEdit
             // 
             this.tenNhanVienTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "TenNhanVien", true));
-            this.tenNhanVienTextEdit.Location = new System.Drawing.Point(105, 181);
+            this.tenNhanVienTextEdit.Enabled = false;
+            this.tenNhanVienTextEdit.Location = new System.Drawing.Point(131, 226);
+            this.tenNhanVienTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tenNhanVienTextEdit.Name = "tenNhanVienTextEdit";
-            this.tenNhanVienTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.tenNhanVienTextEdit.Size = new System.Drawing.Size(204, 22);
             this.tenNhanVienTextEdit.TabIndex = 7;
             // 
             // vw_PhieuNhapBindingSource
@@ -300,38 +307,45 @@
             // masoDDHTextEdit
             // 
             this.masoDDHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "MasoDDH", true));
-            this.masoDDHTextEdit.Location = new System.Drawing.Point(105, 138);
+            this.masoDDHTextEdit.Enabled = false;
+            this.masoDDHTextEdit.Location = new System.Drawing.Point(131, 172);
+            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.masoDDHTextEdit.Name = "masoDDHTextEdit";
-            this.masoDDHTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.masoDDHTextEdit.Size = new System.Drawing.Size(204, 22);
             this.masoDDHTextEdit.TabIndex = 5;
             // 
             // nGAYDateEdit
             // 
             this.nGAYDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "NGAY", true));
             this.nGAYDateEdit.EditValue = null;
-            this.nGAYDateEdit.Location = new System.Drawing.Point(105, 99);
+            this.nGAYDateEdit.Enabled = false;
+            this.nGAYDateEdit.Location = new System.Drawing.Point(131, 124);
+            this.nGAYDateEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nGAYDateEdit.Name = "nGAYDateEdit";
             this.nGAYDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nGAYDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYDateEdit.Size = new System.Drawing.Size(125, 22);
+            this.nGAYDateEdit.Size = new System.Drawing.Size(204, 22);
             this.nGAYDateEdit.TabIndex = 3;
             // 
             // mAPNTextEdit
             // 
             this.mAPNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "MAPN", true));
-            this.mAPNTextEdit.Location = new System.Drawing.Point(105, 53);
+            this.mAPNTextEdit.Enabled = false;
+            this.mAPNTextEdit.Location = new System.Drawing.Point(131, 66);
+            this.mAPNTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mAPNTextEdit.Name = "mAPNTextEdit";
-            this.mAPNTextEdit.Size = new System.Drawing.Size(125, 22);
+            this.mAPNTextEdit.Size = new System.Drawing.Size(204, 22);
             this.mAPNTextEdit.TabIndex = 1;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.cTPNDataGridView);
-            this.groupControl2.Location = new System.Drawing.Point(358, 360);
+            this.groupControl2.Location = new System.Drawing.Point(448, 411);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(706, 366);
+            this.groupControl2.Size = new System.Drawing.Size(624, 497);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi tiết phiếu nhập";
             // 
@@ -346,12 +360,14 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.cTPNDataGridView.DataSource = this.cTPNBindingSource;
-            this.cTPNDataGridView.Location = new System.Drawing.Point(5, 31);
+            this.cTPNDataGridView.Location = new System.Drawing.Point(6, 39);
+            this.cTPNDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTPNDataGridView.MultiSelect = false;
             this.cTPNDataGridView.Name = "cTPNDataGridView";
+            this.cTPNDataGridView.ReadOnly = true;
             this.cTPNDataGridView.RowHeadersWidth = 51;
             this.cTPNDataGridView.RowTemplate.Height = 24;
-            this.cTPNDataGridView.Size = new System.Drawing.Size(701, 259);
+            this.cTPNDataGridView.Size = new System.Drawing.Size(876, 324);
             this.cTPNDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn10
@@ -360,6 +376,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "MAPN";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -367,6 +384,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "MAVT";
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -374,6 +392,7 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "SOLUONG";
             this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -381,6 +400,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "DONGIA";
             this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // cTPNBindingSource
             // 
@@ -433,6 +453,8 @@
             // 
             // vw_PhieuNhapDataGridView
             // 
+            this.vw_PhieuNhapDataGridView.AllowUserToAddRows = false;
+            this.vw_PhieuNhapDataGridView.AllowUserToDeleteRows = false;
             this.vw_PhieuNhapDataGridView.AutoGenerateColumns = false;
             this.vw_PhieuNhapDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vw_PhieuNhapDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -444,9 +466,10 @@
             this.vw_PhieuNhapDataGridView.DataSource = this.vw_PhieuNhapBindingSource;
             this.vw_PhieuNhapDataGridView.Location = new System.Drawing.Point(2, 55);
             this.vw_PhieuNhapDataGridView.Name = "vw_PhieuNhapDataGridView";
+            this.vw_PhieuNhapDataGridView.ReadOnly = true;
             this.vw_PhieuNhapDataGridView.RowHeadersWidth = 51;
             this.vw_PhieuNhapDataGridView.RowTemplate.Height = 24;
-            this.vw_PhieuNhapDataGridView.Size = new System.Drawing.Size(1070, 299);
+            this.vw_PhieuNhapDataGridView.Size = new System.Drawing.Size(1070, 349);
             this.vw_PhieuNhapDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn2
@@ -455,15 +478,17 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "MAPN";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NGAY";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn3.HeaderText = "NGAY";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -471,6 +496,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "MasoDDH";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 

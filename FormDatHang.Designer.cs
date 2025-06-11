@@ -139,6 +139,7 @@
             this.datHangDataGridView.Location = new System.Drawing.Point(0, 76);
             this.datHangDataGridView.MultiSelect = false;
             this.datHangDataGridView.Name = "datHangDataGridView";
+            this.datHangDataGridView.ReadOnly = true;
             this.datHangDataGridView.RowHeadersWidth = 51;
             this.datHangDataGridView.RowTemplate.Height = 24;
             this.datHangDataGridView.Size = new System.Drawing.Size(1151, 336);
@@ -150,6 +151,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "MasoDDH";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -157,6 +159,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "NGAY";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -164,6 +167,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "NhaCC";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -171,6 +175,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "MANV";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // cTDDHBindingSource
             // 

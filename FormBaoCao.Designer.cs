@@ -30,7 +30,8 @@
         {
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.excelBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.pdfBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,21 +47,31 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dropDownButton1);
+            this.panel1.Controls.Add(this.pdfBtn);
+            this.panel1.Controls.Add(this.excelBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1027, 45);
             this.panel1.TabIndex = 1;
             // 
-            // dropDownButton1
+            // excelBtn
             // 
-            this.dropDownButton1.Location = new System.Drawing.Point(810, 12);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(154, 29);
-            this.dropDownButton1.TabIndex = 0;
-            this.dropDownButton1.Text = "Lưu file PDF";
-            this.dropDownButton1.Click += new System.EventHandler(this.dropDownButton1_Click);
+            this.excelBtn.Location = new System.Drawing.Point(621, 12);
+            this.excelBtn.Name = "excelBtn";
+            this.excelBtn.Size = new System.Drawing.Size(150, 29);
+            this.excelBtn.TabIndex = 1;
+            this.excelBtn.Text = "Lưu file EXCEL";
+            this.excelBtn.Click += new System.EventHandler(this.excelBtn_Click);
+            // 
+            // pdfBtn
+            // 
+            this.pdfBtn.Location = new System.Drawing.Point(804, 12);
+            this.pdfBtn.Name = "pdfBtn";
+            this.pdfBtn.Size = new System.Drawing.Size(112, 29);
+            this.pdfBtn.TabIndex = 2;
+            this.pdfBtn.Text = "Lưu file PDF";
+            this.pdfBtn.Click += new System.EventHandler(this.pdfBtn_Click);
             // 
             // FormBaoCao
             // 
@@ -80,6 +91,7 @@
 
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
+        private DevExpress.XtraEditors.SimpleButton excelBtn;
+        private DevExpress.XtraEditors.SimpleButton pdfBtn;
     }
 }

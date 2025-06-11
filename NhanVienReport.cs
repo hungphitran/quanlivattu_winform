@@ -13,6 +13,7 @@ namespace quanlyvattu
         {
             InitializeComponent();
             this.userLbl.Text = $"Người lập:  {Program.mHoten}";
+
         }
 
     }

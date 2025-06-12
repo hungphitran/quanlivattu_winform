@@ -14,6 +14,7 @@ using DevExpress.DashboardCommon.DataProcessing;
 using DevExpress.DataAccess.Native.Data;
 using DevExpress.PivotGrid.QueryMode;
 using DevExpress.Utils.Html.Internal;
+using DevExpress.XtraReports;
 using DevExpress.XtraRichEdit.Import.Html;
 using DevExpress.XtraRichEdit.Mouse;
 using QLVT;
@@ -512,9 +513,14 @@ namespace quanlyvattu
                 formBaoCao.Close();
             }
             String mavt = this.mavtTextEdit.Text;
-            formBaoCao = new FormBaoCao( new LichSuVattuReport(mavt));
-            formBaoCao.Show();
-   
+
+            LichSuVattuReport report = new LichSuVattuReport(mavt);
+            formBaoCao = new FormBaoCao(report);
+            if (report.RowCount <= 0)
+            {
+                MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else formBaoCao.Show();
         }
 
         private void listVattuBtn_Click(object sender, EventArgs e)
@@ -524,8 +530,13 @@ namespace quanlyvattu
                 formBaoCao.Close();
             }
             String mavt = this.mavtTextEdit.Text;
+            reportVattu report = new reportVattu();
             formBaoCao = new FormBaoCao(new reportVattu());
-            formBaoCao.Show();
+            if (report.RowCount <= 0)
+            {
+                MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else formBaoCao.Show();
         }
 
     }

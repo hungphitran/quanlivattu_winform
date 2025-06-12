@@ -157,9 +157,10 @@ namespace quanlyvattu
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes) {
                 String manv = cmbNhanVien.SelectedValue.ToString(); // Get selected employee ID
-                String cmd = $"exec sp_XoaLoginVaUser @Username = '{manv}'";
+                String cmd = $"use master; exec sp_XoaLoginVaUser @Username = '{manv}'";
                 int res = Program.ExecSqlNonQuery(cmd);
-                if (res == 0)
+                Console.WriteLine("res: " + res);// 
+                if (res == 0)//thanh cong
                 {
                     MessageBox.Show("Xóa tài khoản thành công");
                     this.vw_NhanVienCoTaiKhoanTableAdapter.Fill(this.qlvtDataSet.vw_NhanVienCoTaiKhoan);

@@ -131,17 +131,14 @@ namespace quanlyvattu
 
                 if (result == DialogResult.Yes)
                 {
-                    Cursor = Cursors.WaitCursor;
 
                     // Execute the restore with point-in-time recovery
                     int res = Program.ExecSqlNonQuery(
                         $"USE master; EXEC sp_PhucHoiCSDL_TheoThoiGian " +
-                        $"@path=N'C:\\backup\\{deviceName}.bak', " +
-                        $"@datetime='{formattedDateTime}'");
-                    Console.WriteLine(res +" "+ $"USE master; EXEC sp_PhucHoiCSDL_TheoThoiGian " +
-                        $"@path=N'C:\\backup\\{deviceName}.bak', " +
-                        $"@datetime='{formattedDateTime}'");
-                    Cursor = Cursors.Default;
+                        $"@DatabaseName=N'qlvt', " +
+                        $"@FullBackupPath=N'C:\\backup\\{deviceName}.bak', " +
+                        $"@RestoreTime='{formattedDateTime}', "+
+                        $"@LogBackupPath=N'C:\\backup\\qlvt.trn'");
 
                     // Notify the user of the result
                     if (res == 0)

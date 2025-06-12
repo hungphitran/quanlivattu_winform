@@ -300,7 +300,6 @@ C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.BaoCaoChiTiet
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.Dashboard.resources
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormBaoCao.resources
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormDatHang.resources
-C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormLichSuGiaoDichVattu.resources
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormPhieuNhap.resources
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormSelectDetail.resources
 C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormTaoAcc.resources
@@ -728,3 +727,12 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormDoi
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.TongHopNhapXuat.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.NhanVienReport.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormTaoDDH.resources
+C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.BackupRestoreForm.resources
+C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormDoiMatKhau.resources
+C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.FormTaoDDH.resources
+C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.NhanVienReport.resources
+C:\Users\huyph\Documents\quanlivattu_winform\obj\Debug\quanlyvattu.TongHopNhapXuat.resources
+C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\MetroFramework.Design.dll
+C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\MetroFramework.dll
+C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\Siticone.Desktop.UI.dll

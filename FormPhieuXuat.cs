@@ -420,5 +420,6 @@ namespace quanlyvattu
                 vattuBindingSource2.RemoveFilter();
             }
         }
+
     }
 }

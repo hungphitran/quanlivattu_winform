@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backBut = new System.Windows.Forms.Button();
             this.notImportBtn = new DevExpress.XtraEditors.SimpleButton();
             this.importBtn = new DevExpress.XtraEditors.SimpleButton();
@@ -51,49 +55,89 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTDDHDataGridView = new System.Windows.Forms.DataGridView();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.controlPanel = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.groupBoxOrders = new System.Windows.Forms.GroupBox();
+            this.groupBoxOrderDetails = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_BaoCaoDonDatHangChuaNhapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHDataGridView)).BeginInit();
+            this.headerPanel.SuspendLayout();
+            this.controlPanel.SuspendLayout();
+            this.mainPanel.SuspendLayout();
+            this.groupBoxOrders.SuspendLayout();
+            this.groupBoxOrderDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // backBut
             // 
-            this.backBut.Location = new System.Drawing.Point(28, 27);
+            this.backBut.BackColor = System.Drawing.Color.FromArgb(108, 117, 125);
+            this.backBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBut.FlatAppearance.BorderSize = 0;
+            this.backBut.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.backBut.ForeColor = System.Drawing.Color.White;
+            this.backBut.Location = new System.Drawing.Point(30, 20);
             this.backBut.Name = "backBut";
-            this.backBut.Size = new System.Drawing.Size(81, 33);
+            this.backBut.Size = new System.Drawing.Size(120, 35);
             this.backBut.TabIndex = 4;
-            this.backBut.Text = "Quay lại";
+            this.backBut.Text = "◄ Quay lại";
             this.backBut.UseVisualStyleBackColor = true;
             this.backBut.Click += new System.EventHandler(this.backBut_Click);
             // 
             // notImportBtn
             // 
-            this.notImportBtn.Location = new System.Drawing.Point(910, 27);
+            this.notImportBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(102, 16, 242);
+            this.notImportBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.notImportBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.notImportBtn.Appearance.Options.UseBackColor = true;
+            this.notImportBtn.Appearance.Options.UseFont = true;
+            this.notImportBtn.Appearance.Options.UseForeColor = true;
+            this.notImportBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(85, 13, 200);
+            this.notImportBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.notImportBtn.Location = new System.Drawing.Point(590, 20);
             this.notImportBtn.Name = "notImportBtn";
-            this.notImportBtn.Size = new System.Drawing.Size(241, 42);
+            this.notImportBtn.Size = new System.Drawing.Size(250, 35);
             this.notImportBtn.TabIndex = 5;
-            this.notImportBtn.Text = "Xem báo cáo đơn hàng chưa nhập";
+            this.notImportBtn.Text = "📄 Đơn hàng chưa nhập";
             this.notImportBtn.Click += new System.EventHandler(this.notImportBtn_Click);
             // 
             // importBtn
             // 
-            this.importBtn.Location = new System.Drawing.Point(639, 28);
+            this.importBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(25, 135, 84);
+            this.importBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.importBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.importBtn.Appearance.Options.UseBackColor = true;
+            this.importBtn.Appearance.Options.UseFont = true;
+            this.importBtn.Appearance.Options.UseForeColor = true;
+            this.importBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(20, 108, 67);
+            this.importBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.importBtn.Location = new System.Drawing.Point(370, 20);
             this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(233, 41);
+            this.importBtn.Size = new System.Drawing.Size(200, 35);
             this.importBtn.TabIndex = 6;
-            this.importBtn.Text = "Nhập hàng cho đơn đặt hàng hiện tại";
+            this.importBtn.Text = "📦 Nhập hàng";
             this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
             // 
             // addDdhBtn
             // 
-            this.addDdhBtn.Location = new System.Drawing.Point(355, 27);
+            this.addDdhBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(0, 123, 255);
+            this.addDdhBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.addDdhBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.addDdhBtn.Appearance.Options.UseBackColor = true;
+            this.addDdhBtn.Appearance.Options.UseFont = true;
+            this.addDdhBtn.Appearance.Options.UseForeColor = true;
+            this.addDdhBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(0, 86, 179);
+            this.addDdhBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.addDdhBtn.Location = new System.Drawing.Point(170, 20);
             this.addDdhBtn.Name = "addDdhBtn";
-            this.addDdhBtn.Size = new System.Drawing.Size(219, 41);
+            this.addDdhBtn.Size = new System.Drawing.Size(180, 35);
             this.addDdhBtn.TabIndex = 7;
-            this.addDdhBtn.Text = "Thêm đơn đặt hàng";
+            this.addDdhBtn.Text = "➕ Thêm đơn đặt hàng";
             this.addDdhBtn.Click += new System.EventHandler(this.addDdhBtn_Click);
             // 
             // qlvtDataSet1
@@ -129,21 +173,44 @@
             this.datHangDataGridView.AllowUserToDeleteRows = false;
             this.datHangDataGridView.AutoGenerateColumns = false;
             this.datHangDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datHangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datHangDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.datHangDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(220, 53, 69);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(220, 53, 69);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datHangDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.datHangDataGridView.ColumnHeadersHeight = 40;
+            this.datHangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datHangDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5});
             this.datHangDataGridView.DataSource = this.datHangBindingSource;
-            this.datHangDataGridView.Location = new System.Drawing.Point(0, 76);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(255, 193, 7);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datHangDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.datHangDataGridView.EnableHeadersVisualStyles = false;
+            this.datHangDataGridView.GridColor = System.Drawing.Color.FromArgb(233, 236, 239);
+            this.datHangDataGridView.Location = new System.Drawing.Point(10, 30);
             this.datHangDataGridView.MultiSelect = false;
             this.datHangDataGridView.Name = "datHangDataGridView";
             this.datHangDataGridView.ReadOnly = true;
+            this.datHangDataGridView.RowHeadersVisible = false;
             this.datHangDataGridView.RowHeadersWidth = 51;
-            this.datHangDataGridView.RowTemplate.Height = 24;
-            this.datHangDataGridView.Size = new System.Drawing.Size(1151, 336);
-            this.datHangDataGridView.TabIndex = 8;
+            this.datHangDataGridView.RowTemplate.Height = 35;
+            this.datHangDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datHangDataGridView.Size = new System.Drawing.Size(1080, 210);
+            this.datHangDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -233,30 +300,122 @@
             this.cTDDHDataGridView.AllowUserToDeleteRows = false;
             this.cTDDHDataGridView.AutoGenerateColumns = false;
             this.cTDDHDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cTDDHDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cTDDHDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.cTDDHDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(220, 53, 69);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(220, 53, 69);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cTDDHDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.cTDDHDataGridView.ColumnHeadersHeight = 40;
+            this.cTDDHDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.cTDDHDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.cTDDHDataGridView.DataSource = this.cTDDHBindingSource;
-            this.cTDDHDataGridView.Location = new System.Drawing.Point(0, 407);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(255, 193, 7);
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cTDDHDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.cTDDHDataGridView.EnableHeadersVisualStyles = false;
+            this.cTDDHDataGridView.GridColor = System.Drawing.Color.FromArgb(233, 236, 239);
+            this.cTDDHDataGridView.Location = new System.Drawing.Point(10, 30);
+            this.cTDDHDataGridView.MultiSelect = false;
             this.cTDDHDataGridView.Name = "cTDDHDataGridView";
             this.cTDDHDataGridView.ReadOnly = true;
+            this.cTDDHDataGridView.RowHeadersVisible = false;
             this.cTDDHDataGridView.RowHeadersWidth = 51;
-            this.cTDDHDataGridView.RowTemplate.Height = 24;
-            this.cTDDHDataGridView.Size = new System.Drawing.Size(1151, 287);
-            this.cTDDHDataGridView.TabIndex = 8;
+            this.cTDDHDataGridView.RowTemplate.Height = 35;
+            this.cTDDHDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cTDDHDataGridView.Size = new System.Drawing.Size(1080, 170);
+            this.cTDDHDataGridView.TabIndex = 3;
+            // 
+            // headerPanel
+            // 
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.headerPanel.Controls.Add(this.titleLabel);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(1171, 80);
+            this.headerPanel.TabIndex = 2;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(20, 20);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(420, 45);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "QUẢN LÝ ĐƠN ĐẶT HÀNG";
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.controlPanel.Controls.Add(this.backBut);
+            this.controlPanel.Controls.Add(this.addDdhBtn);
+            this.controlPanel.Controls.Add(this.importBtn);
+            this.controlPanel.Controls.Add(this.notImportBtn);
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.controlPanel.Location = new System.Drawing.Point(0, 80);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(1171, 70);
+            this.controlPanel.TabIndex = 1;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Controls.Add(this.groupBoxOrders);
+            this.mainPanel.Controls.Add(this.groupBoxOrderDetails);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 150);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1171, 574);
+            this.mainPanel.TabIndex = 0;
+            // 
+            // groupBoxOrders
+            // 
+            this.groupBoxOrders.BackColor = System.Drawing.Color.White;
+            this.groupBoxOrders.Controls.Add(this.datHangDataGridView);
+            this.groupBoxOrders.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.groupBoxOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.groupBoxOrders.Location = new System.Drawing.Point(30, 20);
+            this.groupBoxOrders.Name = "groupBoxOrders";
+            this.groupBoxOrders.Size = new System.Drawing.Size(1100, 260);
+            this.groupBoxOrders.TabIndex = 0;
+            this.groupBoxOrders.TabStop = false;
+            this.groupBoxOrders.Text = "DANH SÁCH ĐƠN ĐẶT HÀNG";
+            // 
+            // groupBoxOrderDetails
+            // 
+            this.groupBoxOrderDetails.BackColor = System.Drawing.Color.White;
+            this.groupBoxOrderDetails.Controls.Add(this.cTDDHDataGridView);
+            this.groupBoxOrderDetails.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.groupBoxOrderDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.groupBoxOrderDetails.Location = new System.Drawing.Point(30, 300);
+            this.groupBoxOrderDetails.Name = "groupBoxOrderDetails";
+            this.groupBoxOrderDetails.Size = new System.Drawing.Size(1100, 220);
+            this.groupBoxOrderDetails.TabIndex = 1;
+            this.groupBoxOrderDetails.TabStop = false;
+            this.groupBoxOrderDetails.Text = "CHI TIẾT ĐƠN ĐẶT HÀNG";
             // 
             // FormDatHang
             // 
-            this.ClientSize = new System.Drawing.Size(1171, 748);
-            this.Controls.Add(this.cTDDHDataGridView);
-            this.Controls.Add(this.datHangDataGridView);
-            this.Controls.Add(this.addDdhBtn);
-            this.Controls.Add(this.importBtn);
-            this.Controls.Add(this.notImportBtn);
-            this.Controls.Add(this.backBut);
+            this.ClientSize = new System.Drawing.Size(1171, 724);
+            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.controlPanel);
+            this.Controls.Add(this.headerPanel);
             this.Name = "FormDatHang";
             this.Load += new System.EventHandler(this.FormDatHang_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1)).EndInit();
@@ -265,6 +424,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_BaoCaoDonDatHangChuaNhapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHDataGridView)).EndInit();
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
+            this.controlPanel.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
+            this.groupBoxOrders.ResumeLayout(false);
+            this.groupBoxOrderDetails.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -339,5 +504,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridView cTDDHDataGridView;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Panel controlPanel;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.GroupBox groupBoxOrders;
+        private System.Windows.Forms.GroupBox groupBoxOrderDetails;
     }
 }

@@ -383,9 +383,11 @@ namespace quanlyvattu
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "Dashboard";
+          
             this.ResumeLayout(false);
 
         }
+
 
 
         private Button CreateModernRedButton(string text, int x, int y, Panel parent)

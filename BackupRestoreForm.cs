@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.Internal.WinApi.Windows.UI.Notifications;
+using DevExpress.CodeParser;
 using QLVT;
 
 namespace quanlyvattu
@@ -15,12 +13,13 @@ namespace quanlyvattu
     public partial class BackupRestoreForm : Form
     {
         private String deviceName = "device_qlvt";
+        string folderPath = @"C:\backup\";
         public BackupRestoreForm()
         {
             InitializeComponent();
 
             DataTable deviceTable = Program.ExecSqlDataTable("USE master; EXEC sp_helpdevice");
-            if (deviceTable != null && deviceTable.Rows.Count >0)
+            if (deviceTable != null && deviceTable.Rows.Count > 0)
             {
                 createDeviceBtn.Visible = false;
                 groupControl1.Visible = false;
@@ -29,7 +28,7 @@ namespace quanlyvattu
             else
             {
                 createDeviceBtn.Visible = true;
-                groupControl1.Visible= true;
+                groupControl1.Visible = true;
                 MessageBox.Show("Chưa có thiết bị nào, vui lòng tạo thiết bị trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             // Set default values for date/time pickers
@@ -42,7 +41,48 @@ namespace quanlyvattu
             this.lblTime.Visible = false;
             this.restoreWithTimeBtn.Visible = false;
         }
+        static List<string> GetFilesInTimeRange(string folderPath, DateTime from, DateTime to)
+        {
+            var matchingFiles = new List<string>();
 
+            if (!Directory.Exists(folderPath))
+            {
+                Console.WriteLine("Thư mục không tồn tại.");
+                return matchingFiles;
+            }
+
+            var files = Directory.GetFiles(folderPath, "qlvt_Log_*.trn");
+
+            //sắp xếp tập tin theo thời gian tạo
+            files = files.OrderBy(f => File.GetCreationTime(f)).ToArray();
+
+
+            foreach (var file in files)
+            {
+                string name = Path.GetFileNameWithoutExtension(file); // qlvt_Log_20250615_181831
+                string[] parts = name.Split('_');
+                if (parts.Length > 3)
+                {
+                    string datePart = parts[2]; // 20250615
+                    string timePart = parts[3]; // 181831
+                    if (DateTime.TryParseExact(datePart + timePart, "yyyyMMddHHmmss", null, System.Globalization.DateTimeStyles.None, out DateTime fileTime))
+                    {
+                        if (fileTime >= from && fileTime < to)
+                        {
+                            matchingFiles.Add(file);
+                        }
+                        else if (fileTime >= to)
+                        {
+                            //last file >= to
+                            matchingFiles.Add(file);
+                            break; // Stop searching once we find a file after 'to'
+                        }
+                    }
+                }
+            }
+
+            return matchingFiles;
+        }
         public void backupTableLoad()
         {
 
@@ -79,6 +119,8 @@ namespace quanlyvattu
                 DateTime selectedDate = dtpDate.Value.Date;
                 DateTime selectedTime = dtpTime.Value;
 
+                int index = sp_DanhSachBackUpDataGridView.CurrentCell.RowIndex;
+
                 // Create a combined DateTime with the selected date and time
                 DateTime pointInTime = new DateTime(
                     selectedDate.Year,
@@ -92,21 +134,31 @@ namespace quanlyvattu
                 if (!IsValidRestoreTime(pointInTime))
                     return;
 
-                DateTime oldestbackupTime = Convert.ToDateTime(sp_DanhSachBackUpDataGridView.Rows[sp_DanhSachBackUpDataGridView.Rows.Count-1].Cells[0].Value);
-                Console.WriteLine(oldestbackupTime);
+                DateTime fullbackupTime = Convert.ToDateTime(sp_DanhSachBackUpDataGridView.Rows[index].Cells[0].Value);
+
+
 
                 //Ensure the restore time is after the backup time
-                if (pointInTime < oldestbackupTime)
+                if (pointInTime < fullbackupTime)
                 {
                     MessageBox.Show(
-                        $"Thời điểm phục hồi phải sau thời điểm sao lưu ({oldestbackupTime:dd/MM/yyyy HH:mm:ss}).",
+                        $"Thời điểm phục hồi phải sau thời điểm sao lưu ({fullbackupTime:dd/MM/yyyy HH:mm:ss}).",
                         "Lỗi",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     return;
                 }
+                List<string> logFiles = GetFilesInTimeRange(folderPath, fullbackupTime, pointInTime);
 
-                // Ensure the restore time is at least 1 minute before the current time
+                if (logFiles.Count == 0)
+                {
+                    MessageBox.Show(
+                        $"Không tìm thấy bản sao lưu trong khoang thời gian {fullbackupTime:dd/MM/yyyy HH:mm:ss} đến {pointInTime:dd/MM/yyyy HH:mm:ss}.",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
                 if (pointInTime > DateTime.Now.AddMinutes(-1))
                 {
                     Console.WriteLine(pointInTime + " " + DateTime.Now.AddMinutes(-1));
@@ -117,10 +169,8 @@ namespace quanlyvattu
                         MessageBoxIcon.Error);
                     return;
                 }
-
                 // Format the datetime in SQL Server format (YYYY-MM-DD HH:MM:SS)
                 string formattedDateTime = pointInTime.ToString("yyyy-MM-dd HH:mm:ss");
-
                 // Confirm with user before proceeding with restore
                 DialogResult result = MessageBox.Show(
                     $"Bạn có chắc muốn phục hồi CSDL đến thời điểm: {formattedDateTime}?\n\n" +
@@ -131,34 +181,86 @@ namespace quanlyvattu
 
                 if (result == DialogResult.Yes)
                 {
+                        // Backup log hiện tại để tránh mất log chưa backup
+                        string backupLogQuery = $@"exec sp_TaoBackupLog '{Program.database}', 'C:\backup\'";
 
-                    // Execute the restore with point-in-time recovery
-                    int res = Program.ExecSqlNonQuery(
-                        $"USE master; EXEC sp_PhucHoiCSDL_TheoThoiGian " +
-                        $"@DatabaseName=N'qlvt', " +
-                        $"@FullBackupPath=N'C:\\backup\\{deviceName}.bak', " +
-                        $"@RestoreTime='{formattedDateTime}', "+
-                        $"@LogBackupPath=N'C:\\backup\\qlvt.trn'");
+                        using (SqlCommand logCmd = new SqlCommand(backupLogQuery, Program.conn))
+                        {
+                            if (Program.conn.State == ConnectionState.Closed)
+                                Program.conn.Open();
+                            logCmd.ExecuteNonQuery();
+                        }
+                        if (Program.conn.State == ConnectionState.Open)
+                            Program.conn.Close();
 
-                    // Notify the user of the result
-                    if (res == 0)
+
+                    using (SqlConnection conn = new SqlConnection(Program.connstr))
                     {
-                        MessageBox.Show(
-                            $"Đã phục hồi CSDL đến thời điểm {formattedDateTime} thành công!",
-                            "Thành công",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                        conn.Open();
 
+                        // Đưa về SINGLE_USER
+                        string setSingleUser = $@"USE master ALTER DATABASE [{Program.database}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE";
+                        using (SqlCommand cmd = new SqlCommand(setSingleUser, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Restore full backup từ device với FILE = index
+                        string restoreFull = $@"
+                            RESTORE DATABASE [{Program.database}]
+                            FROM DISK = N'{folderPath}device_qlvt.bak'
+                            WITH FILE = {index}, NORECOVERY, REPLACE";
+                        using (SqlCommand cmd = new SqlCommand(restoreFull, conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        bool stopApplied = false;
+
+                        for (int i = 0; i < logFiles.Count; i++)
+                        {
+                            string logFile = "C:\\backup\\"+logFiles[i];
+                            Console.WriteLine(logFile);
+                            string restoreLog;
+                            DateTime logFileTime = File.GetCreationTime(logFile);
+
+                            if (!stopApplied)
+                            {
+                                if (logFileTime >= pointInTime)
+                                {
+                                    restoreLog = $@"
+                                        RESTORE LOG [{Program.database}]
+                                        FROM DISK = N'{logFile}'
+                                        WITH STOPAT = '{pointInTime:yyyy-MM-dd HH:mm:ss}', RECOVERY";
+                                    stopApplied = true;
+                                }
+                                else
+                                {
+                                    restoreLog = $@"
+                                    RESTORE LOG [{Program.database}]
+                                    FROM DISK = N'{logFile}'
+                                    WITH NORECOVERY";
+                                }
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            using (SqlCommand cmd = new SqlCommand(restoreLog, conn))
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            if (!stopApplied)
+                            {
+                                throw new Exception("Không tìm thấy file log chứa thời điểm STOPAT.");
+                            }
+                        }
+
+                        MessageBox.Show($"Đã Phục hồi thành công về thời điểm: {pointInTime:yyyy-MM-dd HH:mm:ss}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Bắt đầu restore log chain hợp lệ kể từ bản full
                         // After successful restore, refresh backup list
                         backupTableLoad();
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            "Phục hồi theo thời gian thất bại. Thời điểm đã chọn có thể không có trong bản sao lưu.",
-                            "Lỗi",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
                     }
                 }
             }
@@ -275,7 +377,7 @@ namespace quanlyvattu
             }
             else
             {
-                int res = Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',0");   
+                int res = Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',0");
                 // Notify the user of the result
                 MessageBox.Show(res == 0 ? "Sao lưu thành công!" : "Sao lưu thất bại!");
             }
@@ -287,8 +389,8 @@ namespace quanlyvattu
         private void restoreBtn_Click(object sender, EventArgs e)
         {
             int index = sp_DanhSachBackUpDataGridView.CurrentCell.RowIndex;
-            Console.WriteLine("index"+index);
-            Console.WriteLine("devicename: "+deviceName);
+            Console.WriteLine("index" + index);
+            Console.WriteLine("devicename: " + deviceName);
 
             int res = Program.ExecSqlNonQuery($"USE master; EXEC sp_PhucHoiCSDL @path=N'C:\\backup\\{deviceName}.bak',@index={this.sp_DanhSachBackUpDataGridView.Rows.Count - index}");
             // Notify the user of the result
@@ -324,3 +426,4 @@ namespace quanlyvattu
         }
     }
 }
+ 

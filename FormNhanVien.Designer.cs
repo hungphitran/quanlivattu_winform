@@ -65,6 +65,12 @@
             this.nhanVienReportBtn = new DevExpress.XtraEditors.SimpleButton();
             this.diachiInput = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.controlPanel = new System.Windows.Forms.Panel();
+            this.inputPanel = new System.Windows.Forms.Panel();
+            this.groupBoxPersonalInfo = new System.Windows.Forms.GroupBox();
+            this.groupBoxWorkInfo = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienDataGridView)).BeginInit();
@@ -77,6 +83,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngaysinhInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luongInput.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diachiInput.Properties)).BeginInit();
+            this.headerPanel.SuspendLayout();
+            this.controlPanel.SuspendLayout();
+            this.inputPanel.SuspendLayout();
+            this.groupBoxPersonalInfo.SuspendLayout();
+            this.groupBoxWorkInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // qlvtDataSet
@@ -106,6 +117,42 @@
             this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VattuTableAdapter = null;
             // 
+            // headerPanel
+            // 
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.headerPanel.Controls.Add(this.titleLabel);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(1500, 80);
+            this.headerPanel.TabIndex = 0;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(20, 20);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(333, 45);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "QUẢN LÝ NHÂN VIÊN";
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.controlPanel.Controls.Add(this.backBtn);
+            this.controlPanel.Controls.Add(this.reloadBtn);
+            this.controlPanel.Controls.Add(this.saveBtn);
+            this.controlPanel.Controls.Add(this.undoBtn);
+            this.controlPanel.Controls.Add(this.nhanVienReportBtn);
+            this.controlPanel.Controls.Add(this.deleteBtn);
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.controlPanel.Location = new System.Drawing.Point(0, 80);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(1500, 70);
+            this.controlPanel.TabIndex = 1;
+            // 
             // nhanvienDataGridView
             // 
             this.nhanvienDataGridView.AllowUserToAddRows = false;
@@ -113,7 +160,14 @@
             this.nhanvienDataGridView.AllowUserToOrderColumns = true;
             this.nhanvienDataGridView.AutoGenerateColumns = false;
             this.nhanvienDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.nhanvienDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nhanvienDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.nhanvienDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nhanvienDataGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.nhanvienDataGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.nhanvienDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.nhanvienDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.nhanvienDataGridView.ColumnHeadersHeight = 40;
+            this.nhanvienDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.nhanvienDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -124,18 +178,28 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.nhanvienDataGridView.DataSource = this.nhanvienBindingSource;
-            this.nhanvienDataGridView.Location = new System.Drawing.Point(0, 119);
-            this.nhanvienDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.nhanvienDataGridView.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.nhanvienDataGridView.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nhanvienDataGridView.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.nhanvienDataGridView.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.nhanvienDataGridView.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.nhanvienDataGridView.EnableHeadersVisualStyles = false;
+            this.nhanvienDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.nhanvienDataGridView.Location = new System.Drawing.Point(20, 170);
+            this.nhanvienDataGridView.Margin = new System.Windows.Forms.Padding(20, 20, 20, 10);
             this.nhanvienDataGridView.MultiSelect = false;
             this.nhanvienDataGridView.Name = "nhanvienDataGridView";
+            this.nhanvienDataGridView.RowHeadersVisible = false;
             this.nhanvienDataGridView.RowHeadersWidth = 51;
-            this.nhanvienDataGridView.Size = new System.Drawing.Size(1401, 295);
-            this.nhanvienDataGridView.TabIndex = 1;
+            this.nhanvienDataGridView.RowTemplate.Height = 35;
+            this.nhanvienDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.nhanvienDataGridView.Size = new System.Drawing.Size(1460, 320);
+            this.nhanvienDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MANV";
-            this.dataGridViewTextBoxColumn1.HeaderText = "MANV";
+            this.dataGridViewTextBoxColumn1.HeaderText = "MÃ NV";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
@@ -149,314 +213,412 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "HO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "HO";
+            this.dataGridViewTextBoxColumn3.HeaderText = "HỌ";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
-            this.dataGridViewTextBoxColumn4.HeaderText = "TEN";
+            this.dataGridViewTextBoxColumn4.HeaderText = "TÊN";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "DIACHI";
-            this.dataGridViewTextBoxColumn5.HeaderText = "DIACHI";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ĐỊA CHỈ";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "NGAYSINH";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NGAYSINH";
+            this.dataGridViewTextBoxColumn6.HeaderText = "NGÀY SINH";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "LUONG";
-            this.dataGridViewTextBoxColumn7.HeaderText = "LUONG";
+            this.dataGridViewTextBoxColumn7.HeaderText = "LƯƠNG";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "GHICHU";
-            this.dataGridViewTextBoxColumn8.HeaderText = "GHICHU";
+            this.dataGridViewTextBoxColumn8.HeaderText = "GHI CHÚ";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(24, 55);
+            this.backBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.backBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.backBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.backBtn.Appearance.Options.UseBackColor = true;
+            this.backBtn.Appearance.Options.UseFont = true;
+            this.backBtn.Appearance.Options.UseForeColor = true;
+            this.backBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.backBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.backBtn.Location = new System.Drawing.Point(30, 20);
             this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(100, 28);
+            this.backBtn.Size = new System.Drawing.Size(120, 35);
             this.backBtn.TabIndex = 16;
-            this.backBtn.Text = "Quay lại";
+            this.backBtn.Text = "◄ Quay lại";
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // reloadBtn
             // 
-            this.reloadBtn.Location = new System.Drawing.Point(256, 55);
+            this.reloadBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(184)))));
+            this.reloadBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.reloadBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.reloadBtn.Appearance.Options.UseBackColor = true;
+            this.reloadBtn.Appearance.Options.UseFont = true;
+            this.reloadBtn.Appearance.Options.UseForeColor = true;
+            this.reloadBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(132)))), ((int)(((byte)(150)))));
+            this.reloadBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.reloadBtn.Location = new System.Drawing.Point(170, 20);
             this.reloadBtn.Margin = new System.Windows.Forms.Padding(4);
             this.reloadBtn.Name = "reloadBtn";
-            this.reloadBtn.Size = new System.Drawing.Size(100, 28);
+            this.reloadBtn.Size = new System.Drawing.Size(120, 35);
             this.reloadBtn.TabIndex = 17;
-            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.Text = "🔄 Reload";
             this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(390, 55);
+            this.saveBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(135)))), ((int)(((byte)(84)))));
+            this.saveBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.saveBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Appearance.Options.UseBackColor = true;
+            this.saveBtn.Appearance.Options.UseFont = true;
+            this.saveBtn.Appearance.Options.UseForeColor = true;
+            this.saveBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(67)))));
+            this.saveBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(310, 20);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(100, 28);
+            this.saveBtn.Size = new System.Drawing.Size(120, 35);
             this.saveBtn.TabIndex = 18;
-            this.saveBtn.Text = "Ghi";
+            this.saveBtn.Text = "💾 Ghi";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // undoBtn
             // 
-            this.undoBtn.Location = new System.Drawing.Point(530, 55);
+            this.undoBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.undoBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.undoBtn.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.undoBtn.Appearance.Options.UseBackColor = true;
+            this.undoBtn.Appearance.Options.UseFont = true;
+            this.undoBtn.Appearance.Options.UseForeColor = true;
+            this.undoBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(57)))));
+            this.undoBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.undoBtn.Location = new System.Drawing.Point(450, 20);
             this.undoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.undoBtn.Name = "undoBtn";
-            this.undoBtn.Size = new System.Drawing.Size(100, 28);
+            this.undoBtn.Size = new System.Drawing.Size(120, 35);
             this.undoBtn.TabIndex = 19;
-            this.undoBtn.Text = "Undo";
+            this.undoBtn.Text = "↶ Undo";
             this.undoBtn.Click += new System.EventHandler(this.undoBtn_Click);
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Appearance.BackColor = System.Drawing.Color.Red;
+            this.deleteBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.deleteBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.deleteBtn.Appearance.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Appearance.Options.UseBackColor = true;
-            this.deleteBtn.Location = new System.Drawing.Point(1196, 53);
+            this.deleteBtn.Appearance.Options.UseFont = true;
+            this.deleteBtn.Appearance.Options.UseForeColor = true;
+            this.deleteBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(35)))), ((int)(((byte)(51)))));
+            this.deleteBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.deleteBtn.Location = new System.Drawing.Point(1270, 20);
             this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(205, 28);
+            this.deleteBtn.Size = new System.Drawing.Size(200, 35);
             this.deleteBtn.TabIndex = 20;
-            this.deleteBtn.Text = "Xóa nhân viên đang chọn";
+            this.deleteBtn.Text = "🗑️ Xóa nhân viên đang chọn";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // nhanVienReportBtn
+            // 
+            this.nhanVienReportBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(16)))), ((int)(((byte)(242)))));
+            this.nhanVienReportBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.nhanVienReportBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.nhanVienReportBtn.Appearance.Options.UseBackColor = true;
+            this.nhanVienReportBtn.Appearance.Options.UseFont = true;
+            this.nhanVienReportBtn.Appearance.Options.UseForeColor = true;
+            this.nhanVienReportBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(13)))), ((int)(((byte)(200)))));
+            this.nhanVienReportBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.nhanVienReportBtn.Location = new System.Drawing.Point(1050, 20);
+            this.nhanVienReportBtn.Name = "nhanVienReportBtn";
+            this.nhanVienReportBtn.Size = new System.Drawing.Size(200, 35);
+            this.nhanVienReportBtn.TabIndex = 40;
+            this.nhanVienReportBtn.Text = "📄 In danh sách nhân viên";
+            this.nhanVienReportBtn.Click += new System.EventHandler(this.nhanVienReportBtn_Click);
+            // 
+            // inputPanel
+            // 
+            this.inputPanel.BackColor = System.Drawing.Color.White;
+            this.inputPanel.Controls.Add(this.groupBoxPersonalInfo);
+            this.inputPanel.Controls.Add(this.groupBoxWorkInfo);
+            this.inputPanel.Controls.Add(this.addBtn);
+            this.inputPanel.Location = new System.Drawing.Point(20, 510);
+            this.inputPanel.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.inputPanel.Name = "inputPanel";
+            this.inputPanel.Size = new System.Drawing.Size(1460, 250);
+            this.inputPanel.TabIndex = 3;
+            // 
+            // groupBoxPersonalInfo
+            // 
+            this.groupBoxPersonalInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxPersonalInfo.Controls.Add(this.labelMANV);
+            this.groupBoxPersonalInfo.Controls.Add(this.manvInput);
+            this.groupBoxPersonalInfo.Controls.Add(this.labelCMND);
+            this.groupBoxPersonalInfo.Controls.Add(this.cmndInput);
+            this.groupBoxPersonalInfo.Controls.Add(this.labelHO);
+            this.groupBoxPersonalInfo.Controls.Add(this.hoInput);
+            this.groupBoxPersonalInfo.Controls.Add(this.labelTEN);
+            this.groupBoxPersonalInfo.Controls.Add(this.tenInput);
+            this.groupBoxPersonalInfo.Controls.Add(this.labelNGAYSINH);
+            this.groupBoxPersonalInfo.Controls.Add(this.ngaysinhInput);
+            this.groupBoxPersonalInfo.Controls.Add(this.label1);
+            this.groupBoxPersonalInfo.Controls.Add(this.diachiInput);
+            this.groupBoxPersonalInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.groupBoxPersonalInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.groupBoxPersonalInfo.Location = new System.Drawing.Point(30, 20);
+            this.groupBoxPersonalInfo.Name = "groupBoxPersonalInfo";
+            this.groupBoxPersonalInfo.Size = new System.Drawing.Size(680, 170);
+            this.groupBoxPersonalInfo.TabIndex = 50;
+            this.groupBoxPersonalInfo.TabStop = false;
+            this.groupBoxPersonalInfo.Text = "THÔNG TIN CÁ NHÂN";
+            // 
+            // groupBoxWorkInfo
+            // 
+            this.groupBoxWorkInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxWorkInfo.Controls.Add(this.labelLUONG);
+            this.groupBoxWorkInfo.Controls.Add(this.luongInput);
+            this.groupBoxWorkInfo.Controls.Add(this.labelGHICHU);
+            this.groupBoxWorkInfo.Controls.Add(this.ghichuInput);
+            this.groupBoxWorkInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.groupBoxWorkInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.groupBoxWorkInfo.Location = new System.Drawing.Point(750, 20);
+            this.groupBoxWorkInfo.Name = "groupBoxWorkInfo";
+            this.groupBoxWorkInfo.Size = new System.Drawing.Size(420, 170);
+            this.groupBoxWorkInfo.TabIndex = 51;
+            this.groupBoxWorkInfo.TabStop = false;
+            this.groupBoxWorkInfo.Text = "THÔNG TIN CÔNG VIỆC";
             // 
             // labelMANV
             // 
+            // labelMANV (continued from where it was cut off)
             this.labelMANV.AutoSize = true;
-            this.labelMANV.Location = new System.Drawing.Point(319, 443);
-            this.labelMANV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMANV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMANV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelMANV.Location = new System.Drawing.Point(30, 35);
             this.labelMANV.Name = "labelMANV";
-            this.labelMANV.Size = new System.Drawing.Size(86, 16);
+            this.labelMANV.Size = new System.Drawing.Size(89, 20);
             this.labelMANV.TabIndex = 21;
-            this.labelMANV.Text = "Mã nhân viên";
+            this.labelMANV.Text = "Mã nhân viên:";
             // 
             // labelCMND
             // 
             this.labelCMND.AutoSize = true;
-            this.labelCMND.Location = new System.Drawing.Point(768, 446);
-            this.labelCMND.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCMND.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelCMND.Location = new System.Drawing.Point(350, 35);
             this.labelCMND.Name = "labelCMND";
-            this.labelCMND.Size = new System.Drawing.Size(47, 16);
+            this.labelCMND.Size = new System.Drawing.Size(51, 20);
             this.labelCMND.TabIndex = 22;
-            this.labelCMND.Text = "CMND";
+            this.labelCMND.Text = "CMND:";
             // 
             // labelHO
             // 
             this.labelHO.AutoSize = true;
-            this.labelHO.Location = new System.Drawing.Point(323, 490);
-            this.labelHO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHO.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelHO.Location = new System.Drawing.Point(30, 75);
             this.labelHO.Name = "labelHO";
-            this.labelHO.Size = new System.Drawing.Size(25, 16);
+            this.labelHO.Size = new System.Drawing.Size(29, 20);
             this.labelHO.TabIndex = 23;
-            this.labelHO.Text = "Họ";
+            this.labelHO.Text = "Họ:";
             // 
             // labelTEN
             // 
             this.labelTEN.AutoSize = true;
-            this.labelTEN.Location = new System.Drawing.Point(772, 493);
-            this.labelTEN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTEN.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTEN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelTEN.Location = new System.Drawing.Point(350, 75);
             this.labelTEN.Name = "labelTEN";
-            this.labelTEN.Size = new System.Drawing.Size(31, 16);
+            this.labelTEN.Size = new System.Drawing.Size(32, 20);
             this.labelTEN.TabIndex = 24;
-            this.labelTEN.Text = "Tên";
+            this.labelTEN.Text = "Tên:";
             // 
             // labelNGAYSINH
             // 
             this.labelNGAYSINH.AutoSize = true;
-            this.labelNGAYSINH.Location = new System.Drawing.Point(323, 537);
-            this.labelNGAYSINH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNGAYSINH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNGAYSINH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelNGAYSINH.Location = new System.Drawing.Point(350, 115);
             this.labelNGAYSINH.Name = "labelNGAYSINH";
-            this.labelNGAYSINH.Size = new System.Drawing.Size(67, 16);
+            this.labelNGAYSINH.Size = new System.Drawing.Size(78, 20);
             this.labelNGAYSINH.TabIndex = 25;
-            this.labelNGAYSINH.Text = "Ngày sinh";
+            this.labelNGAYSINH.Text = "Ngày sinh:";
             // 
             // labelLUONG
             // 
             this.labelLUONG.AutoSize = true;
-            this.labelLUONG.Location = new System.Drawing.Point(772, 541);
-            this.labelLUONG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLUONG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLUONG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelLUONG.Location = new System.Drawing.Point(30, 35);
             this.labelLUONG.Name = "labelLUONG";
-            this.labelLUONG.Size = new System.Drawing.Size(44, 16);
+            this.labelLUONG.Size = new System.Drawing.Size(54, 20);
             this.labelLUONG.TabIndex = 26;
-            this.labelLUONG.Text = "Lương";
+            this.labelLUONG.Text = "Lương:";
             // 
             // labelGHICHU
             // 
             this.labelGHICHU.AutoSize = true;
-            this.labelGHICHU.Location = new System.Drawing.Point(323, 595);
-            this.labelGHICHU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelGHICHU.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGHICHU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelGHICHU.Location = new System.Drawing.Point(30, 75);
             this.labelGHICHU.Name = "labelGHICHU";
-            this.labelGHICHU.Size = new System.Drawing.Size(51, 16);
+            this.labelGHICHU.Size = new System.Drawing.Size(61, 20);
             this.labelGHICHU.TabIndex = 27;
-            this.labelGHICHU.Text = "Ghi chú";
-            // 
-            // addBtn
-            // 
-            this.addBtn.Location = new System.Drawing.Point(617, 629);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(157, 30);
-            this.addBtn.TabIndex = 28;
-            this.addBtn.Text = "THÊM NHÂN VIÊN";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
-            // 
-            // manvInput
-            // 
-            this.manvInput.Location = new System.Drawing.Point(444, 440);
-            this.manvInput.Margin = new System.Windows.Forms.Padding(4);
-            this.manvInput.Name = "manvInput";
-            this.manvInput.Size = new System.Drawing.Size(186, 22);
-            this.manvInput.TabIndex = 29;
-            // 
-            // cmndInput
-            // 
-            this.cmndInput.EditValue = "";
-            this.cmndInput.Location = new System.Drawing.Point(856, 443);
-            this.cmndInput.Margin = new System.Windows.Forms.Padding(4);
-            this.cmndInput.Name = "cmndInput";
-            this.cmndInput.Properties.MaxLength = 12;
-            this.cmndInput.Size = new System.Drawing.Size(165, 22);
-            this.cmndInput.TabIndex = 30;
-            this.cmndInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmndInput_KeyPress);
-            // 
-            // hoInput
-            // 
-            this.hoInput.Location = new System.Drawing.Point(444, 490);
-            this.hoInput.Margin = new System.Windows.Forms.Padding(4);
-            this.hoInput.Name = "hoInput";
-            this.hoInput.Size = new System.Drawing.Size(186, 22);
-            this.hoInput.TabIndex = 31;
-            this.hoInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hoInput_KeyPress);
-            // 
-            // tenInput
-            // 
-            this.tenInput.Location = new System.Drawing.Point(856, 490);
-            this.tenInput.Margin = new System.Windows.Forms.Padding(4);
-            this.tenInput.Name = "tenInput";
-            this.tenInput.Size = new System.Drawing.Size(165, 22);
-            this.tenInput.TabIndex = 32;
-            this.tenInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tenInput_KeyPress);
-            // 
-            // ghichuInput
-            // 
-            this.ghichuInput.Location = new System.Drawing.Point(444, 587);
-            this.ghichuInput.Margin = new System.Windows.Forms.Padding(4);
-            this.ghichuInput.Name = "ghichuInput";
-            this.ghichuInput.Size = new System.Drawing.Size(186, 22);
-            this.ghichuInput.TabIndex = 35;
-            // 
-            // ngaysinhInput
-            // 
-            this.ngaysinhInput.EditValue = null;
-            this.ngaysinhInput.Location = new System.Drawing.Point(444, 535);
-            this.ngaysinhInput.Margin = new System.Windows.Forms.Padding(4);
-            this.ngaysinhInput.Name = "ngaysinhInput";
-            this.ngaysinhInput.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaysinhInput.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaysinhInput.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.ngaysinhInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.ngaysinhInput.Properties.MaskSettings.Set("mask", "dd/MM/yyy");
-            this.ngaysinhInput.Size = new System.Drawing.Size(186, 22);
-            this.ngaysinhInput.TabIndex = 36;
-            this.ngaysinhInput.EditValueChanged += new System.EventHandler(this.ngaysinhInput_EditValueChanged);
-            // 
-            // luongInput
-            // 
-            this.luongInput.Location = new System.Drawing.Point(856, 538);
-            this.luongInput.Margin = new System.Windows.Forms.Padding(4);
-            this.luongInput.Name = "luongInput";
-            this.luongInput.Properties.DisplayFormat.FormatString = "n3";
-            this.luongInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.luongInput.Properties.EditFormat.FormatString = "n3";
-            this.luongInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.luongInput.Size = new System.Drawing.Size(165, 22);
-            this.luongInput.TabIndex = 37;
-            // 
-            // nhanVienReportBtn
-            // 
-            this.nhanVienReportBtn.Location = new System.Drawing.Point(937, 53);
-            this.nhanVienReportBtn.Name = "nhanVienReportBtn";
-            this.nhanVienReportBtn.Size = new System.Drawing.Size(229, 29);
-            this.nhanVienReportBtn.TabIndex = 40;
-            this.nhanVienReportBtn.Text = "In danh sách nhân viên";
-            this.nhanVienReportBtn.Click += new System.EventHandler(this.nhanVienReportBtn_Click);
-            // 
-            // diachiInput
-            // 
-            this.diachiInput.Location = new System.Drawing.Point(856, 584);
-            this.diachiInput.Margin = new System.Windows.Forms.Padding(4);
-            this.diachiInput.Name = "diachiInput";
-            this.diachiInput.Properties.DisplayFormat.FormatString = "n3";
-            this.diachiInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.diachiInput.Properties.EditFormat.FormatString = "n3";
-            this.diachiInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.diachiInput.Size = new System.Drawing.Size(165, 22);
-            this.diachiInput.TabIndex = 41;
+            this.labelGHICHU.Text = "Ghi chú:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(772, 587);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.label1.Location = new System.Drawing.Point(30, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Địa chỉ";
+            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Địa chỉ:";
+            // 
+            // addBtn
+            // 
+            this.addBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.addBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.addBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.addBtn.Appearance.Options.UseBackColor = true;
+            this.addBtn.Appearance.Options.UseFont = true;
+            this.addBtn.Appearance.Options.UseForeColor = true;
+            this.addBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.addBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.addBtn.Location = new System.Drawing.Point(1220, 80);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(200, 45);
+            this.addBtn.TabIndex = 29;
+            this.addBtn.Text = "➕ Thêm nhân viên mới";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // manvInput
+            // 
+            this.manvInput.Location = new System.Drawing.Point(140, 32);
+            this.manvInput.Margin = new System.Windows.Forms.Padding(4);
+            this.manvInput.Name = "manvInput";
+            this.manvInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.manvInput.Properties.Appearance.Options.UseFont = true;
+            this.manvInput.Size = new System.Drawing.Size(180, 26);
+            this.manvInput.TabIndex = 30;
+            // 
+            // cmndInput
+            // 
+            this.cmndInput.Location = new System.Drawing.Point(460, 32);
+            this.cmndInput.Margin = new System.Windows.Forms.Padding(4);
+            this.cmndInput.Name = "cmndInput";
+            this.cmndInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmndInput.Properties.Appearance.Options.UseFont = true;
+            this.cmndInput.Size = new System.Drawing.Size(180, 26);
+            this.cmndInput.TabIndex = 31;
+            // 
+            // hoInput
+            // 
+            this.hoInput.Location = new System.Drawing.Point(140, 72);
+            this.hoInput.Margin = new System.Windows.Forms.Padding(4);
+            this.hoInput.Name = "hoInput";
+            this.hoInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hoInput.Properties.Appearance.Options.UseFont = true;
+            this.hoInput.Size = new System.Drawing.Size(180, 26);
+            this.hoInput.TabIndex = 32;
+            // 
+            // tenInput
+            // 
+            this.tenInput.Location = new System.Drawing.Point(460, 72);
+            this.tenInput.Margin = new System.Windows.Forms.Padding(4);
+            this.tenInput.Name = "tenInput";
+            this.tenInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tenInput.Properties.Appearance.Options.UseFont = true;
+            this.tenInput.Size = new System.Drawing.Size(180, 26);
+            this.tenInput.TabIndex = 33;
+            // 
+            // ghichuInput
+            // 
+            this.ghichuInput.Location = new System.Drawing.Point(140, 72);
+            this.ghichuInput.Margin = new System.Windows.Forms.Padding(4);
+            this.ghichuInput.Name = "ghichuInput";
+            this.ghichuInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ghichuInput.Properties.Appearance.Options.UseFont = true;
+            this.ghichuInput.Size = new System.Drawing.Size(250, 80);
+            this.ghichuInput.TabIndex = 34;
+            // 
+            // ngaysinhInput
+            // 
+            this.ngaysinhInput.EditValue = null;
+            this.ngaysinhInput.Location = new System.Drawing.Point(460, 112);
+            this.ngaysinhInput.Margin = new System.Windows.Forms.Padding(4);
+            this.ngaysinhInput.Name = "ngaysinhInput";
+            this.ngaysinhInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ngaysinhInput.Properties.Appearance.Options.UseFont = true;
+            this.ngaysinhInput.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngaysinhInput.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngaysinhInput.Size = new System.Drawing.Size(180, 26);
+            this.ngaysinhInput.TabIndex = 35;
+            // 
+            // luongInput
+            // 
+            this.luongInput.Location = new System.Drawing.Point(140, 32);
+            this.luongInput.Margin = new System.Windows.Forms.Padding(4);
+            this.luongInput.Name = "luongInput";
+            this.luongInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.luongInput.Properties.Appearance.Options.UseFont = true;
+            this.luongInput.Size = new System.Drawing.Size(250, 26);
+            this.luongInput.TabIndex = 36;
+            // 
+            // diachiInput
+            // 
+            this.diachiInput.Location = new System.Drawing.Point(140, 112);
+            this.diachiInput.Margin = new System.Windows.Forms.Padding(4);
+            this.diachiInput.Name = "diachiInput";
+            this.diachiInput.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.diachiInput.Properties.Appearance.Options.UseFont = true;
+            this.diachiInput.Size = new System.Drawing.Size(180, 26);
+            this.diachiInput.TabIndex = 37;
             // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 689);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.diachiInput);
-            this.Controls.Add(this.nhanVienReportBtn);
-            this.Controls.Add(this.luongInput);
-            this.Controls.Add(this.ngaysinhInput);
-            this.Controls.Add(this.ghichuInput);
-            this.Controls.Add(this.tenInput);
-            this.Controls.Add(this.hoInput);
-            this.Controls.Add(this.cmndInput);
-            this.Controls.Add(this.manvInput);
-            this.Controls.Add(this.addBtn);
-            this.Controls.Add(this.labelGHICHU);
-            this.Controls.Add(this.labelLUONG);
-            this.Controls.Add(this.labelNGAYSINH);
-            this.Controls.Add(this.labelTEN);
-            this.Controls.Add(this.labelHO);
-            this.Controls.Add(this.labelCMND);
-            this.Controls.Add(this.labelMANV);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.undoBtn);
-            this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.reloadBtn);
-            this.Controls.Add(this.backBtn);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.nhanvienDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.controlPanel);
+            this.Controls.Add(this.headerPanel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormNhanVien";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản Lý Nhân Viên";
             this.Load += new System.EventHandler(this.FormNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
@@ -470,8 +632,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngaysinhInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luongInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diachiInput.Properties)).EndInit();
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
+            this.controlPanel.ResumeLayout(false);
+            this.inputPanel.ResumeLayout(false);
+            this.groupBoxPersonalInfo.ResumeLayout(false);
+            this.groupBoxPersonalInfo.PerformLayout();
+            this.groupBoxWorkInfo.ResumeLayout(false);
+            this.groupBoxWorkInfo.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -482,6 +651,14 @@
         private qlvtDataSetTableAdapters.NhanvienTableAdapter nhanvienTableAdapter;
         private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView nhanvienDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DevExpress.XtraEditors.SimpleButton backBtn;
         private DevExpress.XtraEditors.SimpleButton reloadBtn;
         private DevExpress.XtraEditors.SimpleButton saveBtn;
@@ -503,15 +680,13 @@
         private DevExpress.XtraEditors.DateEdit ngaysinhInput;
         private DevExpress.XtraEditors.TextEdit luongInput;
         private DevExpress.XtraEditors.SimpleButton nhanVienReportBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DevExpress.XtraEditors.TextEdit diachiInput;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Panel controlPanel;
+        private System.Windows.Forms.Panel inputPanel;
+        private System.Windows.Forms.GroupBox groupBoxPersonalInfo;
+        private System.Windows.Forms.GroupBox groupBoxWorkInfo;
     }
 }

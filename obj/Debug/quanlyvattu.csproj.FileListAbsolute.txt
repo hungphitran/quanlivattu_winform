@@ -736,3 +736,7 @@ C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\MetroFramework.Design.dll
 C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\MetroFramework.dll
 C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\huyph\Documents\quanlivattu_winform\bin\Debug\Siticone.Desktop.UI.dll
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\MetroFramework.Design.dll
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\MetroFramework.dll
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\Siticone.Desktop.UI.dll

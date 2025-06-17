@@ -34,7 +34,13 @@
             System.Windows.Forms.Label masoDDHLabel;
             System.Windows.Forms.Label tenNhanVienLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPhieuNhap));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datHangBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -76,6 +82,8 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
             mAPNLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
             masoDDHLabel = new System.Windows.Forms.Label();
@@ -97,47 +105,68 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vw_PhieuNhapDataGridView)).BeginInit();
+            this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mAPNLabel
             // 
             mAPNLabel.AutoSize = true;
+            mAPNLabel.BackColor = System.Drawing.Color.Transparent;
+            mAPNLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            mAPNLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             mAPNLabel.Location = new System.Drawing.Point(38, 70);
             mAPNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAPNLabel.Name = "mAPNLabel";
-            mAPNLabel.Size = new System.Drawing.Size(45, 16);
+            mAPNLabel.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
+            mAPNLabel.Size = new System.Drawing.Size(74, 31);
             mAPNLabel.TabIndex = 0;
             mAPNLabel.Text = "MAPN:";
+            mAPNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // nGAYLabel
             // 
             nGAYLabel.AutoSize = true;
+            nGAYLabel.BackColor = System.Drawing.Color.Transparent;
+            nGAYLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            nGAYLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             nGAYLabel.Location = new System.Drawing.Point(40, 131);
             nGAYLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nGAYLabel.Name = "nGAYLabel";
-            nGAYLabel.Size = new System.Drawing.Size(43, 16);
+            nGAYLabel.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
+            nGAYLabel.Size = new System.Drawing.Size(69, 31);
             nGAYLabel.TabIndex = 2;
             nGAYLabel.Text = "NGAY:";
+            nGAYLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // masoDDHLabel
             // 
             masoDDHLabel.AutoSize = true;
+            masoDDHLabel.BackColor = System.Drawing.Color.Transparent;
+            masoDDHLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            masoDDHLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             masoDDHLabel.Location = new System.Drawing.Point(6, 176);
             masoDDHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             masoDDHLabel.Name = "masoDDHLabel";
-            masoDDHLabel.Size = new System.Drawing.Size(70, 16);
+            masoDDHLabel.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
+            masoDDHLabel.Size = new System.Drawing.Size(109, 31);
             masoDDHLabel.TabIndex = 4;
             masoDDHLabel.Text = "Maso DDH:";
+            masoDDHLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tenNhanVienLabel
             // 
             tenNhanVienLabel.AutoSize = true;
+            tenNhanVienLabel.BackColor = System.Drawing.Color.Transparent;
+            tenNhanVienLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            tenNhanVienLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             tenNhanVienLabel.Location = new System.Drawing.Point(4, 230);
             tenNhanVienLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tenNhanVienLabel.Name = "tenNhanVienLabel";
-            tenNhanVienLabel.Size = new System.Drawing.Size(96, 16);
+            tenNhanVienLabel.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
+            tenNhanVienLabel.Size = new System.Drawing.Size(105, 31);
             tenNhanVienLabel.TabIndex = 6;
-            tenNhanVienLabel.Text = "Ten Nhan Vien:";
+            tenNhanVienLabel.Text = "Nhan Vien:";
+            tenNhanVienLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // datHangBindingNavigator
             // 
@@ -274,6 +303,13 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.White;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.groupControl1.Controls.Add(tenNhanVienLabel);
             this.groupControl1.Controls.Add(this.tenNhanVienTextEdit);
             this.groupControl1.Controls.Add(masoDDHLabel);
@@ -283,8 +319,9 @@
             this.groupControl1.Controls.Add(mAPNLabel);
             this.groupControl1.Controls.Add(this.mAPNTextEdit);
             this.groupControl1.Location = new System.Drawing.Point(2, 411);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Padding = new System.Windows.Forms.Padding(20);
             this.groupControl1.Size = new System.Drawing.Size(438, 401);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin phiếu nhập";
@@ -293,10 +330,16 @@
             // 
             this.tenNhanVienTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "TenNhanVien", true));
             this.tenNhanVienTextEdit.Enabled = false;
-            this.tenNhanVienTextEdit.Location = new System.Drawing.Point(131, 226);
-            this.tenNhanVienTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tenNhanVienTextEdit.Location = new System.Drawing.Point(120, 227);
+            this.tenNhanVienTextEdit.Margin = new System.Windows.Forms.Padding(4);
             this.tenNhanVienTextEdit.Name = "tenNhanVienTextEdit";
-            this.tenNhanVienTextEdit.Size = new System.Drawing.Size(204, 22);
+            this.tenNhanVienTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tenNhanVienTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tenNhanVienTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            this.tenNhanVienTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.tenNhanVienTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.tenNhanVienTextEdit.Properties.Padding = new System.Windows.Forms.Padding(4);
+            this.tenNhanVienTextEdit.Size = new System.Drawing.Size(292, 38);
             this.tenNhanVienTextEdit.TabIndex = 7;
             // 
             // vw_PhieuNhapBindingSource
@@ -308,10 +351,16 @@
             // 
             this.masoDDHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "MasoDDH", true));
             this.masoDDHTextEdit.Enabled = false;
-            this.masoDDHTextEdit.Location = new System.Drawing.Point(131, 172);
-            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.masoDDHTextEdit.Location = new System.Drawing.Point(120, 173);
+            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(4);
             this.masoDDHTextEdit.Name = "masoDDHTextEdit";
-            this.masoDDHTextEdit.Size = new System.Drawing.Size(204, 22);
+            this.masoDDHTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.masoDDHTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.masoDDHTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            this.masoDDHTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.masoDDHTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.masoDDHTextEdit.Properties.Padding = new System.Windows.Forms.Padding(4);
+            this.masoDDHTextEdit.Size = new System.Drawing.Size(292, 38);
             this.masoDDHTextEdit.TabIndex = 5;
             // 
             // nGAYDateEdit
@@ -319,55 +368,98 @@
             this.nGAYDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "NGAY", true));
             this.nGAYDateEdit.EditValue = null;
             this.nGAYDateEdit.Enabled = false;
-            this.nGAYDateEdit.Location = new System.Drawing.Point(131, 124);
-            this.nGAYDateEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nGAYDateEdit.Location = new System.Drawing.Point(120, 124);
+            this.nGAYDateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.nGAYDateEdit.Name = "nGAYDateEdit";
+            this.nGAYDateEdit.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.nGAYDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.nGAYDateEdit.Properties.Appearance.Options.UseBackColor = true;
+            this.nGAYDateEdit.Properties.Appearance.Options.UseFont = true;
+            this.nGAYDateEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.nGAYDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nGAYDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYDateEdit.Size = new System.Drawing.Size(204, 22);
+            this.nGAYDateEdit.Properties.Padding = new System.Windows.Forms.Padding(4);
+            this.nGAYDateEdit.Size = new System.Drawing.Size(292, 38);
             this.nGAYDateEdit.TabIndex = 3;
             // 
             // mAPNTextEdit
             // 
             this.mAPNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vw_PhieuNhapBindingSource, "MAPN", true));
             this.mAPNTextEdit.Enabled = false;
-            this.mAPNTextEdit.Location = new System.Drawing.Point(131, 66);
-            this.mAPNTextEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mAPNTextEdit.Location = new System.Drawing.Point(120, 67);
+            this.mAPNTextEdit.Margin = new System.Windows.Forms.Padding(4);
             this.mAPNTextEdit.Name = "mAPNTextEdit";
-            this.mAPNTextEdit.Size = new System.Drawing.Size(204, 22);
+            this.mAPNTextEdit.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.mAPNTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.mAPNTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            this.mAPNTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.mAPNTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.mAPNTextEdit.Properties.Padding = new System.Windows.Forms.Padding(4);
+            this.mAPNTextEdit.Size = new System.Drawing.Size(292, 38);
             this.mAPNTextEdit.TabIndex = 1;
             // 
             // groupControl2
             // 
+            this.groupControl2.Appearance.BackColor = System.Drawing.Color.White;
+            this.groupControl2.Appearance.Options.UseBackColor = true;
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl2.Controls.Add(this.cTPNDataGridView);
             this.groupControl2.Location = new System.Drawing.Point(448, 411);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(624, 497);
+            this.groupControl2.Size = new System.Drawing.Size(859, 497);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi tiết phiếu nhập";
             // 
             // cTPNDataGridView
             // 
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cTPNDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.cTPNDataGridView.AutoGenerateColumns = false;
             this.cTPNDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cTPNDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cTPNDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.cTPNDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cTPNDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.cTPNDataGridView.ColumnHeadersHeight = 40;
+            this.cTPNDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.cTPNDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.cTPNDataGridView.DataSource = this.cTPNBindingSource;
-            this.cTPNDataGridView.Location = new System.Drawing.Point(6, 39);
-            this.cTPNDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cTPNDataGridView.DefaultCellStyle = dataGridViewCellStyle45;
+            this.cTPNDataGridView.EnableHeadersVisualStyles = false;
+            this.cTPNDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.cTPNDataGridView.Location = new System.Drawing.Point(12, 32);
+            this.cTPNDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.cTPNDataGridView.MultiSelect = false;
             this.cTPNDataGridView.Name = "cTPNDataGridView";
             this.cTPNDataGridView.ReadOnly = true;
+            this.cTPNDataGridView.RowHeadersVisible = false;
             this.cTPNDataGridView.RowHeadersWidth = 51;
-            this.cTPNDataGridView.RowTemplate.Height = 24;
-            this.cTPNDataGridView.Size = new System.Drawing.Size(876, 324);
+            this.cTPNDataGridView.RowTemplate.Height = 35;
+            this.cTPNDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cTPNDataGridView.Size = new System.Drawing.Size(847, 324);
             this.cTPNDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn10
@@ -439,12 +531,20 @@
             // 
             // backBut
             // 
-            this.backBut.Location = new System.Drawing.Point(53, 12);
+            this.backBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.backBut.FlatAppearance.BorderSize = 0;
+            this.backBut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
+            this.backBut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.backBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBut.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.backBut.ForeColor = System.Drawing.Color.White;
+            this.backBut.Location = new System.Drawing.Point(1120, 12);
             this.backBut.Name = "backBut";
-            this.backBut.Size = new System.Drawing.Size(92, 29);
+            this.backBut.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.backBut.Size = new System.Drawing.Size(120, 35);
             this.backBut.TabIndex = 3;
-            this.backBut.Text = "Quay lại";
-            this.backBut.UseVisualStyleBackColor = true;
+            this.backBut.Text = "◄ Quay lại";
+            this.backBut.UseVisualStyleBackColor = false;
             this.backBut.Click += new System.EventHandler(this.backBut_Click);
             // 
             // vw_PhieuNhapTableAdapter
@@ -455,21 +555,46 @@
             // 
             this.vw_PhieuNhapDataGridView.AllowUserToAddRows = false;
             this.vw_PhieuNhapDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.vw_PhieuNhapDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.vw_PhieuNhapDataGridView.AutoGenerateColumns = false;
             this.vw_PhieuNhapDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.vw_PhieuNhapDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vw_PhieuNhapDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.vw_PhieuNhapDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vw_PhieuNhapDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.vw_PhieuNhapDataGridView.ColumnHeadersHeight = 40;
+            this.vw_PhieuNhapDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.vw_PhieuNhapDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn14});
             this.vw_PhieuNhapDataGridView.DataSource = this.vw_PhieuNhapBindingSource;
-            this.vw_PhieuNhapDataGridView.Location = new System.Drawing.Point(2, 55);
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.vw_PhieuNhapDataGridView.DefaultCellStyle = dataGridViewCellStyle49;
+            this.vw_PhieuNhapDataGridView.EnableHeadersVisualStyles = false;
+            this.vw_PhieuNhapDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.vw_PhieuNhapDataGridView.Location = new System.Drawing.Point(2, 65);
             this.vw_PhieuNhapDataGridView.Name = "vw_PhieuNhapDataGridView";
             this.vw_PhieuNhapDataGridView.ReadOnly = true;
+            this.vw_PhieuNhapDataGridView.RowHeadersVisible = false;
             this.vw_PhieuNhapDataGridView.RowHeadersWidth = 51;
-            this.vw_PhieuNhapDataGridView.RowTemplate.Height = 24;
-            this.vw_PhieuNhapDataGridView.Size = new System.Drawing.Size(1070, 349);
+            this.vw_PhieuNhapDataGridView.RowTemplate.Height = 35;
+            this.vw_PhieuNhapDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vw_PhieuNhapDataGridView.Size = new System.Drawing.Size(1318, 339);
             this.vw_PhieuNhapDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn2
@@ -483,8 +608,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NGAY";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle48.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle48;
             this.dataGridViewTextBoxColumn3.HeaderText = "NGAY";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -506,14 +631,39 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
+            // headerPanel
+            // 
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.headerPanel.Controls.Add(this.titleLabel);
+            this.headerPanel.Controls.Add(this.backBut);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(1320, 62);
+            this.headerPanel.TabIndex = 6;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(417, 50);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "QUẢN LÝ PHIẾU NHẬP";
+            // 
             // FormPhieuNhap
             // 
-            this.ClientSize = new System.Drawing.Size(1084, 746);
+            this.Appearance.Options.UseFont = true;
+            this.ClientSize = new System.Drawing.Size(1320, 746);
+            this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.vw_PhieuNhapDataGridView);
-            this.Controls.Add(this.backBut);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Name = "FormPhieuNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormPhieuNhap_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingNavigator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet)).EndInit();
@@ -533,6 +683,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vw_PhieuNhapDataGridView)).EndInit();
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -586,5 +738,7 @@
         private DevExpress.XtraEditors.TextEdit masoDDHTextEdit;
         private DevExpress.XtraEditors.DateEdit nGAYDateEdit;
         private DevExpress.XtraEditors.TextEdit mAPNTextEdit;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.Label titleLabel;
     }
 }

@@ -258,6 +258,7 @@ namespace quanlyvattu
                         }
 
                         MessageBox.Show($"Đã Phục hồi thành công về thời điểm: {pointInTime:yyyy-MM-dd HH:mm:ss}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Program.ExecSqlNonQuery("USE master; ALTER DATABASE qlvt SET MULTI_USER WITH ROLLBACK IMMEDIATE;");
                         // Bắt đầu restore log chain hợp lệ kể từ bản full
                         // After successful restore, refresh backup list
                         backupTableLoad();
@@ -266,6 +267,8 @@ namespace quanlyvattu
             }
             catch (Exception ex)
             {
+                Program.ExecSqlNonQuery("use master; restore database qlvt with recovery;");
+                
                 MessageBox.Show(
                     $"Có lỗi xảy ra khi phục hồi: {ex.Message}",
                     "Lỗi",

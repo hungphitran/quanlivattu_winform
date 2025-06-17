@@ -103,6 +103,5 @@ namespace quanlyvattu
                 MessageBox.Show($"Lỗi khi lưu báo cáo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

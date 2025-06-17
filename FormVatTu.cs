@@ -513,8 +513,9 @@ namespace quanlyvattu
                 formBaoCao.Close();
             }
             String mavt = this.mavtTextEdit.Text;
+            string tenvt = this.tenvtTextEdit.Text;
 
-            LichSuVattuReport report = new LichSuVattuReport(mavt);
+            LichSuVattuReport report = new LichSuVattuReport(mavt, tenvt);
             formBaoCao = new FormBaoCao(report);
             if (report.RowCount <= 0)
             {

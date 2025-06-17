@@ -226,7 +226,7 @@
             this.tableCell1.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell1.Text = "Loại Giao Dịch";
             this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell1.Weight = 0.22693192702073317D;
+            this.tableCell1.Weight = 0.19744473901632015D;
             // 
             // tableCell2
             // 
@@ -242,7 +242,7 @@
             this.tableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell2.Text = "Mã Giao Dịch";
             this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell2.Weight = 0.2085541240985577D;
+            this.tableCell2.Weight = 0.17265673039603852D;
             // 
             // tableCell3
             // 
@@ -258,7 +258,7 @@
             this.tableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell3.Text = "Ngày";
             this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell3.Weight = 0.11355506310096154D;
+            this.tableCell3.Weight = 0.18150367309449672D;
             // 
             // tableCell4
             // 
@@ -274,7 +274,7 @@
             this.tableCell4.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell4.Text = "Số Lượng";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell4.Weight = 0.17329299926757813D;
+            this.tableCell4.Weight = 0.13354938120343446D;
             // 
             // tableCell5
             // 
@@ -290,7 +290,7 @@
             this.tableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell5.Text = "Đơn Giá";
             this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell5.Weight = 0.14418473463792067D;
+            this.tableCell5.Weight = 0.15572326687243024D;
             // 
             // tableCell6
             // 
@@ -306,7 +306,7 @@
             this.tableCell6.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell6.Text = "Đối Tác";
             this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell6.Weight = 0.13348117534930889D;
+            this.tableCell6.Weight = 0.15912223289234D;
             // 
             // Detail
             // 
@@ -351,7 +351,7 @@
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell7.Weight = 0.22693192702073317D;
+            this.tableCell7.Weight = 0.19744480978760803D;
             // 
             // tableCell8
             // 
@@ -368,7 +368,7 @@
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell8.Weight = 0.2085541240985577D;
+            this.tableCell8.Weight = 0.17265658996702304D;
             // 
             // tableCell9
             // 
@@ -385,7 +385,7 @@
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell9.Weight = 0.11355506310096154D;
+            this.tableCell9.Weight = 0.18150360187176678D;
             // 
             // tableCell10
             // 
@@ -402,7 +402,7 @@
             this.tableCell10.Name = "tableCell10";
             this.tableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell10.Weight = 0.17329299926757813D;
+            this.tableCell10.Weight = 0.13354942862004712D;
             // 
             // tableCell11
             // 
@@ -419,7 +419,7 @@
             this.tableCell11.Name = "tableCell11";
             this.tableCell11.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell11.Weight = 0.14418473463792067D;
+            this.tableCell11.Weight = 0.15572326673699635D;
             // 
             // tableCell12
             // 
@@ -436,7 +436,7 @@
             this.tableCell12.Name = "tableCell12";
             this.tableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
             this.tableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell12.Weight = 0.13348116361177884D;
+            this.tableCell12.Weight = 0.15912231475408878D;
             // 
             // ReportFooter
             // 
@@ -577,7 +577,7 @@
             // totalDistinctLabel
             // 
             this.totalDistinctLabel.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount()")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Count()")});
             this.totalDistinctLabel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.totalDistinctLabel.KeepTogether = true;
             this.totalDistinctLabel.LocationFloat = new DevExpress.Utils.PointFloat(464.2857F, 4.88444F);

@@ -19,6 +19,8 @@ namespace quanlyvattu
             documentViewer1.DocumentSource = report;
             // Create the document
             report.CreateDocument();
+            Console.WriteLine(report.RowCount);
+
             
         }
 
@@ -101,6 +103,5 @@ namespace quanlyvattu
                 MessageBox.Show($"Lỗi khi lưu báo cáo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

@@ -159,6 +159,7 @@ namespace quanlyvattu
                 else
                 {
                     MessageBox.Show("Lưu thành công");
+                    Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
                 }
             }
             catch (Exception exception)
@@ -408,6 +409,11 @@ namespace quanlyvattu
             if (string.IsNullOrEmpty(luongText))
             {
                 MessageBox.Show("Lương không được để trống!");
+                double l = double.Parse(luongText) ;
+                if(l <7000000) {
+                    MessageBox.Show("Lương không được nhỏ hơn 7000000!");
+                    return false;
+                }
                 return false;
             }
 
@@ -482,8 +488,13 @@ namespace quanlyvattu
 
         private void nhanVienReportBtn_Click(object sender, EventArgs e)
         {
-            FormBaoCao form = new FormBaoCao(new NhanVienReport());
-            form.Show();
+            NhanVienReport report = new NhanVienReport();
+            FormBaoCao form = new FormBaoCao(report);
+            if (report.RowCount <= 0)
+            {
+                MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else form.Show();
         }
 
     }

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using QLVT;
+using Siticone.Desktop.UI.WinForms;
+
 
 namespace quanlyvattu
 {
@@ -37,7 +39,14 @@ namespace quanlyvattu
 
             if (success ==1)
             {
-                MessageBox.Show("Đăng nhập thành công");
+                var msg = new SiticoneMessageDialog();
+                msg.Text = "Đăng nhập thành công";
+                msg.Caption = "Thông báo";
+                msg.Icon = Siticone.Desktop.UI.WinForms.MessageDialogIcon.Error;  
+                msg.Style = Siticone.Desktop.UI.WinForms.MessageDialogStyle.Light;
+                msg.Show();
+
+
                 SqlDataReader reader = Program.ExecSqlDataReader("use qlvt;\r\nselect Nhanvien.MANV, Nhanvien.HO , Nhanvien.TEN\r\nfrom sys.sysusers u, sys.syslogins l,NhanVien\r\nwhere u.sid = l.sid and l.loginname ='"+Program.mlogin+"' and Nhanvien.MANV= u.name");
                 if (reader.HasRows)  // Kiểm tra có dữ liệu không
                 {

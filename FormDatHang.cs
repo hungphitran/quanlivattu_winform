@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports;
 using QLVT;
 
 namespace quanlyvattu
@@ -64,10 +65,15 @@ namespace quanlyvattu
             if (formBaocao != null)
             {
                 formBaocao.Close();
-
             }
-            formBaocao = new FormBaoCao(new ddhChuaNhapRep());
-            formBaocao.Show();
+            ddhChuaNhapRep rep = new ddhChuaNhapRep();
+            formBaocao = new FormBaoCao(rep);
+
+            if (rep.RowCount <= 0)
+            {
+                MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else formBaocao.Show();
 
         }
 

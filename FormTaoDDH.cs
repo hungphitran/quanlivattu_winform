@@ -236,6 +236,7 @@ namespace quanlyvattu
                 }
             }
             MessageBox.Show("Đặt hàng thành công!");
+            Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
             FormManager.switchForm(this, new FormDatHang());
         }
         private void danhSachDatHang_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -255,5 +256,6 @@ namespace quanlyvattu
             }
         }
 
+  
     }
 }

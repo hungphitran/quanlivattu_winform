@@ -19,13 +19,11 @@ namespace quanlyvattu
         public FormTaoAcc()
         {
             InitializeComponent();
-            this.txtUsername.MaxLength = 20;
+            this.txtUsername.Properties.MaxLength = 20;
             this.txtUsername.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToLowercase_NoSpace;
-            this.txtPass.MaxLength = 20;
+            this.txtPass.Properties.MaxLength = 20;
             this.txtPass.KeyPress += KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToLowercase_NoSpace;
-
-
-            this.txtPass.UseSystemPasswordChar = true; // Set to true to hide password inputs
+            this.txtPass.Properties.UseSystemPasswordChar = true;
             this.adminBtn.Checked = true; // Default to not admin
         }
 
@@ -101,9 +99,12 @@ namespace quanlyvattu
             }
         }
 
-        private void checkEdit1_CheckedChanged(object sender, EventArgs e)
+
+
+        private void groupBoxAccountInfo_Enter(object sender, EventArgs e)
         {
-            this.txtPass.UseSystemPasswordChar = !this.checkEdit1.Checked;
+
         }
+
     }
 }

@@ -229,6 +229,7 @@ namespace quanlyvattu
 
                     MessageBox.Show("Thêm phiếu xuất thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
 
                     // Clear form fields
                     mapxInput.Text = "";
@@ -420,5 +421,7 @@ namespace quanlyvattu
                 vattuBindingSource2.RemoveFilter();
             }
         }
+
+
     }
 }

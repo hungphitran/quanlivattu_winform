@@ -514,8 +514,9 @@ namespace quanlyvattu
                 formBaoCao.Close();
             }
             String mavt = this.mavtTextEdit.Text;
+            string tenvt = this.tenvtTextEdit.Text;
 
-            LichSuVattuReport report = new LichSuVattuReport(mavt);
+            LichSuVattuReport report = new LichSuVattuReport(mavt, tenvt);
             formBaoCao = new FormBaoCao(report);
             if (report.RowCount <= 0)
             {
@@ -532,7 +533,7 @@ namespace quanlyvattu
             }
             String mavt = this.mavtTextEdit.Text;
             reportVattu report = new reportVattu();
-            formBaoCao = new FormBaoCao(new reportVattu());
+            formBaoCao = new FormBaoCao(report);
             if (report.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

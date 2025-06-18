@@ -10,18 +10,18 @@ namespace quanlyvattu
 {
     public partial class LichSuVattuReport : DevExpress.XtraReports.UI.XtraReport
     {
-        public LichSuVattuReport(string mavt)
+        public LichSuVattuReport(string mavt,string tenvt)
         {
             InitializeComponent();
             Console.WriteLine("LichSuVattuReport constructor called with MAVT: " + mavt);
             // Bind the report parameter to the SQL query parameter
-            this.Parameters["MAVT"].Value = mavt; // Directly assign the string value
+            this.Parameters["MAVT"].Value = mavt+ ": "; // Directly assign the string value
             this.Parameters["MAVT"].Visible = false;
             this.sqlDataSource1.Queries[0].Parameters[0].Value = new DevExpress.DataAccess.Expression($"'{mavt}'", typeof(string)); // Set the parameter for the SQL query
             Console.WriteLine(this.sqlDataSource1.Queries[0].Parameters[0].Value.ToString());
-            // set parameter for sp
-            //this.da
-            userLbl.Text = $"Người lập : {Program.mHoten}";
+            userLbl.Text = Program.mHoten;
+            this.tenLbl.Text = tenvt;
+
         }
 
     }

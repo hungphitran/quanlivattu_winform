@@ -131,6 +131,7 @@ namespace quanlyvattu
             if (res == 0)
             {
                 MessageBox.Show("Thay đổi mật khẩu thành công cho user "+manv+" với login "+login);
+
                 if (manv == Program.manv)
                 {
                     Program.password = pass;

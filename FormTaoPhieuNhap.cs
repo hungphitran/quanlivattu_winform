@@ -232,6 +232,7 @@ namespace quanlyvattu
                             }
 
                             MessageBox.Show("Phiếu nhập đã được tạo thành công!");
+                            Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
                             FormManager.switchForm(this, new FormDatHang());
                         }
                     }

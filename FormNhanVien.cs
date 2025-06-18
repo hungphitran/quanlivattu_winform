@@ -159,6 +159,7 @@ namespace quanlyvattu
                 else
                 {
                     MessageBox.Show("Lưu thành công");
+                    Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
                 }
             }
             catch (Exception exception)

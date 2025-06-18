@@ -26,7 +26,7 @@ namespace quanlyvattu
 
             this.cellSoLuong.TextFormatString = "{0:n0}";
             this.cellTongTien.TextFormatString = "{0:#,##0} ₫";
-            this.userLbl.Text = "Người lập: " + Program.mHoten;
+            this.userLbl.Text =Program.mHoten;
             //this.tongThangLbl.TextFormatString = "{0:n0}";
             //this.cellTongTien.TextFormatString = "{0:#,##0} ₫";
             //this.tongNamLbl.TextFormatString = "{0:n0}";

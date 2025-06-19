@@ -12,7 +12,7 @@ namespace quanlyvattu
         public ddhChuaNhapRep()
         {
             InitializeComponent();
-            xrLabel1.Text = $"Người lập: {Program.mHoten}";
+            xrLabel1.Text = $"{Program.mHoten}";
         }
 
     }

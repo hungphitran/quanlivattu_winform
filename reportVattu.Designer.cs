@@ -76,6 +76,7 @@
             this.tableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.panel1 = new DevExpress.XtraReports.UI.XRPanel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.signatureLine = new DevExpress.XtraReports.UI.XRLine();
             this.totalDistinctLabel = new DevExpress.XtraReports.UI.XRLabel();
             this.label2 = new DevExpress.XtraReports.UI.XRLabel();
@@ -88,7 +89,6 @@
             this.GrandTotalBackground1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -226,7 +226,7 @@
             this.tableCell1.ForeColor = System.Drawing.Color.Black;
             this.tableCell1.Name = "tableCell1";
             this.tableCell1.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell1.Text = "MAVT";
+            this.tableCell1.Text = "Mã vật tư";
             this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell1.Weight = 0.15384615384615385D;
             // 
@@ -242,7 +242,7 @@
             this.tableCell2.ForeColor = System.Drawing.Color.Black;
             this.tableCell2.Name = "tableCell2";
             this.tableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell2.Text = "TENVT";
+            this.tableCell2.Text = "Tên vật tư";
             this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell2.Weight = 0.15384615384615385D;
             // 
@@ -258,7 +258,7 @@
             this.tableCell3.ForeColor = System.Drawing.Color.Black;
             this.tableCell3.Name = "tableCell3";
             this.tableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell3.Text = "DVT";
+            this.tableCell3.Text = "Đơn vị tính";
             this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell3.Weight = 0.15384615384615385D;
             // 
@@ -274,7 +274,7 @@
             this.tableCell4.ForeColor = System.Drawing.Color.Black;
             this.tableCell4.Name = "tableCell4";
             this.tableCell4.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell4.Text = "Soluongton";
+            this.tableCell4.Text = "Số lượng";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell4.Weight = 0.15384615384615385D;
             // 
@@ -290,7 +290,7 @@
             this.tableCell5.ForeColor = System.Drawing.Color.Black;
             this.tableCell5.Name = "tableCell5";
             this.tableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell5.Text = "Tong So Luong Dat";
+            this.tableCell5.Text = "Tổng đặt";
             this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell5.Weight = 0.15384615384615385D;
             // 
@@ -306,7 +306,7 @@
             this.tableCell6.ForeColor = System.Drawing.Color.Black;
             this.tableCell6.Name = "tableCell6";
             this.tableCell6.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell6.Text = "Tong So Luong Nhap";
+            this.tableCell6.Text = "Tổng nhập";
             this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell6.Weight = 0.15384615384615385D;
             // 
@@ -322,7 +322,7 @@
             this.tableCell7.ForeColor = System.Drawing.Color.Black;
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 4, 4, 96F);
-            this.tableCell7.Text = "Tong So Luong Xuat";
+            this.tableCell7.Text = "Tổng xuất";
             this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell7.Weight = 0.15384615384615385D;
             // 
@@ -492,6 +492,17 @@
             this.panel1.SizeF = new System.Drawing.SizeF(650F, 70F);
             this.panel1.StyleName = "GrandTotalBackground1";
             // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(464.2857F, 10F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(136.6666F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.Text = "Người lập báo cáo";
+            // 
             // signatureLine
             // 
             this.signatureLine.LocationFloat = new DevExpress.Utils.PointFloat(409.2491F, 57.99998F);
@@ -611,17 +622,6 @@
             this.label2});
             this.GroupFooter1.HeightF = 32.00002F;
             this.GroupFooter1.Name = "GroupFooter1";
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(464.2857F, 10F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(136.6666F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.Text = "Người lập báo cáo";
             // 
             // reportVattu
             // 

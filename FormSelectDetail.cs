@@ -74,6 +74,7 @@ namespace quanlyvattu
             }
             else
             {
+
                 BaoCaoChiTietXuat baoCaoChiTietXuat = new BaoCaoChiTietXuat(tuNgay, denNgay);
                 // kiểm tra báo cáo có dữ liệu không
                 if (!Program.hasData(baoCaoChiTietXuat))

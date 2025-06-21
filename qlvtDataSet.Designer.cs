@@ -64,13 +64,7 @@ namespace quanlyvattu {
         
         private sp_BaoCaoChiTietXuatTheoThangDataTable tablesp_BaoCaoChiTietXuatTheoThang;
         
-        private global::System.Data.DataRelation relationFK__CTDDH__MasoDDH__32E0915F;
-        
         private global::System.Data.DataRelation relationFK__CTPN__MAPN__5EBF139D;
-        
-        private global::System.Data.DataRelation relationFK__CTPN__MAVT__5FB337D6;
-        
-        private global::System.Data.DataRelation relationFK__CTPX__MAVT__47DBAE45;
         
         private global::System.Data.DataRelation relationFK__DatHang__MANV__2E1BDC42;
         
@@ -83,6 +77,12 @@ namespace quanlyvattu {
         private global::System.Data.DataRelation relationFK__CTPX__MAPX__46E78A0C;
         
         private global::System.Data.DataRelation relationFK__CTDDH__MAVT__33D4B598;
+        
+        private global::System.Data.DataRelation relationFK__CTPX__MAVT__47DBAE45;
+        
+        private global::System.Data.DataRelation relationFK__CTPN__MAVT__5FB337D6;
+        
+        private global::System.Data.DataRelation relationFK__CTDDH__MasoDDH__32E0915F;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -670,16 +670,16 @@ namespace quanlyvattu {
                     this.tablesp_BaoCaoChiTietXuatTheoThang.InitVars();
                 }
             }
-            this.relationFK__CTDDH__MasoDDH__32E0915F = this.Relations["FK__CTDDH__MasoDDH__32E0915F"];
             this.relationFK__CTPN__MAPN__5EBF139D = this.Relations["FK__CTPN__MAPN__5EBF139D"];
-            this.relationFK__CTPN__MAVT__5FB337D6 = this.Relations["FK__CTPN__MAVT__5FB337D6"];
-            this.relationFK__CTPX__MAVT__47DBAE45 = this.Relations["FK__CTPX__MAVT__47DBAE45"];
             this.relationFK__DatHang__MANV__2E1BDC42 = this.Relations["FK__DatHang__MANV__2E1BDC42"];
             this.relationFK__PhieuNhap__MANV__59063A47 = this.Relations["FK__PhieuNhap__MANV__59063A47"];
             this.relationFK__PhieuNhap__MasoD__59FA5E80 = this.Relations["FK__PhieuNhap__MasoD__59FA5E80"];
             this.relationFK__PhieuXuat__MANV__4222D4EF = this.Relations["FK__PhieuXuat__MANV__4222D4EF"];
             this.relationFK__CTPX__MAPX__46E78A0C = this.Relations["FK__CTPX__MAPX__46E78A0C"];
             this.relationFK__CTDDH__MAVT__33D4B598 = this.Relations["FK__CTDDH__MAVT__33D4B598"];
+            this.relationFK__CTPX__MAVT__47DBAE45 = this.Relations["FK__CTPX__MAVT__47DBAE45"];
+            this.relationFK__CTPN__MAVT__5FB337D6 = this.Relations["FK__CTPN__MAVT__5FB337D6"];
+            this.relationFK__CTDDH__MasoDDH__32E0915F = this.Relations["FK__CTDDH__MasoDDH__32E0915F"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -730,30 +730,10 @@ namespace quanlyvattu {
             base.Tables.Add(this.tablesp_BaoCaoChiTietNhapTheoThang);
             this.tablesp_BaoCaoChiTietXuatTheoThang = new sp_BaoCaoChiTietXuatTheoThangDataTable();
             base.Tables.Add(this.tablesp_BaoCaoChiTietXuatTheoThang);
-            global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__CTDDH__MasoDDH__32E0915F", new global::System.Data.DataColumn[] {
-                        this.tableDatHang.MasoDDHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCTDDH.MasoDDHColumn});
-            this.tableCTDDH.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK__CTDDH__MasoDDH__32E0915F = new global::System.Data.DataRelation("FK__CTDDH__MasoDDH__32E0915F", new global::System.Data.DataColumn[] {
-                        this.tableDatHang.MasoDDHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCTDDH.MasoDDHColumn}, false);
-            this.Relations.Add(this.relationFK__CTDDH__MasoDDH__32E0915F);
             this.relationFK__CTPN__MAPN__5EBF139D = new global::System.Data.DataRelation("FK__CTPN__MAPN__5EBF139D", new global::System.Data.DataColumn[] {
                         this.tablePhieuNhap.MAPNColumn}, new global::System.Data.DataColumn[] {
                         this.tableCTPN.MAPNColumn}, false);
             this.Relations.Add(this.relationFK__CTPN__MAPN__5EBF139D);
-            this.relationFK__CTPN__MAVT__5FB337D6 = new global::System.Data.DataRelation("FK__CTPN__MAVT__5FB337D6", new global::System.Data.DataColumn[] {
-                        this.tableVattu.MAVTColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCTPN.MAVTColumn}, false);
-            this.Relations.Add(this.relationFK__CTPN__MAVT__5FB337D6);
-            this.relationFK__CTPX__MAVT__47DBAE45 = new global::System.Data.DataRelation("FK__CTPX__MAVT__47DBAE45", new global::System.Data.DataColumn[] {
-                        this.tableVattu.MAVTColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCTPX.MAVTColumn}, false);
-            this.Relations.Add(this.relationFK__CTPX__MAVT__47DBAE45);
             this.relationFK__DatHang__MANV__2E1BDC42 = new global::System.Data.DataRelation("FK__DatHang__MANV__2E1BDC42", new global::System.Data.DataColumn[] {
                         this.tableNhanvien.MANVColumn}, new global::System.Data.DataColumn[] {
                         this.tableDatHang.MANVColumn}, false);
@@ -778,6 +758,18 @@ namespace quanlyvattu {
                         this.tableVattu.MAVTColumn}, new global::System.Data.DataColumn[] {
                         this.tableCTDDH.MAVTColumn}, false);
             this.Relations.Add(this.relationFK__CTDDH__MAVT__33D4B598);
+            this.relationFK__CTPX__MAVT__47DBAE45 = new global::System.Data.DataRelation("FK__CTPX__MAVT__47DBAE45", new global::System.Data.DataColumn[] {
+                        this.tableVattu.MAVTColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCTPX.MAVTColumn}, false);
+            this.Relations.Add(this.relationFK__CTPX__MAVT__47DBAE45);
+            this.relationFK__CTPN__MAVT__5FB337D6 = new global::System.Data.DataRelation("FK__CTPN__MAVT__5FB337D6", new global::System.Data.DataColumn[] {
+                        this.tableVattu.MAVTColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCTPN.MAVTColumn}, false);
+            this.Relations.Add(this.relationFK__CTPN__MAVT__5FB337D6);
+            this.relationFK__CTDDH__MasoDDH__32E0915F = new global::System.Data.DataRelation("FK__CTDDH__MasoDDH__32E0915F", new global::System.Data.DataColumn[] {
+                        this.tableDatHang.MasoDDHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCTDDH.MasoDDHColumn}, false);
+            this.Relations.Add(this.relationFK__CTDDH__MasoDDH__32E0915F);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7695,23 +7687,23 @@ namespace quanlyvattu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DatHangRow DatHangRow {
-                get {
-                    return ((DatHangRow)(this.GetParentRow(this.Table.ParentRelations["FK__CTDDH__MasoDDH__32E0915F"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__CTDDH__MasoDDH__32E0915F"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public VattuRow VattuRow {
                 get {
                     return ((VattuRow)(this.GetParentRow(this.Table.ParentRelations["FK__CTDDH__MAVT__33D4B598"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__CTDDH__MAVT__33D4B598"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatHangRow DatHangRow {
+                get {
+                    return ((DatHangRow)(this.GetParentRow(this.Table.ParentRelations["FK__CTDDH__MasoDDH__32E0915F"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__CTDDH__MasoDDH__32E0915F"]);
                 }
             }
             
@@ -7925,23 +7917,23 @@ namespace quanlyvattu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VattuRow VattuRow {
-                get {
-                    return ((VattuRow)(this.GetParentRow(this.Table.ParentRelations["FK__CTPX__MAVT__47DBAE45"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__CTPX__MAVT__47DBAE45"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PhieuXuatRow PhieuXuatRow {
                 get {
                     return ((PhieuXuatRow)(this.GetParentRow(this.Table.ParentRelations["FK__CTPX__MAPX__46E78A0C"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__CTPX__MAPX__46E78A0C"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public VattuRow VattuRow {
+                get {
+                    return ((VattuRow)(this.GetParentRow(this.Table.ParentRelations["FK__CTPX__MAVT__47DBAE45"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__CTPX__MAVT__47DBAE45"]);
                 }
             }
             
@@ -8092,23 +8084,23 @@ namespace quanlyvattu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CTDDHRow[] GetCTDDHRows() {
-                if ((this.Table.ChildRelations["FK__CTDDH__MasoDDH__32E0915F"] == null)) {
-                    return new CTDDHRow[0];
-                }
-                else {
-                    return ((CTDDHRow[])(base.GetChildRows(this.Table.ChildRelations["FK__CTDDH__MasoDDH__32E0915F"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PhieuNhapRow[] GetPhieuNhapRows() {
                 if ((this.Table.ChildRelations["FK__PhieuNhap__MasoD__59FA5E80"] == null)) {
                     return new PhieuNhapRow[0];
                 }
                 else {
                     return ((PhieuNhapRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PhieuNhap__MasoD__59FA5E80"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CTDDHRow[] GetCTDDHRows() {
+                if ((this.Table.ChildRelations["FK__CTDDH__MasoDDH__32E0915F"] == null)) {
+                    return new CTDDHRow[0];
+                }
+                else {
+                    return ((CTDDHRow[])(base.GetChildRows(this.Table.ChildRelations["FK__CTDDH__MasoDDH__32E0915F"])));
                 }
             }
         }
@@ -8697,12 +8689,12 @@ namespace quanlyvattu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CTPNRow[] GetCTPNRows() {
-                if ((this.Table.ChildRelations["FK__CTPN__MAVT__5FB337D6"] == null)) {
-                    return new CTPNRow[0];
+            public CTDDHRow[] GetCTDDHRows() {
+                if ((this.Table.ChildRelations["FK__CTDDH__MAVT__33D4B598"] == null)) {
+                    return new CTDDHRow[0];
                 }
                 else {
-                    return ((CTPNRow[])(base.GetChildRows(this.Table.ChildRelations["FK__CTPN__MAVT__5FB337D6"])));
+                    return ((CTDDHRow[])(base.GetChildRows(this.Table.ChildRelations["FK__CTDDH__MAVT__33D4B598"])));
                 }
             }
             
@@ -8719,12 +8711,12 @@ namespace quanlyvattu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CTDDHRow[] GetCTDDHRows() {
-                if ((this.Table.ChildRelations["FK__CTDDH__MAVT__33D4B598"] == null)) {
-                    return new CTDDHRow[0];
+            public CTPNRow[] GetCTPNRows() {
+                if ((this.Table.ChildRelations["FK__CTPN__MAVT__5FB337D6"] == null)) {
+                    return new CTPNRow[0];
                 }
                 else {
-                    return ((CTDDHRow[])(base.GetChildRows(this.Table.ChildRelations["FK__CTDDH__MAVT__33D4B598"])));
+                    return ((CTPNRow[])(base.GetChildRows(this.Table.ChildRelations["FK__CTPN__MAVT__5FB337D6"])));
                 }
             }
         }

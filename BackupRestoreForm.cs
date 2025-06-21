@@ -42,6 +42,8 @@ namespace quanlyvattu
             this.lblTime.Visible = false;
             this.restoreWithTimeBtn.Visible = false;
         }
+
+       
         static List<string> GetFilesInTimeRange(string folderPath, DateTime from, DateTime to)
         {
             var matchingFiles = new List<string>();
@@ -468,7 +470,6 @@ namespace quanlyvattu
                 // Notify the user of the result
                 MessageBox.Show(res == 0 ? "Sao lưu thành công!" : "Sao lưu thất bại!");
                 // Backup log hiện tại để tránh mất log chưa backup
-
             }
             // Refresh the DataGridView by reloading the data
             backupTableLoad();

@@ -95,6 +95,7 @@
             // 
             this.cmbNhanVien.DataSource = this.vw_NhanVienCoTaiKhoanBindingSource;
             this.cmbNhanVien.DisplayMember = "HOTEN";
+            this.cmbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbNhanVien.FormattingEnabled = true;
             this.cmbNhanVien.Location = new System.Drawing.Point(200, 35);

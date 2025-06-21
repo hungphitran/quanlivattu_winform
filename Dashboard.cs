@@ -9,6 +9,7 @@ namespace quanlyvattu
 {
     public class Dashboard : Form
     {
+        FormBaoCao baocao;
         Label label1;
         Label labelControl1;
         Label labelName;
@@ -532,6 +533,7 @@ namespace quanlyvattu
 
         private void tongHopNhapXuatBtn_Click(object sender, EventArgs e)
         {
+            
             Form dateRangeForm = new Form();
             dateRangeForm.Text = "Chọn khoảng thời gian";
             dateRangeForm.Size = new Size(500, 280);
@@ -660,23 +662,35 @@ namespace quanlyvattu
 
             submitBtn.Click += (s, ev) =>
             {
+                this.Enabled = false; // Disable the main form while processing
+                
+               Console.WriteLine("submit");
                 if (fromDatePicker.Value > toDatePicker.Value)
                 {
                     MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                DateTime fromDate = fromDatePicker.Value, toDate = toDatePicker.Value;
+                dateRangeForm.Close();
+                if (this.baocao != null)
+                {
+                    this.baocao.Close();
+                    this.baocao = null;
+                }
                 try
                 {
-                    TongHopNhapXuat report = new TongHopNhapXuat(fromDatePicker.Value, toDatePicker.Value);
+
+                    TongHopNhapXuat report = new TongHopNhapXuat(fromDate, toDate);
                     if (!Program.hasData(report))
                     {
                         MessageBox.Show("Không có dữ liệu trong khoảng thời gian này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Enabled = true; // Re-enable the main form
                         return;
                     }
-                    FormBaoCao baocao = new FormBaoCao(report);
-                    baocao.Show();
-                    dateRangeForm.Close();
+                    this.baocao = new FormBaoCao(report);
+                    this.baocao.FormClosed += (s2, args) => this.Enabled = true; // Re-enable the main form when report is closed
+                    this.baocao.Show();
+
                 }
                 catch (Exception ex)
                 {

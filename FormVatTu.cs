@@ -295,6 +295,9 @@ namespace quanlyvattu
             String mavt = this.mavtInput.Text.Trim();
             String tenvt = this.tenvtInput.Text.Trim();
             String dvt = this.donvitinhInput.Text.Trim();
+
+            if(String.IsNullOrEmpty(mavt) || String.IsNullOrEmpty(tenvt) || String.IsNullOrEmpty(dvt)) return;
+
             // Kiểm tra các trường nhập liệu
 
                 try
@@ -511,10 +514,11 @@ namespace quanlyvattu
 
         private void lichSuVattuBtn_Click(object sender, EventArgs e)
         {
+            this.lichSuVattuBtn.Enabled = false;
 
             if (formBaoCao != null)
             {
-                formBaoCao.Close();
+                formBaoCao.Dispose();
             }
             String mavt = this.mavtTextEdit.Text;
             string tenvt = this.tenvtTextEdit.Text;
@@ -525,14 +529,20 @@ namespace quanlyvattu
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else formBaoCao.Show();
+            else
+            {
+                formBaoCao.FormClosed += (s, args) => this.lichSuVattuBtn.Enabled = true;
+                formBaoCao.Show();
+            }
         }
 
         private void listVattuBtn_Click(object sender, EventArgs e)
         {
+            this.listVattuBtn.Enabled = false;
             if (formBaoCao != null)
             {
-                formBaoCao.Close();
+                formBaoCao.Dispose();
+                formBaoCao = null;
             }
             String mavt = this.mavtTextEdit.Text;
             reportVattu report = new reportVattu();
@@ -541,7 +551,11 @@ namespace quanlyvattu
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else formBaoCao.Show();
+            else
+            {
+                formBaoCao.FormClosed += (s, args) => this.listVattuBtn.Enabled = true;
+                formBaoCao.Show();
+            }
         }
 
     }

@@ -115,10 +115,10 @@
             // adminBtn
             // 
             this.adminBtn.AutoSize = true;
-            this.adminBtn.Location = new System.Drawing.Point(36, 72);
-            this.adminBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.adminBtn.Location = new System.Drawing.Point(48, 89);
+            this.adminBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adminBtn.Name = "adminBtn";
-            this.adminBtn.Size = new System.Drawing.Size(74, 24);
+            this.adminBtn.Size = new System.Drawing.Size(92, 29);
             this.adminBtn.TabIndex = 1;
             this.adminBtn.TabStop = true;
             this.adminBtn.Text = "Admin";
@@ -127,10 +127,10 @@
             // employeeBtn
             // 
             this.employeeBtn.AutoSize = true;
-            this.employeeBtn.Location = new System.Drawing.Point(164, 73);
-            this.employeeBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.employeeBtn.Location = new System.Drawing.Point(219, 90);
+            this.employeeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeeBtn.Name = "employeeBtn";
-            this.employeeBtn.Size = new System.Drawing.Size(98, 24);
+            this.employeeBtn.Size = new System.Drawing.Size(123, 29);
             this.employeeBtn.TabIndex = 2;
             this.employeeBtn.TabStop = true;
             this.employeeBtn.Text = "Nhân viên";
@@ -202,29 +202,31 @@
             // 
             this.cmbNhanVien.DataSource = this.vw_NhanVienChuaCoTaiKhoanBindingSource4;
             this.cmbNhanVien.DisplayMember = "CMND";
+            this.cmbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhanVien.FormattingEnabled = true;
-            this.cmbNhanVien.Location = new System.Drawing.Point(97, 52);
-            this.cmbNhanVien.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbNhanVien.Location = new System.Drawing.Point(129, 64);
+            this.cmbNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbNhanVien.Name = "cmbNhanVien";
-            this.cmbNhanVien.Size = new System.Drawing.Size(175, 28);
+            this.cmbNhanVien.Size = new System.Drawing.Size(232, 33);
             this.cmbNhanVien.TabIndex = 1;
             this.cmbNhanVien.ValueMember = "MANV";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(7, 60);
+            this.labelControl1.Location = new System.Drawing.Point(9, 74);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(75, 13);
+            this.labelControl1.Size = new System.Drawing.Size(88, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Chọn nhân viên";
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(90, 98);
-            this.checkEdit1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkEdit1.Location = new System.Drawing.Point(120, 121);
+            this.checkEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Hiển thị mật khẩu";
-            this.checkEdit1.Size = new System.Drawing.Size(112, 20);
+            this.checkEdit1.Size = new System.Drawing.Size(149, 24);
             this.checkEdit1.TabIndex = 4;
             // 
             // headerPanel
@@ -233,9 +235,9 @@
             this.headerPanel.Controls.Add(this.titleLabel);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
-            this.headerPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.headerPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(675, 65);
+            this.headerPanel.Size = new System.Drawing.Size(900, 80);
             this.headerPanel.TabIndex = 0;
             // 
             // titleLabel
@@ -243,10 +245,9 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(15, 16);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleLabel.Location = new System.Drawing.Point(20, 20);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(461, 45);
+            this.titleLabel.Size = new System.Drawing.Size(573, 54);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "TẠO TÀI KHOẢN NHÂN VIÊN";
             // 
@@ -256,10 +257,10 @@
             this.controlPanel.Controls.Add(this.backBtn);
             this.controlPanel.Controls.Add(this.createBtn);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.controlPanel.Location = new System.Drawing.Point(0, 65);
-            this.controlPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.controlPanel.Location = new System.Drawing.Point(0, 80);
+            this.controlPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(675, 57);
+            this.controlPanel.Size = new System.Drawing.Size(900, 70);
             this.controlPanel.TabIndex = 1;
             // 
             // backBtn
@@ -270,10 +271,10 @@
             this.backBtn.Appearance.Options.UseBackColor = true;
             this.backBtn.Appearance.Options.UseFont = true;
             this.backBtn.Appearance.Options.UseForeColor = true;
-            this.backBtn.Location = new System.Drawing.Point(22, 16);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.backBtn.Location = new System.Drawing.Point(29, 20);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(90, 28);
+            this.backBtn.Size = new System.Drawing.Size(120, 34);
             this.backBtn.TabIndex = 0;
             this.backBtn.Text = "◄ Quay lại";
             this.backBtn.Click += new System.EventHandler(this.btnBack_Click);
@@ -286,10 +287,10 @@
             this.createBtn.Appearance.Options.UseBackColor = true;
             this.createBtn.Appearance.Options.UseFont = true;
             this.createBtn.Appearance.Options.UseForeColor = true;
-            this.createBtn.Location = new System.Drawing.Point(562, 16);
-            this.createBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.createBtn.Location = new System.Drawing.Point(749, 20);
+            this.createBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(90, 28);
+            this.createBtn.Size = new System.Drawing.Size(120, 34);
             this.createBtn.TabIndex = 1;
             this.createBtn.Text = "Tạo tài khoản";
             this.createBtn.Click += new System.EventHandler(this.btnCreate_Click);
@@ -300,10 +301,10 @@
             this.inputPanel.Controls.Add(this.groupBoxAccountInfo);
             this.inputPanel.Controls.Add(this.groupBoxEmployee);
             this.inputPanel.Controls.Add(this.groupBoxRole);
-            this.inputPanel.Location = new System.Drawing.Point(38, 146);
-            this.inputPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.inputPanel.Location = new System.Drawing.Point(51, 180);
+            this.inputPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(600, 284);
+            this.inputPanel.Size = new System.Drawing.Size(800, 350);
             this.inputPanel.TabIndex = 2;
             // 
             // groupBoxAccountInfo
@@ -315,11 +316,11 @@
             this.groupBoxAccountInfo.Controls.Add(this.checkEdit1);
             this.groupBoxAccountInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.groupBoxAccountInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.groupBoxAccountInfo.Location = new System.Drawing.Point(14, 16);
-            this.groupBoxAccountInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxAccountInfo.Location = new System.Drawing.Point(19, 20);
+            this.groupBoxAccountInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxAccountInfo.Name = "groupBoxAccountInfo";
-            this.groupBoxAccountInfo.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxAccountInfo.Size = new System.Drawing.Size(267, 245);
+            this.groupBoxAccountInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxAccountInfo.Size = new System.Drawing.Size(356, 302);
             this.groupBoxAccountInfo.TabIndex = 0;
             this.groupBoxAccountInfo.TabStop = false;
             this.groupBoxAccountInfo.Text = "THÔNG TIN TÀI KHOẢN";
@@ -330,22 +331,21 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.labelUsername.Location = new System.Drawing.Point(15, 32);
-            this.labelUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUsername.Location = new System.Drawing.Point(20, 39);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(69, 15);
+            this.labelUsername.Size = new System.Drawing.Size(86, 20);
             this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "LoginName";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(90, 30);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Location = new System.Drawing.Point(120, 37);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUsername.Properties.Appearance.Options.UseFont = true;
             this.txtUsername.Properties.MaxLength = 20;
-            this.txtUsername.Size = new System.Drawing.Size(150, 22);
+            this.txtUsername.Size = new System.Drawing.Size(200, 26);
             this.txtUsername.TabIndex = 1;
             // 
             // labelPassword
@@ -353,23 +353,22 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.labelPassword.Location = new System.Drawing.Point(15, 65);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPassword.Location = new System.Drawing.Point(20, 80);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(57, 15);
+            this.labelPassword.Size = new System.Drawing.Size(70, 20);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Mật khẩu";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(90, 63);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPass.Location = new System.Drawing.Point(120, 78);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
             this.txtPass.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPass.Properties.Appearance.Options.UseFont = true;
             this.txtPass.Properties.MaxLength = 20;
             this.txtPass.Properties.UseSystemPasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(150, 22);
+            this.txtPass.Size = new System.Drawing.Size(200, 26);
             this.txtPass.TabIndex = 3;
             // 
             // groupBoxEmployee
@@ -378,11 +377,11 @@
             this.groupBoxEmployee.Controls.Add(this.cmbNhanVien);
             this.groupBoxEmployee.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.groupBoxEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.groupBoxEmployee.Location = new System.Drawing.Point(300, 16);
-            this.groupBoxEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxEmployee.Location = new System.Drawing.Point(400, 20);
+            this.groupBoxEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxEmployee.Name = "groupBoxEmployee";
-            this.groupBoxEmployee.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxEmployee.Size = new System.Drawing.Size(286, 106);
+            this.groupBoxEmployee.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxEmployee.Size = new System.Drawing.Size(381, 130);
             this.groupBoxEmployee.TabIndex = 1;
             this.groupBoxEmployee.TabStop = false;
             this.groupBoxEmployee.Text = "CHỌN NHÂN VIÊN";
@@ -394,11 +393,11 @@
             this.groupBoxRole.Controls.Add(this.employeeBtn);
             this.groupBoxRole.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.groupBoxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.groupBoxRole.Location = new System.Drawing.Point(300, 149);
-            this.groupBoxRole.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxRole.Location = new System.Drawing.Point(400, 183);
+            this.groupBoxRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxRole.Name = "groupBoxRole";
-            this.groupBoxRole.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxRole.Size = new System.Drawing.Size(286, 112);
+            this.groupBoxRole.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxRole.Size = new System.Drawing.Size(381, 138);
             this.groupBoxRole.TabIndex = 2;
             this.groupBoxRole.TabStop = false;
             this.groupBoxRole.Text = "PHÂN QUYỀN";
@@ -408,22 +407,21 @@
             this.labelRole.AutoSize = true;
             this.labelRole.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelRole.ForeColor = System.Drawing.Color.Red;
-            this.labelRole.Location = new System.Drawing.Point(98, 42);
-            this.labelRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelRole.Location = new System.Drawing.Point(131, 52);
             this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(86, 19);
+            this.labelRole.Size = new System.Drawing.Size(107, 23);
             this.labelRole.TabIndex = 0;
             this.labelRole.Text = "Thuộc nhóm";
             // 
             // FormTaoAcc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 488);
+            this.ClientSize = new System.Drawing.Size(900, 601);
             this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.headerPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormTaoAcc";
             this.Text = "Tạo tài khoản nhân viên";
             this.Load += new System.EventHandler(this.FormTaoAcc_Load);

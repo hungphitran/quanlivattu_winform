@@ -14,6 +14,7 @@ namespace quanlyvattu
 {
     public partial class FormNhanVien : Form
     {
+        FormBaoCao formBaoCao = null;
         public FormNhanVien()
         {
             InitializeComponent();
@@ -488,13 +489,24 @@ namespace quanlyvattu
 
         private void nhanVienReportBtn_Click(object sender, EventArgs e)
         {
+            this.nhanVienReportBtn.Enabled = false; // Disable the button to prevent multiple clicks
+
+            if(formBaoCao != null && !formBaoCao.IsDisposed)
+            {
+                formBaoCao.Close(); // Close the existing report form if it is open
+                formBaoCao = null; // Set to null to allow a new report to be created
+            }
             NhanVienReport report = new NhanVienReport();
-            FormBaoCao form = new FormBaoCao(report);
+            this.formBaoCao = new FormBaoCao(report);
             if (report.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else form.Show();
+            else
+            {
+                formBaoCao.FormClosed += (s, args) => this.nhanVienReportBtn.Enabled = true;
+                FormManager.switchForm(this, formBaoCao);
+            }
         }
 
     }

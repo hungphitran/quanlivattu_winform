@@ -36,6 +36,7 @@ namespace quanlyvattu
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            this.submitBtn.Enabled = false;
             // Lấy giá trị từ các điều khiển
             if (this.typeComboBox.SelectedItem == null)
             {
@@ -49,6 +50,7 @@ namespace quanlyvattu
             if (formBaoCao != null )
             {
                     formBaoCao.Close();
+                    formBaoCao = null;
             }
 
 
@@ -85,7 +87,7 @@ namespace quanlyvattu
                 formBaoCao = new FormBaoCao(baoCaoChiTietXuat);
 
             }
-
+            formBaoCao.FormClosed += (s, args) => this.submitBtn.Enabled = true;
             formBaoCao.Show();
         }
 

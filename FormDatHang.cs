@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports;
 using QLVT;
+using static quanlyvattu.qlvtDataSet;
 
 namespace quanlyvattu
 {
@@ -25,12 +26,20 @@ namespace quanlyvattu
         {
             // TODO: This line of code loads data into the 'qlvtDataSet1.DatHang' table. You can move, or remove it, as needed.
             this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.datHangTableAdapter.Fill(this.qlvtDataSet1.DatHang);
-            this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Fill(this.qlvtDataSet1.sp_BaoCaoDonDatHangChuaNhap);
-            this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.cTDDHTableAdapter.Fill(this.qlvtDataSet1.CTDDH);
-            this.cTDDHDataGridView.DataSource = this.cTDDHBindingSource;
+            try
+            {
+                this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.datHangTableAdapter.Fill(this.qlvtDataSet1.DatHang);
+
+                this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Fill(this.qlvtDataSet1.sp_BaoCaoDonDatHangChuaNhap);
+                this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.cTDDHTableAdapter.Fill(this.qlvtDataSet1.CTDDH);
+                this.cTDDHDataGridView.DataSource = this.cTDDHBindingSource;
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
             // 1. Add a column to the DataTable
             if (!qlvtDataSet1.DatHang.Columns.Contains("status"))

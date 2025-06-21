@@ -12,7 +12,7 @@ namespace quanlyvattu
         public NhanVienReport()
         {
             InitializeComponent();
-            this.userLbl.Text = $"Người lập:  {Program.mHoten}";
+            this.userLbl.Text = $"{Program.mHoten}";
 
         }
 

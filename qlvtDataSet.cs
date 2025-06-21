@@ -9,3 +9,10 @@
         }
     }
 }
+
+namespace quanlyvattu.qlvtDataSetTableAdapters {
+    
+    
+    public partial class VattuTableAdapter {
+    }
+}

@@ -269,7 +269,10 @@ namespace quanlyvattu
 
             }
             // Đặt focus vào ô tương ứng sau khi áp dụng lại filter
-            vattuDataGridView.CurrentCell = vattuDataGridView.Rows[vattuBindingSource.Position].Cells[columnIndex];
+            if(index != vattuBindingSource.Position && index != -1)
+            {
+                vattuDataGridView.CurrentCell = vattuDataGridView.Rows[vattuBindingSource.Position].Cells[columnIndex];
+            }
 
             // Lưu giá trị cũ vào undoStack
             undoStack.Push(

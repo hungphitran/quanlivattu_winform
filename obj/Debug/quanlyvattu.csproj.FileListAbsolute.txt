@@ -659,7 +659,6 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\ja\DevExpress.XtraN
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.csproj.AssemblyReference.cache
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BackupRestoreForm.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BaoCaoChiTietNhap.resources
-C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BaoCaoChiTietXuat.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.Dashboard.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormPhieuXuat.resources
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.FormBaoCao.resources
@@ -740,3 +739,4 @@ C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.XtraRich
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.XtraTreeList.v22.1.dll
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.XtraTreeMap.v22.1.dll
 C:\Users\hung\Documents\GitHub\quanlivattu_winform\bin\Debug\DevExpress.XtraTreeMap.v22.1.UI.dll
+C:\Users\hung\Documents\GitHub\quanlivattu_winform\obj\Debug\quanlyvattu.BaoCaoChiTietXuat.resources

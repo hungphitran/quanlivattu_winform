@@ -49,7 +49,7 @@
             this.documentViewer1.Location = new System.Drawing.Point(20, 20);
             this.documentViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(1160, 617);
+            this.documentViewer1.Size = new System.Drawing.Size(1118, 643);
             this.documentViewer1.TabIndex = 0;
             // 
             // headerPanel
@@ -59,7 +59,7 @@
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1200, 62);
+            this.headerPanel.Size = new System.Drawing.Size(1158, 54);
             this.headerPanel.TabIndex = 0;
             // 
             // titleLabel
@@ -67,7 +67,7 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(21, 5);
+            this.titleLabel.Location = new System.Drawing.Point(26, -1);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(201, 54);
             this.titleLabel.TabIndex = 0;
@@ -78,9 +78,9 @@
             this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.controlPanel.Controls.Add(this.exportGroupBox);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.controlPanel.Location = new System.Drawing.Point(0, 62);
+            this.controlPanel.Location = new System.Drawing.Point(0, 54);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(1200, 81);
+            this.controlPanel.Size = new System.Drawing.Size(1158, 63);
             this.controlPanel.TabIndex = 1;
             // 
             // exportGroupBox
@@ -90,7 +90,7 @@
             this.exportGroupBox.Controls.Add(this.excelBtn);
             this.exportGroupBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.exportGroupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.exportGroupBox.Location = new System.Drawing.Point(383, 6);
+            this.exportGroupBox.Location = new System.Drawing.Point(363, 3);
             this.exportGroupBox.Name = "exportGroupBox";
             this.exportGroupBox.Size = new System.Drawing.Size(400, 60);
             this.exportGroupBox.TabIndex = 50;
@@ -138,10 +138,10 @@
             this.mainPanel.BackColor = System.Drawing.Color.White;
             this.mainPanel.Controls.Add(this.documentViewer1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 143);
+            this.mainPanel.Location = new System.Drawing.Point(0, 117);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Padding = new System.Windows.Forms.Padding(20);
-            this.mainPanel.Size = new System.Drawing.Size(1200, 657);
+            this.mainPanel.Size = new System.Drawing.Size(1158, 683);
             this.mainPanel.TabIndex = 2;
             // 
             // FormBaoCao
@@ -149,7 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1158, 800);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.headerPanel);

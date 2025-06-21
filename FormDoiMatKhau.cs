@@ -126,7 +126,8 @@ namespace quanlyvattu
             }
 
             String cmd =
-                $"use master;  EXEC sp_password @old = '{Program.password}',\r\n     @new = '{pass}',\r\n   @loginame = '{login}'";
+                $"use master; exec sp_DoiMatKhau @login = '{login}',@MatKhauMoi = '{pass}'";
+            Console.WriteLine(cmd);
             int res = Program.ExecSqlNonQuery(cmd);
             if (res == 0)
             {

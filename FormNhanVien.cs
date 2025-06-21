@@ -18,6 +18,9 @@ namespace quanlyvattu
         {
             InitializeComponent();
 
+            this.searchInput.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+            this.searchInput.Properties.MaxLength = 30;
+
             this.cmndInput.KeyPress += cmndInput_KeyPress;
             this.hoInput.KeyPress += hoInput_KeyPress;
             this.tenInput.KeyPress += tenInput_KeyPress;
@@ -65,6 +68,8 @@ namespace quanlyvattu
             {
                 String manv = row["MANV"].ToString();
                 nhanvienBindingSource.RemoveFilter();
+                searchInput.Text = "";
+
                 index = nhanvienBindingSource.Find("MANV", manv);
                 nhanvienBindingSource.Filter = currentFilter;
                 nhanvienBindingSource.Position = nhanvienBindingSource.Find("MANV", manv);
@@ -98,6 +103,8 @@ namespace quanlyvattu
             {
                 string cmnd = row["CMND"].ToString().Trim();
                 nhanvienBindingSource.RemoveFilter();
+                searchInput.Text = "";
+
                 DataRow[] existingRows = qlvtDataSet.Nhanvien.Select($"CMND = '{cmnd}' AND MANV <> '{row["MANV"]}'");
                 Console.WriteLine("CMND: " + cmnd + " - " + existingRows.Length);
                 if (existingRows.Length > 0)
@@ -143,6 +150,7 @@ namespace quanlyvattu
             Console.WriteLine("reload");
             this.nhanvienTableAdapter.Fill(this.qlvtDataSet.Nhanvien);
             nhanvienBindingSource.RemoveFilter();
+            searchInput.Text = "";
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -151,6 +159,7 @@ namespace quanlyvattu
             {
                 nhanvienBindingSource.EndEdit();
                 nhanvienBindingSource.RemoveFilter();
+                searchInput.Text = "";
                 int check = this.nhanvienTableAdapter.Update(qlvtDataSet.Nhanvien);
                 if (check == 0)
                 {
@@ -180,6 +189,7 @@ namespace quanlyvattu
             UndoAction action = undoStack.Pop();
 
             this.nhanvienBindingSource.RemoveFilter();
+            searchInput.Text = "";
 
             switch (action.Action)
             {
@@ -276,6 +286,7 @@ namespace quanlyvattu
             {
                 // Remove any filters to ensure all records are checked
                 nhanvienBindingSource.RemoveFilter();
+                searchInput.Text = "";
 
                 // Kiểm tra MANV đã tồn tại
                 DataRow[] existingRows = qlvtDataSet.Nhanvien.Select($"MANV = {manvText}");
@@ -497,5 +508,51 @@ namespace quanlyvattu
             else form.Show();
         }
 
+        private string EscapeLikeValue(string value)
+        {
+            return value
+                .Replace("'", "''")
+                .Replace("[", "[[]")
+                .Replace("%", "[%]")
+                .Replace("*", "[*]");
+        }
+
+        private void searchInput_EditValueChanged(object sender, EventArgs e)
+        {
+            string searchText = EscapeLikeValue(searchInput.Text.Trim());
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                nhanvienBindingSource.Filter = $"CONVERT(MANV, 'System.String') LIKE '%{searchText}%' OR TEN LIKE '%{searchText}%' OR HO LIKE '%{searchText}%'";
+                currentFilter = nhanvienBindingSource.Filter;
+            }
+            else
+            {
+                nhanvienBindingSource.RemoveFilter();
+                currentFilter = null;
+            }
+            labelNoResult.Visible = nhanvienBindingSource.Count == 0;
+        }
+
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            string searchText = searchInput.Text.Trim();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                nhanvienBindingSource.Filter = $"CONVERT(MANV, 'System.String') LIKE '%{searchText}%' OR TEN LIKE '%{searchText}%' OR HO LIKE '%{searchText}%'";
+
+                currentFilter = nhanvienBindingSource.Filter;
+            }
+            else
+            {
+                nhanvienBindingSource.RemoveFilter();
+                searchInput.Text = "";
+
+                currentFilter = null;
+            }
+            labelNoResult.Visible = nhanvienBindingSource.Count == 0;
+        }
     }
 }

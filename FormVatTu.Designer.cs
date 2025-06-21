@@ -340,6 +340,8 @@ namespace quanlyvattu
             this.searchInput.Size = new System.Drawing.Size(182, 22);
             this.searchInput.TabIndex = 15;
             this.searchInput.EditValueChanged += new System.EventHandler(this.searchInput_EditValueChanged);
+            this.searchInput.Properties.NullValuePrompt = "Nhập từ khóa tìm kiếm...";
+            this.searchInput.Properties.NullValuePromptShowForEmptyValue = true;
             // 
             // lichSuVattuBtn
             // 

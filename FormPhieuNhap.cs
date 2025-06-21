@@ -17,6 +17,8 @@ namespace quanlyvattu
         public FormPhieuNhap()
         {
             InitializeComponent();
+            this.searchInput.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
+            this.searchInput.Properties.MaxLength = 30;
         }
         private void dgvPhieuNhap_SelectionChanged(object sender, EventArgs e)
         {
@@ -72,5 +74,31 @@ namespace quanlyvattu
         {
             FormManager.switchForm(this, new Dashboard());
         }
+
+        private void searchInput_EditValueChanged(object sender, EventArgs e)
+        {
+            string searchText = searchInput.Text.Trim().Replace("'", "''");
+
+            // Kiểm tra nếu không có dữ liệu thì bỏ qua
+            if (qlvtDataSet == null || qlvtDataSet.vw_PhieuNhap == null)
+                return;
+
+            // Tạo bộ lọc
+            string filter = "";
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                filter = $"MAPN LIKE '%{searchText}%' OR MasoDDH LIKE '%{searchText}%' OR TenNhanVien LIKE '%{searchText}%'";
+            }
+
+            // Gán filter cho DataView
+            DataView dv = new DataView(qlvtDataSet.vw_PhieuNhap);
+            dv.RowFilter = filter;
+
+            vw_PhieuNhapDataGridView.DataSource = dv;
+
+            labelNoResult.Visible = dv.Count == 0;
+
+        }
+
     }
 }

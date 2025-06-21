@@ -589,6 +589,8 @@
             this.searchInput.Size = new System.Drawing.Size(186, 20);
             this.searchInput.TabIndex = 41;
             this.searchInput.EditValueChanged += new System.EventHandler(this.searchInput_EditValueChanged);
+            this.searchInput.Properties.NullValuePrompt = "Nhập từ khóa tìm kiếm...";
+            this.searchInput.Properties.NullValuePromptShowForEmptyValue = true;
             // 
             // inputPanel
             // 

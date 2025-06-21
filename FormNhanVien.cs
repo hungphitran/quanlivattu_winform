@@ -21,6 +21,7 @@ namespace quanlyvattu
             this.searchInput.KeyPress += KeyPressConstraint.KeyPress_LettersDigitsSpace;
             this.searchInput.Properties.MaxLength = 30;
 
+            this.manvInput.KeyPress += manvInput_KeyPress;
             this.cmndInput.KeyPress += cmndInput_KeyPress;
             this.hoInput.KeyPress += hoInput_KeyPress;
             this.tenInput.KeyPress += tenInput_KeyPress;
@@ -219,6 +220,15 @@ namespace quanlyvattu
             }
 
             nhanvienBindingSource.ResetBindings(true);
+        }
+
+        private void manvInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow digits
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Block invalid input
+            }
         }
 
         private void cmndInput_KeyPress(object sender, KeyPressEventArgs e)

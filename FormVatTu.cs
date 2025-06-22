@@ -296,7 +296,11 @@ namespace quanlyvattu
             String tenvt = this.tenvtInput.Text.Trim();
             String dvt = this.donvitinhInput.Text.Trim();
 
-            if(String.IsNullOrEmpty(mavt) || String.IsNullOrEmpty(tenvt) || String.IsNullOrEmpty(dvt)) return;
+            if(String.IsNullOrEmpty(mavt) || String.IsNullOrEmpty(tenvt) || String.IsNullOrEmpty(dvt))
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             // Kiểm tra các trường nhập liệu
 

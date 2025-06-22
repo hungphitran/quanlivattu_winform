@@ -158,8 +158,8 @@ namespace quanlyvattu
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes) {
                 String manv = cmbNhanVien.SelectedValue.ToString(); // Get selected employee ID
-                string role = Program.mGroup == "AdminRole" ? "ad" : "nv";
-                String cmd = $"use master; exec sp_XoaLoginVaUser @Username = '{Program.mlogin}_{manv}_{role}'";
+                String cmd = $"use master; exec sp_XoaLoginVaUser '_{manv}_'";
+                Console.WriteLine(cmd);
                 int res = Program.ExecSqlNonQuery(cmd);
                 Console.WriteLine("res: " + res);// 
                 if (res == 0)//thanh cong

@@ -129,6 +129,7 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewCalendarColumn.cs" />
     <Compile Include="FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>

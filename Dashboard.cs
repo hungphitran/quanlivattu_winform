@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -481,10 +483,12 @@ namespace quanlyvattu
         // Giữ nguyên tất cả logic events
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            Program.mHoten = "";
+            Program.manv = "";
             Program.mlogin = "";
             Program.password = "";
             Program.mGroup = "";
-            Program.mHoten = "";
+            Console.WriteLine("Logging out and switching to LoginForm... " + Program.conn.State.ToString());
             Program.conn.Close();
             FormManager.switchForm(this, new LoginForm());
         }
@@ -671,6 +675,7 @@ namespace quanlyvattu
                 if (fromDatePicker.Value > toDatePicker.Value)
                 {
                     MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Enabled = true;
                     return;
                 }
                 DateTime fromDate = fromDatePicker.Value, toDate = toDatePicker.Value;
@@ -698,6 +703,7 @@ namespace quanlyvattu
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi khi tạo báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Enabled = true;
                 }
             };
 

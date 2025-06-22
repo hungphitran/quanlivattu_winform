@@ -39,8 +39,11 @@
             this.addDdhBtn = new DevExpress.XtraEditors.SimpleButton();
             this.qlvtDataSet1 = new quanlyvattu.qlvtDataSet();
             this.datHangTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.DatHangTableAdapter();
+            this.nhanvienTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.NhanvienTableAdapter();
+            this.vattuTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.VattuTableAdapter();
             this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
             this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datHangDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +67,7 @@
             this.editDDH = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_BaoCaoDonDatHangChuaNhapBindingSource)).BeginInit();
@@ -150,6 +154,14 @@
             // 
             this.datHangTableAdapter.ClearBeforeFill = true;
             // 
+            // nhanvienTableAdapter
+            // 
+            this.nhanvienTableAdapter.ClearBeforeFill = true;
+            // 
+            // vattuTableAdapter
+            // 
+            this.vattuTableAdapter.ClearBeforeFill = true;
+            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -157,16 +169,21 @@
             this.tableAdapterManager.CTPNTableAdapter = null;
             this.tableAdapterManager.CTPXTableAdapter = null;
             this.tableAdapterManager.DatHangTableAdapter = this.datHangTableAdapter;
-            this.tableAdapterManager.NhanvienTableAdapter = null;
+            this.tableAdapterManager.NhanvienTableAdapter = this.nhanvienTableAdapter;
             this.tableAdapterManager.PhieuNhapTableAdapter = null;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VattuTableAdapter = null;
+            this.tableAdapterManager.VattuTableAdapter = this.vattuTableAdapter;
             // 
             // datHangBindingSource
             // 
             this.datHangBindingSource.DataMember = "DatHang";
             this.datHangBindingSource.DataSource = this.qlvtDataSet1;
+            // 
+            // nhanvienBindingSource
+            // 
+            this.nhanvienBindingSource.DataMember = "Nhanvien";
+            this.nhanvienBindingSource.DataSource = this.qlvtDataSet1;
             // 
             // datHangDataGridView
             // 
@@ -439,6 +456,7 @@
             this.Load += new System.EventHandler(this.FormDatHang_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.qlvtDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_BaoCaoDonDatHangChuaNhapBindingSource)).EndInit();
@@ -507,6 +525,8 @@
         private DevExpress.XtraEditors.SimpleButton addDdhBtn;
         private qlvtDataSet qlvtDataSet1;
         private qlvtDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
+        private qlvtDataSetTableAdapters.NhanvienTableAdapter nhanvienTableAdapter;
+        private qlvtDataSetTableAdapters.VattuTableAdapter vattuTableAdapter;
         private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource datHangBindingSource;
         private System.Windows.Forms.DataGridView datHangDataGridView;
@@ -530,5 +550,6 @@
         private System.Windows.Forms.GroupBox groupBoxOrders;
         private System.Windows.Forms.GroupBox groupBoxOrderDetails;
         private DevExpress.XtraEditors.SimpleButton editDDH;
+        private System.Windows.Forms.BindingSource nhanvienBindingSource;
     }
 }

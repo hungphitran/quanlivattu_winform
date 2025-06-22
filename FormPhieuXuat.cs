@@ -48,7 +48,45 @@ namespace quanlyvattu
             this.nhanvienTableAdapter.Fill(this.qlvtDataSet.Nhanvien);
             this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
             this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
+
+            // Thêm cột tên vật tư vào bảng CTPX
+            if (!qlvtDataSet.CTPX.Columns.Contains("TenVatTu"))
+            {
+                qlvtDataSet.CTPX.Columns.Add("TenVatTu", typeof(string));
+            }
+
+            // Thêm cột tên vật tư vào DataGridView CTPX
+            var tenVatTuCol = new DataGridViewTextBoxColumn();
+            tenVatTuCol.DataPropertyName = "TenVatTu";
+            tenVatTuCol.HeaderText = "Tên Vật Tư";
+            tenVatTuCol.MinimumWidth = 6;
+            tenVatTuCol.Name = "tenVatTuColumn";
+            tenVatTuCol.ReadOnly = true;
+            tenVatTuCol.Width = 200;
+            cTPXDataGridView.Columns.Add(tenVatTuCol);
+
+            // Cập nhật tên vật tư cho bảng CTPX
+            foreach (DataRow row in qlvtDataSet.CTPX.Rows)
+            {
+                string mavt = row["MAVT"].ToString();
+                row["TenVatTu"] = GetTenVatTu(mavt);
+            }
+
+            // Ẩn cột MAVT trong CTPX và hiển thị cột tên vật tư
+            MAVT.Visible = false;
+
             this.ngayInput.Value = DateTime.Now;
+        }
+
+        // Phương thức helper để lấy tên vật tư từ MAVT
+        private string GetTenVatTu(string mavt)
+        {
+            var vatTuRow = qlvtDataSet.Vattu.FindByMAVT(mavt);
+            if (vatTuRow != null)
+            {
+                return vatTuRow.TENVT ?? "Không có tên";
+            }
+            return "Không tìm thấy";
         }
 
         private void backBtn_Click(object sender, EventArgs e)

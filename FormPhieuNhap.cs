@@ -35,6 +35,13 @@ namespace quanlyvattu
 
                     // Update DataSource for dgvCTPN
                     cTPNDataGridView.DataSource = dv;
+
+                    // Cập nhật tên vật tư cho dữ liệu được lọc
+                    foreach (DataRowView rowView in dv)
+                    {
+                        string mavt = rowView["MAVT"].ToString();
+                        rowView["TenVatTu"] = GetTenVatTu(mavt);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -58,6 +65,36 @@ namespace quanlyvattu
             this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             this.phieuNhapTableAdapter.Fill(this.qlvtDataSet.PhieuNhap);
 
+            // Load dữ liệu từ bảng Vattu
+            this.vattuTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.vattuTableAdapter.Fill(this.qlvtDataSet.Vattu);
+
+            // Thêm cột tên vật tư vào bảng CTPN
+            if (!qlvtDataSet.CTPN.Columns.Contains("TenVatTu"))
+            {
+                qlvtDataSet.CTPN.Columns.Add("TenVatTu", typeof(string));
+            }
+
+            // Thêm cột tên vật tư vào DataGridView CTPN
+            var tenVatTuCol = new DataGridViewTextBoxColumn();
+            tenVatTuCol.DataPropertyName = "TenVatTu";
+            tenVatTuCol.HeaderText = "Tên Vật Tư";
+            tenVatTuCol.MinimumWidth = 6;
+            tenVatTuCol.Name = "tenVatTuColumn";
+            tenVatTuCol.ReadOnly = true;
+            tenVatTuCol.Width = 200;
+            cTPNDataGridView.Columns.Add(tenVatTuCol);
+
+            // Cập nhật tên vật tư cho bảng CTPN
+            foreach (DataRow row in qlvtDataSet.CTPN.Rows)
+            {
+                string mavt = row["MAVT"].ToString();
+                row["TenVatTu"] = GetTenVatTu(mavt);
+            }
+
+            // Ẩn cột MAVT trong CTPN và hiển thị cột tên vật tư
+            dataGridViewTextBoxColumn11.Visible = false;
+
             // Format the DateEdit control if it exists
             if (nGAYDateEdit != null)
             {
@@ -68,6 +105,17 @@ namespace quanlyvattu
 
             vw_PhieuNhapDataGridView.SelectionChanged += dgvPhieuNhap_SelectionChanged;
 
+        }
+
+        // Phương thức helper để lấy tên vật tư từ MAVT
+        private string GetTenVatTu(string mavt)
+        {
+            var vatTuRow = qlvtDataSet.Vattu.FindByMAVT(mavt);
+            if (vatTuRow != null)
+            {
+                return vatTuRow.TENVT ?? "Không có tên";
+            }
+            return "Không tìm thấy";
         }
 
         private void backBut_Click(object sender, EventArgs e)

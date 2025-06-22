@@ -31,6 +31,14 @@ namespace quanlyvattu
                 this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.datHangTableAdapter.Fill(this.qlvtDataSet1.DatHang);
 
+                // Load dữ liệu từ bảng Nhanvien
+                this.nhanvienTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.nhanvienTableAdapter.Fill(this.qlvtDataSet1.Nhanvien);
+
+                // Load dữ liệu từ bảng Vattu
+                this.vattuTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.vattuTableAdapter.Fill(this.qlvtDataSet1.Vattu);
+
                 this.sp_BaoCaoDonDatHangChuaNhapTableAdapter.Fill(this.qlvtDataSet1.sp_BaoCaoDonDatHangChuaNhap);
                 this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.cTDDHTableAdapter.Fill(this.qlvtDataSet1.CTDDH);
@@ -47,11 +55,43 @@ namespace quanlyvattu
                 qlvtDataSet1.DatHang.Columns.Add("status", typeof(string));
             }
 
+            // Thêm cột tên nhân viên
+            if (!qlvtDataSet1.DatHang.Columns.Contains("TenNhanVien"))
+            {
+                qlvtDataSet1.DatHang.Columns.Add("TenNhanVien", typeof(string));
+            }
+
+            // Thêm cột tên vật tư vào bảng CTDDH
+            if (!qlvtDataSet1.CTDDH.Columns.Contains("TenVatTu"))
+            {
+                qlvtDataSet1.CTDDH.Columns.Add("TenVatTu", typeof(string));
+            }
+
             // 2. Set the DataPropertyName of the DataGridView column (in Designer or code)
             var newCol = new DataGridViewTextBoxColumn();
             newCol.DataPropertyName = "status";
             newCol.HeaderText = "Trạng thái";
             datHangDataGridView.Columns.Add(newCol);
+
+            // Thêm cột tên nhân viên vào DataGridView
+            var tenNhanVienCol = new DataGridViewTextBoxColumn();
+            tenNhanVienCol.DataPropertyName = "TenNhanVien";
+            tenNhanVienCol.HeaderText = "Tên Nhân Viên";
+            tenNhanVienCol.MinimumWidth = 6;
+            tenNhanVienCol.Name = "tenNhanVienColumn";
+            tenNhanVienCol.ReadOnly = true;
+            tenNhanVienCol.Width = 200;
+            datHangDataGridView.Columns.Add(tenNhanVienCol);
+
+            // Thêm cột tên vật tư vào DataGridView CTDDH
+            var tenVatTuCol = new DataGridViewTextBoxColumn();
+            tenVatTuCol.DataPropertyName = "TenVatTu";
+            tenVatTuCol.HeaderText = "Tên Vật Tư";
+            tenVatTuCol.MinimumWidth = 6;
+            tenVatTuCol.Name = "tenVatTuColumn";
+            tenVatTuCol.ReadOnly = true;
+            tenVatTuCol.Width = 200;
+            cTDDHDataGridView.Columns.Add(tenVatTuCol);
 
             // 3. Set the value via the BindingSource
             foreach (DataRow row in qlvtDataSet1.DatHang.Rows)
@@ -61,7 +101,48 @@ namespace quanlyvattu
                     row["status"] = "Chưa nhập";
                 }
                 else row["status"] = "Đã nhập";
+
+                // Lấy tên nhân viên từ bảng Nhanvien
+                int manv = Convert.ToInt32(row["MANV"]);
+                row["TenNhanVien"] = GetTenNhanVien(manv);
             }
+
+            // Cập nhật tên vật tư cho bảng CTDDH
+            foreach (DataRow row in qlvtDataSet1.CTDDH.Rows)
+            {
+                string mavt = row["MAVT"].ToString();
+                row["TenVatTu"] = GetTenVatTu(mavt);
+            }
+
+            // Ẩn cột MANV và hiển thị cột tên nhân viên
+            dataGridViewTextBoxColumn5.Visible = false;
+
+            // Ẩn cột MAVT trong CTDDH và hiển thị cột tên vật tư
+            dataGridViewTextBoxColumn7.Visible = false;
+        }
+
+        // Phương thức helper để lấy tên nhân viên từ MANV
+        private string GetTenNhanVien(int manv)
+        {
+            var nhanVienRow = qlvtDataSet1.Nhanvien.FindByMANV(manv);
+            if (nhanVienRow != null)
+            {
+                string ho = nhanVienRow.HO ?? "";
+                string ten = nhanVienRow.TEN ?? "";
+                return $"{ho} {ten}".Trim();
+            }
+            return "Không tìm thấy";
+        }
+
+        // Phương thức helper để lấy tên vật tư từ MAVT
+        private string GetTenVatTu(string mavt)
+        {
+            var vatTuRow = qlvtDataSet1.Vattu.FindByMAVT(mavt);
+            if (vatTuRow != null)
+            {
+                return vatTuRow.TENVT ?? "Không có tên";
+            }
+            return "Không tìm thấy";
         }
 
         private void backBut_Click(object sender, EventArgs e)
@@ -95,7 +176,18 @@ namespace quanlyvattu
 
         private void importBtn_Click(object sender, EventArgs e)
         {
-            if(this.datHangDataGridView.CurrentRow.Cells[4].Value.ToString() =="Đã nhập")
+            // Tìm cột trạng thái bằng tên
+            int statusColumnIndex = -1;
+            for (int i = 0; i < datHangDataGridView.Columns.Count; i++)
+            {
+                if (datHangDataGridView.Columns[i].DataPropertyName == "status")
+                {
+                    statusColumnIndex = i;
+                    break;
+                }
+            }
+
+            if (statusColumnIndex != -1 && this.datHangDataGridView.CurrentRow.Cells[statusColumnIndex].Value.ToString() == "Đã nhập")
             {
                 MessageBox.Show("Đơn đặt hàng đã nhập không thể tạo phiếu nhập");
                 return;
@@ -120,6 +212,25 @@ namespace quanlyvattu
             this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
             this.cTDDHTableAdapter.Fill(this.qlvtDataSet1.CTDDH);
 
+            // Cập nhật lại tên nhân viên khi form được load lại
+            if (qlvtDataSet1.DatHang.Columns.Contains("TenNhanVien"))
+            {
+                foreach (DataRow row in qlvtDataSet1.DatHang.Rows)
+                {
+                    int manv = Convert.ToInt32(row["MANV"]);
+                    row["TenNhanVien"] = GetTenNhanVien(manv);
+                }
+            }
+
+            // Cập nhật lại tên vật tư khi form được load lại
+            if (qlvtDataSet1.CTDDH.Columns.Contains("TenVatTu"))
+            {
+                foreach (DataRow row in qlvtDataSet1.CTDDH.Rows)
+                {
+                    string mavt = row["MAVT"].ToString();
+                    row["TenVatTu"] = GetTenVatTu(mavt);
+                }
+            }
         }
 
         private void editDDH_Click(object sender, EventArgs e)

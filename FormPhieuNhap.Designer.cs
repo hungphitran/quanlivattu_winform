@@ -58,6 +58,7 @@
             this.phieuNhapTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.PhieuNhapTableAdapter();
             this.tableAdapterManager = new quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager();
             this.cTPNTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.CTPNTableAdapter();
+            this.vattuTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.VattuTableAdapter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.tenNhanVienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.vw_PhieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -298,11 +299,15 @@
             this.tableAdapterManager.PhieuNhapTableAdapter = this.phieuNhapTableAdapter;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = quanlyvattu.qlvtDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VattuTableAdapter = null;
+            this.tableAdapterManager.VattuTableAdapter = this.vattuTableAdapter;
             // 
             // cTPNTableAdapter
             // 
             this.cTPNTableAdapter.ClearBeforeFill = true;
+            // 
+            // vattuTableAdapter
+            // 
+            this.vattuTableAdapter.ClearBeforeFill = true;
             // 
             // groupControl1
             // 
@@ -770,5 +775,6 @@
         private System.Windows.Forms.Label titleLabel;
         private DevExpress.XtraEditors.TextEdit searchInput;
         private System.Windows.Forms.Label labelNoResult;
+        private qlvtDataSetTableAdapters.VattuTableAdapter vattuTableAdapter;
     }
 }

@@ -25,11 +25,75 @@ namespace quanlyvattu
             this.mapxInput.Properties.MaxLength = 8;
             this.soluongInput.Properties.MaxLength = 10;
             this.dongiaInput.Properties.MaxLength = 10;
+
+            // Chỉ cho nhập chữ, không cho số, không cho 2 dấu cách liên tiếp, sau dấu cách tự động viết hoa cho hotenkhInput
+            this.hotenkhInput.KeyPress += hotenkhInput_KeyPress;
+            this.hotenkhInput.TextChanged += hotenkhInput_TextChanged;
         }
 
+        private void hotenkhInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho nhập chữ cái, dấu cách, và phím điều khiển
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+                return;
+            }
+            // Không cho nhập 2 dấu cách liên tiếp
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            if (e.KeyChar == ' ')
+            {
+                if (text.Length == 0 || text.EndsWith(" "))
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
 
-
-
+        private void hotenkhInput_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            if (string.IsNullOrEmpty(text)) return;
+            // Không cho 2 dấu cách liên tiếp
+            while (text.Contains("  "))
+                text = text.Replace("  ", " ");
+            // Viết hoa chữ cái đầu tiên và sau mỗi dấu cách, còn lại chuyển về thường
+            var sb = new StringBuilder();
+            bool capitalize = true;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                if (char.IsLetter(c))
+                {
+                    if (capitalize)
+                    {
+                        sb.Append(char.ToUpper(c));
+                        capitalize = false;
+                    }
+                    else
+                    {
+                        sb.Append(char.ToLower(c));
+                    }
+                }
+                else
+                {
+                    sb.Append(c);
+                    if (c == ' ')
+                        capitalize = true;
+                }
+            }
+            string newText = sb.ToString();
+            if (textBox.Text != newText)
+            {
+                int selStart = textBox.SelectionStart;
+                int diff = textBox.Text.Length - newText.Length;
+                textBox.Text = newText;
+                textBox.SelectionStart = Math.Max(0, selStart - diff);
+            }
+        }
 
         private void phieuXuatBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

@@ -493,6 +493,32 @@ namespace quanlyvattu
             }
         }
 
+        private string EscapeLikeValue(string value)
+        {
+            return value
+                .Replace("'", "''")
+                .Replace("[", "[[]")
+                .Replace("%", "[%]")
+                .Replace("*", "[*]");
+        }
+
+        private void searchInput_EditValueChanged(object sender, EventArgs e)
+        {
+            string searchText = EscapeLikeValue(searchInput.Text.Trim());
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                vattuBindingSource.Filter = $"MAVT LIKE '%{searchText}%' OR TENVT LIKE '%{searchText}%'";
+                currentFilter = vattuBindingSource.Filter;
+            }
+            else
+            {
+                vattuBindingSource.RemoveFilter();
+                currentFilter = null;
+            }
+            labelNoResult.Visible = vattuBindingSource.Count == 0;
+        }
+
 
 
         private void searchBtn_Click(object sender, EventArgs e)

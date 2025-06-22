@@ -384,12 +384,15 @@ namespace quanlyvattu
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "Dashboard";
-          
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
 
         }
 
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
 
+        }
 
         private Button CreateModernRedButton(string text, int x, int y, Panel parent)
         {

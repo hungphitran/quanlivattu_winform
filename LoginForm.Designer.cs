@@ -41,6 +41,7 @@
             this.lblAppName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlRight = new System.Windows.Forms.Panel();
+            this.eyeIcon = new System.Windows.Forms.PictureBox();
             this.picUserIcon = new System.Windows.Forms.PictureBox();
             this.picPasswordIcon = new System.Windows.Forms.PictureBox();
             this.pnlUserUnderline = new System.Windows.Forms.Panel();
@@ -49,6 +50,7 @@
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eyeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPasswordIcon)).BeginInit();
             this.SuspendLayout();
@@ -185,6 +187,7 @@
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.eyeIcon);
             this.pnlRight.Controls.Add(this.picUserIcon);
             this.pnlRight.Controls.Add(this.picPasswordIcon);
             this.pnlRight.Controls.Add(this.pnlUserUnderline);
@@ -202,6 +205,19 @@
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(338, 447);
             this.pnlRight.TabIndex = 7;
+            // 
+            // eyeIcon
+            // 
+            this.eyeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.eyeIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eyeIcon.Image = ((System.Drawing.Image)(resources.GetObject("eyeIcon.Image")));
+            this.eyeIcon.Location = new System.Drawing.Point(260, 221);
+            this.eyeIcon.Name = "eyeIcon";
+            this.eyeIcon.Size = new System.Drawing.Size(20, 20);
+            this.eyeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.eyeIcon.TabIndex = 11;
+            this.eyeIcon.TabStop = false;
+            this.eyeIcon.Click += new System.EventHandler(this.eyeIcon_Click);
             // 
             // picUserIcon
             // 
@@ -275,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlRight.ResumeLayout(false);
             this.pnlRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eyeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUserIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPasswordIcon)).EndInit();
             this.ResumeLayout(false);
@@ -300,5 +317,6 @@
         private System.Windows.Forms.PictureBox picPasswordIcon;
         private System.Windows.Forms.Label labelname1;
         private System.Windows.Forms.Label labelnam2;
+        private System.Windows.Forms.PictureBox eyeIcon;
     }
 }

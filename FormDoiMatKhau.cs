@@ -61,9 +61,11 @@ namespace quanlyvattu
                 String login = "";
                 // Query to get the login name for the given user ID
                 string query = $@"use qlvt;
-                SELECT name
-                FROM sys.database_principals
-                WHERE name LIKE '%[_]{userId}[_]%';";
+                SELECT dp.name AS [UserName], sp.name AS [LoginName]
+                FROM sys.database_principals dp
+                JOIN sys.server_principals sp ON dp.sid = sp.sid
+                WHERE dp.type_desc = 'SQL_USER'
+                AND dp.name LIKE '%[_]{userId}[_]%';";
 
                 // Execute the query
                 SqlDataReader reader = Program.ExecSqlDataReader(query);
@@ -73,7 +75,7 @@ namespace quanlyvattu
                     while (reader.Read())
                     {
                         // Return the login name
-                         login=reader["loginname"].ToString();
+                         login=reader["LoginName"].ToString();
                     }
                 }
                 else
@@ -113,11 +115,17 @@ namespace quanlyvattu
             String pass2 = this.textPass2.Text;
             String manv = cmbNhanVien.SelectedValue.ToString(); // Get selected employee ID
             String login = GetLoginByUser(manv); // Get the login name for the selected user
+            if (pass.Length == 0 || pass2.Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập mật kháu.");
+                return;
+            }
             if (login == null|| login.Length==0)
             {
                 MessageBox.Show("Không tìm thấy login cho nhân viên này.");
                 return;
             }
+
             if (pass != pass2)
             {
                 MessageBox.Show("Mật khẩu không khớp");
@@ -134,9 +142,19 @@ namespace quanlyvattu
 
                 if (manv == Program.manv)
                 {
+                    Console.WriteLine($"Current MANV: {Program.manv}");
                     Program.password = pass;
                     Program.conn.Close();
-                    Program.connectDB();
+                    if(Program.connectDB() == 1)
+                    {
+                        Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
+                            Program.database + ";User ID=" +
+                            Program.mlogin + ";password=" + Program.password;
+                    }
+                    else
+                    {
+                        FormManager.switchForm(this, new LoginForm());
+                    }
                 }
                 textPass1.Text = "";
                 textPass2.Text = "";

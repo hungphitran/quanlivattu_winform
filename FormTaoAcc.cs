@@ -106,5 +106,11 @@ namespace quanlyvattu
 
         }
 
+        
+
+        private void showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPass.Properties.UseSystemPasswordChar = !showPassword.Checked;
+        }
     }
 }

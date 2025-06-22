@@ -46,7 +46,7 @@
             this.vw_NhanVienChuaCoTaiKhoanBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.cmbNhanVien = new System.Windows.Forms.ComboBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.showPassword = new DevExpress.XtraEditors.CheckEdit();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPassword.Properties)).BeginInit();
             this.headerPanel.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -218,14 +218,15 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Chọn nhân viên";
             // 
-            // checkEdit1
+            // showPassword
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(90, 98);
-            this.checkEdit1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Hiển thị mật khẩu";
-            this.checkEdit1.Size = new System.Drawing.Size(112, 20);
-            this.checkEdit1.TabIndex = 4;
+            this.showPassword.Location = new System.Drawing.Point(90, 98);
+            this.showPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.showPassword.Name = "showPassword";
+            this.showPassword.Properties.Caption = "Hiển thị mật khẩu";
+            this.showPassword.Size = new System.Drawing.Size(112, 20);
+            this.showPassword.TabIndex = 4;
+            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
             // 
             // headerPanel
             // 
@@ -312,7 +313,7 @@
             this.groupBoxAccountInfo.Controls.Add(this.txtUsername);
             this.groupBoxAccountInfo.Controls.Add(this.labelPassword);
             this.groupBoxAccountInfo.Controls.Add(this.txtPass);
-            this.groupBoxAccountInfo.Controls.Add(this.checkEdit1);
+            this.groupBoxAccountInfo.Controls.Add(this.showPassword);
             this.groupBoxAccountInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.groupBoxAccountInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.groupBoxAccountInfo.Location = new System.Drawing.Point(14, 16);
@@ -433,7 +434,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_NhanVienChuaCoTaiKhoanBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPassword.Properties)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
             this.controlPanel.ResumeLayout(false);
@@ -468,7 +469,7 @@
         private System.Windows.Forms.BindingSource vw_NhanVienChuaCoTaiKhoanBindingSource4;
         private System.Windows.Forms.ComboBox cmbNhanVien;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit showPassword;
         private System.Windows.Forms.Panel headerPanel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel controlPanel;

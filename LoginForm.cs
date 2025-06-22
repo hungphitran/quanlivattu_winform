@@ -91,9 +91,12 @@ namespace quanlyvattu
             }
             else
             {
-
-                
-                MessageBox.Show("Không thể đăng nhập");
+                var msg = new SiticoneMessageDialog();
+                msg.Text = "Sai username hoặc password";
+                msg.Caption = "Đăng nhập lỗi";
+                msg.Icon = Siticone.Desktop.UI.WinForms.MessageDialogIcon.Error;
+                msg.Style = Siticone.Desktop.UI.WinForms.MessageDialogStyle.Light;
+                msg.Show();
 
             }
 
@@ -105,5 +108,19 @@ namespace quanlyvattu
         {
             this.Close();
         }
+
+        private bool isPasswordVisible = false;
+
+
+        private void eyeIcon_Click(object sender, EventArgs e)
+        {
+            isPasswordVisible = !isPasswordVisible;
+            txtPass.PasswordChar = isPasswordVisible ? '\0' : '●';
+
+            eyeIcon.Image = isPasswordVisible
+                ? Properties.Resources.eye_off
+                : Properties.Resources.eye_on;
+        }
+
     }
 }

@@ -117,8 +117,8 @@ namespace quanlyvattu
             // Ẩn cột MANV và hiển thị cột tên nhân viên
             dataGridViewTextBoxColumn5.Visible = false;
 
-            // Ẩn cột MAVT trong CTDDH và hiển thị cột tên vật tư
-            dataGridViewTextBoxColumn7.Visible = false;
+            //// Ẩn cột MAVT trong CTDDH và hiển thị cột tên vật tư
+            //dataGridViewTextBoxColumn7.Visible = false;
         }
 
         // Phương thức helper để lấy tên nhân viên từ MANV

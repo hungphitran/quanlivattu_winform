@@ -36,7 +36,9 @@ namespace quanlyvattu
             this.Validate();
             this.phieuXuatBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.qlvtDataSet);
-
+            
+            // Cập nhật tên nhân viên sau khi lưu
+            UpdateTenNhanVien();
         }
 
         private void FormPhieuXuat_Load(object sender, EventArgs e)
@@ -75,6 +77,28 @@ namespace quanlyvattu
             // Ẩn cột MAVT trong CTPX và hiển thị cột tên vật tư
             MAVT.Visible = false;
 
+            // Thêm cột tên nhân viên vào bảng PhieuXuat
+            if (!qlvtDataSet.PhieuXuat.Columns.Contains("TenNhanVien"))
+            {
+                qlvtDataSet.PhieuXuat.Columns.Add("TenNhanVien", typeof(string));
+            }
+
+            // Thêm cột tên nhân viên vào DataGridView PhieuXuat
+            var tenNhanVienCol = new DataGridViewTextBoxColumn();
+            tenNhanVienCol.DataPropertyName = "TenNhanVien";
+            tenNhanVienCol.HeaderText = "Tên Nhân Viên";
+            tenNhanVienCol.MinimumWidth = 6;
+            tenNhanVienCol.Name = "tenNhanVienColumn";
+            tenNhanVienCol.ReadOnly = true;
+            tenNhanVienCol.Width = 150;
+            phieuXuatDataGridView1.Columns.Add(tenNhanVienCol);
+
+            // Cập nhật tên nhân viên cho bảng PhieuXuat
+            UpdateTenNhanVien();
+
+            // Ẩn cột MANV trong PhieuXuat và hiển thị cột tên nhân viên
+            dataGridViewTextBoxColumn4.Visible = false;
+
             this.ngayInput.Value = DateTime.Now;
         }
 
@@ -89,6 +113,29 @@ namespace quanlyvattu
             return "Không tìm thấy";
         }
 
+        // Phương thức helper để lấy tên nhân viên từ MANV
+        private string GetTenNhanVien(int manv)
+        {
+            var nhanVienRow = qlvtDataSet.Nhanvien.FindByMANV(manv);
+            if (nhanVienRow != null)
+            {
+                string ho = nhanVienRow.HO ?? "";
+                string ten = nhanVienRow.TEN ?? "";
+                return $"{ho} {ten}".Trim();
+            }
+            return "Không tìm thấy";
+        }
+
+        // Phương thức cập nhật tên nhân viên cho tất cả các phiếu xuất
+        private void UpdateTenNhanVien()
+        {
+            foreach (DataRow row in qlvtDataSet.PhieuXuat.Rows)
+            {
+                int manv = Convert.ToInt32(row["MANV"]);
+                row["TenNhanVien"] = GetTenNhanVien(manv);
+            }
+        }
+
         private void backBtn_Click(object sender, EventArgs e)
         {
             FormManager.switchForm(this, new Dashboard());
@@ -99,14 +146,24 @@ namespace quanlyvattu
 
         }
 
-        //private void reloadBtn_Click(object sender, EventArgs e)
-        //{
-        //    Console.WriteLine("reload");
-        //    this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
-        //    phieuXuatBindingSource.RemoveFilter();
-        //    this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
-        //    cTPXBindingSource.RemoveFilter();
-        //}
+        private void reloadBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("reload");
+            this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
+            phieuXuatBindingSource.RemoveFilter();
+            this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
+            cTPXBindingSource.RemoveFilter();
+            
+            // Cập nhật tên nhân viên sau khi reload
+            UpdateTenNhanVien();
+            
+            // Cập nhật tên vật tư cho CTPX
+            foreach (DataRow row in qlvtDataSet.CTPX.Rows)
+            {
+                string mavt = row["MAVT"].ToString();
+                row["TenVatTu"] = GetTenVatTu(mavt);
+            }
+        }
         private bool ValidatePhieuXuatInputs(string mapx, string hotenKH, int? manv, DateTime ngay)
         {
             // Validate MAPX (Primary Key, nChar(8))
@@ -282,6 +339,16 @@ namespace quanlyvattu
                     // Refresh the datasets to show the newly added record
                     this.phieuXuatTableAdapter.Fill(this.qlvtDataSet.PhieuXuat);
                     this.cTPXTableAdapter.Fill(this.qlvtDataSet.CTPX);
+                    
+                    // Cập nhật tên nhân viên sau khi refresh
+                    UpdateTenNhanVien();
+                    
+                    // Cập nhật tên vật tư cho CTPX
+                    foreach (DataRow row in qlvtDataSet.CTPX.Rows)
+                    {
+                        string mavt = row["MAVT"].ToString();
+                        row["TenVatTu"] = GetTenVatTu(mavt);
+                    }
                 }
             }
             catch (SqlException sqlEx)
@@ -462,7 +529,7 @@ namespace quanlyvattu
 
         private void searchInput_EditValueChanged(object sender, EventArgs e)
         {
-            string searchText = searchInput.Text.Trim().Replace("'", "''"); // tránh lỗi khi nhập dấu nháy đơn
+            string searchText = searchInput.Text.Trim().Replace("'", "''"); // tránh lỗi khi nhập dấu nháy đơn  
 
             if (string.IsNullOrEmpty(searchText))
             {
@@ -470,9 +537,28 @@ namespace quanlyvattu
                 return;
             }
 
-            // Lọc theo MAPX, HOTENKH và MANV (MANV cần convert sang chuỗi)
+            // Lọc theo MAPX, HOTENKH và MANV (MANV cần convert sang chuỗi)  
             string filter = $"MAPX LIKE '%{searchText}%' OR HOTENKH LIKE '%{searchText}%' OR CONVERT(MANV, 'System.String') LIKE '%{searchText}%'";
             phieuXuatBindingSource.Filter = filter;
+
+            // Nếu không tìm thấy kết quả theo filter thông thường, tìm kiếm theo tên nhân viên  
+            if (phieuXuatBindingSource.Count == 0)
+            {
+                // Tìm kiếm theo tên nhân viên  
+                var matchingRows = qlvtDataSet.PhieuXuat.AsEnumerable()
+                    .Where(row => GetTenNhanVien(Convert.ToInt32(row["MANV"]))
+                        .IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+
+                if (matchingRows.Count > 0)
+                {
+                    // Tạo filter mới dựa trên MAPX của các dòng tìm được  
+                    var mapxList = matchingRows.Select(row => $"'{row["MAPX"]}'").ToArray();
+                    string mapxFilter = string.Join(",", mapxList);
+                    phieuXuatBindingSource.Filter = $"MAPX IN ({mapxFilter})";
+                }
+            }
+
             labelNoResult.Visible = phieuXuatBindingSource.Count == 0;
         }
 

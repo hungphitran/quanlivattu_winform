@@ -127,5 +127,99 @@ namespace quanlyvattu
             //lấy ma ddh hien tai
             Console.WriteLine("Chỉnh sửa đơn đặt hàng "+ this.cTDDHDataGridView.CurrentRow.Index);
         }
+
+        private string EscapeLikeValue(string value)
+        {
+            return value
+                .Replace("'", "''")
+                .Replace("[", "[[]")
+                .Replace("%", "[%]")
+                .Replace("*", "[*]");
+        }
+        //   private void searchInput_EditValueChanged(object sender, EventArgs e)
+        //   {
+        //       string searchText = EscapeLikeValue(searchInput.Text.Trim());
+
+        //       if (!string.IsNullOrEmpty(searchText))
+        //       {
+        //           datHangBindingSource.Filter =
+        //$"CONVERT(MANV, 'System.String') LIKE '%{searchText}%' " +
+        //$"OR NhaCC LIKE '%{searchText}%' " +
+        //$"OR MasoDDH LIKE '%{searchText}%'";
+
+
+        //       }
+        //       else
+        //       {
+        //           datHangBindingSource.RemoveFilter();
+        //       }
+
+        //       labelNoResult.Visible = datHangBindingSource.Count == 0;
+        //   }
+
+        //   private void checkChuaNhap_CheckedChanged(object sender, EventArgs e)
+        //   {
+
+        //   }
+
+        //   private void checkDaNhap_CheckedChanged(object sender, EventArgs e)
+        //   {
+
+        //   }
+
+        private void ApplyFilter()
+        {
+            string searchText = EscapeLikeValue(searchInput.Text.Trim());
+            List<string> conditions = new List<string>();
+
+            // 1. Điều kiện tìm kiếm (luôn áp dụng)
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                conditions.Add($"CONVERT(MANV, 'System.String') LIKE '%{searchText}%'");
+                conditions.Add($"NhaCC LIKE '%{searchText}%'");
+                conditions.Add($"MasoDDH LIKE '%{searchText}%'");
+            }
+
+            string searchFilter = conditions.Count > 0 ? "(" + string.Join(" OR ", conditions) + ")" : null;
+
+            // 2. Điều kiện trạng thái (chỉ khi có check)
+            string statusFilter = null;
+            if (checkChuaNhap.Checked && !checkDaNhap.Checked)
+            {
+                statusFilter = "status = 'Chưa nhập'";
+            }
+            else if (!checkChuaNhap.Checked && checkDaNhap.Checked)
+            {
+                statusFilter = "status = 'Đã nhập'";
+            }
+            // Nếu cả hai đều check hoặc đều không check thì không thêm điều kiện trạng thái
+
+            // 3. Gộp điều kiện
+            List<string> finalConditions = new List<string>();
+            if (!string.IsNullOrEmpty(searchFilter)) finalConditions.Add(searchFilter);
+            if (!string.IsNullOrEmpty(statusFilter)) finalConditions.Add(statusFilter);
+
+            datHangBindingSource.Filter = finalConditions.Count > 0 ? string.Join(" AND ", finalConditions) : null;
+
+            labelNoResult.Visible = datHangBindingSource.Count == 0;
+        }
+
+
+        private void searchInput_EditValueChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+
+        private void checkChuaNhap_CheckedChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+
+        private void checkDaNhap_CheckedChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+
+
     }
 }

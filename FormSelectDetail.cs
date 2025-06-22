@@ -41,6 +41,7 @@ namespace quanlyvattu
             if (this.typeComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Chưa chọn loại báo cáo");
+                this.submitBtn.Enabled = true;
                 return;
             }
             String loaiBaoCao = this.typeComboBox.SelectedItem.ToString();

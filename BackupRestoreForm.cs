@@ -320,8 +320,7 @@ namespace quanlyvattu
                         // backup with init 
                         DeleteUnnecessaryLogFiles();
                         int res = Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',1");
-
-
+                        Program.ExecSqlNonQuery($"USE master; EXEC sp_XoaLoginMoCoi; \n use qlvt; EXEC sp_TaoLoginChoTatCaUserChuaCoLogin");
 
                         // Bắt đầu restore log chain hợp lệ kể từ bản full
                         // After successful restore, refresh backup list
@@ -488,6 +487,7 @@ namespace quanlyvattu
                 MessageBox.Show("Phục hồi thành công!");
                 DeleteUnnecessaryLogFiles();
                 Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',1");
+                Program.ExecSqlNonQuery($"USE master; EXEC sp_XoaLoginMoCoi; \n use qlvt; EXEC sp_TaoLoginChoTatCaUserChuaCoLogin");
             }
             else
             {

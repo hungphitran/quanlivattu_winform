@@ -60,11 +60,10 @@ namespace quanlyvattu
             {
                 String login = "";
                 // Query to get the login name for the given user ID
-                string query = $@"
-            SELECT l.loginname 
-            FROM sys.sysusers u
-            JOIN sys.syslogins l ON u.sid = l.sid
-            WHERE u.name = '{userId}'";
+                string query = $@"use qlvt;
+                SELECT name
+                FROM sys.database_principals
+                WHERE name LIKE '%[_]{userId}[_]%';";
 
                 // Execute the query
                 SqlDataReader reader = Program.ExecSqlDataReader(query);
@@ -159,7 +158,8 @@ namespace quanlyvattu
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes) {
                 String manv = cmbNhanVien.SelectedValue.ToString(); // Get selected employee ID
-                String cmd = $"use master; exec sp_XoaLoginVaUser @Username = '{manv}'";
+                string role = Program.mGroup == "AdminRole" ? "ad" : "nv";
+                String cmd = $"use master; exec sp_XoaLoginVaUser @Username = '{Program.mlogin}_{manv}_{role}'";
                 int res = Program.ExecSqlNonQuery(cmd);
                 Console.WriteLine("res: " + res);// 
                 if (res == 0)//thanh cong

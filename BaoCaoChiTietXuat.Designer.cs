@@ -96,6 +96,9 @@
             this.GrandTotalBackground1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooter3 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.grandSum = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table3)).BeginInit();
@@ -772,6 +775,41 @@
             this.xrLabel1.SizeF = new System.Drawing.SizeF(170.2209F, 23F);
             this.xrLabel1.Text = "Người lập báo cáo";
             // 
+            // GroupFooter3
+            // 
+            this.GroupFooter3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel3,
+            this.grandSum});
+            this.GroupFooter3.HeightF = 72.16446F;
+            this.GroupFooter3.Level = 2;
+            this.GroupFooter3.Name = "GroupFooter3";
+            // 
+            // grandSum
+            // 
+            this.grandSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grandSum.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Sum([TONGTHANHTIEN])")});
+            this.grandSum.LocationFloat = new DevExpress.Utils.PointFloat(429.7791F, 29.83114F);
+            this.grandSum.Multiline = true;
+            this.grandSum.Name = "grandSum";
+            this.grandSum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.grandSum.SizeF = new System.Drawing.SizeF(186.6667F, 23F);
+            this.grandSum.StylePriority.UseBackColor = false;
+            this.grandSum.Text = "grandSum";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(31.56832F, 29.83114F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.StylePriority.UseBackColor = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.Text = "Tổng";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // BaoCaoChiTietXuat
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -783,7 +821,8 @@
             this.Detail,
             this.GroupFooter1,
             this.GroupFooter2,
-            this.ReportFooter});
+            this.ReportFooter,
+            this.GroupFooter3});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
             this.DataMember = "sp_BaoCaoChiTietXuatTheoThang";
@@ -875,5 +914,8 @@
         private DevExpress.XtraReports.UI.XRLabel userlbl;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter3;
+        private DevExpress.XtraReports.UI.XRLabel grandSum;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
     }
 }

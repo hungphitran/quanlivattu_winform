@@ -577,5 +577,7 @@ namespace quanlyvattu
             }
             labelNoResult.Visible = nhanvienBindingSource.Count == 0;
         }
+
+
     }
 }

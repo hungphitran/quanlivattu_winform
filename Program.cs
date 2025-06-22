@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using quanlyvattu;
 using System.Text;
 using DevExpress.DataAccess.Sql;
+using Siticone.Desktop.UI.WinForms;
 
 
 
@@ -50,7 +51,8 @@ namespace QLVT
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                //MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+               
                 return 0;
             }
         }

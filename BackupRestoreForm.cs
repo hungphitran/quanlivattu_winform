@@ -42,6 +42,8 @@ namespace quanlyvattu
             this.lblTime.Visible = false;
             this.restoreWithTimeBtn.Visible = false;
         }
+
+       
         static List<string> GetFilesInTimeRange(string folderPath, DateTime from, DateTime to)
         {
             var matchingFiles = new List<string>();
@@ -318,8 +320,7 @@ namespace quanlyvattu
                         // backup with init 
                         DeleteUnnecessaryLogFiles();
                         int res = Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',1");
-
-
+                        Program.ExecSqlNonQuery($"USE master; EXEC sp_XoaLoginMoCoi; \n use qlvt; EXEC sp_TaoLoginChoTatCaUserChuaCoLogin");
 
                         // Bắt đầu restore log chain hợp lệ kể từ bản full
                         // After successful restore, refresh backup list
@@ -468,7 +469,6 @@ namespace quanlyvattu
                 // Notify the user of the result
                 MessageBox.Show(res == 0 ? "Sao lưu thành công!" : "Sao lưu thất bại!");
                 // Backup log hiện tại để tránh mất log chưa backup
-
             }
             // Refresh the DataGridView by reloading the data
             backupTableLoad();
@@ -487,6 +487,7 @@ namespace quanlyvattu
                 MessageBox.Show("Phục hồi thành công!");
                 DeleteUnnecessaryLogFiles();
                 Program.ExecSqlNonQuery($"USE qlvt; EXEC sp_SaoLuuCSDL 'qlvt', '{deviceName}',1");
+                Program.ExecSqlNonQuery($"USE master; EXEC sp_XoaLoginMoCoi; \n use qlvt; EXEC sp_TaoLoginChoTatCaUserChuaCoLogin");
             }
             else
             {

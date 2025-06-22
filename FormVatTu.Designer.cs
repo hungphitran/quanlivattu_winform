@@ -36,8 +36,8 @@ namespace quanlyvattu
             System.Windows.Forms.Label soluongtonLabel;
             System.Windows.Forms.Label dVTLabel;
             System.Windows.Forms.Label mAVTLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
             this.vattuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vattuTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.VattuTableAdapter();
@@ -66,13 +66,14 @@ namespace quanlyvattu
             this.soluongtonSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.tenvtTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.groupBoxAddVatTu = new System.Windows.Forms.GroupBox();
+            this.addButt = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.donvitinhInput = new DevExpress.XtraEditors.TextEdit();
             this.tenvtInput = new DevExpress.XtraEditors.TextEdit();
             this.mavtInput = new DevExpress.XtraEditors.TextEdit();
-            this.addButt = new DevExpress.XtraEditors.SimpleButton();
+            this.labelNoResult = new System.Windows.Forms.Label();
             tENVTLabel = new System.Windows.Forms.Label();
             soluongtonLabel = new System.Windows.Forms.Label();
             dVTLabel = new System.Windows.Forms.Label();
@@ -338,6 +339,9 @@ namespace quanlyvattu
             this.searchInput.Properties.Appearance.Options.UseFont = true;
             this.searchInput.Size = new System.Drawing.Size(182, 22);
             this.searchInput.TabIndex = 15;
+            this.searchInput.EditValueChanged += new System.EventHandler(this.searchInput_EditValueChanged);
+            this.searchInput.Properties.NullValuePrompt = "Nhập từ khóa tìm kiếm...";
+            this.searchInput.Properties.NullValuePromptShowForEmptyValue = true;
             // 
             // lichSuVattuBtn
             // 
@@ -365,14 +369,14 @@ namespace quanlyvattu
             this.vattuDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vattuDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.vattuDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.vattuDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vattuDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.vattuDataGridView.ColumnHeadersHeight = 40;
             this.vattuDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.vattuDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -381,14 +385,14 @@ namespace quanlyvattu
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.vattuDataGridView.DataSource = this.vattuBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.vattuDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.vattuDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.vattuDataGridView.EnableHeadersVisualStyles = false;
             this.vattuDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.vattuDataGridView.Location = new System.Drawing.Point(20, 170);
@@ -528,6 +532,24 @@ namespace quanlyvattu
             this.groupBoxAddVatTu.TabStop = false;
             this.groupBoxAddVatTu.Text = "THÊM VẬT TƯ MỚI";
             // 
+            // addButt
+            // 
+            this.addButt.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.addButt.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.addButt.Appearance.ForeColor = System.Drawing.Color.White;
+            this.addButt.Appearance.Options.UseBackColor = true;
+            this.addButt.Appearance.Options.UseFont = true;
+            this.addButt.Appearance.Options.UseForeColor = true;
+            this.addButt.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.addButt.AppearanceHovered.Options.UseBackColor = true;
+            this.addButt.Location = new System.Drawing.Point(440, 104);
+            this.addButt.Margin = new System.Windows.Forms.Padding(4);
+            this.addButt.Name = "addButt";
+            this.addButt.Size = new System.Drawing.Size(200, 45);
+            this.addButt.TabIndex = 29;
+            this.addButt.Text = "➕ Thêm vật tư mới";
+            this.addButt.Click += new System.EventHandler(this.addButt_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -591,23 +613,18 @@ namespace quanlyvattu
             this.mavtInput.Size = new System.Drawing.Size(180, 22);
             this.mavtInput.TabIndex = 30;
             // 
-            // addButt
+            // labelNoResult
             // 
-            this.addButt.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.addButt.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.addButt.Appearance.ForeColor = System.Drawing.Color.White;
-            this.addButt.Appearance.Options.UseBackColor = true;
-            this.addButt.Appearance.Options.UseFont = true;
-            this.addButt.Appearance.Options.UseForeColor = true;
-            this.addButt.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
-            this.addButt.AppearanceHovered.Options.UseBackColor = true;
-            this.addButt.Location = new System.Drawing.Point(440, 104);
-            this.addButt.Margin = new System.Windows.Forms.Padding(4);
-            this.addButt.Name = "addButt";
-            this.addButt.Size = new System.Drawing.Size(200, 45);
-            this.addButt.TabIndex = 29;
-            this.addButt.Text = "➕ Thêm vật tư mới";
-            this.addButt.Click += new System.EventHandler(this.addButt_Click);
+            this.labelNoResult.AutoSize = true;
+            this.labelNoResult.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoResult.ForeColor = System.Drawing.Color.Red;
+            this.labelNoResult.Location = new System.Drawing.Point(582, 316);
+            this.labelNoResult.Name = "labelNoResult";
+            this.labelNoResult.Size = new System.Drawing.Size(313, 21);
+            this.labelNoResult.TabIndex = 4;
+            this.labelNoResult.Text = "Không tìm thấy vật tư phù hợp với tìm kiếm";
+            this.labelNoResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNoResult.Visible = false;
             // 
             // FormVatTu
             // 
@@ -615,6 +632,7 @@ namespace quanlyvattu
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.Controls.Add(this.labelNoResult);
             this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.vattuDataGridView);
             this.Controls.Add(this.controlPanel);
@@ -647,6 +665,7 @@ namespace quanlyvattu
             ((System.ComponentModel.ISupportInitialize)(this.tenvtInput.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mavtInput.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -686,5 +705,6 @@ namespace quanlyvattu
         private System.Windows.Forms.Panel controlPanel;
         private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.GroupBox groupBoxAddVatTu;
+        private System.Windows.Forms.Label labelNoResult;
     }
 }

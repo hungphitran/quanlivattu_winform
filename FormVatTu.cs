@@ -295,6 +295,9 @@ namespace quanlyvattu
             String mavt = this.mavtInput.Text.Trim();
             String tenvt = this.tenvtInput.Text.Trim();
             String dvt = this.donvitinhInput.Text.Trim();
+
+            if(String.IsNullOrEmpty(mavt) || String.IsNullOrEmpty(tenvt) || String.IsNullOrEmpty(dvt)) return;
+
             // Kiểm tra các trường nhập liệu
 
                 try
@@ -490,6 +493,32 @@ namespace quanlyvattu
             }
         }
 
+        private string EscapeLikeValue(string value)
+        {
+            return value
+                .Replace("'", "''")
+                .Replace("[", "[[]")
+                .Replace("%", "[%]")
+                .Replace("*", "[*]");
+        }
+
+        private void searchInput_EditValueChanged(object sender, EventArgs e)
+        {
+            string searchText = EscapeLikeValue(searchInput.Text.Trim());
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                vattuBindingSource.Filter = $"MAVT LIKE '%{searchText}%' OR TENVT LIKE '%{searchText}%'";
+                currentFilter = vattuBindingSource.Filter;
+            }
+            else
+            {
+                vattuBindingSource.RemoveFilter();
+                currentFilter = null;
+            }
+            labelNoResult.Visible = vattuBindingSource.Count == 0;
+        }
+
 
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -511,10 +540,11 @@ namespace quanlyvattu
 
         private void lichSuVattuBtn_Click(object sender, EventArgs e)
         {
+            this.lichSuVattuBtn.Enabled = false;
 
             if (formBaoCao != null)
             {
-                formBaoCao.Close();
+                formBaoCao.Dispose();
             }
             String mavt = this.mavtTextEdit.Text;
             string tenvt = this.tenvtTextEdit.Text;
@@ -524,15 +554,22 @@ namespace quanlyvattu
             if (report.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.lichSuVattuBtn.Enabled = true;
             }
-            else formBaoCao.Show();
+            else
+            {
+                formBaoCao.FormClosed += (s, args) => this.lichSuVattuBtn.Enabled = true;
+                formBaoCao.Show();
+            }
         }
 
         private void listVattuBtn_Click(object sender, EventArgs e)
         {
+            this.listVattuBtn.Enabled = false;
             if (formBaoCao != null)
             {
-                formBaoCao.Close();
+                formBaoCao.Dispose();
+                formBaoCao = null;
             }
             String mavt = this.mavtTextEdit.Text;
             reportVattu report = new reportVattu();
@@ -540,8 +577,13 @@ namespace quanlyvattu
             if (report.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.listVattuBtn.Enabled = true;
             }
-            else formBaoCao.Show();
+            else
+            {
+                formBaoCao.FormClosed += (s, args) => this.listVattuBtn.Enabled = true;
+                formBaoCao.Show();
+            }
         }
 
     }

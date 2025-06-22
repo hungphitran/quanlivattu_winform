@@ -71,6 +71,7 @@ namespace quanlyvattu
 
         private void notImportBtn_Click(object sender, EventArgs e)
         {
+            this.notImportBtn.Enabled = false;
             if (formBaocao != null)
             {
                 formBaocao.Close();
@@ -81,8 +82,14 @@ namespace quanlyvattu
             if (rep.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.notImportBtn.Enabled = true;
+
             }
-            else formBaocao.Show();
+            else
+            {
+                formBaocao.FormClosed += (s, args) => this.notImportBtn.Enabled = true;
+                formBaocao.Show();
+            } 
 
         }
 
@@ -113,6 +120,12 @@ namespace quanlyvattu
             this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
             this.cTDDHTableAdapter.Fill(this.qlvtDataSet1.CTDDH);
 
+        }
+
+        private void editDDH_Click(object sender, EventArgs e)
+        {
+            //lấy ma ddh hien tai
+            Console.WriteLine("Chỉnh sửa đơn đặt hàng "+ this.cTDDHDataGridView.CurrentRow.Index);
         }
     }
 }

@@ -9,8 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataProcessing.InMemoryDataProcessor;
 using QLVT;
 using Siticone.Desktop.UI.WinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace quanlyvattu
@@ -33,8 +36,9 @@ namespace quanlyvattu
 
             Program.mlogin = userName;
             Program.password = pass;
+            int manv=0;
 
-            
+
             int success= Program.connectDB();
 
             if (success ==1)
@@ -46,8 +50,29 @@ namespace quanlyvattu
                 msg.Style = Siticone.Desktop.UI.WinForms.MessageDialogStyle.Light;
                 msg.Show();
 
+                // lấy user của login
+                SqlDataReader reader = Program.ExecSqlDataReader($"USE qlvt;\n" +
+                    "select dp.name AS UserName \n"+
+                    "FROM sys.database_principals dp \n" +
+                    "LEFT JOIN sys.server_principals sp ON dp.sid = sp.sid \n"+
+                    $"WHERE sp.name = '{userName}'; \n");
 
-                SqlDataReader reader = Program.ExecSqlDataReader("use qlvt;\r\nselect Nhanvien.MANV, Nhanvien.HO , Nhanvien.TEN\r\nfrom sys.sysusers u, sys.syslogins l,NhanVien\r\nwhere u.sid = l.sid and l.loginname ='"+Program.mlogin+"' and Nhanvien.MANV= u.name");
+                if (reader.HasRows)  // Kiểm tra có dữ liệu không
+                {
+                    Console.WriteLine(reader);
+
+                    while (reader.Read())  // Duyệt từng dòng dữ liệu
+                    {
+                        string user= reader["Username"].ToString(); // login_manv
+                        manv =  int.Parse(user.Split('_')[1]);
+                    }
+                }
+                reader.Close();
+                // lấy thông tin người dùng
+                reader = Program.ExecSqlDataReader($"USE qlvt;\n " +
+                    "select HO, TEN, MANV\n" +
+                    "FROM Nhanvien nv\n" +
+                    $"WHERE MANV = '{manv}';\n ");
                 if (reader.HasRows)  // Kiểm tra có dữ liệu không
                 {
                     Console.WriteLine(reader);
@@ -91,9 +116,12 @@ namespace quanlyvattu
             }
             else
             {
-
-                
-                MessageBox.Show("Không thể đăng nhập");
+                var msg = new SiticoneMessageDialog();
+                msg.Text = "Sai username hoặc password";
+                msg.Caption = "Đăng nhập lỗi";
+                msg.Icon = Siticone.Desktop.UI.WinForms.MessageDialogIcon.Error;
+                msg.Style = Siticone.Desktop.UI.WinForms.MessageDialogStyle.Light;
+                msg.Show();
 
             }
 
@@ -105,5 +133,19 @@ namespace quanlyvattu
         {
             this.Close();
         }
+
+        private bool isPasswordVisible = false;
+
+
+        private void eyeIcon_Click(object sender, EventArgs e)
+        {
+            isPasswordVisible = !isPasswordVisible;
+            txtPass.PasswordChar = isPasswordVisible ? '\0' : '●';
+
+            eyeIcon.Image = isPasswordVisible
+                ? Properties.Resources.eye_off
+                : Properties.Resources.eye_on;
+        }
+
     }
 }

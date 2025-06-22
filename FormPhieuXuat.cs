@@ -422,6 +422,21 @@ namespace quanlyvattu
             }
         }
 
+        private void searchInput_EditValueChanged(object sender, EventArgs e)
+        {
+            string searchText = searchInput.Text.Trim().Replace("'", "''"); // tránh lỗi khi nhập dấu nháy đơn
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                phieuXuatBindingSource.RemoveFilter();
+                return;
+            }
+
+            // Lọc theo MAPX, HOTENKH và MANV (MANV cần convert sang chuỗi)
+            string filter = $"MAPX LIKE '%{searchText}%' OR HOTENKH LIKE '%{searchText}%' OR CONVERT(MANV, 'System.String') LIKE '%{searchText}%'";
+            phieuXuatBindingSource.Filter = filter;
+            labelNoResult.Visible = phieuXuatBindingSource.Count == 0;
+        }
 
     }
 }

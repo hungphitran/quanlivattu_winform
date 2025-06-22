@@ -36,10 +36,12 @@ namespace quanlyvattu
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            this.submitBtn.Enabled = false;
             // Lấy giá trị từ các điều khiển
             if (this.typeComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Chưa chọn loại báo cáo");
+                this.submitBtn.Enabled = true;
                 return;
             }
             String loaiBaoCao = this.typeComboBox.SelectedItem.ToString();
@@ -49,6 +51,7 @@ namespace quanlyvattu
             if (formBaoCao != null )
             {
                     formBaoCao.Close();
+                    formBaoCao = null;
             }
 
 
@@ -56,6 +59,7 @@ namespace quanlyvattu
             if (DateTime.Compare(tuNgay, denNgay) !=-1)
             {
                 MessageBox.Show("Ngày bắt đầu không được nhỏ hơn ngày kết thúc");
+                this.submitBtn.Enabled = true;
                 return;
             }
 
@@ -67,6 +71,7 @@ namespace quanlyvattu
                 if (!Program.hasData(baoCaoChiTietNhap))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
+                    this.submitBtn.Enabled = true;
                     return;
                 }
                 formBaoCao = new FormBaoCao(baoCaoChiTietNhap);
@@ -80,12 +85,13 @@ namespace quanlyvattu
                 if (!Program.hasData(baoCaoChiTietXuat))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
+                    this.submitBtn.Enabled = true;
                     return;
                 }
                 formBaoCao = new FormBaoCao(baoCaoChiTietXuat);
 
             }
-
+            formBaoCao.FormClosed += (s, args) => this.submitBtn.Enabled = true;
             formBaoCao.Show();
         }
 

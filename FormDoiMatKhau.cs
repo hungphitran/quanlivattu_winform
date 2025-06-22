@@ -143,18 +143,10 @@ namespace quanlyvattu
                 if (manv == Program.manv)
                 {
                     Console.WriteLine($"Current MANV: {Program.manv}");
-                    Program.password = pass;
                     Program.conn.Close();
-                    if(Program.connectDB() == 1)
-                    {
-                        Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
-                            Program.database + ";User ID=" +
-                            Program.mlogin + ";password=" + Program.password;
-                    }
-                    else
-                    {
-                        FormManager.switchForm(this, new LoginForm());
-                    }
+                    Program.password = pass;
+
+                    Program.connectDB();
                 }
                 textPass1.Text = "";
                 textPass2.Text = "";

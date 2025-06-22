@@ -490,8 +490,6 @@ namespace quanlyvattu
             Program.mGroup = "";
             Console.WriteLine("Logging out and switching to LoginForm... " + Program.conn.State.ToString());
             Program.conn.Close();
-            Program.conn.Dispose();
-            Program.conn = null;
             FormManager.switchForm(this, new LoginForm());
         }
 

@@ -82,6 +82,8 @@ namespace quanlyvattu
             if (rep.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.notImportBtn.Enabled = true;
+
             }
             else
             {

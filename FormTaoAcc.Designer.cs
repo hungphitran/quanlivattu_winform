@@ -214,7 +214,7 @@
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(9, 74);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(88, 16);
             this.labelControl1.TabIndex = 0;
@@ -222,12 +222,11 @@
             // 
             // showPassword
             // 
-
-            this.showPassword.Location = new System.Drawing.Point(90, 98);
+            this.showPassword.Location = new System.Drawing.Point(120, 119);
             this.showPassword.Margin = new System.Windows.Forms.Padding(2);
             this.showPassword.Name = "showPassword";
             this.showPassword.Properties.Caption = "Hiển thị mật khẩu";
-            this.showPassword.Size = new System.Drawing.Size(112, 20);
+            this.showPassword.Size = new System.Drawing.Size(194, 24);
             this.showPassword.TabIndex = 4;
             this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
             // 

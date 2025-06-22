@@ -554,6 +554,7 @@ namespace quanlyvattu
             if (report.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.lichSuVattuBtn.Enabled = true;
             }
             else
             {
@@ -576,6 +577,7 @@ namespace quanlyvattu
             if (report.RowCount <= 0)
             {
                 MessageBox.Show("Báo cáo không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.listVattuBtn.Enabled = true;
             }
             else
             {

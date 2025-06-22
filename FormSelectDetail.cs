@@ -59,6 +59,7 @@ namespace quanlyvattu
             if (DateTime.Compare(tuNgay, denNgay) !=-1)
             {
                 MessageBox.Show("Ngày bắt đầu không được nhỏ hơn ngày kết thúc");
+                this.submitBtn.Enabled = true;
                 return;
             }
 
@@ -70,6 +71,7 @@ namespace quanlyvattu
                 if (!Program.hasData(baoCaoChiTietNhap))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
+                    this.submitBtn.Enabled = true;
                     return;
                 }
                 formBaoCao = new FormBaoCao(baoCaoChiTietNhap);
@@ -83,6 +85,7 @@ namespace quanlyvattu
                 if (!Program.hasData(baoCaoChiTietXuat))
                 {
                     MessageBox.Show("Không có dữ liệu trong khoảng thời gian này");
+                    this.submitBtn.Enabled = true;
                     return;
                 }
                 formBaoCao = new FormBaoCao(baoCaoChiTietXuat);

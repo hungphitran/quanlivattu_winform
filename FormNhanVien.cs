@@ -25,8 +25,28 @@ namespace quanlyvattu
             this.manvInput.KeyPress += manvInput_KeyPress;
             this.cmndInput.KeyPress += cmndInput_KeyPress;
             this.hoInput.KeyPress += hoInput_KeyPress;
+            this.hoInput.TextChanged += hoInput_TextChanged;
             this.tenInput.KeyPress += tenInput_KeyPress;
             this.luongInput.KeyPress += luongInput_KeyPress;
+
+            // Đặt mặc định ngày sinh là ngày hôm qua của 18 năm trước khi mở form
+            this.ngaysinhInput.DateTime = DateTime.Now.AddYears(-18).AddDays(-1);
+            this.ngaysinhInput.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.ngaysinhInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ngaysinhInput.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.ngaysinhInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ngaysinhInput.Properties.Mask.EditMask = "dd/MM/yyyy";
+
+            // Không cho nhập 2 dấu cách liên tiếp ở địa chỉ
+            this.diachiInput.KeyPress += diachiInput_KeyPress;
+            this.diachiInput.TextChanged += diachiInput_TextChanged;
+
+            // Thêm sự kiện để chặn nhập text vào NGAYSINH và LUONG trên DataGridView
+            this.nhanvienDataGridView.EditingControlShowing += nhanvienDataGridView_EditingControlShowing;
+
+            // Logic nhập tên nhân viên giống tên khách hàng ở phiếu xuất
+            this.tenInput.KeyPress += tenInput_KeyPress;
+            this.tenInput.TextChanged += tenInput_TextChanged;
         }
 
         Stack<UndoAction> undoStack = new Stack<UndoAction>();
@@ -57,7 +77,34 @@ namespace quanlyvattu
             this.nhanvienDataGridView.CellValueChanged += NhanvienDataGridView_CellValueChanged;
             this.nhanvienDataGridView.CellBeginEdit += NhanvienDataGridView_CellBeginEdit;
 
+            // Đảm bảo cột NGAYSINH là CalendarColumn (nếu columns bị reset)
+            if (!(nhanvienDataGridView.Columns[5] is DataGridViewCalendarColumn))
+            {
+                nhanvienDataGridView.Columns.RemoveAt(5);
+                var calendarCol = new DataGridViewCalendarColumn();
+                calendarCol.DataPropertyName = "NGAYSINH";
+                calendarCol.HeaderText = "NGÀY SINH";
+                calendarCol.Name = "dataGridViewCalendarColumn_NGAYSINH";
+                calendarCol.DefaultCellStyle.Format = "dd/MM/yyyy";
+                nhanvienDataGridView.Columns.Insert(5, calendarCol);
+            }
+            // Đảm bảo cột LUONG luôn tồn tại ở vị trí 6
+            bool foundLuong = false;
+            foreach (DataGridViewColumn col in nhanvienDataGridView.Columns)
+            {
+                if (col.DataPropertyName == "LUONG") { foundLuong = true; break; }
+            }
+            if (!foundLuong)
+            {
+                var luongCol = new DataGridViewTextBoxColumn();
+                luongCol.DataPropertyName = "LUONG";
+                luongCol.HeaderText = "LƯƠNG";
+                luongCol.Name = "dataGridViewTextBoxColumn7";
+                luongCol.MinimumWidth = 6;
+                nhanvienDataGridView.Columns.Insert(6, luongCol);
+            }
         }
+
         private void NhanvienDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             DataRowView rowView = (DataRowView)nhanvienDataGridView.CurrentRow.DataBoundItem;
@@ -92,6 +139,44 @@ namespace quanlyvattu
             );
         }
 
+        private void nhanvienDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            // Xác định cột đang edit
+            int col = nhanvienDataGridView.CurrentCell.ColumnIndex;
+            // NGAYSINH (cột 5): chỉ cho nhập ngày, không cho nhập text
+            if (col == 5)
+            {
+                // Nếu là TextBox thì chặn mọi phím nhập, chỉ cho dùng DatePicker
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress -= BlockAllKeyPress; // tránh đăng ký nhiều lần
+                    tb.KeyPress += BlockAllKeyPress;
+                }
+            }
+            // LUONG (cột 6): chỉ cho nhập số
+            else if (col == 6)
+            {
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress -= KeyPress_OnlyDigits;
+                    tb.KeyPress += KeyPress_OnlyDigits;
+                }
+            }
+        }
+
+        private void BlockAllKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void KeyPress_OnlyDigits(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void NhanvienDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             // Nếu không có dòng đang chọn thì bỏ qua
@@ -99,6 +184,7 @@ namespace quanlyvattu
 
             DataRowView rowView = (DataRowView)nhanvienDataGridView.CurrentRow.DataBoundItem;
             DataRow row = rowView.Row;
+            int currentRowIndex = nhanvienDataGridView.CurrentCell.RowIndex;
 
             // Kiểm tra trùng CMND khi sửa cột CMND 
             if (e.ColumnIndex == 1)// cột CMND
@@ -108,13 +194,68 @@ namespace quanlyvattu
                 searchInput.Text = "";
 
                 DataRow[] existingRows = qlvtDataSet.Nhanvien.Select($"CMND = '{cmnd}' AND MANV <> '{row["MANV"]}'");
-                Console.WriteLine("CMND: " + cmnd + " - " + existingRows.Length);
                 if (existingRows.Length > 0)
                 {
                     MessageBox.Show("CMND này đã tồn tại, không thể cập nhật.");
-                    // Phục hồi giá trị cũ
                     row.ItemArray = undoStack.Pop().OldItemArray;
-                    nhanvienBindingSource.Position = 0;
+                    nhanvienBindingSource.Position = currentRowIndex;
+                    nhanvienDataGridView.CurrentCell = nhanvienDataGridView.Rows[currentRowIndex].Cells[e.ColumnIndex];
+                    return;
+                }
+            }
+
+            // Kiểm tra NGAYSINH (cột 5)
+            if (e.ColumnIndex == 5) // NGAYSINH
+            {
+                object value = row["NGAYSINH"];
+                DateTime ngaysinh;
+                if (value == DBNull.Value || value == null || !DateTime.TryParse(value.ToString(), out ngaysinh))
+                {
+                    MessageBox.Show("Ngày sinh không hợp lệ! Vui lòng nhập đúng định dạng ngày.");
+                    row.ItemArray = undoStack.Pop().OldItemArray;
+                    nhanvienBindingSource.Position = currentRowIndex;
+                    nhanvienDataGridView.CurrentCell = nhanvienDataGridView.Rows[currentRowIndex].Cells[e.ColumnIndex];
+                    return;
+                }
+                if (ngaysinh > DateTime.Now)
+                {
+                    MessageBox.Show("Ngày sinh không thể là ngày trong tương lai!");
+                    row.ItemArray = undoStack.Pop().OldItemArray;
+                    nhanvienBindingSource.Position = currentRowIndex;
+                    nhanvienDataGridView.CurrentCell = nhanvienDataGridView.Rows[currentRowIndex].Cells[e.ColumnIndex];
+                    return;
+                }
+                int age = DateTime.Now.Year - ngaysinh.Year;
+                if (ngaysinh > DateTime.Now.AddYears(-age)) age--; // chính xác tuổi
+                if (age < 18)
+                {
+                    MessageBox.Show("Nhân viên phải từ 18 tuổi trở lên!");
+                    row.ItemArray = undoStack.Pop().OldItemArray;
+                    nhanvienBindingSource.Position = currentRowIndex;
+                    nhanvienDataGridView.CurrentCell = nhanvienDataGridView.Rows[currentRowIndex].Cells[e.ColumnIndex];
+                    return;
+                }
+            }
+
+            // Kiểm tra LUONG (cột 6)
+            if (e.ColumnIndex == 6) // LUONG
+            {
+                object value = row["LUONG"];
+                double luong;
+                if (value == DBNull.Value || value == null || !double.TryParse(value.ToString(), out luong))
+                {
+                    MessageBox.Show("Lương phải là số hợp lệ!");
+                    row.ItemArray = undoStack.Pop().OldItemArray;
+                    nhanvienBindingSource.Position = currentRowIndex;
+                    nhanvienDataGridView.CurrentCell = nhanvienDataGridView.Rows[currentRowIndex].Cells[e.ColumnIndex];
+                    return;
+                }
+                if (luong < 7000000)
+                {
+                    MessageBox.Show("Lương phải từ 7.000.000 đồng trở lên!");
+                    row.ItemArray = undoStack.Pop().OldItemArray;
+                    nhanvienBindingSource.Position = currentRowIndex;
+                    nhanvienDataGridView.CurrentCell = nhanvienDataGridView.Rows[currentRowIndex].Cells[e.ColumnIndex];
                     return;
                 }
             }
@@ -138,9 +279,6 @@ namespace quanlyvattu
 
             MessageBox.Show("Cập nhật thành công");
         }
-
-       
-
 
         private void backBtn_Click(object sender, EventArgs e)
         {
@@ -243,19 +381,129 @@ namespace quanlyvattu
 
         private void hoInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Only allow letters and spaces
+            // Chỉ cho nhập chữ cái, dấu cách, và phím điều khiển
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
-                e.Handled = true; // Block invalid input
+                e.Handled = true;
+                return;
+            }
+            // Không cho nhập 2 dấu cách liên tiếp
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            if (e.KeyChar == ' ')
+            {
+                if (text.Length == 0 || text.EndsWith(" "))
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void hoInput_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            if (string.IsNullOrEmpty(text)) return;
+            // Không cho 2 dấu cách liên tiếp
+            while (text.Contains("  "))
+                text = text.Replace("  ", " ");
+            // Viết hoa chữ cái đầu tiên và sau mỗi dấu cách, còn lại chuyển về thường
+            var sb = new StringBuilder();
+            bool capitalize = true;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                if (char.IsLetter(c))
+                {
+                    if (capitalize)
+                    {
+                        sb.Append(char.ToUpper(c));
+                        capitalize = false;
+                    }
+                    else
+                    {
+                        sb.Append(char.ToLower(c));
+                    }
+                }
+                else
+                {
+                    sb.Append(c);
+                    if (c == ' ')
+                        capitalize = true;
+                }
+            }
+            string newText = sb.ToString();
+            if (textBox.Text != newText)
+            {
+                int selStart = textBox.SelectionStart;
+                int diff = textBox.Text.Length - newText.Length;
+                textBox.Text = newText;
+                textBox.SelectionStart = Math.Max(0, selStart - diff);
             }
         }
 
         private void tenInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Only allow letters and spaces
+            // Chỉ cho nhập chữ cái, dấu cách, và phím điều khiển
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
-                e.Handled = true; // Block invalid input
+                e.Handled = true;
+                return;
+            }
+            // Không cho nhập 2 dấu cách liên tiếp
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            if (e.KeyChar == ' ')
+            {
+                if (text.Length == 0 || text.EndsWith(" "))
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void tenInput_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            if (string.IsNullOrEmpty(text)) return;
+            // Không cho 2 dấu cách liên tiếp
+            while (text.Contains("  "))
+                text = text.Replace("  ", " ");
+            // Viết hoa chữ cái đầu tiên và sau mỗi dấu cách, còn lại chuyển về thường
+            var sb = new StringBuilder();
+            bool capitalize = true;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                if (char.IsLetter(c))
+                {
+                    if (capitalize)
+                    {
+                        sb.Append(char.ToUpper(c));
+                        capitalize = false;
+                    }
+                    else
+                    {
+                        sb.Append(char.ToLower(c));
+                    }
+                }
+                else
+                {
+                    sb.Append(c);
+                    if (c == ' ')
+                        capitalize = true;
+                }
+            }
+            string newText = sb.ToString();
+            if (textBox.Text != newText)
+            {
+                int selStart = textBox.SelectionStart;
+                int diff = textBox.Text.Length - newText.Length;
+                textBox.Text = newText;
+                textBox.SelectionStart = Math.Max(0, selStart - diff);
             }
         }
 
@@ -283,7 +531,9 @@ namespace quanlyvattu
             string ho = this.hoInput.Text.Trim();
             string ten = this.tenInput.Text.Trim();
             string diachi = this.diachiInput.Text.Trim(); // Thêm trường địa chỉ
-            DateTime? ngaysinh = this.ngaysinhInput.DateTime; // Nullable DateTime
+            DateTime? ngaysinh = string.IsNullOrEmpty(this.ngaysinhInput.Text)
+                ? DateTime.Now.AddYears(-18).AddDays(-1)
+                : this.ngaysinhInput.DateTime;
             string luongText = this.luongInput.Text.Trim();
             string ghichu = this.ghichuInput.Text.Trim();
 
@@ -462,7 +712,7 @@ namespace quanlyvattu
             this.hoInput.Text = "";
             this.tenInput.Text = "";
             this.diachiInput.Text = "";
-            this.ngaysinhInput.Text = "";
+            this.ngaysinhInput.DateTime = DateTime.Now.AddYears(-18).AddDays(-1);
             this.luongInput.Text = "";
             this.ghichuInput.Text = "";
         }
@@ -578,6 +828,96 @@ namespace quanlyvattu
             labelNoResult.Visible = nhanvienBindingSource.Count == 0;
         }
 
+        private void diachiInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho nhập ký tự, số, dấu cách, dấu phẩy, dấu chấm, và phím điều khiển
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+                return;
+            }
+            // Không cho nhập 2 dấu cách liên tiếp hoặc các dấu phân cách liên tiếp (., ,, .., .,, ,., ...)
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string text = textBox.Text;
+            char last = text.Length > 0 ? text[text.Length - 1] : '\0';
+            if ((e.KeyChar == ' ' && (text.Length == 0 || last == ' ')) ||
+                ((e.KeyChar == ',' || e.KeyChar == '.') && (text.Length == 0 || last == ' ' || last == ',' || last == '.')))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void diachiInput_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = sender as DevExpress.XtraEditors.TextEdit;
+            string oldText = textBox.Text;
+            if (string.IsNullOrEmpty(oldText)) return;
+            int oldSelStart = textBox.SelectionStart;
+
+            // Lưu lại text trước khi format để so sánh
+            string before = oldText;
+            int beforeSel = oldSelStart;
+
+            // Format lại text
+            string text = oldText;
+            // Không cho 2 dấu cách liên tiếp
+            while (text.Contains("  "))
+                text = text.Replace("  ", " ");
+            // Không cho các dấu phân cách liên tiếp (., ,, .., .,, ,., ...)
+            string[] bads = { ",,", "..", ",.", ".,", ",,,", "...", ",.,", ".,.", ",..", "..,", ".,," };
+            bool replaced;
+            do {
+                replaced = false;
+                foreach (var bad in bads)
+                {
+                    int idx = text.IndexOf(bad);
+                    if (idx != -1)
+                    {
+                        text = text.Remove(idx + 1, bad.Length - 1);
+                        replaced = true;
+                        if (oldSelStart > idx + 1)
+                            oldSelStart -= (bad.Length - 1);
+                    }
+                }
+            } while (replaced);
+            // Không cho dấu phẩy hoặc chấm ở đầu hoặc cuối chuỗi
+            while (text.StartsWith(",") || text.StartsWith("."))
+            {
+                text = text.Substring(1);
+                if (oldSelStart > 0) oldSelStart--;
+            }
+            while (text.EndsWith(",") || text.EndsWith("."))
+            {
+                text = text.Substring(0, text.Length - 1);
+                if (oldSelStart > text.Length) oldSelStart = text.Length;
+            }
+
+            // Xác định nếu vừa nhập dấu phẩy/chấm thì con trỏ phải đứng sau dấu đó
+            // (kể cả khi nhập ở giữa chuỗi)
+            if (text != before) {
+                // Tìm vị trí đầu tiên mà text khác before
+                int diffIdx = 0;
+                while (diffIdx < text.Length && diffIdx < before.Length && text[diffIdx] == before[diffIdx])
+                    diffIdx++;
+                // Nếu nhập dấu phẩy/chấm ở giữa
+                if (oldSelStart > 0 &&
+                    (beforeSel > 0 && (before[beforeSel-1] == ',' || before[beforeSel-1] == '.')) &&
+                    (diffIdx == beforeSel-1 || diffIdx == beforeSel))
+                {
+                    // Đặt con trỏ sau dấu vừa nhập
+                    oldSelStart = diffIdx + 1;
+                }
+                else if (oldSelStart > text.Length) {
+                    oldSelStart = text.Length;
+                }
+            }
+            if (textBox.Text != text)
+            {
+                textBox.Text = text;
+                textBox.SelectionStart = Math.Max(0, Math.Min(oldSelStart, textBox.Text.Length));
+            }
+        }
 
     }
 }

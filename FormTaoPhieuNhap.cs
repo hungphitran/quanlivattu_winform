@@ -306,7 +306,12 @@ namespace quanlyvattu
                 {
                     cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
                     cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+                    if (Program.conn.State != ConnectionState.Open)
+                    {
+                        Program.conn.Open();
+                    }
                     int count = (int)cmdCheck.ExecuteScalar();
+
                     if (count > 0) continue;
                 }
 
@@ -375,20 +380,6 @@ namespace quanlyvattu
                     }
 
                     return;
-                }
-
-                // Cập nhật tồn kho nếu mọi thứ thành công
-                foreach (DataRow row in ctphieuNhapTable.Rows)
-                {
-                    string mavt = row["MAVT"].ToString();
-                    int soluong = int.Parse(row["SOLUONG"].ToString());
-
-                    using (SqlCommand cmdUpdate = new SqlCommand("UPDATE VATTU SET SOLUONGTON = SOLUONGTON + @SL WHERE MAVT = @MAVT", Program.conn))
-                    {
-                        cmdUpdate.Parameters.AddWithValue("@SL", soluong);
-                        cmdUpdate.Parameters.AddWithValue("@MAVT", mavt);
-                        cmdUpdate.ExecuteNonQuery();
-                    }
                 }
 
                 MessageBox.Show("Phiếu nhập đã được tạo thành công!");

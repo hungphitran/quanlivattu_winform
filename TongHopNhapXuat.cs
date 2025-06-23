@@ -34,15 +34,20 @@ namespace quanlyvattu
                 this.tableCell8.TextFormatString = "{0:0.00%}"; // TyLeNhap
                 this.tableCell10.TextFormatString = "{0:0.00%}"; // TyLeXuat
 
-
+                
                 // Fill the report to load data
+
                 this.sqlDataSource1.Fill();
+
 
                 this.userLbl.Text = Program.mHoten;
 
                 //calculation total
                 double totalNhap = 0.0;
                 double totalXuat = 0.0;
+
+
+
             }
             catch (Exception ex)
             {

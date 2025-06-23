@@ -50,14 +50,14 @@ namespace quanlyvattu
             int res = Program.ExecSqlNonQuery(cmd);
             if (res==0)
             {
-                MessageBox.Show("thành công");
+                MessageBox.Show("Tạo tài khoản thành công");
                 this.cmbNhanVien.DataSource = null; // Clear the data source
                 this.vw_NhanVienChuaCoTaiKhoanTableAdapter.Fill(this.qlvtDataSet.vw_NhanVienChuaCoTaiKhoan); // Reload the data
                 this.cmbNhanVien.DataSource = vw_NhanVienChuaCoTaiKhoanBindingSource; // Reassign the data source
             }
             else
             {
-                MessageBox.Show("thất bại");
+                MessageBox.Show("Tạo tài khoản thất bại");
             }
         }
 

@@ -8,7 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.DataProcessing.InMemoryDataProcessor;
+using DevExpress.Pdf.Native.BouncyCastle.Utilities.Collections;
 using QLVT;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace quanlyvattu
 {
@@ -131,6 +134,33 @@ namespace quanlyvattu
                 MessageBox.Show("Mật khẩu không khớp");
                 return;
             }
+
+            string checkSession = "USE qlvt;\n" +
+            "SELECT name, sid \n" +
+            "FROM sys.database_principals \n" +
+            "WHERE name LIKE '%[_]"+manv+"[_]%' \n" +
+            "AND type IN(''S'', ''U'')\n";
+
+            SqlDataReader reader = Program.ExecSqlDataReader(checkSession);
+            if (reader.HasRows)
+            {
+               string sid = reader["sid"].ToString();
+               // check if user has a session
+                string checkSessionQuery = "USE qlvt;\n" +
+                "SELECT * \n" +
+                "FROM sys.dm_exec_sessions \n" +
+                "WHERE session_id = "+sid+" \n" +
+                "AND is_user_process = 1;";
+                SqlDataReader sessionReader = Program.ExecSqlDataReader(checkSessionQuery);
+                if (sessionReader.HasRows)
+                {
+                    MessageBox.Show("Tài khoản này đang đăng nhập !!!");
+                    sessionReader.Close();
+                    return;
+                }
+
+            }
+            reader.Close();
 
             String cmd =
                 $"ALTER LOGIN [{login}] WITH PASSWORD = '{pass}' ;";

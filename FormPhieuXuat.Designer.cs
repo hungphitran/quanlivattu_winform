@@ -127,7 +127,6 @@ namespace quanlyvattu
             this.vattuBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.vattuComboBox = new System.Windows.Forms.ComboBox();
             this.soluongLabel = new DevExpress.XtraEditors.LabelControl();
-            this.dongiaLabel = new DevExpress.XtraEditors.LabelControl();
             this.tenvtLabel = new DevExpress.XtraEditors.LabelControl();
             this.inputPanel2 = new DevExpress.XtraEditors.PanelControl();
             this.ngayInput = new System.Windows.Forms.DateTimePicker();
@@ -172,10 +171,11 @@ namespace quanlyvattu
             mAVTLabel.AutoSize = true;
             mAVTLabel.BackColor = System.Drawing.Color.Transparent;
             mAVTLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAVTLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            mAVTLabel.Location = new System.Drawing.Point(316, 20);
+            mAVTLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            mAVTLabel.Location = new System.Drawing.Point(421, 25);
+            mAVTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAVTLabel.Name = "mAVTLabel";
-            mAVTLabel.Size = new System.Drawing.Size(43, 15);
+            mAVTLabel.Size = new System.Drawing.Size(56, 20);
             mAVTLabel.TabIndex = 5;
             mAVTLabel.Text = "MAVT:";
             // 
@@ -196,13 +196,14 @@ namespace quanlyvattu
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.Red;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.panelHeader.Controls.Add(this.labelTitle);
             this.panelHeader.Controls.Add(this.backBtn);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1228, 70);
+            this.panelHeader.Size = new System.Drawing.Size(1637, 86);
             this.panelHeader.TabIndex = 0;
             // 
             // labelTitle
@@ -210,9 +211,10 @@ namespace quanlyvattu
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(468, 20);
+            this.labelTitle.Location = new System.Drawing.Point(624, 25);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(248, 32);
+            this.labelTitle.Size = new System.Drawing.Size(310, 41);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "QUẢN LÝ XUẤT KHO";
             // 
@@ -220,7 +222,7 @@ namespace quanlyvattu
             // 
             this.backBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
             this.backBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.backBtn.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.backBtn.Appearance.ForeColor = System.Drawing.Color.White;
             this.backBtn.Appearance.Options.UseBackColor = true;
             this.backBtn.Appearance.Options.UseFont = true;
             this.backBtn.Appearance.Options.UseForeColor = true;
@@ -229,9 +231,10 @@ namespace quanlyvattu
             this.backBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.backBtn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.backBtn.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
-            this.backBtn.Location = new System.Drawing.Point(15, 18);
+            this.backBtn.Location = new System.Drawing.Point(20, 22);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(100, 36);
+            this.backBtn.Size = new System.Drawing.Size(133, 44);
             this.backBtn.TabIndex = 0;
             this.backBtn.Text = "Quay lại";
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
@@ -372,10 +375,11 @@ namespace quanlyvattu
             this.xtraTabControl1.AppearancePage.HeaderActive.ForeColor = System.Drawing.Color.White;
             this.xtraTabControl1.AppearancePage.HeaderActive.Options.UseBackColor = true;
             this.xtraTabControl1.AppearancePage.HeaderActive.Options.UseForeColor = true;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 70);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 86);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.phieuxuatTab;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1228, 668);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1637, 822);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.phieuxuatTab,
@@ -390,8 +394,9 @@ namespace quanlyvattu
             this.phieuxuatTab.Controls.Add(this.searchInput);
             this.phieuxuatTab.Controls.Add(this.cTPXDataGridView);
             this.phieuxuatTab.Controls.Add(this.phieuXuatDataGridView1);
+            this.phieuxuatTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phieuxuatTab.Name = "phieuxuatTab";
-            this.phieuxuatTab.Size = new System.Drawing.Size(1226, 636);
+            this.phieuxuatTab.Size = new System.Drawing.Size(1635, 783);
             this.phieuxuatTab.Text = "Phiếu Xuất";
             // 
             // labelNoResult
@@ -399,19 +404,21 @@ namespace quanlyvattu
             this.labelNoResult.AutoSize = true;
             this.labelNoResult.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoResult.ForeColor = System.Drawing.Color.Red;
-            this.labelNoResult.Location = new System.Drawing.Point(501, 214);
+            this.labelNoResult.Location = new System.Drawing.Point(668, 263);
+            this.labelNoResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNoResult.Name = "labelNoResult";
-            this.labelNoResult.Size = new System.Drawing.Size(225, 20);
+            this.labelNoResult.Size = new System.Drawing.Size(284, 25);
             this.labelNoResult.TabIndex = 7;
             this.labelNoResult.Text = "Không tìm thấy kết quả tìm kiếm";
             this.labelNoResult.Visible = false;
             // 
             // searchInput
             // 
-            this.searchInput.Location = new System.Drawing.Point(874, 27);
+            this.searchInput.Location = new System.Drawing.Point(1165, 33);
+            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchInput.Name = "searchInput";
             this.searchInput.Properties.NullValuePrompt = "Nhập từ khóa tìm kiếm...";
-            this.searchInput.Size = new System.Drawing.Size(326, 20);
+            this.searchInput.Size = new System.Drawing.Size(435, 22);
             this.searchInput.TabIndex = 6;
             this.searchInput.EditValueChanged += new System.EventHandler(this.searchInput_EditValueChanged);
             // 
@@ -424,7 +431,7 @@ namespace quanlyvattu
             this.cTPXDataGridView.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -439,21 +446,22 @@ namespace quanlyvattu
             this.cTPXDataGridView.DataSource = this.cTPXBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.cTPXDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.cTPXDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cTPXDataGridView.Location = new System.Drawing.Point(25, 400);
+            this.cTPXDataGridView.Location = new System.Drawing.Point(33, 492);
+            this.cTPXDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTPXDataGridView.MultiSelect = false;
             this.cTPXDataGridView.Name = "cTPXDataGridView";
             this.cTPXDataGridView.ReadOnly = true;
             this.cTPXDataGridView.RowHeadersVisible = false;
             this.cTPXDataGridView.RowHeadersWidth = 51;
             this.cTPXDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cTPXDataGridView.Size = new System.Drawing.Size(1175, 220);
+            this.cTPXDataGridView.Size = new System.Drawing.Size(1567, 271);
             this.cTPXDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn5
@@ -497,7 +505,7 @@ namespace quanlyvattu
             this.phieuXuatDataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -512,21 +520,22 @@ namespace quanlyvattu
             this.phieuXuatDataGridView1.DataSource = this.phieuXuatBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.phieuXuatDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.phieuXuatDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.phieuXuatDataGridView1.Location = new System.Drawing.Point(25, 70);
+            this.phieuXuatDataGridView1.Location = new System.Drawing.Point(33, 86);
+            this.phieuXuatDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phieuXuatDataGridView1.MultiSelect = false;
             this.phieuXuatDataGridView1.Name = "phieuXuatDataGridView1";
             this.phieuXuatDataGridView1.ReadOnly = true;
             this.phieuXuatDataGridView1.RowHeadersVisible = false;
             this.phieuXuatDataGridView1.RowHeadersWidth = 51;
             this.phieuXuatDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.phieuXuatDataGridView1.Size = new System.Drawing.Size(1175, 300);
+            this.phieuXuatDataGridView1.Size = new System.Drawing.Size(1567, 369);
             this.phieuXuatDataGridView1.TabIndex = 1;
             this.phieuXuatDataGridView1.SelectionChanged += new System.EventHandler(this.phieuXuatDataGridView1_SelectionChanged);
             // 
@@ -581,22 +590,23 @@ namespace quanlyvattu
             this.ctpxTab.Controls.Add(this.mAVTTextBox);
             this.ctpxTab.Controls.Add(this.vattuComboBox);
             this.ctpxTab.Controls.Add(this.soluongLabel);
-            this.ctpxTab.Controls.Add(this.dongiaLabel);
             this.ctpxTab.Controls.Add(this.tenvtLabel);
             this.ctpxTab.Controls.Add(this.inputPanel2);
+            this.ctpxTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctpxTab.Name = "ctpxTab";
-            this.ctpxTab.Size = new System.Drawing.Size(1226, 636);
+            this.ctpxTab.Size = new System.Drawing.Size(1635, 783);
             this.ctpxTab.Text = "Tạo Phiếu Xuất";
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(464, 243);
+            this.labelControl1.Location = new System.Drawing.Point(619, 299);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 15);
+            this.labelControl1.Size = new System.Drawing.Size(60, 20);
             this.labelControl1.TabIndex = 16;
             this.labelControl1.Text = "Đơn Giá:";
             // 
@@ -610,9 +620,10 @@ namespace quanlyvattu
             this.clearAllBtn.Appearance.Options.UseForeColor = true;
             this.clearAllBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
             this.clearAllBtn.AppearanceHovered.Options.UseBackColor = true;
-            this.clearAllBtn.Location = new System.Drawing.Point(800, 300);
+            this.clearAllBtn.Location = new System.Drawing.Point(1067, 369);
+            this.clearAllBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearAllBtn.Name = "clearAllBtn";
-            this.clearAllBtn.Size = new System.Drawing.Size(120, 35);
+            this.clearAllBtn.Size = new System.Drawing.Size(160, 43);
             this.clearAllBtn.TabIndex = 15;
             this.clearAllBtn.Text = "Xóa Tất Cả";
             this.clearAllBtn.Click += new System.EventHandler(this.clearAllBtn_Click);
@@ -627,9 +638,10 @@ namespace quanlyvattu
             this.deleteVTbtn.Appearance.Options.UseForeColor = true;
             this.deleteVTbtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.deleteVTbtn.AppearanceHovered.Options.UseBackColor = true;
-            this.deleteVTbtn.Location = new System.Drawing.Point(670, 300);
+            this.deleteVTbtn.Location = new System.Drawing.Point(893, 369);
+            this.deleteVTbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteVTbtn.Name = "deleteVTbtn";
-            this.deleteVTbtn.Size = new System.Drawing.Size(120, 35);
+            this.deleteVTbtn.Size = new System.Drawing.Size(160, 43);
             this.deleteVTbtn.TabIndex = 14;
             this.deleteVTbtn.Text = "Xóa Vật Tư";
             this.deleteVTbtn.Click += new System.EventHandler(this.deleteVTbtn_Click);
@@ -640,22 +652,24 @@ namespace quanlyvattu
             this.totalAmoutBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalAmoutBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.totalAmoutBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.totalAmoutBox.Location = new System.Drawing.Point(540, 580);
+            this.totalAmoutBox.Location = new System.Drawing.Point(720, 714);
+            this.totalAmoutBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.totalAmoutBox.Name = "totalAmoutBox";
             this.totalAmoutBox.ReadOnly = true;
-            this.totalAmoutBox.Size = new System.Drawing.Size(200, 29);
+            this.totalAmoutBox.Size = new System.Drawing.Size(266, 34);
             this.totalAmoutBox.TabIndex = 13;
             this.totalAmoutBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // totalLabel
             // 
             this.totalLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.totalLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.totalLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.totalLabel.Appearance.Options.UseFont = true;
             this.totalLabel.Appearance.Options.UseForeColor = true;
-            this.totalLabel.Location = new System.Drawing.Point(388, 585);
+            this.totalLabel.Location = new System.Drawing.Point(517, 720);
+            this.totalLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(132, 21);
+            this.totalLabel.Size = new System.Drawing.Size(164, 28);
             this.totalLabel.TabIndex = 12;
             this.totalLabel.Text = "Tổng Tiền (VNĐ):";
             // 
@@ -669,9 +683,10 @@ namespace quanlyvattu
             this.addPhieuXuatBtn.Appearance.Options.UseForeColor = true;
             this.addPhieuXuatBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.addPhieuXuatBtn.AppearanceHovered.Options.UseBackColor = true;
-            this.addPhieuXuatBtn.Location = new System.Drawing.Point(780, 575);
+            this.addPhieuXuatBtn.Location = new System.Drawing.Point(1040, 708);
+            this.addPhieuXuatBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addPhieuXuatBtn.Name = "addPhieuXuatBtn";
-            this.addPhieuXuatBtn.Size = new System.Drawing.Size(150, 40);
+            this.addPhieuXuatBtn.Size = new System.Drawing.Size(200, 49);
             this.addPhieuXuatBtn.TabIndex = 11;
             this.addPhieuXuatBtn.Text = "Tạo Phiếu Xuất";
             this.addPhieuXuatBtn.Click += new System.EventHandler(this.addPhieuXuatBtn_Click);
@@ -684,7 +699,7 @@ namespace quanlyvattu
             this.tempDataGridView.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -699,21 +714,22 @@ namespace quanlyvattu
             this.THANHTIEN});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tempDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tempDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tempDataGridView.Location = new System.Drawing.Point(25, 350);
+            this.tempDataGridView.GridColor = System.Drawing.Color.White;
+            this.tempDataGridView.Location = new System.Drawing.Point(33, 431);
+            this.tempDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tempDataGridView.MultiSelect = false;
             this.tempDataGridView.Name = "tempDataGridView";
             this.tempDataGridView.ReadOnly = true;
             this.tempDataGridView.RowHeadersVisible = false;
             this.tempDataGridView.RowHeadersWidth = 51;
             this.tempDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tempDataGridView.Size = new System.Drawing.Size(1175, 220);
+            this.tempDataGridView.Size = new System.Drawing.Size(1567, 271);
             this.tempDataGridView.TabIndex = 10;
             // 
             // MAVT
@@ -761,16 +777,18 @@ namespace quanlyvattu
             this.addvattuBtn.Appearance.Options.UseForeColor = true;
             this.addvattuBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
             this.addvattuBtn.AppearanceHovered.Options.UseBackColor = true;
-            this.addvattuBtn.Location = new System.Drawing.Point(540, 300);
+            this.addvattuBtn.Location = new System.Drawing.Point(720, 369);
+            this.addvattuBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addvattuBtn.Name = "addvattuBtn";
-            this.addvattuBtn.Size = new System.Drawing.Size(120, 35);
+            this.addvattuBtn.Size = new System.Drawing.Size(160, 43);
             this.addvattuBtn.TabIndex = 9;
             this.addvattuBtn.Text = "Thêm Vật Tư";
             this.addvattuBtn.Click += new System.EventHandler(this.addvattuBtn_Click);
             // 
             // dongiaInput
             // 
-            this.dongiaInput.Location = new System.Drawing.Point(540, 240);
+            this.dongiaInput.Location = new System.Drawing.Point(720, 295);
+            this.dongiaInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dongiaInput.Name = "dongiaInput";
             this.dongiaInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.dongiaInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -781,12 +799,13 @@ namespace quanlyvattu
             this.dongiaInput.Properties.Appearance.Options.UseFont = true;
             this.dongiaInput.Properties.Appearance.Options.UseForeColor = true;
             this.dongiaInput.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.dongiaInput.Size = new System.Drawing.Size(200, 24);
+            this.dongiaInput.Size = new System.Drawing.Size(267, 30);
             this.dongiaInput.TabIndex = 8;
             // 
             // soluongInput
             // 
-            this.soluongInput.Location = new System.Drawing.Point(135, 240);
+            this.soluongInput.Location = new System.Drawing.Point(180, 295);
+            this.soluongInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.soluongInput.Name = "soluongInput";
             this.soluongInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.soluongInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -797,7 +816,7 @@ namespace quanlyvattu
             this.soluongInput.Properties.Appearance.Options.UseFont = true;
             this.soluongInput.Properties.Appearance.Options.UseForeColor = true;
             this.soluongInput.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.soluongInput.Size = new System.Drawing.Size(150, 24);
+            this.soluongInput.Size = new System.Drawing.Size(200, 30);
             this.soluongInput.TabIndex = 7;
             // 
             // mAVTTextBox
@@ -807,10 +826,11 @@ namespace quanlyvattu
             this.mAVTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vattuBindingSource2, "MAVT", true));
             this.mAVTTextBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.mAVTTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mAVTTextBox.Location = new System.Drawing.Point(365, 18);
+            this.mAVTTextBox.Location = new System.Drawing.Point(487, 22);
+            this.mAVTTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mAVTTextBox.Name = "mAVTTextBox";
             this.mAVTTextBox.ReadOnly = true;
-            this.mAVTTextBox.Size = new System.Drawing.Size(100, 25);
+            this.mAVTTextBox.Size = new System.Drawing.Size(133, 30);
             this.mAVTTextBox.TabIndex = 6;
             // 
             // vattuBindingSource2
@@ -827,9 +847,10 @@ namespace quanlyvattu
             this.vattuComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.vattuComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.vattuComboBox.FormattingEnabled = true;
-            this.vattuComboBox.Location = new System.Drawing.Point(540, 18);
+            this.vattuComboBox.Location = new System.Drawing.Point(720, 22);
+            this.vattuComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vattuComboBox.Name = "vattuComboBox";
-            this.vattuComboBox.Size = new System.Drawing.Size(300, 25);
+            this.vattuComboBox.Size = new System.Drawing.Size(399, 31);
             this.vattuComboBox.TabIndex = 4;
             this.vattuComboBox.ValueMember = "MAVT";
             this.vattuComboBox.SelectedIndexChanged += new System.EventHandler(this.vattuComboBox_SelectedIndexChanged);
@@ -837,36 +858,26 @@ namespace quanlyvattu
             // soluongLabel
             // 
             this.soluongLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.soluongLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.soluongLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.soluongLabel.Appearance.Options.UseFont = true;
             this.soluongLabel.Appearance.Options.UseForeColor = true;
-            this.soluongLabel.Location = new System.Drawing.Point(54, 245);
+            this.soluongLabel.Location = new System.Drawing.Point(72, 302);
+            this.soluongLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.soluongLabel.Name = "soluongLabel";
-            this.soluongLabel.Size = new System.Drawing.Size(56, 15);
+            this.soluongLabel.Size = new System.Drawing.Size(70, 20);
             this.soluongLabel.TabIndex = 3;
             this.soluongLabel.Text = "Số Lượng:";
-            // 
-            // dongiaLabel
-            // 
-            this.dongiaLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dongiaLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dongiaLabel.Appearance.Options.UseFont = true;
-            this.dongiaLabel.Appearance.Options.UseForeColor = true;
-            this.dongiaLabel.Location = new System.Drawing.Point(0, 0);
-            this.dongiaLabel.Name = "dongiaLabel";
-            this.dongiaLabel.Size = new System.Drawing.Size(48, 15);
-            this.dongiaLabel.TabIndex = 2;
-            this.dongiaLabel.Text = "Đơn Giá:";
             // 
             // tenvtLabel
             // 
             this.tenvtLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tenvtLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tenvtLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.tenvtLabel.Appearance.Options.UseFont = true;
             this.tenvtLabel.Appearance.Options.UseForeColor = true;
-            this.tenvtLabel.Location = new System.Drawing.Point(471, 20);
+            this.tenvtLabel.Location = new System.Drawing.Point(628, 25);
+            this.tenvtLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tenvtLabel.Name = "tenvtLabel";
-            this.tenvtLabel.Size = new System.Drawing.Size(63, 15);
+            this.tenvtLabel.Size = new System.Drawing.Size(80, 20);
             this.tenvtLabel.TabIndex = 1;
             this.tenvtLabel.Text = "Tên Vật Tư:";
             // 
@@ -883,9 +894,10 @@ namespace quanlyvattu
             this.inputPanel2.Controls.Add(this.hotenkhLabel);
             this.inputPanel2.Controls.Add(this.ngayLabel);
             this.inputPanel2.Controls.Add(this.mapxLabel);
-            this.inputPanel2.Location = new System.Drawing.Point(25, 60);
+            this.inputPanel2.Location = new System.Drawing.Point(33, 74);
+            this.inputPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inputPanel2.Name = "inputPanel2";
-            this.inputPanel2.Size = new System.Drawing.Size(1175, 140);
+            this.inputPanel2.Size = new System.Drawing.Size(1567, 172);
             this.inputPanel2.TabIndex = 0;
             // 
             // ngayInput
@@ -896,16 +908,18 @@ namespace quanlyvattu
             this.ngayInput.Enabled = false;
             this.ngayInput.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ngayInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayInput.Location = new System.Drawing.Point(515, 20);
+            this.ngayInput.Location = new System.Drawing.Point(687, 25);
+            this.ngayInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ngayInput.Name = "ngayInput";
-            this.ngayInput.Size = new System.Drawing.Size(200, 25);
+            this.ngayInput.Size = new System.Drawing.Size(265, 30);
             this.ngayInput.TabIndex = 7;
             this.ngayInput.Value = new System.DateTime(2025, 6, 22, 22, 45, 48, 126);
             // 
             // nvInput
             // 
             this.nvInput.Enabled = false;
-            this.nvInput.Location = new System.Drawing.Point(515, 80);
+            this.nvInput.Location = new System.Drawing.Point(687, 98);
+            this.nvInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nvInput.Name = "nvInput";
             this.nvInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.nvInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -916,12 +930,13 @@ namespace quanlyvattu
             this.nvInput.Properties.Appearance.Options.UseFont = true;
             this.nvInput.Properties.Appearance.Options.UseForeColor = true;
             this.nvInput.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.nvInput.Size = new System.Drawing.Size(200, 24);
+            this.nvInput.Size = new System.Drawing.Size(267, 30);
             this.nvInput.TabIndex = 6;
             // 
             // hotenkhInput
             // 
-            this.hotenkhInput.Location = new System.Drawing.Point(110, 80);
+            this.hotenkhInput.Location = new System.Drawing.Point(147, 98);
+            this.hotenkhInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.hotenkhInput.Name = "hotenkhInput";
             this.hotenkhInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.hotenkhInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -932,12 +947,13 @@ namespace quanlyvattu
             this.hotenkhInput.Properties.Appearance.Options.UseFont = true;
             this.hotenkhInput.Properties.Appearance.Options.UseForeColor = true;
             this.hotenkhInput.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.hotenkhInput.Size = new System.Drawing.Size(250, 24);
+            this.hotenkhInput.Size = new System.Drawing.Size(333, 30);
             this.hotenkhInput.TabIndex = 5;
             // 
             // mapxInput
             // 
-            this.mapxInput.Location = new System.Drawing.Point(110, 20);
+            this.mapxInput.Location = new System.Drawing.Point(147, 25);
+            this.mapxInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mapxInput.Name = "mapxInput";
             this.mapxInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.mapxInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -948,66 +964,71 @@ namespace quanlyvattu
             this.mapxInput.Properties.Appearance.Options.UseFont = true;
             this.mapxInput.Properties.Appearance.Options.UseForeColor = true;
             this.mapxInput.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.mapxInput.Size = new System.Drawing.Size(150, 24);
+            this.mapxInput.Size = new System.Drawing.Size(200, 30);
             this.mapxInput.TabIndex = 4;
             // 
             // manvLabel
             // 
             this.manvLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.manvLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.manvLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.manvLabel.Appearance.Options.UseFont = true;
             this.manvLabel.Appearance.Options.UseForeColor = true;
-            this.manvLabel.Location = new System.Drawing.Point(415, 85);
+            this.manvLabel.Location = new System.Drawing.Point(553, 105);
+            this.manvLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manvLabel.Name = "manvLabel";
-            this.manvLabel.Size = new System.Drawing.Size(80, 15);
+            this.manvLabel.Size = new System.Drawing.Size(103, 20);
             this.manvLabel.TabIndex = 3;
             this.manvLabel.Text = "Mã Nhân Viên:";
             // 
             // hotenkhLabel
             // 
             this.hotenkhLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.hotenkhLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.hotenkhLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.hotenkhLabel.Appearance.Options.UseFont = true;
             this.hotenkhLabel.Appearance.Options.UseForeColor = true;
-            this.hotenkhLabel.Location = new System.Drawing.Point(20, 85);
+            this.hotenkhLabel.Location = new System.Drawing.Point(27, 105);
+            this.hotenkhLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.hotenkhLabel.Name = "hotenkhLabel";
-            this.hotenkhLabel.Size = new System.Drawing.Size(65, 15);
+            this.hotenkhLabel.Size = new System.Drawing.Size(82, 20);
             this.hotenkhLabel.TabIndex = 2;
             this.hotenkhLabel.Text = "Họ Tên K.H:";
             // 
             // ngayLabel
             // 
             this.ngayLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ngayLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ngayLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.ngayLabel.Appearance.Options.UseFont = true;
             this.ngayLabel.Appearance.Options.UseForeColor = true;
-            this.ngayLabel.Location = new System.Drawing.Point(415, 25);
+            this.ngayLabel.Location = new System.Drawing.Point(553, 31);
+            this.ngayLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ngayLabel.Name = "ngayLabel";
-            this.ngayLabel.Size = new System.Drawing.Size(53, 15);
+            this.ngayLabel.Size = new System.Drawing.Size(70, 20);
             this.ngayLabel.TabIndex = 1;
             this.ngayLabel.Text = "Ngày Lập:";
             // 
             // mapxLabel
             // 
             this.mapxLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.mapxLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mapxLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.mapxLabel.Appearance.Options.UseFont = true;
             this.mapxLabel.Appearance.Options.UseForeColor = true;
-            this.mapxLabel.Location = new System.Drawing.Point(20, 25);
+            this.mapxLabel.Location = new System.Drawing.Point(27, 31);
+            this.mapxLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mapxLabel.Name = "mapxLabel";
-            this.mapxLabel.Size = new System.Drawing.Size(83, 15);
+            this.mapxLabel.Size = new System.Drawing.Size(106, 20);
             this.mapxLabel.TabIndex = 0;
             this.mapxLabel.Text = "Mã Phiếu Xuất:";
             // 
             // FormPhieuXuat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 736);
+            this.ClientSize = new System.Drawing.Size(1637, 906);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(540, 218);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormPhieuXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1091,7 +1112,6 @@ namespace quanlyvattu
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DevExpress.XtraEditors.PanelControl inputPanel2;
         private DevExpress.XtraEditors.LabelControl tenvtLabel;
-        private DevExpress.XtraEditors.LabelControl dongiaLabel;
         private DevExpress.XtraEditors.LabelControl soluongLabel;
         private System.Windows.Forms.ComboBox vattuComboBox;
         private System.Windows.Forms.BindingSource vattuBindingSource2;

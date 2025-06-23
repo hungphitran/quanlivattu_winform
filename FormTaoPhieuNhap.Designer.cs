@@ -53,10 +53,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cTDDHDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.masoDDHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.nhanvienEditor = new DevExpress.XtraEditors.TextEdit();
@@ -71,6 +67,10 @@
             this.inputPanel = new System.Windows.Forms.Panel();
             this.groupBoxOrderInfo = new System.Windows.Forms.GroupBox();
             this.groupBoxReceiptInfo = new System.Windows.Forms.GroupBox();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             masoDDHLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -140,7 +140,7 @@
             this.backBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.backBtn.AppearanceHovered.Options.UseBackColor = true;
             this.backBtn.Location = new System.Drawing.Point(31, 18);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(120, 34);
             this.backBtn.TabIndex = 12;
@@ -158,7 +158,7 @@
             this.addBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
             this.addBtn.AppearanceHovered.Options.UseBackColor = true;
             this.addBtn.Location = new System.Drawing.Point(237, 102);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(236, 46);
             this.addBtn.TabIndex = 14;
@@ -330,35 +330,6 @@
             this.cTDDHDataGridView.Size = new System.Drawing.Size(1229, 199);
             this.cTDDHDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "MasoDDH";
-            this.dataGridViewTextBoxColumn5.HeaderText = "MasoDDH";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MAVT";
-            this.dataGridViewTextBoxColumn6.HeaderText = "MAVT";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SOLUONG";
-            this.dataGridViewTextBoxColumn7.HeaderText = "SOLUONG";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DONGIA";
-            this.dataGridViewTextBoxColumn8.HeaderText = "DONGIA";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
             // dateTimePicker
             // 
             this.dateTimePicker.Enabled = false;
@@ -495,6 +466,36 @@
             this.groupBoxReceiptInfo.TabStop = false;
             this.groupBoxReceiptInfo.Text = "THÔNG TIN PHIẾU NHẬP";
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "MasoDDH";
+            this.dataGridViewTextBoxColumn5.HeaderText = "MasoDDH";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "MAVT";
+            this.dataGridViewTextBoxColumn6.HeaderText = "MAVT";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn7.HeaderText = "SOLUONG";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DONGIA";
+            this.dataGridViewTextBoxColumn8.HeaderText = "DONGIA";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
             // FormTaoPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -549,10 +550,6 @@
         private qlvtDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
         private System.Windows.Forms.BindingSource cTDDHBindingSource;
         private System.Windows.Forms.DataGridView cTDDHDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private DevExpress.XtraEditors.TextEdit masoDDHTextEdit;
         private DevExpress.XtraEditors.TextEdit nhanvienEditor;
@@ -571,5 +568,9 @@
         private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.GroupBox groupBoxOrderInfo;
         private System.Windows.Forms.GroupBox groupBoxReceiptInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

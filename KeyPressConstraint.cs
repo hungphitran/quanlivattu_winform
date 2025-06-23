@@ -91,5 +91,23 @@ namespace quanlyvattu
                 }
             }
         }
+
+        //constraint cho Họ
+        public static void KeyPress_OnlyLettersAndSpace(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) &&
+                !char.IsLetter(e.KeyChar) &&
+                e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if ((sender is TextBox textBox && e.KeyChar == ' ' && (textBox.Text.EndsWith(" ") || textBox.Text.Length == 0)) || (sender is TextEdit textEdit && e.KeyChar == ' ' && (textEdit.Text.EndsWith(" ") || textEdit.Text.Length == 0)))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

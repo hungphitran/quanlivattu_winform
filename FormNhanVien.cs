@@ -47,6 +47,12 @@ namespace quanlyvattu
             // Logic nhập tên nhân viên giống tên khách hàng ở phiếu xuất
             this.tenInput.KeyPress += tenInput_KeyPress;
             this.tenInput.TextChanged += tenInput_TextChanged;
+            this.manvInput.Properties.MaxLength = 20;
+            this.cmndInput.Properties.MaxLength = 20;
+            this.hoInput.Properties.MaxLength = 40;
+            this.tenInput.Properties.MaxLength = 10;
+            this.diachiInput.Properties.MaxLength = 100;
+
         }
 
         Stack<UndoAction> undoStack = new Stack<UndoAction>();
@@ -62,6 +68,7 @@ namespace quanlyvattu
             this.Validate();
             this.nhanvienBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.qlvtDataSet);
+
 
         }
 
@@ -103,6 +110,8 @@ namespace quanlyvattu
                 luongCol.MinimumWidth = 6;
                 nhanvienDataGridView.Columns.Insert(6, luongCol);
             }
+            this.nhanvienDataGridView.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
+
         }
 
         private void NhanvienDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -141,25 +150,45 @@ namespace quanlyvattu
 
         private void nhanvienDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            // Xác định cột đang edit
             int col = nhanvienDataGridView.CurrentCell.ColumnIndex;
-            // NGAYSINH (cột 5): chỉ cho nhập ngày, không cho nhập text
-            if (col == 5)
+            if (e.Control is TextBox tb)
             {
-                // Nếu là TextBox thì chặn mọi phím nhập, chỉ cho dùng DatePicker
-                if (e.Control is TextBox tb)
+                // Gỡ bỏ các handler cũ để tránh trùng lặp
+                tb.KeyPress -= KeyPressConstraint.KeyPress_OnlyAsciiLettersAndDigits_ToUppercase_NoSpace;
+                tb.KeyPress -= KeyPressConstraint.KeyPress_OnlyDigits;
+                tb.KeyPress -= KeyPressConstraint.KeyPress_LettersDigitsSpace;
+                tb.KeyPress -= BlockAllKeyPress;
+                tb.KeyPress -= KeyPress_OnlyDigits;
+                tb.KeyPress -= diachiInput_KeyPress;
+
+                switch (col)
                 {
-                    tb.KeyPress -= BlockAllKeyPress; // tránh đăng ký nhiều lần
-                    tb.KeyPress += BlockAllKeyPress;
-                }
-            }
-            // LUONG (cột 6): chỉ cho nhập số
-            else if (col == 6)
-            {
-                if (e.Control is TextBox tb)
-                {
-                    tb.KeyPress -= KeyPress_OnlyDigits;
-                    tb.KeyPress += KeyPress_OnlyDigits;
+                    case 0: // MANV
+                        tb.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+                        tb.MaxLength = 20;
+                        break;
+                    case 1: // CMND
+                        tb.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+                        tb.MaxLength = 20;
+                        break;
+                    case 2: // HO
+                        tb.KeyPress += KeyPressConstraint.KeyPress_OnlyLettersAndSpace;
+                        tb.MaxLength = 40;
+                        break;
+                    case 3: // TEN
+                        tb.KeyPress += KeyPressConstraint.KeyPress_OnlyLetters;
+                        tb.MaxLength = 10;
+                        break;
+                    case 4: // DIACHI
+                        tb.KeyPress += diachiInput_KeyPress; // Giữ logic đặc biệt hiện tại
+                        tb.MaxLength = 100;
+                        break;
+                    case 5: // NGAYSINH
+                        tb.KeyPress += BlockAllKeyPress;
+                        break;
+                    case 6: // LUONG
+                        tb.KeyPress += KeyPressConstraint.KeyPress_OnlyDigits;
+                        break;
                 }
             }
         }
@@ -308,7 +337,7 @@ namespace quanlyvattu
                 else
                 {
                     MessageBox.Show("Lưu thành công");
-                    Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
+                    //Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
                 }
             }
             catch (Exception exception)
@@ -777,7 +806,8 @@ namespace quanlyvattu
             else
             {
                 formBaoCao.FormClosed += (s, args) => this.nhanVienReportBtn.Enabled = true;
-                FormManager.switchForm(this, formBaoCao);
+                formBaoCao.Show();  
+            
             }
         }
 

@@ -73,34 +73,34 @@ namespace quanlyvattu
 
         private void cTDDHDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 3)
             {
-                if (cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString().Trim() == "")
+                if (cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString().Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập đúng số lượng!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value = maxSoluong[e.RowIndex];
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value = maxSoluong[e.RowIndex];
                     return;
                 }
-                int soluong = int.Parse(cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
-                if (soluong==0 || soluong > maxSoluong[e.RowIndex])
+                int soluong = int.Parse(cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
+                if (soluong<=0 || soluong > maxSoluong[e.RowIndex])
                 {
                     MessageBox.Show("số lượng không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cTDDHDataGridView.Rows[e.RowIndex].Cells[2].Value = maxSoluong[e.RowIndex];
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value = maxSoluong[e.RowIndex];
                 }
             }
             else
             {
-                if(cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString().Trim() == "")
+                if(cTDDHDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString().Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập đúng đơn giá!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value = maxDongia[e.RowIndex];
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[4].Value = maxDongia[e.RowIndex];
                     return;
                 }
-                int dongia = int.Parse(cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
+                int dongia = int.Parse(cTDDHDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
                 if (dongia == 0 )
                 {
                     MessageBox.Show("đơn giá không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cTDDHDataGridView.Rows[e.RowIndex].Cells[3].Value = maxDongia[e.RowIndex];
+                    cTDDHDataGridView.Rows[e.RowIndex].Cells[4].Value = maxDongia[e.RowIndex];
                 }
             }
         }
@@ -269,8 +269,10 @@ namespace quanlyvattu
                 if (row.IsNewRow) continue;
 
                 string mavt = row.Cells[1].Value?.ToString();
-                string soluongStr = row.Cells[2].Value?.ToString();
-                string dongiaStr = row.Cells[3].Value?.ToString();
+                string soluongStr = row.Cells[3].Value?.ToString();
+                string dongiaStr = row.Cells[4].Value?.ToString();
+
+                Console.WriteLine($"Mã VT: {mavt}, Số lượng: {soluongStr}, Đơn giá: {dongiaStr}");
 
                 if (string.IsNullOrWhiteSpace(mavt) || string.IsNullOrWhiteSpace(soluongStr) || string.IsNullOrWhiteSpace(dongiaStr))
                 {
@@ -280,13 +282,16 @@ namespace quanlyvattu
 
                 if (!int.TryParse(soluongStr, out int sl) || sl <= 0)
                 {
-                    MessageBox.Show($"Số lượng không hợp lệ tại vật tư {mavt}!");
+                    MessageBox.Show($"Số lượng không hợp lệ tại vật tư {mavt}!1");
+                    Console.WriteLine($"Số lượng không hợp lệ tại vật tư {mavt}!1");
                     return;
                 }
-
+                //
                 if (!float.TryParse(dongiaStr, out float dg) || dg <= 0)
                 {
-                    MessageBox.Show($"Đơn giá không hợp lệ tại vật tư {mavt}!");
+                    MessageBox.Show($"Đơn giá không hợp lệ tại vật tư {mavt}!2");
+
+                    Console.WriteLine($"Đơn giá không hợp lệ tại vật tư {mavt}2!");
                     return;
                 }
             }
@@ -315,8 +320,8 @@ namespace quanlyvattu
                     if (count > 0) continue;
                 }
 
-                int soluong = int.Parse(row.Cells[2].Value.ToString());
-                float dongia = float.Parse(row.Cells[3].Value.ToString());
+                int soluong = int.Parse(row.Cells[3].Value.ToString());
+                float dongia = float.Parse(row.Cells[4].Value.ToString());
 
                 ctphieuNhapTable.Rows.Add(mapn, mavt, soluong, dongia);
                 addedVatTu.Add(mavt);
@@ -383,7 +388,7 @@ namespace quanlyvattu
                 }
 
                 MessageBox.Show("Phiếu nhập đã được tạo thành công!");
-                Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
+                //Program.ExecSqlNonQuery("exec sp_TaoBackupLog 'qlvt';");
                 FormManager.switchForm(this, new FormDatHang());
             }
             catch (Exception ex)

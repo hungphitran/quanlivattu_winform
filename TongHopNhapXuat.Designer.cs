@@ -65,11 +65,11 @@
             this.TongXuat = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.exportTotal = new DevExpress.XtraReports.UI.XRLabel();
             this.importTotal = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -453,6 +453,19 @@
             this.ReportFooter.HeightF = 64.33334F;
             this.ReportFooter.Name = "ReportFooter";
             // 
+            // xrLabel1
+            // 
+            this.xrLabel1.AutoWidth = true;
+            this.xrLabel1.CanGrow = false;
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(352.5825F, 8.333385F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(230.7509F, 23F);
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "Người lập báo cáo";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel1.WordWrap = false;
+            // 
             // GroupFooter1
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -501,19 +514,6 @@
             this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "Tổng xuất";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.AutoWidth = true;
-            this.xrLabel1.CanGrow = false;
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(352.5825F, 8.333385F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(230.7509F, 23F);
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "Người lập báo cáo";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrLabel1.WordWrap = false;
             // 
             // TongHopNhapXuat
             // 

@@ -29,6 +29,18 @@ namespace quanlyvattu
             // Chỉ cho nhập chữ, không cho số, không cho 2 dấu cách liên tiếp, sau dấu cách tự động viết hoa cho hotenkhInput
             this.hotenkhInput.KeyPress += hotenkhInput_KeyPress;
             this.hotenkhInput.TextChanged += hotenkhInput_TextChanged;
+
+            // Định dạng hiển thị cho cột Đơn Giá và Thành Tiền
+            if (tempDataGridView.Columns["DONGIA"] != null)
+            {
+                tempDataGridView.Columns["DONGIA"].DefaultCellStyle.Format = "#,0 đ";
+                tempDataGridView.Columns["DONGIA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+            if (tempDataGridView.Columns["THANHTIEN"] != null)
+            {
+                tempDataGridView.Columns["THANHTIEN"].DefaultCellStyle.Format = "#,0 đ";
+                tempDataGridView.Columns["THANHTIEN"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
         }
 
         private void hotenkhInput_KeyPress(object sender, KeyPressEventArgs e)
@@ -348,7 +360,7 @@ namespace quanlyvattu
                     string mavt = row.Cells["MAVT"].Value.ToString();
                     int soluong = Convert.ToInt32(row.Cells["SOLUONG"].Value);
                     double dongia = Convert.ToDouble(row.Cells["DONGIA"].Value);
-
+                    Console.WriteLine("mavt: " + mavt + ", soluong: " + soluong + ", dongia: " + dongia);
                     ctpxTable.Rows.Add(mavt, soluong, dongia);
                 }
             }
@@ -362,6 +374,7 @@ namespace quanlyvattu
 
             try
             {
+
                 using (SqlCommand cmd = new SqlCommand("phieu_xuat_hang", Program.conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -388,7 +401,7 @@ namespace quanlyvattu
 
                     MessageBox.Show("Thêm phiếu xuất thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
+                    //Program.ExecSqlNonQuery("exec sp_TaoBackupLog 'qlvt' ;");
 
                     // Clear form fields
                     mapxInput.Text = "";
@@ -500,6 +513,26 @@ namespace quanlyvattu
                 MessageBox.Show("Đơn giá phải là số thực!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+
+            var vattu = qlvtDataSet.Vattu.FindByMAVT(mavt);
+
+            if (vattu == null)
+            {
+                MessageBox.Show("Không tìm thấy vật tư!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(vattu.Soluongton < soLuong)
+            {
+                MessageBox.Show("Vật tư không đúng số lượng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
+            if(soLuong <= 0)
+            {
+                MessageBox.Show("Số lượng phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
 
             float thanhTien = soLuong * donGia;
 

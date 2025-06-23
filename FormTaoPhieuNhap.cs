@@ -395,11 +395,43 @@ namespace quanlyvattu
 
         private void FormTaoPhieuNhap_Load(object sender, EventArgs e)
         {
+
+               this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.vattuTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            // TODO: This line of code loads data into the 'qlvtDataSet.DatHang' table. You can move, or remove it, as needed.
+            this.datHangTableAdapter.Fill(this.qlvtDataSet.DatHang);
+            // TODO: This line of code loads data into the 'qlvtDataSet.DatHang' table. You can move, or remove it, as needed.
+            this.datHangTableAdapter.Fill(this.qlvtDataSet.DatHang);
+            // TODO: This line of code loads data into the 'qlvtDataSet.CTDDH' table. You can move, or remove it, as needed.
+            this.cTDDHTableAdapter.Fill(this.qlvtDataSet.CTDDH);
+            // TODO: This line of code loads data into the 'qlvtDataSet.Vattu' table. You can move, or remove it, as needed.
+            this.vattuTableAdapter.Fill(this.qlvtDataSet.Vattu);
+            // TODO: This line of code loads data into the 'qlvtDataSet.Vattu' table. You can move, or remove it, as needed.
+            this.vattuTableAdapter.Fill(this.qlvtDataSet.Vattu);
             // TODO: This line of code loads data into the 'qlvtDataSet.CTPN' table. You can move, or remove it, as needed.
             this.cTPNTableAdapter.Fill(this.qlvtDataSet.CTPN);
             // TODO: This line of code loads data into the 'qlvtDataSet.PhieuNhap' table. You can move, or remove it, as needed.
             this.phieuNhapTableAdapter.Fill(this.qlvtDataSet.PhieuNhap);
 
+           
+
+            // Sau khi load dữ liệu cho CTDDH, điền tên vật tư cho từng dòng
+            foreach (DataGridViewRow row in cTDDHDataGridView.Rows)
+            {
+                if (row.IsNewRow) continue;
+                var mavt = row.Cells["dataGridViewTextBoxColumn6"].Value?.ToString();
+                if (!string.IsNullOrEmpty(mavt))
+                {
+                    var vattuRow = qlvtDataSet.Vattu.FindByMAVT(mavt);
+                    if (vattuRow != null)
+                    {
+                        row.Cells["dataGridViewTextBoxColumnTENVT"].Value = vattuRow["TENVT"];
+                    }
+                }
+            }
         }
     }
 }

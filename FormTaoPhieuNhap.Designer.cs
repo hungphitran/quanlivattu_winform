@@ -33,10 +33,10 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backBtn = new DevExpress.XtraEditors.SimpleButton();
             this.addBtn = new DevExpress.XtraEditors.SimpleButton();
             this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
@@ -53,10 +53,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cTDDHDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.masoDDHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.nhanvienEditor = new DevExpress.XtraEditors.TextEdit();
@@ -71,6 +67,13 @@
             this.inputPanel = new System.Windows.Forms.Panel();
             this.groupBoxOrderInfo = new System.Windows.Forms.GroupBox();
             this.groupBoxReceiptInfo = new System.Windows.Forms.GroupBox();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vattuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vattuTableAdapter = new quanlyvattu.qlvtDataSetTableAdapters.VattuTableAdapter();
+            this.dataGridViewTextBoxColumnTENVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             masoDDHLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -91,6 +94,7 @@
             this.inputPanel.SuspendLayout();
             this.groupBoxOrderInfo.SuspendLayout();
             this.groupBoxReceiptInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // masoDDHLabel
@@ -215,14 +219,14 @@
             this.datHangDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datHangDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.datHangDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datHangDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datHangDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.datHangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datHangDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -230,18 +234,18 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.datHangDataGridView.DataSource = this.datHangBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datHangDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datHangDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             this.datHangDataGridView.EnableHeadersVisualStyles = false;
             this.datHangDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.datHangDataGridView.Location = new System.Drawing.Point(15, 107);
-            this.datHangDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datHangDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.datHangDataGridView.Name = "datHangDataGridView";
             this.datHangDataGridView.ReadOnly = true;
             this.datHangDataGridView.RowHeadersVisible = false;
@@ -296,33 +300,34 @@
             this.cTDDHDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cTDDHDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.cTDDHDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cTDDHDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cTDDHDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.cTDDHDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cTDDHDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumnTENVT,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.cTDDHDataGridView.DataSource = this.cTDDHBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cTDDHDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cTDDHDataGridView.DefaultCellStyle = dataGridViewCellStyle16;
             this.cTDDHDataGridView.EnableHeadersVisualStyles = false;
             this.cTDDHDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.cTDDHDataGridView.Location = new System.Drawing.Point(15, 173);
-            this.cTDDHDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cTDDHDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.cTDDHDataGridView.MultiSelect = false;
             this.cTDDHDataGridView.Name = "cTDDHDataGridView";
             this.cTDDHDataGridView.RowHeadersVisible = false;
@@ -332,42 +337,12 @@
             this.cTDDHDataGridView.Size = new System.Drawing.Size(922, 179);
             this.cTDDHDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "MasoDDH";
-            this.dataGridViewTextBoxColumn5.HeaderText = "MasoDDH";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MAVT";
-            this.dataGridViewTextBoxColumn6.HeaderText = "MAVT";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SOLUONG";
-            this.dataGridViewTextBoxColumn7.HeaderText = "SOLUONG";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DONGIA";
-            this.dataGridViewTextBoxColumn8.HeaderText = "DONGIA";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
             // dateTimePicker
             // 
             this.dateTimePicker.Enabled = false;
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker.Location = new System.Drawing.Point(122, 47);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(178, 27);
             this.dateTimePicker.TabIndex = 15;
@@ -377,7 +352,7 @@
             this.masoDDHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource, "MasoDDH", true));
             this.masoDDHTextEdit.Enabled = false;
             this.masoDDHTextEdit.Location = new System.Drawing.Point(122, 24);
-            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.masoDDHTextEdit.Margin = new System.Windows.Forms.Padding(2);
             this.masoDDHTextEdit.Name = "masoDDHTextEdit";
             this.masoDDHTextEdit.Size = new System.Drawing.Size(177, 20);
             this.masoDDHTextEdit.TabIndex = 16;
@@ -386,7 +361,7 @@
             // 
             this.nhanvienEditor.Enabled = false;
             this.nhanvienEditor.Location = new System.Drawing.Point(122, 84);
-            this.nhanvienEditor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nhanvienEditor.Margin = new System.Windows.Forms.Padding(2);
             this.nhanvienEditor.Name = "nhanvienEditor";
             this.nhanvienEditor.Size = new System.Drawing.Size(177, 20);
             this.nhanvienEditor.TabIndex = 20;
@@ -394,7 +369,7 @@
             // maPNEditor
             // 
             this.maPNEditor.Location = new System.Drawing.Point(178, 31);
-            this.maPNEditor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maPNEditor.Margin = new System.Windows.Forms.Padding(2);
             this.maPNEditor.Name = "maPNEditor";
             this.maPNEditor.Size = new System.Drawing.Size(177, 20);
             this.maPNEditor.TabIndex = 21;
@@ -423,7 +398,7 @@
             this.headerPanel.Controls.Add(this.titleLabel);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
-            this.headerPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.headerPanel.Margin = new System.Windows.Forms.Padding(2);
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(950, 65);
             this.headerPanel.TabIndex = 16;
@@ -446,7 +421,7 @@
             this.controlPanel.Controls.Add(this.backBtn);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.controlPanel.Location = new System.Drawing.Point(0, 65);
-            this.controlPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(950, 38);
             this.controlPanel.TabIndex = 15;
@@ -457,9 +432,9 @@
             this.inputPanel.Controls.Add(this.groupBoxOrderInfo);
             this.inputPanel.Controls.Add(this.groupBoxReceiptInfo);
             this.inputPanel.Location = new System.Drawing.Point(15, 365);
-            this.inputPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inputPanel.Margin = new System.Windows.Forms.Padding(2);
             this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(922, 203);
+            this.inputPanel.Size = new System.Drawing.Size(922, 179);
             this.inputPanel.TabIndex = 0;
             // 
             // groupBoxOrderInfo
@@ -474,9 +449,9 @@
             this.groupBoxOrderInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.groupBoxOrderInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.groupBoxOrderInfo.Location = new System.Drawing.Point(22, 16);
-            this.groupBoxOrderInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxOrderInfo.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxOrderInfo.Name = "groupBoxOrderInfo";
-            this.groupBoxOrderInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxOrderInfo.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxOrderInfo.Size = new System.Drawing.Size(435, 138);
             this.groupBoxOrderInfo.TabIndex = 0;
             this.groupBoxOrderInfo.TabStop = false;
@@ -491,25 +466,72 @@
             this.groupBoxReceiptInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.groupBoxReceiptInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.groupBoxReceiptInfo.Location = new System.Drawing.Point(472, 16);
-            this.groupBoxReceiptInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxReceiptInfo.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxReceiptInfo.Name = "groupBoxReceiptInfo";
-            this.groupBoxReceiptInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxReceiptInfo.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxReceiptInfo.Size = new System.Drawing.Size(428, 138);
             this.groupBoxReceiptInfo.TabIndex = 1;
             this.groupBoxReceiptInfo.TabStop = false;
             this.groupBoxReceiptInfo.Text = "THÔNG TIN PHIẾU NHẬP";
             // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DONGIA";
+            this.dataGridViewTextBoxColumn8.HeaderText = "DONGIA";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn7.HeaderText = "SOLUONG";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "MAVT";
+            this.dataGridViewTextBoxColumn6.HeaderText = "MAVT";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "MasoDDH";
+            this.dataGridViewTextBoxColumn5.HeaderText = "MasoDDH";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // vattuBindingSource
+            // 
+            this.vattuBindingSource.DataMember = "Vattu";
+            this.vattuBindingSource.DataSource = this.qlvtDataSet;
+            // 
+            // vattuTableAdapter
+            // 
+            this.vattuTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumnTENVT
+            // 
+            this.dataGridViewTextBoxColumnTENVT.DataPropertyName = "TENVT";
+            this.dataGridViewTextBoxColumnTENVT.HeaderText = "Tên vật tư";
+            this.dataGridViewTextBoxColumnTENVT.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumnTENVT.Name = "dataGridViewTextBoxColumnTENVT";
+            this.dataGridViewTextBoxColumnTENVT.ReadOnly = true;
+            // 
             // FormTaoPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 563);
+            this.ClientSize = new System.Drawing.Size(950, 544);
             this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.cTDDHDataGridView);
             this.Controls.Add(this.datHangDataGridView);
             this.Controls.Add(this.headerPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTaoPhieuNhap";
             this.Text = "NhapVatTu";
             this.Load += new System.EventHandler(this.FormTaoPhieuNhap_Load);
@@ -532,6 +554,7 @@
             this.groupBoxOrderInfo.PerformLayout();
             this.groupBoxReceiptInfo.ResumeLayout(false);
             this.groupBoxReceiptInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -543,6 +566,7 @@
         private System.Windows.Forms.BindingSource sp_BaoCaoDonDatHangChuaNhapBindingSource;
         private qlvtDataSetTableAdapters.sp_BaoCaoDonDatHangChuaNhapTableAdapter sp_BaoCaoDonDatHangChuaNhapTableAdapter;
         private qlvtDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private qlvtDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
         private qlvtDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
         private System.Windows.Forms.BindingSource datHangBindingSource;
         private System.Windows.Forms.DataGridView datHangDataGridView;
@@ -550,7 +574,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private qlvtDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
         private System.Windows.Forms.BindingSource cTDDHBindingSource;
         private System.Windows.Forms.DataGridView cTDDHDataGridView;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
@@ -571,9 +594,12 @@
         private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.GroupBox groupBoxOrderInfo;
         private System.Windows.Forms.GroupBox groupBoxReceiptInfo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnTENVT;
+        private System.Windows.Forms.BindingSource vattuBindingSource;
+        private qlvtDataSetTableAdapters.VattuTableAdapter vattuTableAdapter;
     }
 }

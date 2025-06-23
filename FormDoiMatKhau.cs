@@ -133,7 +133,7 @@ namespace quanlyvattu
             }
 
             String cmd =
-                $"use master; exec sp_DoiMatKhau @login = '{login}',@MatKhauMoi = '{pass}'";
+                $"ALTER LOGIN [{login}] WITH PASSWORD = '{pass}' ;";
             Console.WriteLine(cmd);
             int res = Program.ExecSqlNonQuery(cmd);
             if (res == 0)
@@ -175,6 +175,8 @@ namespace quanlyvattu
                 if (res == 0)//thanh cong
                 {
                     MessageBox.Show("Xóa tài khoản thành công");
+                    cmd = "use master; exec sp_XoaLoginMoCoi;";
+                    Program.ExecSqlNonQuery(cmd);
                     this.vw_NhanVienCoTaiKhoanTableAdapter.Fill(this.qlvtDataSet.vw_NhanVienCoTaiKhoan);
                 }
                 else

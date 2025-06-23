@@ -60,12 +60,12 @@ namespace quanlyvattu
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAVTLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cTPXBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phieuXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qlvtDataSet = new quanlyvattu.qlvtDataSet();
@@ -127,7 +127,6 @@ namespace quanlyvattu
             this.vattuBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.vattuComboBox = new System.Windows.Forms.ComboBox();
             this.soluongLabel = new DevExpress.XtraEditors.LabelControl();
-            this.dongiaLabel = new DevExpress.XtraEditors.LabelControl();
             this.tenvtLabel = new DevExpress.XtraEditors.LabelControl();
             this.inputPanel2 = new DevExpress.XtraEditors.PanelControl();
             this.ngayInput = new System.Windows.Forms.DateTimePicker();
@@ -172,8 +171,8 @@ namespace quanlyvattu
             mAVTLabel.AutoSize = true;
             mAVTLabel.BackColor = System.Drawing.Color.Transparent;
             mAVTLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAVTLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            mAVTLabel.Location = new System.Drawing.Point(316, 20);
+            mAVTLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            mAVTLabel.Location = new System.Drawing.Point(22, 15);
             mAVTLabel.Name = "mAVTLabel";
             mAVTLabel.Size = new System.Drawing.Size(43, 15);
             mAVTLabel.TabIndex = 5;
@@ -196,13 +195,13 @@ namespace quanlyvattu
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.Red;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.panelHeader.Controls.Add(this.labelTitle);
             this.panelHeader.Controls.Add(this.backBtn);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1228, 70);
+            this.panelHeader.Size = new System.Drawing.Size(1155, 70);
             this.panelHeader.TabIndex = 0;
             // 
             // labelTitle
@@ -220,7 +219,7 @@ namespace quanlyvattu
             // 
             this.backBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
             this.backBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.backBtn.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.backBtn.Appearance.ForeColor = System.Drawing.Color.White;
             this.backBtn.Appearance.Options.UseBackColor = true;
             this.backBtn.Appearance.Options.UseFont = true;
             this.backBtn.Appearance.Options.UseForeColor = true;
@@ -375,7 +374,7 @@ namespace quanlyvattu
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 70);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.phieuxuatTab;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1228, 668);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1152, 668);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.phieuxuatTab,
@@ -422,14 +421,14 @@ namespace quanlyvattu
             this.cTPXDataGridView.AutoGenerateColumns = false;
             this.cTPXDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cTPXDataGridView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cTPXDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cTPXDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.cTPXDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cTPXDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -437,14 +436,14 @@ namespace quanlyvattu
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.cTPXDataGridView.DataSource = this.cTPXBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cTPXDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cTPXDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
             this.cTPXDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cTPXDataGridView.Location = new System.Drawing.Point(25, 400);
             this.cTPXDataGridView.MultiSelect = false;
@@ -495,14 +494,14 @@ namespace quanlyvattu
             this.phieuXuatDataGridView1.AutoGenerateColumns = false;
             this.phieuXuatDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.phieuXuatDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.phieuXuatDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.phieuXuatDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.phieuXuatDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phieuXuatDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -510,14 +509,14 @@ namespace quanlyvattu
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.phieuXuatDataGridView1.DataSource = this.phieuXuatBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.phieuXuatDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.phieuXuatDataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
             this.phieuXuatDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.phieuXuatDataGridView1.Location = new System.Drawing.Point(25, 70);
             this.phieuXuatDataGridView1.MultiSelect = false;
@@ -581,20 +580,19 @@ namespace quanlyvattu
             this.ctpxTab.Controls.Add(this.mAVTTextBox);
             this.ctpxTab.Controls.Add(this.vattuComboBox);
             this.ctpxTab.Controls.Add(this.soluongLabel);
-            this.ctpxTab.Controls.Add(this.dongiaLabel);
             this.ctpxTab.Controls.Add(this.tenvtLabel);
             this.ctpxTab.Controls.Add(this.inputPanel2);
             this.ctpxTab.Name = "ctpxTab";
-            this.ctpxTab.Size = new System.Drawing.Size(1226, 636);
+            this.ctpxTab.Size = new System.Drawing.Size(1150, 636);
             this.ctpxTab.Text = "Tạo Phiếu Xuất";
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(464, 243);
+            this.labelControl1.Location = new System.Drawing.Point(866, 16);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 15);
             this.labelControl1.TabIndex = 16;
@@ -610,7 +608,7 @@ namespace quanlyvattu
             this.clearAllBtn.Appearance.Options.UseForeColor = true;
             this.clearAllBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
             this.clearAllBtn.AppearanceHovered.Options.UseBackColor = true;
-            this.clearAllBtn.Location = new System.Drawing.Point(800, 300);
+            this.clearAllBtn.Location = new System.Drawing.Point(657, 206);
             this.clearAllBtn.Name = "clearAllBtn";
             this.clearAllBtn.Size = new System.Drawing.Size(120, 35);
             this.clearAllBtn.TabIndex = 15;
@@ -627,7 +625,7 @@ namespace quanlyvattu
             this.deleteVTbtn.Appearance.Options.UseForeColor = true;
             this.deleteVTbtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.deleteVTbtn.AppearanceHovered.Options.UseBackColor = true;
-            this.deleteVTbtn.Location = new System.Drawing.Point(670, 300);
+            this.deleteVTbtn.Location = new System.Drawing.Point(527, 206);
             this.deleteVTbtn.Name = "deleteVTbtn";
             this.deleteVTbtn.Size = new System.Drawing.Size(120, 35);
             this.deleteVTbtn.TabIndex = 14;
@@ -640,7 +638,7 @@ namespace quanlyvattu
             this.totalAmoutBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalAmoutBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.totalAmoutBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.totalAmoutBox.Location = new System.Drawing.Point(540, 580);
+            this.totalAmoutBox.Location = new System.Drawing.Point(485, 497);
             this.totalAmoutBox.Name = "totalAmoutBox";
             this.totalAmoutBox.ReadOnly = true;
             this.totalAmoutBox.Size = new System.Drawing.Size(200, 29);
@@ -650,10 +648,10 @@ namespace quanlyvattu
             // totalLabel
             // 
             this.totalLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.totalLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.totalLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.totalLabel.Appearance.Options.UseFont = true;
             this.totalLabel.Appearance.Options.UseForeColor = true;
-            this.totalLabel.Location = new System.Drawing.Point(388, 585);
+            this.totalLabel.Location = new System.Drawing.Point(333, 502);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(132, 21);
             this.totalLabel.TabIndex = 12;
@@ -669,7 +667,7 @@ namespace quanlyvattu
             this.addPhieuXuatBtn.Appearance.Options.UseForeColor = true;
             this.addPhieuXuatBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.addPhieuXuatBtn.AppearanceHovered.Options.UseBackColor = true;
-            this.addPhieuXuatBtn.Location = new System.Drawing.Point(780, 575);
+            this.addPhieuXuatBtn.Location = new System.Drawing.Point(725, 492);
             this.addPhieuXuatBtn.Name = "addPhieuXuatBtn";
             this.addPhieuXuatBtn.Size = new System.Drawing.Size(150, 40);
             this.addPhieuXuatBtn.TabIndex = 11;
@@ -682,14 +680,14 @@ namespace quanlyvattu
             this.tempDataGridView.AllowUserToDeleteRows = false;
             this.tempDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tempDataGridView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tempDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tempDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.tempDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tempDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MAVT,
@@ -697,23 +695,23 @@ namespace quanlyvattu
             this.SOLUONG,
             this.DONGIA,
             this.THANHTIEN});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tempDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tempDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tempDataGridView.Location = new System.Drawing.Point(25, 350);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tempDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            this.tempDataGridView.GridColor = System.Drawing.Color.White;
+            this.tempDataGridView.Location = new System.Drawing.Point(22, 260);
             this.tempDataGridView.MultiSelect = false;
             this.tempDataGridView.Name = "tempDataGridView";
             this.tempDataGridView.ReadOnly = true;
             this.tempDataGridView.RowHeadersVisible = false;
             this.tempDataGridView.RowHeadersWidth = 51;
             this.tempDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tempDataGridView.Size = new System.Drawing.Size(1175, 220);
+            this.tempDataGridView.Size = new System.Drawing.Size(1120, 220);
             this.tempDataGridView.TabIndex = 10;
             // 
             // MAVT
@@ -761,7 +759,7 @@ namespace quanlyvattu
             this.addvattuBtn.Appearance.Options.UseForeColor = true;
             this.addvattuBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
             this.addvattuBtn.AppearanceHovered.Options.UseBackColor = true;
-            this.addvattuBtn.Location = new System.Drawing.Point(540, 300);
+            this.addvattuBtn.Location = new System.Drawing.Point(397, 206);
             this.addvattuBtn.Name = "addvattuBtn";
             this.addvattuBtn.Size = new System.Drawing.Size(120, 35);
             this.addvattuBtn.TabIndex = 9;
@@ -770,7 +768,7 @@ namespace quanlyvattu
             // 
             // dongiaInput
             // 
-            this.dongiaInput.Location = new System.Drawing.Point(540, 240);
+            this.dongiaInput.Location = new System.Drawing.Point(942, 13);
             this.dongiaInput.Name = "dongiaInput";
             this.dongiaInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.dongiaInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -786,7 +784,7 @@ namespace quanlyvattu
             // 
             // soluongInput
             // 
-            this.soluongInput.Location = new System.Drawing.Point(135, 240);
+            this.soluongInput.Location = new System.Drawing.Point(672, 12);
             this.soluongInput.Name = "soluongInput";
             this.soluongInput.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.soluongInput.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -807,7 +805,7 @@ namespace quanlyvattu
             this.mAVTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vattuBindingSource2, "MAVT", true));
             this.mAVTTextBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.mAVTTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mAVTTextBox.Location = new System.Drawing.Point(365, 18);
+            this.mAVTTextBox.Location = new System.Drawing.Point(71, 13);
             this.mAVTTextBox.Name = "mAVTTextBox";
             this.mAVTTextBox.ReadOnly = true;
             this.mAVTTextBox.Size = new System.Drawing.Size(100, 25);
@@ -827,7 +825,7 @@ namespace quanlyvattu
             this.vattuComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.vattuComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.vattuComboBox.FormattingEnabled = true;
-            this.vattuComboBox.Location = new System.Drawing.Point(540, 18);
+            this.vattuComboBox.Location = new System.Drawing.Point(246, 13);
             this.vattuComboBox.Name = "vattuComboBox";
             this.vattuComboBox.Size = new System.Drawing.Size(300, 25);
             this.vattuComboBox.TabIndex = 4;
@@ -837,34 +835,22 @@ namespace quanlyvattu
             // soluongLabel
             // 
             this.soluongLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.soluongLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.soluongLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.soluongLabel.Appearance.Options.UseFont = true;
             this.soluongLabel.Appearance.Options.UseForeColor = true;
-            this.soluongLabel.Location = new System.Drawing.Point(54, 245);
+            this.soluongLabel.Location = new System.Drawing.Point(591, 17);
             this.soluongLabel.Name = "soluongLabel";
             this.soluongLabel.Size = new System.Drawing.Size(56, 15);
             this.soluongLabel.TabIndex = 3;
             this.soluongLabel.Text = "Số Lượng:";
             // 
-            // dongiaLabel
-            // 
-            this.dongiaLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dongiaLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dongiaLabel.Appearance.Options.UseFont = true;
-            this.dongiaLabel.Appearance.Options.UseForeColor = true;
-            this.dongiaLabel.Location = new System.Drawing.Point(0, 0);
-            this.dongiaLabel.Name = "dongiaLabel";
-            this.dongiaLabel.Size = new System.Drawing.Size(48, 15);
-            this.dongiaLabel.TabIndex = 2;
-            this.dongiaLabel.Text = "Đơn Giá:";
-            // 
             // tenvtLabel
             // 
             this.tenvtLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tenvtLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tenvtLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.tenvtLabel.Appearance.Options.UseFont = true;
             this.tenvtLabel.Appearance.Options.UseForeColor = true;
-            this.tenvtLabel.Location = new System.Drawing.Point(471, 20);
+            this.tenvtLabel.Location = new System.Drawing.Point(177, 15);
             this.tenvtLabel.Name = "tenvtLabel";
             this.tenvtLabel.Size = new System.Drawing.Size(63, 15);
             this.tenvtLabel.TabIndex = 1;
@@ -885,7 +871,7 @@ namespace quanlyvattu
             this.inputPanel2.Controls.Add(this.mapxLabel);
             this.inputPanel2.Location = new System.Drawing.Point(25, 60);
             this.inputPanel2.Name = "inputPanel2";
-            this.inputPanel2.Size = new System.Drawing.Size(1175, 140);
+            this.inputPanel2.Size = new System.Drawing.Size(1117, 140);
             this.inputPanel2.TabIndex = 0;
             // 
             // ngayInput
@@ -954,7 +940,7 @@ namespace quanlyvattu
             // manvLabel
             // 
             this.manvLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.manvLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.manvLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.manvLabel.Appearance.Options.UseFont = true;
             this.manvLabel.Appearance.Options.UseForeColor = true;
             this.manvLabel.Location = new System.Drawing.Point(415, 85);
@@ -966,7 +952,7 @@ namespace quanlyvattu
             // hotenkhLabel
             // 
             this.hotenkhLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.hotenkhLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.hotenkhLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.hotenkhLabel.Appearance.Options.UseFont = true;
             this.hotenkhLabel.Appearance.Options.UseForeColor = true;
             this.hotenkhLabel.Location = new System.Drawing.Point(20, 85);
@@ -978,7 +964,7 @@ namespace quanlyvattu
             // ngayLabel
             // 
             this.ngayLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ngayLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ngayLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.ngayLabel.Appearance.Options.UseFont = true;
             this.ngayLabel.Appearance.Options.UseForeColor = true;
             this.ngayLabel.Location = new System.Drawing.Point(415, 25);
@@ -990,7 +976,7 @@ namespace quanlyvattu
             // mapxLabel
             // 
             this.mapxLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.mapxLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mapxLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.mapxLabel.Appearance.Options.UseFont = true;
             this.mapxLabel.Appearance.Options.UseForeColor = true;
             this.mapxLabel.Location = new System.Drawing.Point(20, 25);
@@ -1003,7 +989,7 @@ namespace quanlyvattu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 736);
+            this.ClientSize = new System.Drawing.Size(1155, 719);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1091,7 +1077,6 @@ namespace quanlyvattu
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DevExpress.XtraEditors.PanelControl inputPanel2;
         private DevExpress.XtraEditors.LabelControl tenvtLabel;
-        private DevExpress.XtraEditors.LabelControl dongiaLabel;
         private DevExpress.XtraEditors.LabelControl soluongLabel;
         private System.Windows.Forms.ComboBox vattuComboBox;
         private System.Windows.Forms.BindingSource vattuBindingSource2;

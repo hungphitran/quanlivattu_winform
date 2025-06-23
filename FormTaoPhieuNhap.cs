@@ -109,12 +109,148 @@ namespace quanlyvattu
         {
             FormManager.switchForm(this, new FormDatHang());
         }
+        //private void addBtn_Click(object sender, EventArgs e)
+        //{
+        //    string masoDDH = masoDDHTextEdit.Text.Trim();
+        //    int manv = int.Parse(Program.manv);
+        //    DateTime ngay = dateTimePicker.Value;
+        //    String mapn = this.maPNEditor.EditValue.ToString().Trim();
+        //    if (mapn.Length == 0 || mapn.Length > 8)
+        //    {
+        //        MessageBox.Show("Mã phiếu nhập không hợp lệ");
+        //        return;
+        //    }
+
+        //    if (this.qlvtDataSet.PhieuNhap.FindByMAPN(mapn) != null)
+        //    {
+        //        MessageBox.Show("Mã phiếu nhập đã tồn tại");
+        //        return;
+        //    }
+
+
+
+
+        //    qlvtDataSet.CTPNDataTable ctphieuNhapTable = new qlvtDataSet.CTPNDataTable();
+        //    HashSet<string> addedVatTu = new HashSet<string>();
+        //    foreach (DataGridViewRow row in cTDDHDataGridView.Rows)
+        //    {
+        //        if (row.IsNewRow) continue;
+
+        //        string mavt = row.Cells[1].Value.ToString();
+        //        if (addedVatTu.Contains(mavt)) continue;
+
+        //        // Kiểm tra trùng trong database
+        //        bool exists = false;
+        //        using (SqlCommand cmdCheck = new SqlCommand(
+        //            "SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
+        //        {
+        //            cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
+        //            cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+        //            int count = (int)cmdCheck.ExecuteScalar();
+        //            if (count > 0) exists = true;
+        //        }
+        //        if (exists) continue; // Bỏ qua nếu đã tồn tại trong DB
+
+        //        int soluong = int.Parse(row.Cells[2].Value.ToString());
+        //        float dongia = float.Parse(row.Cells[3].Value.ToString());
+
+        //        ctphieuNhapTable.Rows.Add(mapn, mavt, soluong, dongia);
+        //        addedVatTu.Add(mavt);
+        //    }
+        //    try
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand("phieu_nhap_hang", Program.conn))
+        //        {
+        //            cmd.CommandType = CommandType.StoredProcedure;
+
+        //            cmd.Parameters.AddWithValue("@MAPN", mapn);
+        //            cmd.Parameters.AddWithValue("@NGAY", ngay.ToString("yyyy-MM-dd"));
+        //            cmd.Parameters.AddWithValue("@MasoDDH", masoDDH);
+        //            cmd.Parameters.AddWithValue("@MANV", manv);
+        //            int result = cmd.ExecuteNonQuery();
+        //            if (result == 0)
+        //            {
+        //                MessageBox.Show("Lỗi khi thêm phiếu nhập");
+        //                return;
+        //            }
+        //            else
+        //            {
+        //                // Thay vì dùng: int check = cTPNTableAdapter.Update(ctphieuNhapTable);
+        //                bool hasError = false;
+        //                foreach (DataRow row in ctphieuNhapTable.Rows)
+        //                {
+        //                    string mavt = row["MAVT"].ToString();
+        //                    int soluong = int.Parse(row["SOLUONG"].ToString());
+        //                    float dongia = float.Parse(row["DONGIA"].ToString());
+
+        //                    // Kiểm tra lại lần nữa trước khi insert
+        //                    using (SqlCommand cmdCheck = new SqlCommand(
+        //                        "SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
+        //                    {
+        //                        cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
+        //                        cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+        //                        int count = (int)cmdCheck.ExecuteScalar();
+        //                        if (count > 0) continue; // Đã tồn tại, bỏ qua
+        //                    }
+
+        //                    using (SqlCommand cmdInsert = new SqlCommand(
+        //                        "INSERT INTO CTPN (MAPN, MAVT, SOLUONG, DONGIA) VALUES (@MAPN, @MAVT, @SL, @DG)", Program.conn))
+        //                    {
+        //                        cmdInsert.Parameters.AddWithValue("@MAPN", mapn);
+        //                        cmdInsert.Parameters.AddWithValue("@MAVT", mavt);
+        //                        cmdInsert.Parameters.AddWithValue("@SL", soluong);
+        //                        cmdInsert.Parameters.AddWithValue("@DG", dongia);
+        //                        try
+        //                        {
+        //                            cmdInsert.ExecuteNonQuery();
+        //                        }
+        //                        catch
+        //                        {
+        //                            hasError = true;
+        //                        }
+        //                    }
+        //                }
+        //                if (hasError)
+        //                {
+        //                    MessageBox.Show("Có lỗi khi thêm một số chi tiết phiếu nhập.");
+        //                }
+        //                else
+        //                {
+        //                    // Cập nhật số lượng vật tư
+        //                    foreach (DataRow row in ctphieuNhapTable.Rows)
+        //                    {
+        //                        string mavt = row["MAVT"].ToString();
+        //                        int soluong = int.Parse(row["SOLUONG"].ToString());
+
+        //                        using (SqlCommand cmdUpdate = new SqlCommand(
+        //                            "UPDATE VATTU SET SOLUONGTON = SOLUONGTON + @SL WHERE MAVT = @MAVT", Program.conn))
+        //                        {
+        //                            cmdUpdate.Parameters.AddWithValue("@SL", soluong);
+        //                            cmdUpdate.Parameters.AddWithValue("@MAVT", mavt);
+        //                            cmdUpdate.ExecuteNonQuery();
+        //                        }
+        //                    }
+
+        //                    MessageBox.Show("Phiếu nhập đã được tạo thành công!");
+        //                    Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
+        //                    FormManager.switchForm(this, new FormDatHang());
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi thêm phiếu nhập: " + ex.Message);
+        //    }
+        //}
+
         private void addBtn_Click(object sender, EventArgs e)
         {
             string masoDDH = masoDDHTextEdit.Text.Trim();
             int manv = int.Parse(Program.manv);
             DateTime ngay = dateTimePicker.Value;
-            String mapn = this.maPNEditor.EditValue.ToString().Trim();
+            string mapn = this.maPNEditor.EditValue.ToString().Trim();
+
             if (mapn.Length == 0 || mapn.Length > 8)
             {
                 MessageBox.Show("Mã phiếu nhập không hợp lệ");
@@ -127,11 +263,37 @@ namespace quanlyvattu
                 return;
             }
 
+            // ✅ Validate lại dữ liệu chi tiết
+            foreach (DataGridViewRow row in cTDDHDataGridView.Rows)
+            {
+                if (row.IsNewRow) continue;
 
+                string mavt = row.Cells[1].Value?.ToString();
+                string soluongStr = row.Cells[2].Value?.ToString();
+                string dongiaStr = row.Cells[3].Value?.ToString();
 
+                if (string.IsNullOrWhiteSpace(mavt) || string.IsNullOrWhiteSpace(soluongStr) || string.IsNullOrWhiteSpace(dongiaStr))
+                {
+                    MessageBox.Show("Dữ liệu vật tư không được để trống!");
+                    return;
+                }
+
+                if (!int.TryParse(soluongStr, out int sl) || sl <= 0)
+                {
+                    MessageBox.Show($"Số lượng không hợp lệ tại vật tư {mavt}!");
+                    return;
+                }
+
+                if (!float.TryParse(dongiaStr, out float dg) || dg <= 0)
+                {
+                    MessageBox.Show($"Đơn giá không hợp lệ tại vật tư {mavt}!");
+                    return;
+                }
+            }
 
             qlvtDataSet.CTPNDataTable ctphieuNhapTable = new qlvtDataSet.CTPNDataTable();
             HashSet<string> addedVatTu = new HashSet<string>();
+
             foreach (DataGridViewRow row in cTDDHDataGridView.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -140,16 +302,18 @@ namespace quanlyvattu
                 if (addedVatTu.Contains(mavt)) continue;
 
                 // Kiểm tra trùng trong database
-                bool exists = false;
-                using (SqlCommand cmdCheck = new SqlCommand(
-                    "SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
+                using (SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
                 {
                     cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
                     cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+                    if (Program.conn.State != ConnectionState.Open)
+                    {
+                        Program.conn.Open();
+                    }
                     int count = (int)cmdCheck.ExecuteScalar();
-                    if (count > 0) exists = true;
+
+                    if (count > 0) continue;
                 }
-                if (exists) continue; // Bỏ qua nếu đã tồn tại trong DB
 
                 int soluong = int.Parse(row.Cells[2].Value.ToString());
                 float dongia = float.Parse(row.Cells[3].Value.ToString());
@@ -157,92 +321,77 @@ namespace quanlyvattu
                 ctphieuNhapTable.Rows.Add(mapn, mavt, soluong, dongia);
                 addedVatTu.Add(mavt);
             }
+
             try
             {
                 using (SqlCommand cmd = new SqlCommand("phieu_nhap_hang", Program.conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     cmd.Parameters.AddWithValue("@MAPN", mapn);
                     cmd.Parameters.AddWithValue("@NGAY", ngay.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@MasoDDH", masoDDH);
                     cmd.Parameters.AddWithValue("@MANV", manv);
-                    int result = cmd.ExecuteNonQuery();
-                    if (result == 0)
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Thêm chi tiết phiếu nhập
+                bool hasError = false;
+                foreach (DataRow row in ctphieuNhapTable.Rows)
+                {
+                    string mavt = row["MAVT"].ToString();
+                    int soluong = int.Parse(row["SOLUONG"].ToString());
+                    float dongia = float.Parse(row["DONGIA"].ToString());
+
+                    using (SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
                     {
-                        MessageBox.Show("Lỗi khi thêm phiếu nhập");
-                        return;
+                        cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
+                        cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
+                        int count = (int)cmdCheck.ExecuteScalar();
+                        if (count > 0) continue;
                     }
-                    else
+
+                    using (SqlCommand cmdInsert = new SqlCommand("INSERT INTO CTPN (MAPN, MAVT, SOLUONG, DONGIA) VALUES (@MAPN, @MAVT, @SL, @DG)", Program.conn))
                     {
-                        // Thay vì dùng: int check = cTPNTableAdapter.Update(ctphieuNhapTable);
-                        bool hasError = false;
-                        foreach (DataRow row in ctphieuNhapTable.Rows)
+                        cmdInsert.Parameters.AddWithValue("@MAPN", mapn);
+                        cmdInsert.Parameters.AddWithValue("@MAVT", mavt);
+                        cmdInsert.Parameters.AddWithValue("@SL", soluong);
+                        cmdInsert.Parameters.AddWithValue("@DG", dongia);
+                        try
                         {
-                            string mavt = row["MAVT"].ToString();
-                            int soluong = int.Parse(row["SOLUONG"].ToString());
-                            float dongia = float.Parse(row["DONGIA"].ToString());
-
-                            // Kiểm tra lại lần nữa trước khi insert
-                            using (SqlCommand cmdCheck = new SqlCommand(
-                                "SELECT COUNT(*) FROM CTPN WHERE MAPN = @MAPN AND MAVT = @MAVT", Program.conn))
-                            {
-                                cmdCheck.Parameters.AddWithValue("@MAPN", mapn);
-                                cmdCheck.Parameters.AddWithValue("@MAVT", mavt);
-                                int count = (int)cmdCheck.ExecuteScalar();
-                                if (count > 0) continue; // Đã tồn tại, bỏ qua
-                            }
-
-                            using (SqlCommand cmdInsert = new SqlCommand(
-                                "INSERT INTO CTPN (MAPN, MAVT, SOLUONG, DONGIA) VALUES (@MAPN, @MAVT, @SL, @DG)", Program.conn))
-                            {
-                                cmdInsert.Parameters.AddWithValue("@MAPN", mapn);
-                                cmdInsert.Parameters.AddWithValue("@MAVT", mavt);
-                                cmdInsert.Parameters.AddWithValue("@SL", soluong);
-                                cmdInsert.Parameters.AddWithValue("@DG", dongia);
-                                try
-                                {
-                                    cmdInsert.ExecuteNonQuery();
-                                }
-                                catch
-                                {
-                                    hasError = true;
-                                }
-                            }
+                            cmdInsert.ExecuteNonQuery();
                         }
-                        if (hasError)
+                        catch
                         {
-                            MessageBox.Show("Có lỗi khi thêm một số chi tiết phiếu nhập.");
-                        }
-                        else
-                        {
-                            // Cập nhật số lượng vật tư
-                            foreach (DataRow row in ctphieuNhapTable.Rows)
-                            {
-                                string mavt = row["MAVT"].ToString();
-                                int soluong = int.Parse(row["SOLUONG"].ToString());
-
-                                using (SqlCommand cmdUpdate = new SqlCommand(
-                                    "UPDATE VATTU SET SOLUONGTON = SOLUONGTON + @SL WHERE MAVT = @MAVT", Program.conn))
-                                {
-                                    cmdUpdate.Parameters.AddWithValue("@SL", soluong);
-                                    cmdUpdate.Parameters.AddWithValue("@MAVT", mavt);
-                                    cmdUpdate.ExecuteNonQuery();
-                                }
-                            }
-
-                            MessageBox.Show("Phiếu nhập đã được tạo thành công!");
-                            Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
-                            FormManager.switchForm(this, new FormDatHang());
+                            hasError = true;
                         }
                     }
                 }
+
+                if (hasError)
+                {
+                    MessageBox.Show("Có lỗi khi thêm một số chi tiết phiếu nhập.\nPhiếu sẽ bị hủy.");
+
+                    // Xóa phiếu nhập đã thêm
+                    using (SqlCommand cmdDelete = new SqlCommand("DELETE FROM PHIEUNHAP WHERE MAPN = @MAPN", Program.conn))
+                    {
+                        cmdDelete.Parameters.AddWithValue("@MAPN", mapn);
+                        cmdDelete.ExecuteNonQuery();
+                    }
+
+                    return;
+                }
+
+                MessageBox.Show("Phiếu nhập đã được tạo thành công!");
+                Program.ExecSqlNonQuery("use qlvt; exec sp_TaoBackupLog 'qlvt'");
+                FormManager.switchForm(this, new FormDatHang());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi thêm phiếu nhập: " + ex.Message);
             }
         }
+
 
         private void FormTaoPhieuNhap_Load(object sender, EventArgs e)
         {
